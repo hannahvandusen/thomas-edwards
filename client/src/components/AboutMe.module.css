@@ -6,7 +6,18 @@
 
 .image {
     width: 100%;
-    overflow-y:hidden
+    margin-right: 100px;
+    overflow-y:hidden;
+    max-width: 440px; 
+}
+
+
+.image2 {
+    width: 100%;
+    overflow-y:hidden;
+    max-width: 420px;
+    margin-right: 20px;
+    margin-bottom: 25px;
 
 }
 
@@ -19,22 +30,22 @@
 }
 
 .mainHeader {
-  height: 40vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 2rem;
-  overflow-y:hidden
+    height: 35vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    overflow-y:hidden
 }
 
 .mainHeader h1 {
- font: 4rem;   
- margin-bottom: 2rem;
- line-height: 1.2;
- font-size:60px;
- overflow-y:hidden
+    font: 4rem;   
+    margin-bottom: 2rem;
+    line-height: 1.2;
+    font-size:60px;
+    overflow-y:hidden
 }
 
 .mainHeader h1 span {
@@ -44,8 +55,8 @@
 }
 
 .mainHeader p {
-font-size: 2rem;
-overflow-y:hidden
+    font-size: 2rem;
+    overflow-y:hidden
 }
 
 .card {
@@ -53,7 +64,9 @@ overflow-y:hidden
    grid-template-columns: repeat(2, 1fr);  
    background-color: rgba(207, 219, 213, 1);
    margin-bottom: 2rem;
-   overflow-y:hidden
+   padding: 3rem;
+   overflow-y:hidden;
+ 
 }
 
 .card h3 {
@@ -61,14 +74,17 @@ overflow-y:hidden
     overflow-y:hidden
 }
 
-.card span {
+/* .card span {
     margin-bottom: 2rem;
     color: rgb(0, 0, 0);
-    overflow-y:hidden
-}
+    overflow-y:hidden;
+} */
 
 .card img {
-    height: 400px;
+    margin-bottom: 20px;
+    margin-top: 25px;
+    margin-right: 20px;
+    height: 350px;
     overflow-y:hidden
 }
 
@@ -87,14 +103,16 @@ overflow-y:hidden
     overflow-y:hidden
 }
 
-.values {
+.form {
     background-color: rgba(207, 219, 213, 1);
-    padding-top: 50px;
-    padding-bottom: 50px;
-    overflow-y:hidden
+    padding-top: 100px;
+    padding-bottom: 100px;
+    font-size: larger;
+    overflow-y:hidden;
+
 }
 
-.values h1 {
+.form h1 {
     color:rgba(14, 52, 160, 1);
     overflow-y:hidden
 }
@@ -117,7 +135,7 @@ overflow-y:hidden
 
 
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 750px) {
     .card {
         display: block;
     }

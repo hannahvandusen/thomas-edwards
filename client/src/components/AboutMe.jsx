@@ -18,7 +18,7 @@ const AboutMe = () => {
     <>
         <header className={styles.mainHeader}>
             <h1><span>About</span>Thomas</h1>
-            <p>My gift is to Inspire, and make dreams come true</p>
+            <p>My gift is to Inspire others, and make dreams come true</p>
             <main></main>
         </header>
         <div className={styles.container}>
@@ -26,38 +26,29 @@ const AboutMe = () => {
                 <img className={styles.image} src={photo1} alt="My Story" />
                 <div>
                     <h3>My Story</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore est quia officia, sunt odio minima harum rerum assumenda asperiores perspiciatis nobis id excepturi dolorem, animi repellendus hic voluptatibus maxime eius.Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore est quia officia, sunt odio minima harum rerum assumenda asperiores perspiciatis nobis id excepturi dolorem, animi repellendus hic voluptatibus maxime eius.Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore est quia officia, sunt odio minima harum rerum assumenda asperiores perspiciatis nobis id excepturi doloremipsum20,animirepellendus hic voluptatibus maxime eius.Lorem ipsum dolor sit ametsdfs consectetur adipisicing elithbsll. GreatInventore est quia officia, sunt odio minima harum rerum assumenda asperiores perspiciatis nobis id excepturi dolorem, animi repellendus hic voluptatibus maxime eius.Lorem ipsum dolor sit amet consectetur adipisicing elit.  GreatInventore est quia officia, sunt odio minima harum rerum assumenda asperiores perspiciatis nobis id excepturi dolorem.</p>
                 </div>
             </section>
 
-            <section data-aos="fade-left" className={styles.card}>
-                <img className={styles.image} src={photo2} alt="My Values" />
+            <section className={styles.card}>
+                <img className={styles.image2} src={photo2} alt="My Values" />
                 <div>
-                    <h3 data-aos="fade-down">My Values</h3>
-                    <p data-aos="fade-up">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore est quia officia, sunt odio minima harum rerum assumenda asperiores perspiciatis nobis id excepturi dolorem, animi repellendus hic voluptatibus maxime eius.Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore est quia officia, sunt odio minima harum rerum assumenda asperiores perspiciatis nobis id excepturi dolorem, animi repellendus hic voluptatibus maxime eius.Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                    <h3 data-aos="zoom-in-right">My Values</h3>
+                    <p data-aos="fade-right"  >Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore est quia officia, sunt odio minima harum rerum assumenda asperiores perspiciatis nobis id excepturi doloremipsum20,animirepellendus hic voluptatibus maxime eius.Lorem ipsum dolor sit ametsdfs consectetur adipisicing elithbsll. GreatInventore est quia officia, sunt odio minima harum rerum assumenda asperiores perspiciatis nobis id excepturi dolorem, animi repellendus hic voluptatibus maxime eius.Lorem ipsum dolor sit amet consectetur adipisicing elit.  GreatInventore est quia officia, sunt odio minima harum rerum assumenda asperiores perspiciatis nobis id excepturi dolorem.</p>
                 </div>
             </section>
 
-            <section data-aos="fade-right" className={styles.card}>
+            <section className={styles.card}>
                 <img className={styles.image} src={photo3} alt="My Mission" />
                 <div>
-                    <h3>My Mission</h3>
-                    <p data-aos="fade-up">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore est quia officia, sunt odio minima harum rerum assumenda asperiores perspiciatis nobis id excepturi dolorem, animi repellendus hic voluptatibus maxime eius.Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore est quia officia, sunt odio minima harum rerum assumenda asperiores perspiciatis nobis id excepturi dolorem, animi repellendus hic voluptatibus maxime eius.Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                    <h3 data-aos="zoom-in-left">My Mission</h3>
+                    <p data-aos="fade-left">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore est quia officia, sunt odio minima harum rerum assumenda asperiores perspiciatis nobis id excepturi doloremipsum20,animirepellendus hic voluptatibus maxime eius.Lorem ipsum dolor sit ametsdfs consectetur adipisicing elithbsll. GreatInventore est quia officia, sunt odio minima harum rerum assumenda asperiores perspiciatis nobis id excepturi dolorem, animi repellendus hic voluptatibus maxime eius.Lorem ipsum dolor sit amet consectetur adipisicing elit.  GreatInventore est quia officia, sunt odio minima harum rerum assumenda asperiores perspiciatis nobis id excepturi dolorem.</p>
                 </div>
             </section>
-                <div data-aos="fade-up"  className={styles.values}>
-                    <h1 data-aos="fade-down" >Connect</h1>
-                    <div className={styles.description1}>
-                    <h3>Respect.</h3>
-                    <h3>Empathy.</h3>
-                    <h3>Respect.</h3>
-                </div>
-                
-                <div className={styles. description2}>
-                    <h3>Realness.</h3>
-                    <h3>Value.</h3>
-                    <h3>Community.</h3>
-                    </div>
+
+
+                <div className={styles.form}>
+                    <h1 data-aos="fade-down">Get in Touch</h1>
                  </div>
         </div>      
     </> 
