@@ -1,0 +1,9 @@
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    column-gap: 1em;
+    padding: 1em;
+    border-bottom: .5em transparent black;
+    margin-bottom: .5em;
+    
+}
