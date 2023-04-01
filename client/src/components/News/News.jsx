@@ -2,9 +2,7 @@ import React from "react";
 import { Newsletter } from "reactstrap";
 
 function News() {
-    return(
-        
-    )
+    return()
 }
 
 export default News;
