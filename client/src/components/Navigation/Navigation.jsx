@@ -1,7 +1,17 @@
 import React, { useState } from 'react'
-import { Navbar, NavbarBrand, NavbarToggler, Nav, NavItem, NavLink, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem, NavbarText, Collapse } from 'reactstrap'; 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faInstagram } from "@fortawesome/free-brands-svg-icons"
+import {
+    Collapse,
+    Navbar,
+    NavbarToggler,
+    NavbarBrand,
+    Nav,
+    NavItem,
+    NavLink,
+    UncontrolledDropdown,
+    DropdownToggle,
+    DropdownMenu,
+    DropdownItem,
+} from 'reactstrap'
 
 
 function Navigation(args) {
@@ -11,23 +21,34 @@ function Navigation(args) {
     const toggle = () => setIsOpen(!isOpen);
 
     return (
-    // <div className='navbar'>
-    //     <a href="/">Home</a>
-    //     <a href="/">About Thomas</a>
-    //     <a href="/">Testimonials</a>
-    //     <a href="/">Newsletter</a>
-    //     <a href="/">Shop</a>
-    // </div>
+
     <>
-            <Nav fill pills>
-                <NavbarBrand>Inner Famous</NavbarBrand>
-                <NavItem>
-                    <NavLink href='/'>Home</NavLink>
-                </NavItem>
-            </Nav>
+            <Nav>
 
-        {/* </Navbar> */}
-
+                <NavbarBrand href='/' className='navbarbrand' style={{fontSize: "1.5em"}}>Inner Famous</NavbarBrand>
+                        <NavItem>
+                            <NavLink href="/">
+                            Home
+                        </NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink href="/store">Store</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink href="/testimonials">Testimonials</NavLink>
+                        </NavItem>
+                        <UncontrolledDropdown nav inNavbar>
+                            <DropdownToggle nav caret>
+                                About
+                            </DropdownToggle>
+                            <DropdownMenu right>
+                                <DropdownItem href='/about'>About Thomas
+                                </DropdownItem>
+                                <DropdownItem href='/contact'>Contact</DropdownItem>
+                                <DropdownItem divider />
+                            </DropdownMenu>
+                        </UncontrolledDropdown>
+                    </Nav>
     </>
     )
 }
