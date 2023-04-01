@@ -1,11 +1,13 @@
 import { React } from "react";
 import {  Card, CardImg, CardImgOverlay, CardTitle, CardText } from "reactstrap";
+import logo from '../images/photo1.jpg'
 
 const Testimonials = () => {
 return (
 	<>
 	{/* <h1>What People Are Saying About Thomas</h1> */}
     <div>
+      <img src={logo} alt="logo" /> 
   <Card inverse>
     <CardImg
       alt="Card image cap"

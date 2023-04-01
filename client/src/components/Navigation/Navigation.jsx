@@ -23,8 +23,7 @@ function Navigation(args) {
     return (
 
     <>
-            <Nav>
-
+            <Nav className='navigation'>
                 <NavbarBrand href='/' className='navbarbrand' style={{fontSize: "1.5em"}}>Inner Famous</NavbarBrand>
                         <NavItem>
                             <NavLink href="/">
@@ -41,7 +40,7 @@ function Navigation(args) {
                             <DropdownToggle nav caret>
                                 About
                             </DropdownToggle>
-                            <DropdownMenu right>
+                            <DropdownMenu right dark>
                                 <DropdownItem href='/about'>About Thomas
                                 </DropdownItem>
                                 <DropdownItem href='/contact'>Contact</DropdownItem>
