@@ -1,5 +1,6 @@
 import { React } from "react";
 import {  Card, CardImg, CardGroup, CardTitle, CardText, CardBody, CardSubtitle, CardHeader, Row, Col } from "reactstrap";
+import photo1 from "../images/photo1.jpg";
 
 const Testimonials = () => {
 return (
@@ -22,8 +23,8 @@ return (
         Testimonial #1
     </CardHeader>
     <CardImg
-      alt="Card image cap"
-      src="./images/photo1.jpg"
+      alt="Thomas photo 1"
+      src={photo1}
       top
       width="100%"
     />
