@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "name": "client",
   "version": "0.1.0",
   "private": true,
@@ -38,7 +37,6 @@
       "last 1 safari version"
     ]
   }
-=======
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -56,5 +54,4 @@
   "author": "",
   "license": "ISC",
   "description": ""
->>>>>>> 8c80f94ff8ab33d38d796caa191573f2c8085a1f
 }
