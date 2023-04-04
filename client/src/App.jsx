@@ -15,6 +15,7 @@ function App() {
                 <Route path='/testimonials' element={<Testimonials/>} />
                 <Route path='/store' element={<StoreIndex/>} /> 
                 <Route path='/about' element={<AboutMe/>}/> 
+                <Route path='/newsletter'/> 
             </Routes>
         </Router>  
 
