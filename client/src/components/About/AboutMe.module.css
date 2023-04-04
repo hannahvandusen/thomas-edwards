@@ -61,7 +61,7 @@
 
 .card {
    display: grid;
-   grid-template-columns: repeat(2, 1fr);  
+   /* grid-template-columns: repeat(2, 1fr);   */
    background-color: rgba(207, 219, 213, 1);
    margin-bottom: 2rem;
    padding: 3rem;
