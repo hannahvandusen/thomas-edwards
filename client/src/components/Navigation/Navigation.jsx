@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
     Collapse,
     Navbar,
@@ -16,15 +16,17 @@ import {
 
 function Navigation(args) {
 
-    const [ isOpen, setIsOpen ] = useState(false);
-
-    const toggle = () => setIsOpen(!isOpen);
+    let style = {
+        width: "100%",
+        background: "black",
+        opacity: ".5",
+        color: "white"
+    }
 
     return (
 
-    <>
-            <Nav>
-
+    <div className='sticky-top' style={style}>
+            <Nav className='navigation' >
                 <NavbarBrand href='/' className='navbarbrand' style={{fontSize: "1.5em"}}>Inner Famous</NavbarBrand>
                         <NavItem>
                             <NavLink href="/">
@@ -37,11 +39,14 @@ function Navigation(args) {
                         <NavItem>
                             <NavLink href="/testimonials">Testimonials</NavLink>
                         </NavItem>
+                        <NavItem>
+                            <NavLink href="/newsletter">Newsletter</NavLink>
+                        </NavItem>
                         <UncontrolledDropdown nav inNavbar>
                             <DropdownToggle nav caret>
                                 About
                             </DropdownToggle>
-                            <DropdownMenu right>
+                            <DropdownMenu right dark>
                                 <DropdownItem href='/about'>About Thomas
                                 </DropdownItem>
                                 <DropdownItem href='/contact'>Contact</DropdownItem>
@@ -49,7 +54,7 @@ function Navigation(args) {
                             </DropdownMenu>
                         </UncontrolledDropdown>
                     </Nav>
-    </>
+    </ div>
     )
 }
 

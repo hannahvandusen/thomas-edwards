@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Card, CardBody, CardTitle, CardSubtitle, CardText, Button, CardImg, CardGroup } from 'reactstrap'
 
-
 function StoreIndex() {
     return (
         <>
@@ -53,7 +52,7 @@ function StoreIndex() {
             Card subtitle
         </CardSubtitle>
         <CardText>
-            This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.
+        This card has supporting text below as a natural lead-in to additional content.
         </CardText>
         <Button>
             Add to Cart
