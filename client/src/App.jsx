@@ -5,6 +5,7 @@ import Testimonials from './pages/Testimonials';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import StoreIndex from './components/Store/StoreIndex';
 import AboutMe from './components/About/AboutMe'
+import Admin from './components/Admin/Admin'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
                 <Route path='/store' element={<StoreIndex/>} /> 
                 <Route path='/about' element={<AboutMe/>}/> 
                 <Route path='/newsletter'/> 
+                <Route path='/admin/login' element ={<Admin /> }/> 
             </Routes>
         </Router>  
 
