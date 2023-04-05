@@ -20,10 +20,9 @@ function App() {
                 <Route path='/admin/login' element ={<Admin /> }/> 
             </Routes>
         </Router>  
-
-      <Footer /> 
+      <Footer />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
