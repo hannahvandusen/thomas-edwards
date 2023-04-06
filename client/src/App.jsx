@@ -5,6 +5,10 @@ import Testimonials from "./pages/Testimonials"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import StoreIndex from "./components/Store/StoreIndex"
 import AboutMe from "./components/About/AboutMe"
+<<<<<<< HEAD
+=======
+import  Admin  from "./components/admin/Admin"
+>>>>>>> 792bc95a82a84359956498e8720a63c962e58bba
 
 function App() {
   return (
@@ -16,6 +20,10 @@ function App() {
           <Route path="/store" element={<StoreIndex />} />
           <Route path="/about" element={<AboutMe />} />
           <Route path="/newsletter" />
+<<<<<<< HEAD
+=======
+          <Route path="/admin" element={<Admin />}/> 
+>>>>>>> 792bc95a82a84359956498e8720a63c962e58bba
         </Routes>
       </Router>
 
