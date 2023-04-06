@@ -35,10 +35,7 @@ const AboutMe = () => {
               ipsum dolor sit ametsdfs consectetur adipisicing elithbsll.
               GreatInventore est quia officia, sunt odio minima harum rerum
               assumenda asperiores perspiciatis nobis id excepturi dolorem,
-              animi repellendus hic voluptatibus maxime eius.Lorem ipsum dolor
-              sit amet consectetur adipisicing elit. GreatInventore est quia
-              officia, sunt odio minima harum rerum assumenda asperiores
-              perspiciatis nobis id excepturi dolorem.
+              animi repellendus hic hic voluptatibus maxime eius.
             </p>
           </div>
         </section>
@@ -47,18 +44,13 @@ const AboutMe = () => {
           <img className={styles.image2} src={photo2} alt="My Values" />
           <div>
             <h3 data-aos="zoom-in-right">My Values</h3>
-            <p data-aos="fade-right">
+            <p className={styles.left} data-aos="fade-right">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
               est quia officia, sunt odio minima harum rerum assumenda
               asperiores perspiciatis nobis id excepturi
               doloremipsum20,animirepellendus hic voluptatibus maxime eius.Lorem
               ipsum dolor sit ametsdfs consectetur adipisicing elithbsll.
               GreatInventore est quia officia, sunt odio minima harum rerum
-              assumenda asperiores perspiciatis nobis id excepturi dolorem,
-              animi repellendus hic voluptatibus maxime eius.Lorem ipsum dolor
-              sit amet consectetur adipisicing elit. GreatInventore est quia
-              officia, sunt odio minima harum rerum assumenda asperiores
-              perspiciatis nobis id excepturi dolorem.
             </p>
           </div>
         </section>
@@ -73,12 +65,9 @@ const AboutMe = () => {
               asperiores perspiciatis nobis id excepturi
               doloremipsum20,animirepellendus hic voluptatibus maxime eius.Lorem
               ipsum dolor sit ametsdfs consectetur adipisicing elithbsll.
-              GreatInventore est quia officia, sunt odio minima harum rerum
-              assumenda asperiores perspiciatis nobis id excepturi dolorem,
-              animi repellendus hic voluptatibus maxime eius.Lorem ipsum dolor
-              sit amet consectetur adipisicing elit. GreatInventore est quia
-              officia, sunt odio minima harum rerum assumenda asperiores
-              perspiciatis nobis id excepturi dolorem.
+              asperiores perspiciatis nobis id excepturi
+              doloremipsum20,animirepellendus hic voluptatibus maxime eius.Lorem
+              ipsum dolor sit ametsdfs consectetur adipisicing elithbsll.
             </p>
           </div>
         </section>
