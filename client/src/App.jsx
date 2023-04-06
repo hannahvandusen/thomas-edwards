@@ -1,6 +1,7 @@
 
 import './App.css';
 import Navigation from './components/Navigation/Navigation';
+import Home from './pages/home/Home';
 import Footer from './components/footer/Footer';
 import Testimonials from './pages/Testimonials';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -19,7 +20,7 @@ function App() {
           <Route path="/newsletter" />
         </Routes>
       </Router>
-
+      <Home />
       <Footer />
     </div>
   )

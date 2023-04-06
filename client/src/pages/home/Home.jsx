@@ -1,7 +1,7 @@
 import React from 'react';
-import { Col, Row, Container } from 'reactstrap';
-import photo1 from '../public/love.jpg';
-
+import { Col, Row, Container} from 'reactstrap';
+import {Carousel} from 'reactstrap';
+//import Image1 from '../../images/'
 
 function Home() {
     return(
@@ -9,7 +9,7 @@ function Home() {
     <Row>
         <Col className="bg-light border">
             {/* <div style={{backgroundImage={photo1}}}></div> */}
-            <img src={photo1} alt="photo1" />
+            <Carousel/>
         </Col>
     </Row>
     <Row>
