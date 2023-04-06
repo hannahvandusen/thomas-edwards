@@ -17,7 +17,7 @@ function App() {
           <Route path="/store" element={<StoreIndex />} />
           <Route path="/about" element={<AboutMe />} />
           <Route path="/newsletter" />
-          <Route path="/admin/login" element={<Admin /> }/> 
+          <Route path="/admin" element={<Admin />}/> 
         </Routes>
       </Router>
 
