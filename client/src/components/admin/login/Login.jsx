@@ -2,9 +2,9 @@ import React, { useRef } from 'react'
 import { Button, Form, FormGroup, Input, Label } from 'reactstrap'
 
 function Login() {
-
-    const emailRef = useRef();
+    const emailRef = useRef(); 
     const passwordRef = useRef();
+    // const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -17,8 +17,8 @@ function Login() {
         const url = `http://localhost:4000/admin/login`;
         const headers = new Headers({
             "Content-Type": "application/json"
-        });
-
+        });    
+    
         const requestOptions = {
             headers,
             body: bodyObj,
@@ -27,45 +27,42 @@ function Login() {
 
         try {
             const res = await fetch(url, requestOptions);
-            const data = await res.json(); 
+            const data = await res.json();
 
-            // console.log(data); 
+            // console.log(data);
 
             if(data.admin) {
-                console.log(data.admin); 
+                console.log(data.admin);
             } else {
                 alert(`${data.error}. Try again!`)
             }
-
         } catch (err) {
             console.error(err)
+
         }
     }
+
     return (
-    <>
-        <h1>Login</h1>
-        <Form onSubmit={handleSubmit}>
-            <FormGroup>
-                <Label>Email</Label>
-                <Input 
+        <>
+            <h1>Login</h1>
+            <Form onSubmit={handleSubmit}>
+                <FormGroup>
+                    <Label>Email</Label>
+                    <Input 
                     innerRef={emailRef}
                     type='email'
-                    // form='reset'
-                /> 
-            </FormGroup>
-            <FormGroup>
-                <Label>Password</Label>
-                <Input 
+                    /> 
+                </FormGroup>
+                <FormGroup>
+                    <Label>Password</Label>
+                    <Input 
                     innerRef={passwordRef}
                     type='password'
-                /> 
-            </FormGroup>
-            <Button
-            type='submit'
-            color='dark'
-            >Login</Button>
-        </Form>
-    </>
+                    /> 
+                </FormGroup>
+                <Button type='submit' color='dark'>Login</Button>
+            </Form>
+        </>
     )
 }
 

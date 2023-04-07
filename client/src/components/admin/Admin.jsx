@@ -5,7 +5,6 @@ import Login from './login/Login'
 function Admin() {
     return (
         <>
-        <h1>Testy</h1>
             <Container>
                 <Row>
                     <Col>
