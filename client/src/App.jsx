@@ -9,17 +9,18 @@ import Admin from './components/Admin/Admin'
 
 function App() {
   return (
-    <div className="App" >
-        <Navigation /> 
-        <Router>
-            <Routes>
-                <Route path='/testimonials' element={<Testimonials/>} />
-                <Route path='/store' element={<StoreIndex/>} /> 
-                <Route path='/about' element={<AboutMe/>}/> 
-                <Route path='/newsletter'/> 
-                <Route path='/admin/login' element ={<Admin /> }/> 
-            </Routes>
-        </Router>  
+    <div className="App">
+      <Navigation />
+      <Router>
+        <Routes>
+          <Route path="/testimonials" element={<Testimonials />} />
+          <Route path="/store" element={<StoreIndex />} />
+          <Route path="/about" element={<AboutMe />} />
+          <Route path="/newsletter" />
+          <Route path="/admin" element={<Admin />}/> 
+          <Route path="/intake" element={<Intake />} />
+        </Routes>
+      </Router>
       <Footer />
     </div>
   )
