@@ -91,7 +91,7 @@ Overall, I highly recommend Thomas as a friend, mentor, and professional contact
         As a Student
     </CardHeader>
     <CardImg
-      alt="Thomas photo 3"
+      alt="Thomas photo 6"
       src="./images/photo6.jpg"
       top
       width="100%"
@@ -141,6 +141,39 @@ Overall, I highly recommend Thomas as a friend, mentor, and professional contact
       </CardSubtitle>
       <CardText>
       I’ve had nothing but positive and pleasant experience from Thomas. He is always kind and caring, offering wisdom and guidance wherever he can. He was not only a resource for me but my colleagues as well. I fully recommend that Thomas is someone you need to know.
+      </CardText>
+    </CardBody>
+  </Card>
+  </Col>
+
+  <Col sm="3">
+  <Card className="my-2"
+    color="primary"
+    outline
+    style={{
+      width: '18rem'
+    }}>
+    <CardHeader>
+        As a Role Model
+    </CardHeader>
+    <CardImg
+      alt="Thomas photo 3"
+      src="./images/photo3.jpg"
+      top
+      width="100%"
+    />
+    <CardBody>
+      <CardTitle tag="h5">
+      Eugene Johnson
+      </CardTitle>
+      <CardSubtitle
+        className="mb-2 text-muted"
+        tag="h6"
+      >
+        - Fellow Hoosier
+      </CardSubtitle>
+      <CardText>
+      Thomas Edwards has provided high-level professional guidance to Hoosiers looking to better their lives through education. He is passionate about guiding individuals and families in accessing national, state and local resources that help minimize the cost of attending and graduating for college, and maximize the potential for career success. Mr. Edwards believes that everyone has greatness within, and strives to be a role model and mentor that helps all become their best selves.
       </CardText>
     </CardBody>
   </Card>

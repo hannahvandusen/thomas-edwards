@@ -1,11 +1,11 @@
-
-import './App.css';
-import Navigation from './components/Navigation/Navigation';
-import Footer from './components/footer/Footer';
-import Testimonials from './pages/Testimonials';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import StoreIndex from './components/Store/StoreIndex';
-import AboutMe from './components/About/AboutMe'
+import "./App.css"
+import Navigation from "./components/Navigation/Navigation"
+import Footer from "./components/footer/Footer"
+import Testimonials from "./pages/Testimonials"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import StoreIndex from "./components/Store/StoreIndex"
+import AboutMe from "./components/About/AboutMe"
+import  Admin  from "./components/admin/Admin"
 
 function App() {
   return (
@@ -17,6 +17,7 @@ function App() {
           <Route path="/store" element={<StoreIndex />} />
           <Route path="/about" element={<AboutMe />} />
           <Route path="/newsletter" />
+          <Route path="/admin" element={<Admin />}/> 
         </Routes>
       </Router>
 
