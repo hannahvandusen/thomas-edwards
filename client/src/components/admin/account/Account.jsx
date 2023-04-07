@@ -2,12 +2,10 @@ import React, { useRef } from 'react'
 import { Button, Form, FormGroup, Input, Label } from 'reactstrap'
 import { useNavigate } from 'react-router-dom';
 
-function Login({ updateToken }) {
-    const emailRef = useRef(); 
+function Account() {
+    const emailRef = useRef();
     const passwordRef = useRef();
     const navigate = useNavigate();
-
-    
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -15,61 +13,59 @@ function Login({ updateToken }) {
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
 
-        let bodyObj = JSON.stringify({ email, password });
+        let bodyObj = JSON.stringify({email, password});
 
-        const url = `http://localhost:4000/admin/login`;
+        const url = `http://localhost:4000/admin/account`;
         const headers = new Headers({
             "Content-Type": "application/json"
         });    
-    
+
         const requestOptions = {
             headers,
             body: bodyObj,
-            method: 'POST'
+            method: 'PATCH'
         }
 
+        
         try {
             const res = await fetch(url, requestOptions);
             const data = await res.json();
-
             // console.log(data);
-
-            if(data.admin) {
-                console.log(data);
-                localStorage.setItem("token", `${data.token}`);
-                // navigate('/admin/')
-                
+            if(data.updated) {
+                // console.log(data);
+                navigate('/admin/'); 
             } else {
                 alert(`${data.error}. Try again!`)
             }
         } catch (err) {
             console.error(err)
-
         }
     }
 
-    return (
-        <>
-            <h1>Login</h1>
-            <Form onSubmit={handleSubmit}>
-                <FormGroup>
-                    <Label>Email</Label>
-                    <Input 
+
+
+  return (
+    <>
+        <h1>Update Account Info</h1>
+        <Form onSubmit={handleSubmit}>
+            <FormGroup>
+                <Label>Email</Label>
+                <Input 
                     innerRef={emailRef}
                     type='email'
-                    /> 
-                </FormGroup>
-                <FormGroup>
-                    <Label>Password</Label>
-                    <Input 
+                /> 
+            </FormGroup>
+            <FormGroup>
+                <Label>Password</Label>
+                <Input 
                     innerRef={passwordRef}
                     type='password'
-                    /> 
-                </FormGroup>
-                <Button type='submit' color='dark'>Login</Button>
-            </Form>
-        </>
-    )
+                /> 
+            </FormGroup>
+            <Button type='submit' color='dark'>Update Account Info</Button>
+        </Form>
+    </>
+  )
 }
 
-export default Login
+export default Account

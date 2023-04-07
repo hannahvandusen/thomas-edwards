@@ -46,7 +46,7 @@ function Navigation(args) {
                             <DropdownToggle nav caret>
                                 About
                             </DropdownToggle>
-                            <DropdownMenu right dark>
+                            <DropdownMenu end dark>
                                 <DropdownItem href='/about'>About Thomas
                                 </DropdownItem>
                                 <DropdownItem href='/intake'>Contact</DropdownItem>
