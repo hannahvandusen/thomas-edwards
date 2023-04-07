@@ -1,49 +1,45 @@
 import React from 'react';
 import { Col, Row, Container} from 'reactstrap';
-import {Carousel} from 'reactstrap';
-//import Image1 from '../../images/'
+import Carousel from '../../components/carousel/Carousel';
+import styles from './Home.module.css';
+
 
 function Home() {
     return(
 <Container>
     <Row>
-        <Col className="bg-light border">
-            {/* <div style={{backgroundImage={photo1}}}></div> */}
+        <Col className={styles.mainPhoto}>
             <Carousel/>
         </Col>
     </Row>
     <Row>
-        <Col className="bg-light border">
-            .col
-        </Col>
-        <Col className="bg-light border">
-            .col
-        </Col>
-        <Col className="bg-light border">
-            .col
-        </Col>
-        <Col className="bg-light border">
-            .col
+        <Col className={styles.aboutSectionIntro}>
+            <h2 id={styles.aboutMeText}>About Me</h2>
+            <p>
+                lorem
+            </p>
         </Col>
     </Row>
     <Row>
-        <Col
-            className="bg-light border"
-            xs="3"
-        >
-            .col-3
-        </Col>
-        <Col
-            className="bg-light border"
-            xs="auto"
-        >
-            .col-auto - variable width content
-        </Col>
-        <Col
-            className="bg-light border"
-            xs="3"
-        >
-            .col-3
+        <Col>
+            <Col
+                className="bg-light border"
+                xs="3"
+            >
+                .col-3
+            </Col>
+            <Col
+                className="bg-light border"
+                xs="auto"
+            >
+                .col-auto - variable width content
+            </Col>
+            <Col
+                className="bg-light border"
+                xs="3"
+            >
+                .col-3
+            </Col>
         </Col>
     </Row>
     <Row>
