@@ -26,12 +26,13 @@ function Account() {
             method: 'PATCH'
         }
 
+        
         try {
             const res = await fetch(url, requestOptions);
             const data = await res.json();
-
-            if(data.admin) {
-                console.log(data);
+            // console.log(data);
+            if(data.updated) {
+                // console.log(data);
                 navigate('/admin/'); 
             } else {
                 alert(`${data.error}. Try again!`)
