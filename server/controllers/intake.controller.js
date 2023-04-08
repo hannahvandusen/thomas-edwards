@@ -14,13 +14,18 @@ router.post("/", async(req, res) => {
         //     contactMethod, 
         //     message
         // }); 
+
+        const date = new Date()
+        const currentDate = date.getFullYear() +"-"+(date.getMonth() + 1)+"-"+date.getDate();
+    
         const intake = new Intake({
             name: req.body.name,
             email: req.body.email,
             phone: req.body.phone,
             contactTime: req.body.time,
             contactMethod: req.body.method,
-            message: req.body.message
+            message: req.body.message,
+            date: currentDate
         })
 
         const newIntake = await intake.save();
@@ -39,4 +44,17 @@ router.post("/", async(req, res) => {
         })
     }
 });
+
+router.get("/", async(req, res) => {
+    try {
+        const intakeForms = await Intake.find();
+        res.status(200).json({
+            intakeForms
+        })
+    } catch (err) {
+        res.status(500).json({
+            Error: err.message
+    })
+}
+}); 
 module.exports = router;
