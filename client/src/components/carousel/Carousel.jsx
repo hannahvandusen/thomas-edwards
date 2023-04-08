@@ -9,13 +9,13 @@ import {
 
 const items = [
   {
-    src: 'https://picsum.photos/id/123/1200/400',
+    src: '../client/src/images/site_photo_2.jpg',
     altText: 'Slide 1',
     caption: 'Slide 1',
     key: 1,
   },
   {
-    src: 'https://picsum.photos/id/456/1200/400',
+    src: '../client/src/images/site_photo_3.jpg',
     altText: 'Slide 2',
     caption: 'Slide 2',
     key: 2,
