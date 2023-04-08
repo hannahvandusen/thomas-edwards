@@ -4,7 +4,7 @@ import { Table } from 'reactstrap';
 function PortalTable({intakes}) {
 
     //console.log(props)
-  return (
+    return (
     <>
         <Table style={{color: "#cddee5"}}>
             <thead>
@@ -20,7 +20,7 @@ function PortalTable({intakes}) {
             </thead>
             <tbody>
                 {
-                    intakes.map(intake => {
+                    intakes.map(intake => (
                         <tr key={intake._id}>
                             <th scope='row'>{intake.date}</th>
 
@@ -31,7 +31,7 @@ function PortalTable({intakes}) {
                             <td> {intake.contactMethod} </td>
                             <td> {intake.message} </td>
                         </tr>
-                    })
+                    ))
                 }
             </tbody>
         </Table>
