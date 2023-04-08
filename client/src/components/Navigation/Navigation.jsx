@@ -20,7 +20,7 @@ function Navigation(args) {
         width: "100%",
         background: "black",
         opacity: ".5",
-        color: "white"
+        color: "white",
     }
 
     return (
@@ -33,9 +33,9 @@ function Navigation(args) {
                             Home
                         </NavLink>
                         </NavItem>
-                        <NavItem>
+                        {/* <NavItem>
                             <NavLink href="/store">Store</NavLink>
-                        </NavItem>
+                        </NavItem> */}
                         <NavItem>
                             <NavLink href="/testimonials">Testimonials</NavLink>
                         </NavItem>
@@ -46,10 +46,10 @@ function Navigation(args) {
                             <DropdownToggle nav caret>
                                 About
                             </DropdownToggle>
-                            <DropdownMenu right dark>
+                            <DropdownMenu end dark>
                                 <DropdownItem href='/about'>About Thomas
                                 </DropdownItem>
-                                <DropdownItem href='/contact'>Contact</DropdownItem>
+                                <DropdownItem href='/intake'>Contact</DropdownItem>
                                 <DropdownItem divider />
                             </DropdownMenu>
                         </UncontrolledDropdown>
