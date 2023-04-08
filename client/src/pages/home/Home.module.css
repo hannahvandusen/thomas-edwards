@@ -5,9 +5,14 @@ width: 100%
 .aboutSectionIntro{
         color: white;
         padding: 10%;
-        background-image: url('/Users/micahcole/Desktop/sbpt-nov-2022/projects/thomas-edwards/client/public/images/photo1.jpg');
+        background: url(/Users/micahcole/Desktop/sbpt-nov-2022/projects/thomas-edwards/client/public/images/photo1.jpg) no-repeat center center;
+        width: auto;
+        height: auto;
+        min-height: 100%;
+        min-width: auto;
         margin-left: 4.5%;
         margin-right: 4.5%;
+        
 }
 
 #aboutMeText{
