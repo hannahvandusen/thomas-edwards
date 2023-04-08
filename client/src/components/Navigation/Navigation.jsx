@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from 'react'
 import {
+    Collapse,
     Navbar,
-    NavbarBrand,
     NavbarToggler,
+    NavbarBrand,
     Nav,
     NavItem,
     NavLink,
@@ -10,36 +11,51 @@ import {
     DropdownToggle,
     DropdownMenu,
     DropdownItem,
-    NavbarText,
-    Collapse,
-} from "reactstrap";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faInstagram } from "@fortawesome/free-brands-svg-icons";
+} from 'reactstrap'
+
 
 function Navigation(args) {
-    const [isOpen, setIsOpen] = useState(false);
 
-    const toggle = () => setIsOpen(!isOpen);
+    let style = {
+        width: "100%",
+        background: "black",
+        opacity: ".5",
+        color: "white",
+    }
 
     return (
-        // <div className='navbar'>
-        //     <a href="/">Home</a>
-        //     <a href="/">About Thomas</a>
-        //     <a href="/">Testimonials</a>
-        //     <a href="/">Newsletter</a>
-        //     <a href="/">Shop</a>
-        // </div>
-        <>
-            <Nav fill pills>
-                <NavbarBrand>Inner Famous</NavbarBrand>
-                <NavItem>
-                    <NavLink href="/">Home</NavLink>
-                </NavItem>
-            </Nav>
 
-            {/* </Navbar> */}
-        </>
-    );
+    <div className='sticky-top' style={style}>
+            <Nav className='navigation' >
+                <NavbarBrand href='/' className='navbarbrand' style={{fontSize: "1.5em"}}>Inner Famous</NavbarBrand>
+                        <NavItem>
+                            <NavLink href="/">
+                            Home
+                        </NavLink>
+                        </NavItem>
+                        {/* <NavItem>
+                            <NavLink href="/store">Store</NavLink>
+                        </NavItem> */}
+                        <NavItem>
+                            <NavLink href="/testimonials">Testimonials</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink href="/newsletter">Newsletter</NavLink>
+                        </NavItem>
+                        <UncontrolledDropdown nav inNavbar>
+                            <DropdownToggle nav caret>
+                                About
+                            </DropdownToggle>
+                            <DropdownMenu end dark>
+                                <DropdownItem href='/about'>About Thomas
+                                </DropdownItem>
+                                <DropdownItem href='/intake'>Contact</DropdownItem>
+                                <DropdownItem divider />
+                            </DropdownMenu>
+                        </UncontrolledDropdown>
+                    </Nav>
+    </ div>
+    )
 }
 
-export default Navigation;
+export default Navigation
