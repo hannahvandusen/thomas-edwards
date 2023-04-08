@@ -190,8 +190,6 @@ Overall, I highly recommend Thomas as a friend, mentor, and professional contact
   </Card>
   </Col>
   
-
-
     </CardGroup>
 
 </Row>

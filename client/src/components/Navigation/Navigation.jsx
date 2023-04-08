@@ -18,9 +18,9 @@ function Navigation(args) {
 
     let style = {
         width: "100%",
-        background: "black",
-        opacity: ".5",
-        color: "white",
+        // background: "black",
+        // opacity: ".5",
+        // color: "white",
     }
 
     return (
@@ -28,7 +28,7 @@ function Navigation(args) {
     <div className='sticky-top' style={style}>
             <Nav className='navigation' >
                 <NavbarBrand href='/' className='navbarbrand' style={{fontSize: "1.5em"}}>Inner Famous</NavbarBrand>
-                        <NavItem>
+                        <NavItem className='link'>
                             <NavLink href="/">
                             Home
                         </NavLink>
@@ -36,20 +36,20 @@ function Navigation(args) {
                         {/* <NavItem>
                             <NavLink href="/store">Store</NavLink>
                         </NavItem> */}
-                        <NavItem>
+                        <NavItem className='link'>
                             <NavLink href="/testimonials">Testimonials</NavLink>
                         </NavItem>
-                        <NavItem>
+                        <NavItem className='link'>
                             <NavLink href="/newsletter">Newsletter</NavLink>
                         </NavItem>
                         <UncontrolledDropdown nav inNavbar>
-                            <DropdownToggle nav caret>
+                            <DropdownToggle nav caret className='link'>
                                 About
                             </DropdownToggle>
                             <DropdownMenu end dark>
-                                <DropdownItem href='/about'>About Thomas
+                                <DropdownItem href='/about' className='link'>About Thomas
                                 </DropdownItem>
-                                <DropdownItem href='/intake'>Contact</DropdownItem>
+                                <DropdownItem href='/intake' className='link'>Contact</DropdownItem>
                                 <DropdownItem divider />
                             </DropdownMenu>
                         </UncontrolledDropdown>

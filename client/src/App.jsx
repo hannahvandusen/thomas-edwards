@@ -11,6 +11,7 @@ import Admin from './components/admin/Admin'
 import Intake from './pages/Intake'
 import Logout from './components/admin/logout/Logout';
 import Account from './components/admin/account/Account';
+import Newsletter from './pages/Newsletter';
 
 function App() {
 
@@ -22,7 +23,7 @@ function App() {
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/store" element={<StoreIndex />} />
           <Route path="/about" element={<AboutMe />} />
-          <Route path="/newsletter" />
+          <Route path="/newsletter" element={<Newsletter />}/>
           <Route path="/admin" element={<Admin />}/> 
           <Route path="/intake" element={<Intake />} />
           <Route path='/admin/account' element={<Account />}/> 
