@@ -49,7 +49,7 @@ const AboutMe = () => {
 
                 <div className={styles.form}>
                     <h1 data-aos="fade-down">Get in Touch</h1>
-                 </div>
+                </div>
         </div>      
     </> 
   )

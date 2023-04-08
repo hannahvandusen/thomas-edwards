@@ -32,12 +32,13 @@ function Login({ updateToken }) {
             const res = await fetch(url, requestOptions);
             const data = await res.json();
 
-            // console.log(data);
+            console.log(data);
 
             if(data.admin) {
                 console.log(data);
                 localStorage.setItem("token", `${data.token}`);
                 // navigate('/admin/')
+                window.location.reload(false); 
                 
             } else {
                 alert(`${data.error}. Try again!`)
