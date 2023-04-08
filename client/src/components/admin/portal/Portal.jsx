@@ -6,9 +6,9 @@ function Portal() {
     <>
         <Container>
             <Row>
-                <Col>
+                {/* <Col>
                     <h1 style={{color: "white", fontSize: "large"}}>Analytics</h1>
-                </Col>
+                </Col> */}
                 <Col>
                     <h1 style={{color: "white", fontSize: "large"}}>Messages</h1>
                 </Col>

@@ -7,7 +7,8 @@ const mongoose = require("mongoose");
 const DBURL = process.env.DBURL;
 
 //* controllers
-const adminController = require('./controllers/admin.controller')
+const adminController = require('./controllers/admin.controller');
+const intakeController = require('./controllers/intake.controller');
 
 mongoose.connect(`${DBURL}`);
 const db = mongoose.connection;
@@ -19,5 +20,6 @@ app.use(cors());
 
 //* pages
 app.use('/admin', adminController); 
+app.use('/intake', intakeController); 
 
 app.listen(PORT, () => console.log(`Server running on port: ${PORT}`));

@@ -1,12 +1,30 @@
 .App {
   text-align: center;
-  background-color: black;
+  background-color:#252d2d; 
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #d2d5d1;
 }
 
 .navigation {
-  height: 10vh;
-  text-align: center;
+  height: 8vh;
+  /* text-align: center; */
+  color: #cddee5;
+  background-color:#252d2d; 
+  border-bottom: 2px solid black;
+  /* opacity: .5; */
+}
+.link:hover {
+  /* color: white; */
+  background-color: rgba(255, 255, 255, 0.07);
+}
+
+.link:focus {
+  /* color: #cddee5; */
+  background-color: rgba(255, 255, 255, 0.07);
+}
+
+.navbarbrand {
+  color:#17bcde;
 }
 
 .footer {
@@ -14,6 +32,13 @@
   position: relative;
   width: 100%;
   bottom: 0;
-  color: rgba(14, 52, 160, 1);
   font-size: 25px;
+}
+
+.link {
+  color: #cddee5;
+}
+
+.intake {
+  color: #252d2d;
 }

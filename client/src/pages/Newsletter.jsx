@@ -8,7 +8,6 @@ function Newsletter() {
         <div>
             <SubscribeForm />
             <RecentNews />
-            <Footer />
         </div>
     );
 }

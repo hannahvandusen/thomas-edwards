@@ -8,7 +8,7 @@ const Intake = () => {
       {/* <h6 style={{color: "white"}}>
         If you would like to reach out to me directly as an individual client or a business please fill out the below form and I will contact you ASAP!
       </h6> */}
-      <Form>
+      <Form className="intake">
         <FormGroup floating>
           <Input
             id="Name"
