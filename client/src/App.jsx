@@ -1,5 +1,6 @@
 import './App.css';
 import Navigation from './components/Navigation/Navigation';
+import Home from './pages/home/Home';
 import Footer from './components/footer/Footer';
 import Testimonials from './pages/Testimonials';
 import { useEffect, useState } from 'react';
@@ -25,6 +26,7 @@ function App() {
           <Route path="/admin" element={<Admin />}/> 
           <Route path="/intake" element={<Intake />} />
           <Route path='/admin/account' element={<Account />}/> 
+          <Route path='/' element={<Home />} /> 
         </Routes>
       </Router>
       <Footer />
