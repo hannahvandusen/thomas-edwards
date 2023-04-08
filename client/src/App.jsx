@@ -26,9 +26,9 @@ function App() {
           <Route path="/admin" element={<Admin />}/> 
           <Route path="/intake" element={<Intake />} />
           <Route path='/admin/account' element={<Account />}/> 
+          <Route path='/' element={<Home />} /> 
         </Routes>
       </Router>
-      <Home />
       <Footer />
     </div>
   )
