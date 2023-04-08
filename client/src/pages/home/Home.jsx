@@ -8,118 +8,16 @@ function Home() {
     return(
 <Container>
     <Row>
-        <Col className={styles.mainPhoto}>
+        <Col class="mainPhoto" className={styles.mainPhoto}>
             <Carousel/>
         </Col>
     </Row>
     <Row>
         <Col className={styles.aboutSectionIntro}>
-            <h2 id={styles.aboutMeText}>About Me</h2>
-            <p>
-                lorem
+            <h1 id={styles.aboutMeText} class="col-sm-5">About Me</h1>
+            <p class="col-sm-8">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. At rerum totam nulla eius nam nisi deserunt dignissimos dolore, vel provident fuga, rem quibusdam! Consequuntur, aspernatur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, id praesentium? Nam, eligendi deleniti? Dolores in labore veniam asperiores eaque necessitatibus corporis rem maiores qui, porro, facere autem quos excepturi, error magni est consequatur praesentium. Praesentium similique voluptates fugit corporis nesciunt, maiores unde eveniet beatae! Autem omnis provident placeat quia?
             </p>
-        </Col>
-    </Row>
-    <Row>
-        <Col>
-            <Col
-                className="bg-light border"
-                xs="3"
-            >
-                .col-3
-            </Col>
-            <Col
-                className="bg-light border"
-                xs="auto"
-            >
-                .col-auto - variable width content
-            </Col>
-            <Col
-                className="bg-light border"
-                xs="3"
-            >
-                .col-3
-            </Col>
-        </Col>
-    </Row>
-    <Row>
-        <Col
-            className="bg-light border"
-            xs="6"
-        >
-            .col-6
-        </Col>
-        <Col
-            className="bg-light border"
-            xs="6"
-        >
-            .col-6
-        </Col>
-    </Row>
-    <Row>
-        <Col
-            className="bg-light border"
-            sm="4"
-            xs="6"
-        >
-            .col-6 .col-sm-4
-        </Col>
-        <Col
-            className="bg-light border"
-            sm="4"
-            xs="6"
-        >
-            .col-6 .col-sm-4
-        </Col>
-        <Col
-            className="bg-light border"
-            sm="4"
-        >
-            .col-sm-4
-        </Col>
-    </Row>
-    <Row>
-        <Col
-            className="bg-light border"
-            sm={{
-                offset: 1,
-                order: 2,
-                size: 6
-            }}
-        >
-            .col-sm-6 .order-sm-2 .offset-sm-1
-        </Col>
-    </Row>
-    <Row>
-        <Col
-            className="bg-light border"
-            md={{
-                offset: 3,
-                size: 6
-            }}
-            sm="12"
-        >
-            .col-sm-12 .col-md-6 .offset-md-3
-        </Col>
-    </Row>
-    <Row>
-        <Col
-            className="bg-light border"
-            sm={{
-                offset: 1,
-                size: 'auto'
-            }}
-        >
-            .col-sm-auto .offset-sm-1
-        </Col>
-        <Col
-            className="bg-light border"
-            sm={{
-                offset: 1,
-                size: 'auto'
-            }}
-        >
-            .col-sm-auto .offset-sm-1
         </Col>
     </Row>
 </Container>

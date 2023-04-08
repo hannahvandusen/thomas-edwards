@@ -3,9 +3,15 @@ width: 100%
 }
 
 .aboutSectionIntro{
-    text-emphasis-color: white;
+        color: white;
+        padding: 10%;
+        background-image: url('/Users/micahcole/Desktop/sbpt-nov-2022/projects/thomas-edwards/client/public/images/photo1.jpg');
+        margin-left: 4.5%;
+        margin-right: 4.5%;
 }
 
 #aboutMeText{
-    text-decoration-color: white;
+    color: white;
+    text-align: center;
+    margin:4%;
 }
