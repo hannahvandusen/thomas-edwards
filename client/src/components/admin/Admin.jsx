@@ -59,7 +59,6 @@ function Admin() {
                     </Col>
                 </Row>
             </Container>
-            // login working, but need to reload page in order for portal to show up after login, doesn't automatically load
         )
     }
     return (
