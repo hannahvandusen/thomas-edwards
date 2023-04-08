@@ -22,10 +22,11 @@ const AboutMe = () => {
         <p>My gift is to Inspire others, and make dreams come true</p>
         <main></main>
       </header>
+
       <div className={styles.container}>
         <section className={styles.card}>
           <img className={styles.image} src={photo1} alt="My Story" />
-          <div>
+          <div className={styles.description}>
             <h3>My Story</h3>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
@@ -41,25 +42,27 @@ const AboutMe = () => {
         </section>
 
         <section className={styles.card}>
-          <img className={styles.image2} src={photo2} alt="My Values" />
-          <div>
-            <h3 data-aos="zoom-in-right">My Values</h3>
-            <p className={styles.left} data-aos="fade-right">
+          <img className={styles.image} src={photo2} alt="My Mission" />
+          <div className={styles.description}>
+            <h3 data-aos="zoom-in-right">My Mission</h3>
+            <p data-aos="fade-up">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
               est quia officia, sunt odio minima harum rerum assumenda
               asperiores perspiciatis nobis id excepturi
               doloremipsum20,animirepellendus hic voluptatibus maxime eius.Lorem
               ipsum dolor sit ametsdfs consectetur adipisicing elithbsll.
-              GreatInventore est quia officia, sunt odio minima harum rerum
+              asperiores perspiciatis nobis id excepturi
+              doloremipsum20,animirepellendus hic voluptatibus maxime eius.Lorem
+              ipsum dolor sit ametsdfs consectetur adipisicing elithbsll.
             </p>
           </div>
         </section>
 
         <section className={styles.card}>
           <img className={styles.image} src={photo3} alt="My Mission" />
-          <div>
-            <h3 data-aos="zoom-in-left">My Mission</h3>
-            <p data-aos="fade-left">
+          <div className={styles.description}>
+            <h3 data-aos="zoom-in-left">My Values</h3>
+            <p data-aos="fade-up">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
               est quia officia, sunt odio minima harum rerum assumenda
               asperiores perspiciatis nobis id excepturi
@@ -71,10 +74,9 @@ const AboutMe = () => {
             </p>
           </div>
         </section>
-
-        <div className={styles.form}>
-          <h1 data-aos="fade-down">Get in Touch</h1>
-        </div>
+      </div>
+      <div className={styles.form}>
+        <h1 data-aos="fade-down">Get in Touch</h1>
       </div>
     </>
   )
