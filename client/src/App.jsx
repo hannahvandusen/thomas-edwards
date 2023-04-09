@@ -27,7 +27,7 @@ function App() {
           <Route path="/testimonialsindex/update:id" element={<TestimonialsEdit />} />
           <Route path="/store" element={<StoreIndex />} />
           <Route path="/about" element={<AboutMe />} />
-          <Route path="/newsletter" element={<Newsletter />} />
+          <Route path="/newsletter" element={<Newsletter />}/>
           <Route path="/admin" element={<Admin />}/> 
           <Route path="/intake" element={<Intake />} />
           <Route path='/admin/account' element={<Account />}/> 

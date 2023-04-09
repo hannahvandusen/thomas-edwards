@@ -27,24 +27,24 @@
   line-height: 1.2;
   font-size: 60px;
   overflow-y: hidden;
-  color: white;
+  /* color: white; */
 }
 
 .mainHeader h1 span {
-  color: rgba(14, 52, 160, 1);
+  color: #17bcde;
   font-size: 60px;
   overflow-y: hidden;
 }
 
 .mainHeader p {
   overflow-y: hidden;
-  color: white;
+  /* color: white; */
 }
 
 .card {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  background-color: rgba(207, 219, 213, 1);
+  /* background-color: rgba(207, 219, 213, 1); */
   padding: 4rem 5rem;
   overflow-y: hidden;
   border: 1px solid rgb(125, 127, 129, 0.5);
@@ -57,7 +57,7 @@
 
 .card span {
   margin-bottom: 2rem;
-  color: rgb(0, 0, 0);
+  /* color: rgb(0, 0, 0); */
   overflow-y: hidden;
 }
 
@@ -70,7 +70,7 @@
 }
 
 .card h3 {
-  color: rgba(14, 52, 160, 1);
+  color: #17bcde;
   overflow-y: hidden;
 }
 
@@ -96,7 +96,7 @@
 }
 
 .form {
-  background-color: rgba(207, 219, 213, 1);
+  /* background-color: rgba(207, 219, 213, 1); */
   padding-top: 100px;
   padding-bottom: 100px;
   font-size: larger;
@@ -104,7 +104,7 @@
 }
 
 .form h1 {
-  color: rgba(14, 52, 160, 1);
+  color: #17bcde;
   overflow-y: hidden;
 }
 

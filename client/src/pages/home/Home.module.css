@@ -3,7 +3,7 @@ width: 100%
 }
 
 .aboutSectionIntro{
-        color: white;
+        color:#cddee5;
         padding: 10%;
         background-image: url('../../images/photo1.jpg');
         margin-left: 4.5%;
@@ -11,7 +11,7 @@ width: 100%
 }
 
 #aboutMeText{
-    color: white;
+    /* color: white; */
     text-align: center;
     margin:4%;
 }

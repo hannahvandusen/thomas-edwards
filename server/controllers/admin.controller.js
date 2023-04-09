@@ -68,26 +68,28 @@ router.post("/login", async (req, res) => {
 
 router.patch("/account", async(req, res) => {
     try {
-    const info = req.body;
+        const email = req.body.email; 
+        const password = bcrypt.hashSync(req.body.password); 
 
-    const { id } = "642decae7fa4601cc079f41c"; 
+        const info = { email, password }
+        const { id } = "642decae7fa4601cc079f41c"; 
 
-    const returnOption = { new: true };
+        const returnOption = { new: true };
 
-    const updated = await Admin.findOneAndUpdate( id, info , returnOption)
+        const updated = await Admin.findOneAndUpdate( id, info , returnOption)
 
-    updated ? 
-        res.status(200).json({
-            updated
-        }) :
-        res.status(404).json({
-            message: `Cannot update account info`
-        });
-    } catch(err) {
-        res.status(500).json({
-            Error: err.message
-        })
-    }
+        updated ? 
+            res.status(200).json({
+                updated
+            }) :
+            res.status(404).json({
+                message: `Cannot update account info`
+            });
+        } catch(err) {
+            res.status(500).json({
+                Error: err.message
+            })
+        }
 }); 
 
 module.exports = router;
