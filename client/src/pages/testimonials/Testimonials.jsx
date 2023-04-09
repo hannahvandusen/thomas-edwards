@@ -4,7 +4,7 @@ import {  Card, CardImg, CardGroup, CardTitle, CardText, CardBody, CardSubtitle,
 const Testimonials = () => {
 return (
 	<>
-	<h1 style={{color: "white"}}>What People Are Saying About Thomas</h1>
+	<h1 style={{color: "#cddee5"}}>What People Are Saying About Thomas</h1>
 
     <div>
 
