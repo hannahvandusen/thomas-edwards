@@ -7,7 +7,7 @@ import FullButton from '../../components/button/FullButton';
 
 function Home() {
     return (
-        <Container >
+        <Container class="container">
             <div class="container-fluid">
                 <Row  className={styles.aboutSectionIntro}>
                     <Col class="col-sm-2">
