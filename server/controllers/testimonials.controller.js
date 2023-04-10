@@ -4,23 +4,23 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const validateSession = require("../middleware/validate-session");
 
-router.post('/', validateSession, async (req, res) => {
+router.post('/', async (req, res) => {
 
     try {
 
         const { firstName, lastName, association, quote } = req.body;
-        if (!firstName) throw new Error(
-            "Please enter a first name."
-        )
-        if (!lastName) throw new Error(
-            "Please enter a last name."
-        )
-        if (!association) throw new Error(
-            "Please enter an association."
-        )
-        if (!quote) throw new Error(
-            "Please enter a quote."
-        )
+        // if (!firstName) throw new Error(
+        //     "Please enter a first name."
+        // )
+        // if (!lastName) throw new Error(
+        //     "Please enter a last name."
+        // )
+        // if (!association) throw new Error(
+        //     "Please enter an association."
+        // )
+        // if (!quote) throw new Error(
+        //     "Please enter a quote."
+        // )
 
         const testimonials = new Testimonials({
             firstName: firstName,
