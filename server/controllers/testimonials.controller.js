@@ -4,35 +4,35 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const validateSession = require("../middleware/validate-session");
 
-router.post('/', validateSession, async (req, res) => {
+router.post('/', async (req, res) => {
 
     try {
 
         const { firstName, lastName, association, quote } = req.body;
-        if (!firstName) throw new Error(
-            "Please enter a first name."
-        )
-        if (!lastName) throw new Error(
-            "Please enter a last name."
-        )
-        if (!association) throw new Error(
-            "Please enter an association."
-        )
-        if (!quote) throw new Error(
-            "Please enter a quote."
-        )
+        // if (!firstName) throw new Error(
+        //     "Please enter a first name."
+        // )
+        // if (!lastName) throw new Error(
+        //     "Please enter a last name."
+        // )
+        // if (!association) throw new Error(
+        //     "Please enter an association."
+        // )
+        // if (!quote) throw new Error(
+        //     "Please enter a quote."
+        // )
 
         const testimonials = new Testimonials({
-            "firstName": firstName,
-            "lastName": lastName,
-            "association": association,
-            "quote": quote
+            firstName: firstName,
+            lastName: lastName,
+            association: association,
+            quote: quote
         })
 
         const newTestimonials = await testimonials.save();
-        const token = jwt.sign({ id: newTestimonials._id}, process.env.JWT, {
-            expiresIn: "1 year"
-        });
+        // const token = jwt.sign({ id: newTestimonials._id}, process.env.JWT, {
+        //     expiresIn: "1 year"
+        // });
         
         newTestimonials ?
             res.status(200).json({
