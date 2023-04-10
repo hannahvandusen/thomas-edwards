@@ -37,7 +37,6 @@ function Login({ updateToken }) {
             if(data.admin) {
                 console.log(data);
                 localStorage.setItem("token", `${data.token}`);
-                // navigate('/admin/')
                 window.location.reload(false); 
                 
             } else {
