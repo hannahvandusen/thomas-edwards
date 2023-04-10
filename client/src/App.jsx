@@ -11,6 +11,10 @@ import Admin from "./components/admin/Admin";
 import Intake from "./pages/Intake";
 import Logout from "./components/admin/logout/Logout";
 import Account from "./components/admin/account/Account";
+<<<<<<< HEAD
+=======
+import Newsletter from "./pages/Newsletter";
+>>>>>>> fc28c28aecf7aa1592ba375a235709f69a32220c
 
 function App() {
     return (
@@ -28,6 +32,10 @@ function App() {
                     <Route path="/" element={<Home />} />
                 </Routes>
             </Router>
+<<<<<<< HEAD
+=======
+
+>>>>>>> fc28c28aecf7aa1592ba375a235709f69a32220c
             <Footer />
         </div>
     );
