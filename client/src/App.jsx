@@ -13,6 +13,7 @@ import Admin from './components/admin/Admin'
 import Intake from './pages/Intake'
 import Logout from './components/admin/logout/Logout';
 import Account from './components/admin/account/Account';
+
 import Newsletter from './pages/Newsletter';
 
 function App() {
