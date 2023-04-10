@@ -5,16 +5,14 @@ import { useNavigate } from 'react-router-dom';
 
 function TestimonialsTable(props) {
 
+    console.log(props)
     const navigate = useNavigate();
 
     async function deleteTestimonial(id) {
-        const url = `${baseURL}/testimonialsindex/${id}`;
+        const url = `http://localhost:4000/testimonialsindex/${id}`;
 
         let requestOptions = {
-            headers: new Headers({
-                "Authorization": props.token
-            }),
-            method: 'DELETE'
+                method: 'DELETE'
         }
 
         try {
