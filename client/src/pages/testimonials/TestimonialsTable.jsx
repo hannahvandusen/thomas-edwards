@@ -3,19 +3,14 @@ import { Button, Table } from 'reactstrap'
 import { baseURL } from '../../environment'
 import { useNavigate } from 'react-router-dom';
 
-function MovieTable(props) {
+function TestimonialsTable(props) {
 
     const navigate = useNavigate();
 
-    async function deleteMovie(id) {
-        // console.log(id);
-        const url = `${baseURL}/movie/${id}`;
-
-        // const headers = new Headers();
-        // headers.append("Authorization", props.token);
+    async function deleteTestimonial(id) {
+        const url = `${baseURL}/testimonialsindex/${id}`;
 
         let requestOptions = {
-            // headers: headers,
             headers: new Headers({
                 "Authorization": props.token
             }),
@@ -28,69 +23,62 @@ function MovieTable(props) {
             let data = await res.json();
 
             console.log(data.message);
-            if(data.message === "movie removed") {
-                props.fetchMovies();
+            if(data.message === "Testimonial Removed") {
+                props.fetchTestimonials();
             } else {
-                throw new Error("Movie was not removed!")
+                throw new Error("Testimonial was not removed!")
             }
 
         } catch (error) {
             console.error(error);
         }
+
     }
 
     return (
         <>
-        <h1>Movies</h1>
+        <h1 style={{color: "#cddee5"}}>Testimonials</h1>
         <Table striped>
             <thead>
                 <tr>
-                    <th>
-                        Title
+                    <th style={{color: "#cddee5"}}>
+                        First Name
                     </th>
-                    <th>
-                        Genre
+                    <th style={{color: "#cddee5"}}>
+                        Last Name
                     </th>
-                    <th>
-                        Rating
+                    <th style={{color: "#cddee5"}}>
+                        Association
                     </th>
-                    <th>
-                        Length
-                    </th>
-                    <th>
-                        Year Released
-                    </th>
-                    <th>
-                        Edit / Delete
+                    <th style={{color: "#cddee5"}}>
+                        Quote
                     </th>
                 </tr>
             </thead>
             <tbody>
                 {
-                props.movies.map(movie => (
-                <tr key={movie._id}>
+                props.testimonials.map(testimonials => (
+                <tr key={testimonials._id}>
                     <th scope="row">
-                        {movie.title}
+                        {testimonials.firstName}
                     </th>
                     <td>
-                        {movie.genre}
+                        {testimonials.lastName}
                     </td>
                     <td>
-                        {movie.rating}
+                        {testimonials.association}
                     </td>
                     <td>
-                        {movie.length}
-                    </td>
-                    <td>
-                        {movie.releaseYear}
+                        {testimonials.quote}
                     </td>
                     <td>
                         <Button
-                            onClick={() => navigate(`/movie/update/${movie.id}`)}
+                            onClick={() => navigate(`/testimonialsindex/update/${testimonials._id}`)}
                             color="warning">Edit</Button>
                         <Button
-                            onClick={() => deleteMovie(movie._id)}
+                            onClick={() => deleteTestimonial(testimonials._id)}
                             color="danger">Delete</Button>
+                        
                     </td>
                 </tr>
                 ))}
@@ -100,4 +88,4 @@ function MovieTable(props) {
     )
 }
 
-export default MovieTable
+export default TestimonialsTable
