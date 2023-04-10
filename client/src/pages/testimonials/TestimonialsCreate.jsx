@@ -27,7 +27,7 @@ function TestimonialsCreate(props) {
 
     let myHeader = new Headers();
         myHeader.append("Content-Type", "application/json");
-        myHeader.append('Authorization', props.token);
+        // myHeader.append('Authorization', props.token);
 
         const requestOptions = {
             headers: myHeader,

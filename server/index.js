@@ -22,6 +22,6 @@ app.use(cors());
 //* pages
 app.use('/admin', adminController); 
 app.use('/intake', intakeController);
-app.use('./testimonialsindex', testimonialsController);
+app.use('/testimonialsindex', testimonialsController);
 
 app.listen(PORT, () => console.log(`Server running on port: ${PORT}`));

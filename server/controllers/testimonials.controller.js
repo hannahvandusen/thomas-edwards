@@ -23,16 +23,16 @@ router.post('/', validateSession, async (req, res) => {
         )
 
         const testimonials = new Testimonials({
-            "firstName": firstName,
-            "lastName": lastName,
-            "association": association,
-            "quote": quote
+            firstName: firstName,
+            lastName: lastName,
+            association: association,
+            quote: quote
         })
 
         const newTestimonials = await testimonials.save();
-        const token = jwt.sign({ id: newTestimonials._id}, process.env.JWT, {
-            expiresIn: "1 year"
-        });
+        // const token = jwt.sign({ id: newTestimonials._id}, process.env.JWT, {
+        //     expiresIn: "1 year"
+        // });
         
         newTestimonials ?
             res.status(200).json({
