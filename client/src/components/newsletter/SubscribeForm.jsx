@@ -1,3 +1,4 @@
+import "./SubscribeForm.css";
 import React, { useState } from "react";
 
 function SubscribeForm() {
@@ -32,15 +33,26 @@ function SubscribeForm() {
             {subscribed ? (
                 <p>Thank you for subscribing!</p>
             ) : (
-                <form onSubmit={handleSubmit}>
-                    <label htmlFor="email-input">Email address:</label>
+                <form action="#" class="row flex-fill" onSubmit={handleSubmit}>
+                    <label htmlFor="email-input">
+                        Subscribe to our free newsletter
+                    </label>
                     <input
                         type="email"
+                        className="form-control px-4 border-0 w-100 text-center text-md-left"
+                        id="email"
+                        placeholder="Your Email"
+                        name="email"
                         id="email-input"
                         value={email}
                         onChange={handleEmailChange}
                     />
-                    <button type="submit">Subscribe</button>
+                    <button
+                        type="submit"
+                        class="btn btn-primary btn-lg border-0 w-100"
+                    >
+                        Subscribe
+                    </button>
                 </form>
             )}
         </div>
