@@ -1,12 +1,12 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import { Button, Col, Container, Row } from 'reactstrap'
-import Account from './account/Account';
 import Login from './login/Login'
 import Logout from './logout/Logout';
-import Portal from './portal/Portal';
+import PortalIndex from './portal/PortalIndex';
 
 function Admin() {
+
 
     const [ sessionToken, setSessionToken ] = useState('');
 
@@ -44,27 +44,26 @@ function Admin() {
                 <Row>
                 <h1 style={{color: "white"}}>Admin Portal</h1>
 
-                    <Col className='md-10'>
-                        <Portal />
+                    <Col md="9">
+                        <PortalIndex />
                     </Col>
-                    <Col className='md-2'>
+                    <Col md="3">
                         <Logout setToken={setSessionToken}/> 
                         <Button 
                         href="/admin/account" 
                         color="primary" 
                         style={style} 
                         outline>
-                            Update Account
+                            Update Account 
                         </Button>
                     </Col>
                 </Row>
             </Container>
-            // login working, but need to reload page in order for portal to show up after login, doesn't automatically load
         )
     }
     return (
         <>
-            {displayForm()};
+            {displayForm()}
         </>
     )
 }

@@ -2,16 +2,16 @@
   width: 100%;
 }
 
-.aboutSectionIntro {
-  color: white;
-  padding: 10%;
-  background-image: url("../../images/photo1.jpg");
-  margin-left: 4.5%;
-  margin-right: 4.5%;
+.aboutSectionIntro{
+        color:#cddee5;
+        padding: 10%;
+        background-image: url('../../images/photo1.jpg');
+        margin-left: 4.5%;
+        margin-right: 4.5%;
 }
 
-#aboutMeText {
-  color: white;
-  text-align: center;
-  margin: 4%;
+#aboutMeText{
+    /* color: white; */
+    text-align: center;
+    margin:4%;
 }
