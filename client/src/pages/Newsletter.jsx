@@ -18,13 +18,8 @@ function Newsletter() {
                     </div>
                 </div>
             </div>
-
-        <div>
-            <SubscribeForm />
-            <RecentNews />
-
         </div>
     );
-};
+}
 
 export default Newsletter;
