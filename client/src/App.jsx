@@ -2,7 +2,7 @@ import "./App.css";
 import Navigation from "./components/Navigation/Navigation";
 import Home from "./pages/home/Home";
 import Footer from "./components/footer/Footer";
-import Testimonials from "./pages/Testimonials";
+import Testimonials from "./pages/testimonials/Testimonials";
 import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import StoreIndex from "./components/Store/StoreIndex";
