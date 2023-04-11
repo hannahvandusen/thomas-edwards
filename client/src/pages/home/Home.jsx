@@ -1,16 +1,17 @@
 import React from 'react';
-import { Col, Row, Container, Input, CardGroup, Card, CardImg, CardBody, CardHeader,CardTitle, CardSubtitle, CardText } from 'reactstrap';
+import { Col, Row, Container, Input, CardGroup, Card, CardImg, CardBody, CardHeader,CardTitle, CardSubtitle, CardText, Button } from 'reactstrap';
 import Carousel from '../../components/carousel/Carousel';
 import styles from './Home.module.css';
-import FullButton from '../../components/button/FullButton';
+import FullButton from '../../components/button/FullButton.jsx';
 
 
 function Home() {
     return (
-        <Container class="container">
+        <Container>
             <div class="container-fluid">
                 <Row  className={styles.aboutSectionIntro}>
                     <Col class="col-sm-2">
+                    <Button color="#17bcde" path="/AboutMe">About me section</Button>
                     </Col>
                     <Col id={styles.opaqueLayer}>
                         <div id={styles.aboutMeTextDiv}>
@@ -20,15 +21,13 @@ function Home() {
                             </p>
                         </div>
                     </Col>
-                    <FullButton />
                 </Row>
             </div>
             <Row>
-                <h2>How I Can Help</h2>
+                <h1 id="testimonialHeader">Testimonials</h1>
                 <CardGroup>
                     <Card className="my-2"
-                        color="primary"
-                        outline
+                        color="secondary"
                         style={{
                             width: '18rem'
                         }}>
@@ -57,8 +56,7 @@ function Home() {
                         </CardBody>
                     </Card>
                     <Card className="my-2"
-                        color="primary"
-                        outline
+                        color="secondary"
                         style={{
                             width: '18rem'
                         }}>
@@ -87,8 +85,7 @@ function Home() {
                         </CardBody>
                     </Card>
                     <Card className="my-2"
-                        color="primary"
-                        outline
+                        color="secondary"
                         style={{
                             width: '18rem'
                         }}>
@@ -117,9 +114,8 @@ function Home() {
                         </CardBody>
                     </Card>
                 </CardGroup>
-
-
             </Row>
+            
             <Row>
                 <h3>Thomas Edwards</h3>
                 <p>Inner Famous Consultation</p>
