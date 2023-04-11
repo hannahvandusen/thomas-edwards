@@ -27,7 +27,7 @@ function Admin() {
 
     const style = {
         float: "right",
-        margin: "1em"
+        margin: "1em",
     }
 
     const displayForm = () => {
@@ -42,21 +42,27 @@ function Admin() {
             </Container> :
             <Container>
                 <Row>
-                <h1 style={{color: "white"}}>Admin Portal</h1>
-
-                    <Col md="9">
+                    <h1 style={{color: "white"}}>Admin Portal</h1>
+                
+                    <Col md="8">
                         <PortalIndex />
                     </Col>
                     <Col md="3">
-                        <Logout setToken={setSessionToken}/> 
                         <Button 
                         href="/admin/account" 
                         color="primary" 
                         style={style} 
                         outline>
-                            Update Account 
+                            Update Email/Password 
                         </Button>
+                        <Button 
+                        href="/testimonialsindex"
+                        color="primary" 
+                        style={style} 
+                        outline
+                        >View Testimonials</Button>
                     </Col>
+                    <Logout setToken={setSessionToken}/> 
                 </Row>
             </Container>
         )

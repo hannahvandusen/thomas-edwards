@@ -27,7 +27,7 @@ router.post('/', async (req, res) => {
             lastName: lastName,
             association: association,
             quote: quote
-        })
+        }); 
 
         const newTestimonials = await testimonials.save();
         // const token = jwt.sign({ id: newTestimonials._id}, process.env.JWT, {
@@ -72,7 +72,7 @@ router.get('/', async (req, res) => {
 });
 
 
-router.patch('/:id', validateSession, async (req, res) => {
+router.patch('/:id', async (req, res) => {
     try {
 
         const filter = { _id: req.params.id, owner_id: req.user.id }
@@ -98,12 +98,13 @@ router.patch('/:id', validateSession, async (req, res) => {
     }
 });
 
-router.delete('/:id', validateSession, async (req, res) => {
+router.delete('/:id', async (req, res) => {
     try {
 
-        const filter = { _id: req.params.id, owner_id: req.user.id };
 
-        const deleteTestimonial = await Testimonials.deleteOne(filter);
+        const { id } = req.params;
+
+        const deleteTestimonial = await Testimonials.deleteOne({ _id: id });
 
         deleteTestimonial.deletedCount > 0 ?
             res.status(200).json({

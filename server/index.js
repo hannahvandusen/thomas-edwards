@@ -8,8 +8,8 @@ const DBURL = process.env.DBURL;
 
 //* controllers
 const adminController = require('./controllers/admin.controller');
-const intakeController = require('./controllers/intake.controller');
 const testimonialsController = require('./controllers/testimonials.controller');
+const intakeController = require('./controllers/intake.controller');
 
 mongoose.connect(`${DBURL}`);
 const db = mongoose.connection;

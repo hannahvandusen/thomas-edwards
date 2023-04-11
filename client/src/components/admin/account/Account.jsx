@@ -62,8 +62,9 @@ function Account() {
                     type='password'
                 /> 
             </FormGroup>
-            <Button type='submit' color='dark'>Update Account Info</Button>
+            <Button type='submit' color='primary' outline>Update Account Info</Button>
         </Form>
+        <Button color='primary' outline onClick={() => navigate('/admin')}>Cancel</Button>
     </>
   )
 }

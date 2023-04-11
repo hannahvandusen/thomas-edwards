@@ -87,7 +87,6 @@ const Intake = () => {
             id="Phone"
             name="phone"
             placeholder="Phone"
-            type="number"
             innerRef={phoneRef}
           />
           <Label for="examplePhone">
@@ -156,3 +155,6 @@ const Intake = () => {
     };
     
     export default Intake;
+
+
+    
