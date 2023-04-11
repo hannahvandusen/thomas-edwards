@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 function TestimonialsTable(props) {
 
-    console.log(props)
+    // console.log(props)
     const navigate = useNavigate();
 
     async function deleteTestimonial(id) {
@@ -20,7 +20,7 @@ function TestimonialsTable(props) {
             let res = await fetch(url, requestOptions);
             let data = await res.json();
 
-            console.log(data.message);
+            // console.log(data.message);
             if(data.message === "Testimonial Removed") {
                 props.fetchTestimonials();
             } else {

@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
-import { Button, Table } from 'reactstrap';
+import { Button, Card, CardBody, CardGroup, CardText, CardTitle, ListGroup, ListGroupItem, Table } from 'reactstrap';
 
 function PortalView() {
 
+    // console.log(props); 
     let navigate = useNavigate();
     let { id } = useParams();
 
@@ -26,17 +27,17 @@ function PortalView() {
             const res = await fetch(url, requestOptions);
             const data = await res.json();
 
-            console.log(data);
+            //console.log(data);
 
-            const { name, email, phone, time, method, message, date } = data.intake;
+            const { name, email, phone, contactTime, contactMethod, message, date } = data.intake;
             setName(name); 
             setEmail(email);
             setPhone(phone);
-            setTime(time);
-            setMethod(method);
+            setTime(contactTime);
+            setMethod(contactMethod);
             setMessage(message);
             setDate(date);
-
+            console.log(data.intake); 
         } catch (err) {
             console.error(err)
         }
@@ -55,11 +56,28 @@ function PortalView() {
 
     }
 
-  return (
+    return (
     <>
-        <h1>hello</h1>
+        <>
+        <h1>Message from {name}</h1>
+            <CardGroup>
+            <Card>
+                <CardBody >
+                    <CardTitle>Message received: {date} </CardTitle>
+                    <CardText>Message: {message}</CardText>
+                    <ListGroup flush>
+                        <ListGroupItem>Phone: {phone} </ListGroupItem>
+                        <ListGroupItem>Email: {email} </ListGroupItem>
+                        <ListGroupItem>Preferred Method of Contact: {method} </ListGroupItem>
+                        <ListGroupItem>Preferred Time of Day for Contact: {time} </ListGroupItem>
+                    </ListGroup>
+                </CardBody>
+            </Card>
+            </CardGroup>
+            <Button onClick={() => navigate('/admin')} color="primary" outline >Back to Admin Portal</Button>
+        </>
     </>
-  )
+    )
 }
 
 export default PortalView

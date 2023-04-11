@@ -40,7 +40,7 @@ function TestimonialsCreate(props) {
             const res = await fetch(url, requestOptions)
             const data = await res.json();
 
-            console.log(data.newTestimonials);
+            // console.log(data.newTestimonials);
 
             formRef.current.reset(); 
             props.fetchTestimonials();
@@ -78,7 +78,8 @@ function TestimonialsCreate(props) {
                     <Label style={{color: "#cddee5"}}>Quote</Label>
                     <Input 
                         innerRef={quoteRef}
-                        autoComplete='off' />
+                        autoComplete='off' 
+                        type='textarea'/>
                 </FormGroup>
                 
                 <Button type='submit' color="success" >Add Testimonial</Button>
