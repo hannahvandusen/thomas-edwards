@@ -1,6 +1,7 @@
 import React from "react";
 import RecentNews from "../components/newsletter/RecentNews";
 import SubscribeForm from "../components/newsletter/SubscribeForm";
+import NewNewsletter from "../components/newsletter/NewNewsletter";
 import "./Newsletter.css";
 
 function Newsletter() {
@@ -15,6 +16,9 @@ function Newsletter() {
                     <div className="col-md-4">
                         <h2>Subscribe to our Newsletter</h2>
                         <SubscribeForm />
+                        <hr />
+                        <h2>Create a New Newsletter</h2>
+                        <NewNewsletter />
                     </div>
                 </div>
             </div>
