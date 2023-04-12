@@ -14,6 +14,7 @@ import Intake from "./pages/Intake";
 import Logout from "./components/admin/logout/Logout";
 import Account from "./components/admin/account/Account";
 import Newsletter from "./pages/Newsletter";
+import PortalView from "./components/admin/portal/PortalView";
 
 function App() {
     return (
@@ -24,6 +25,7 @@ function App() {
                     <Route path="/testimonials" element={<Testimonials />} />
                     <Route path="/testimonialsindex" element={<TestimonialsIndex />} />
                     <Route path="/testimonialsindex/update:id" element={<TestimonialsEdit />} />
+                    <Route path="/intake/:id" element={<PortalView />} /> 
                     <Route path="/store" element={<StoreIndex />} />
                     <Route path="/about" element={<AboutMe />} />
                     <Route path="/newsletter" element={<Newsletter />} />
@@ -33,10 +35,9 @@ function App() {
                     <Route path="/" element={<Home />} />
                 </Routes>
             </Router>
-
             <Footer />
         </div>
     );
 }
 
-export default App;
+export default App

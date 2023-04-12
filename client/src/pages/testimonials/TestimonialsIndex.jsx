@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react'
-import { Col, Container, Row } from 'reactstrap'
+import { useNavigate } from 'react-router-dom'
+import { Button, Col, Container, Row } from 'reactstrap'
 import { baseURL } from '../../environment'
 import TestimonialsCreate from './TestimonialsCreate'
 import TestimonialsTable from './TestimonialsTable'
 
 function TestimonialsIndex(props) {
+
+    const navigate = useNavigate();
 
     const [ testimonials, setTestimonials ] = useState([]);
 
@@ -46,6 +49,7 @@ function TestimonialsIndex(props) {
                             testimonials={testimonials} />
                     </Col>
                 </Row>
+                <Button onClick={() => navigate('/admin')} outline color='primary'>Admin Portal</Button>
             </Container>
         </>
 
