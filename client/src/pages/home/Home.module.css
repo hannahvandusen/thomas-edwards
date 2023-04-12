@@ -3,8 +3,9 @@
 }
 
 .container{
-    margin:0;
-    padding:0;
+    width: min(100% - 30px, 840px);
+    margin:0 auto;
+    padding:0 15px;;
     border:0;
 }
 
