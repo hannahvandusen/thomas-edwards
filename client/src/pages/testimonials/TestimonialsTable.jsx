@@ -5,16 +5,14 @@ import { useNavigate } from 'react-router-dom';
 
 function TestimonialsTable(props) {
 
+    // console.log(props)
     const navigate = useNavigate();
 
     async function deleteTestimonial(id) {
-        const url = `${baseURL}/testimonialsindex/${id}`;
+        const url = `http://localhost:4000/testimonialsindex/${id}`;
 
         let requestOptions = {
-            headers: new Headers({
-                "Authorization": props.token
-            }),
-            method: 'DELETE'
+                method: 'DELETE'
         }
 
         try {
@@ -22,7 +20,7 @@ function TestimonialsTable(props) {
             let res = await fetch(url, requestOptions);
             let data = await res.json();
 
-            console.log(data.message);
+            // console.log(data.message);
             if(data.message === "Testimonial Removed") {
                 props.fetchTestimonials();
             } else {
@@ -59,16 +57,16 @@ function TestimonialsTable(props) {
                 {
                 props.testimonials.map(testimonials => (
                 <tr key={testimonials._id}>
-                    <th scope="row">
+                    <th style={{color: "#cddee5"}} scope="row">
                         {testimonials.firstName}
                     </th>
-                    <td>
+                    <td style={{color: "#cddee5"}}>
                         {testimonials.lastName}
                     </td>
-                    <td>
+                    <td style={{color: "#cddee5"}}>
                         {testimonials.association}
                     </td>
-                    <td>
+                    <td style={{color: "#cddee5"}}>
                         {testimonials.quote}
                     </td>
                     <td>

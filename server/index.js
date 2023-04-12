@@ -8,11 +8,8 @@ const DBURL = process.env.DBURL;
 
 //* controllers
 const adminController = require('./controllers/admin.controller');
-<<<<<<< HEAD
 const testimonialsController = require('./controllers/testimonials.controller');
-=======
 const intakeController = require('./controllers/intake.controller');
->>>>>>> 4f46348b818fdd91d88bd6465ec3a94f19ff0668
 
 mongoose.connect(`${DBURL}`);
 const db = mongoose.connection;
@@ -24,10 +21,7 @@ app.use(cors());
 
 //* pages
 app.use('/admin', adminController); 
-<<<<<<< HEAD
-app.use('./testimonials', testimonialsController);
-=======
-app.use('/intake', intakeController); 
->>>>>>> 4f46348b818fdd91d88bd6465ec3a94f19ff0668
+app.use('/intake', intakeController);
+app.use('/testimonialsindex', testimonialsController);
 
 app.listen(PORT, () => console.log(`Server running on port: ${PORT}`));

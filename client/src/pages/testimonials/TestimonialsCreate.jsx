@@ -12,10 +12,9 @@ function TestimonialsCreate(props) {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(firstNameRef.current.value);
+        // console.log(firstNameRef.current.value);
 
-    const url = `${baseURL}/testimonialsindex`
-    console.log(url);
+    //console.log(url);
 
     const bodyObj = JSON.stringify({
         firstName: firstNameRef.current.value,
@@ -25,25 +24,26 @@ function TestimonialsCreate(props) {
     });
     // console.log(bodyObj);
 
-    let myHeader = new Headers();
-        myHeader.append("Content-Type", "application/json");
-        myHeader.append('Authorization', props.token);
+    const url = `http://localhost:4000/testimonialsindex`
+    const headers = new Headers({
+        "Content-Type": "application/json"
+    });
 
         const requestOptions = {
-            headers: myHeader,
+            headers,
             body: bodyObj,
             method: 'POST'
         }
-        console.log(bodyObj);
+        //console.log(bodyObj);
 
         try {
             const res = await fetch(url, requestOptions)
             const data = await res.json();
 
-            console.log(data);
+            // console.log(data.newTestimonials);
 
-            formRef.current.reset();
-            props.fetchTestimonials()
+            formRef.current.reset(); 
+            props.fetchTestimonials();
 
         } catch (err) {
             console.error(err);
@@ -54,7 +54,7 @@ function TestimonialsCreate(props) {
         <>
             <h1 style={{color: "#cddee5"}}>Add Testimonial</h1>
             <Form 
-                innerRef={formRef}
+                // innerRef={formRef}
                 onSubmit={handleSubmit}>
                 <FormGroup>
                     <Label style={{color: "#cddee5"}}>First Name</Label>
@@ -78,10 +78,11 @@ function TestimonialsCreate(props) {
                     <Label style={{color: "#cddee5"}}>Quote</Label>
                     <Input 
                         innerRef={quoteRef}
-                        autoComplete='off' />
+                        autoComplete='off' 
+                        type='textarea'/>
                 </FormGroup>
                 
-                <Button color="success" >Add Testimonial</Button>
+                <Button type='submit' color="success" >Add Testimonial</Button>
             </Form>
         </>
     )

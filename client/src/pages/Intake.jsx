@@ -56,7 +56,7 @@ const Intake = () => {
         If you would like to reach out to me directly as an individual client or a business please fill out the below form and I will contact you ASAP!
       </h6> */}
       <Form className="intake" onSubmit={handleSubmit}>
-        <FormGroup floating>
+        <FormGroup row>
           <Input
             id="Name"
             name="name"
@@ -69,7 +69,7 @@ const Intake = () => {
           </Label>
         </FormGroup>
         {' '}
-        <FormGroup floating>
+        <FormGroup row>
           <Input
             id="email"
             name="email"
@@ -87,7 +87,6 @@ const Intake = () => {
             id="Phone"
             name="phone"
             placeholder="Phone"
-            type="number"
             innerRef={phoneRef}
           />
           <Label for="examplePhone">
@@ -132,7 +131,7 @@ const Intake = () => {
         </FormGroup>
       </FormGroup>
         {' '}
-        <FormGroup floating>
+        <FormGroup row>
           <Input
             id="Message"
             name="message"
@@ -156,3 +155,6 @@ const Intake = () => {
     };
     
     export default Intake;
+
+
+    
