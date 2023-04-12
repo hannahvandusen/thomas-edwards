@@ -57,4 +57,25 @@ router.get("/", async(req, res) => {
     })
 }
 }); 
+
+router.get('/:id', async(req, res) => {
+    try {
+        const { id } = req.params;
+
+        const intake = await Intake.findOne({_id: id});
+
+        intake ?
+        res.status(200).json({
+            intake
+        }) :
+        res.status(404).json({
+            message: `Form found`
+        })
+    } catch (err) {
+        res.status(500).json({
+            Error: err.message
+    })
+    }
+})
+
 module.exports = router;

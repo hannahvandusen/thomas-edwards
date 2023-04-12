@@ -3,6 +3,8 @@ import Navigation from "./components/Navigation/Navigation";
 import Home from "./pages/home/Home";
 import Footer from "./components/footer/Footer";
 import Testimonials from "./pages/testimonials/Testimonials";
+import TestimonialsIndex from './pages/testimonials/TestimonialsIndex';
+import TestimonialsEdit from './pages/testimonials/TestimonialsEdit';
 import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import StoreIndex from "./components/Store/StoreIndex";
@@ -12,6 +14,7 @@ import Intake from "./pages/Intake";
 import Logout from "./components/admin/logout/Logout";
 import Account from "./components/admin/account/Account";
 import Newsletter from "./pages/Newsletter";
+import PortalView from "./components/admin/portal/PortalView";
 
 function App() {
     return (
@@ -20,6 +23,9 @@ function App() {
             <Router>
                 <Routes>
                     <Route path="/testimonials" element={<Testimonials />} />
+                    <Route path="/testimonialsindex" element={<TestimonialsIndex />} />
+                    <Route path="/testimonialsindex/update:id" element={<TestimonialsEdit />} />
+                    <Route path="/intake/:id" element={<PortalView />} /> 
                     <Route path="/store" element={<StoreIndex />} />
                     <Route path="/about" element={<AboutMe />} />
                     <Route path="/newsletter" element={<Newsletter />} />
