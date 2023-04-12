@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from 'react'
-import { Col, Container, Row } from 'reactstrap'
+import { useNavigate } from 'react-router-dom'
+import { Button, Col, Container, Row } from 'reactstrap'
 import { baseURL } from '../../environment'
 import TestimonialsCreate from './TestimonialsCreate'
 import TestimonialsTable from './TestimonialsTable'
 
 function TestimonialsIndex(props) {
 
+    const navigate = useNavigate();
+
     const [ testimonials, setTestimonials ] = useState([]);
 
     const fetchTestimonials = async () => {
-        const url = `${baseURL}/testimonialsindex`;
+        const url = `http://localhost:4000/testimonialsindex`;
 
         const requestOptions = {
             headers: new Headers({
@@ -28,25 +31,25 @@ function TestimonialsIndex(props) {
     }
 
     useEffect(() => {
-        if(props.token) {
+        if(localStorage.getItem('token') !== null) {
             fetchTestimonials();
         }
-    }, [props.token]) 
+    }, [localStorage.getItem('token')]) 
 
     return (
         <>
             <Container >
                 <Row>
                     <Col md="4" >
-                        <TestimonialsCreate token={props.token} fetchTestimonials={fetchTestimonials} />
+                        <TestimonialsCreate fetchTestimonials={fetchTestimonials} />
                     </Col>
                     <Col md="8">
                         <TestimonialsTable
                             fetchTestimonials={fetchTestimonials}
-                            token={props.token}
                             testimonials={testimonials} />
                     </Col>
                 </Row>
+                <Button onClick={() => navigate('/admin')} outline color='primary'>Admin Portal</Button>
             </Container>
         </>
 

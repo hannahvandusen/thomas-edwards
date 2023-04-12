@@ -8,10 +8,10 @@
 .navigation {
   height: 8vh;
   /* text-align: center; */
-  color: #cddee5;
+  color: #cddee5 ;
   background-color:#252d2d; 
   border-bottom: 2px solid black;
-  /* opacity: .5; */
+  opacity: .5;
 }
 .link:hover {
   /* color: white; */
