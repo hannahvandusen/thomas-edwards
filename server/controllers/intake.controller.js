@@ -69,7 +69,7 @@ router.get('/:id', async(req, res) => {
             intake
         }) :
         res.status(404).json({
-            message: `Form found`
+            message: `Form not found`
         })
     } catch (err) {
         res.status(500).json({

@@ -17,12 +17,6 @@ function Admin() {
 
     const token = {sessionToken}
 
-    useEffect(() => {
-        if(localStorage.getItem('token')) {
-        setSessionToken(localStorage.getItem('token'));
-        }
-    }, [])
-
     // console.log(localStorage.getItem("token"))
 
     const style = {
@@ -30,6 +24,12 @@ function Admin() {
         margin: "1em",
     }
 
+    useEffect(() => {
+        if(localStorage.getItem('token')) {
+        setSessionToken(localStorage.getItem('token'));
+        }
+    }, [])
+    
     const displayForm = () => {
         return (
             localStorage.getItem('token') === null ?
@@ -41,8 +41,8 @@ function Admin() {
             </Row>
             </Container> :
             <Container>
+                <h1 style={{color: "white"}}>Admin Portal</h1>
                 <Row>
-                    <h1 style={{color: "white"}}>Admin Portal</h1>
                 
                     <Col md="8">
                         <PortalIndex />
@@ -60,13 +60,20 @@ function Admin() {
                         color="primary" 
                         style={style} 
                         outline
-                        >View Testimonials</Button>
+                        >Edit Testimonials</Button>
+                        <Button
+                        color="primary" 
+                        style={style} 
+                        outline
+                        href="/about/edit"
+                        >Edit About</Button>
                     </Col>
                     <Logout setToken={setSessionToken}/> 
                 </Row>
             </Container>
         )
     }
+
     return (
         <>
             {displayForm()}

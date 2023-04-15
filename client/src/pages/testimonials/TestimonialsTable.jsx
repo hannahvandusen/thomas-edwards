@@ -71,7 +71,7 @@ function TestimonialsTable(props) {
                     </td>
                     <td>
                         <Button
-                            onClick={() => navigate(`/testimonialsindex/update/${testimonials._id}`)}
+                            onClick={() => navigate(`/testimonialsindex/${testimonials._id}`)}
                             color="warning">Edit</Button>
                         <Button
                             onClick={() => deleteTestimonial(testimonials._id)}

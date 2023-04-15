@@ -71,17 +71,37 @@ router.get('/', async (req, res) => {
     }
 });
 
+router.get('/:id', async (req, res ) => {
+    try {
+        const { id } = req.params;
+        const testimonial = await Testimonials.findOne({_id: id });
+        testimonial ?
+        res.status(200).json({
+            testimonial
+        }) :
+        res.status(404).json({
+            message: `testimonial not found`
+        })
+
+    } catch (err) {
+        res.status(500).json({
+            Error: err.message
+        })
+
+    }
+})
+
 
 router.patch('/:id', async (req, res) => {
     try {
 
-        const filter = { _id: req.params.id, owner_id: req.user.id }
+        const filter = { _id: req.params.id }; 
 
-        const info = req.body;
+        const info = req.body; 
 
-        const returnOption = {new: true};
+        const returnOption = { new: true };
 
-        const updated = await Testimonials.findByIdAndUpdate(filter, info, returnOption);
+        const updated = await Testimonials.findOneAndUpdate(filter, info, returnOption);
 
         updated ?
             res.status(200).json({
