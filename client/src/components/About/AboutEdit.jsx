@@ -1,7 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { CardGroup, Card, CardBody, CardTitle, CardText, ListGroup, ListGroupItem, Button, Form, FormGroup, Input, Label } from 'reactstrap';
-import { EditText, EditTextarea } from 'react-edit-text';
-import 'react-edit-text/dist/index.css';
 import { useNavigate } from 'react-router-dom';
 
 function AboutEdit() {
