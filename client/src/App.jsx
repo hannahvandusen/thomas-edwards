@@ -15,6 +15,7 @@ import Logout from "./components/admin/logout/Logout";
 import Account from "./components/admin/account/Account";
 import Newsletter from "./pages/Newsletter";
 import PortalView from "./components/admin/portal/PortalView";
+import AboutEdit from "./components/About/AboutEdit";
 
 function App() {
     return (
@@ -28,6 +29,7 @@ function App() {
                     <Route path="/intake/:id" element={<PortalView />} /> 
                     <Route path="/store" element={<StoreIndex />} />
                     <Route path="/about" element={<AboutMe />} />
+                    <Route path="/about/edit" element={<AboutEdit />} /> 
                     <Route path="/newsletter" element={<Newsletter />} />
                     <Route path="/admin" element={<Admin />} />
                     <Route path="/intake" element={<Intake />} />
