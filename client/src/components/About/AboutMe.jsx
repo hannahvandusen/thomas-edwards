@@ -13,6 +13,14 @@ const AboutMe = () => {
     AOS.init()
   }, [])
 
+  const [ about, setAbout ] = useState(); 
+  const [ story, setStory ] = useState(); 
+  const [ mission, setMission ] = useState();
+  const [ value, setValue ] = useState(); 
+
+  const fetchAbout = async () => {
+    
+  }
   return (
     <>
       <header className={styles.mainHeader}>
