@@ -151,6 +151,13 @@ form input {
   margin: 1px;
 }
 
+svg{
+    padding: 20px;
+}
+
+.titles{
+    margin: 0px;
+}
 /* ------ MEDIA QUIRES ------ */
 
 @media screen and (max-width: 1200px) {
