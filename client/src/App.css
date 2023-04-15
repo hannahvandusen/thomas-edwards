@@ -1,17 +1,20 @@
 .App {
   text-align: center;
-  background-color:#252d2d; 
+  background-color:#110e08; 
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #d2d5d1;
+}
+
+.nav{
+  --bs-nav-link-color: #ffcd51;
 }
 
 .navigation {
   height: 8vh;
   /* text-align: center; */
-  color: #cddee5 ;
-  background-color:#252d2d; 
+  color: #c2cdc0;
+  background-color:#110e08; 
   border-bottom: 2px solid black;
-  opacity: .5;
+  opacity: .8;
 }
 .link:hover {
   /* color: white; */
@@ -24,7 +27,7 @@
 }
 
 .navbarbrand {
-  color:#17bcde;
+  color:#ffcd51;
 }
 
 .footer {

@@ -29,7 +29,7 @@ function Home() {
                     <img className={styles.image} src={aboutImage} alt="My Story" />
                     <div className={styles.description}>
                         <h3>About Thomas Edwards</h3>
-                        <p data-aos="fade-up">
+                        <p class={styles.paragraph} data-aos="fade-up">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
                             est quia officia, sunt odio minima harum rerum assumenda
                             asperiores perspiciatis nobis id excepturi
@@ -46,7 +46,7 @@ function Home() {
                 </section>
             </div>
 
-            <h1 class="titles">How I can Help You</h1>
+            <h1 class="titles" styles={[styles.titles]}>How I can Help You</h1>
 
             <div className={styles.help}>
                 <div data-aos="fade-up" className="box1">

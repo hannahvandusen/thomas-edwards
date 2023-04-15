@@ -3,6 +3,11 @@
   padding: 0;
 }
 
+.paragraph{
+  padding: 10%;
+  font-size: medium;
+}
+
 .main {
   padding: 0;
   position: relative;
@@ -17,8 +22,8 @@
 .mainHeader {
   position: absolute;
   left: 500px;
-  color: #cddee5;
-  font-size: 40px;
+  color: #ffcd51;
+  font-size: 30rem;
   top: 250px;
   width: 60%;
   text-align: center;
@@ -28,7 +33,7 @@
 
 .form {
   text-align: center;
-  background-color: #cddee5;
+  background-color: #ffcd51;
   padding: 35px;
   background-image: url(../../images/design.jpg);
   background-size: 100vw;
@@ -137,7 +142,6 @@
 
 h1 {
   padding-top: 20px;
-  margin-left: 10%;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
@@ -156,7 +160,8 @@ svg{
 }
 
 .titles{
-    margin: 0px;
+  display: flex;
+  justify-content: center;
 }
 /* ------ MEDIA QUIRES ------ */
 
@@ -165,7 +170,7 @@ svg{
     position: absolute;
     left: 350px;
     color: #cddee5;
-    font-size: 40px;
+    font-size: 3rem;
     top: 200px;
     width: 60%;
     text-align: center;
