@@ -9,7 +9,7 @@ function TestimonialsTable(props) {
     const navigate = useNavigate();
 
     async function deleteTestimonial(id) {
-        const url = `${baseURL}/testimonials/index/${id}`;
+        const url = `http://localhost:4000/testimonialsindex/${id}`;
 
         let requestOptions = {
                 method: 'DELETE'
@@ -71,7 +71,7 @@ function TestimonialsTable(props) {
                     </td>
                     <td>
                         <Button
-                            onClick={() => navigate(`/testimonials/index/update/${testimonials._id}`)}
+                            onClick={() => navigate(`/testimonialsindex/update/${testimonials._id}`)}
                             color="warning">Edit</Button>
                         <Button
                             onClick={() => deleteTestimonial(testimonials._id)}

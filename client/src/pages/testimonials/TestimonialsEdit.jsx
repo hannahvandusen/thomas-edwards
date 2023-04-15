@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { Button, Col, Container, Form, FormGroup, Input, Label, Row } from 'reactstrap';
-import { baseURL } from '../../environment';
 
 function TestimonialsEdit(props) {
 
@@ -12,7 +11,7 @@ function TestimonialsEdit(props) {
     const [association, setAssociation] = useState('');
     const [quote, setQuote] = useState('');
 
-    const url = `${baseURL}/testimonials/${id}`;
+    const url = `http://localhost:4000/testimonialsindex/${id}`;
 
     const fetchTestimonials = async () => {
         
@@ -81,7 +80,7 @@ function TestimonialsEdit(props) {
         <>
             <h1 style={{
                 textAlign: "center", textDecoration: "underline"
-            }}>Edit Movie</h1>
+            }}>Edit Testimonial</h1>
             <Container>
                 <Row>
                     <Col md="4">
