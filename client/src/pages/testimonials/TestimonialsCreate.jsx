@@ -1,6 +1,5 @@
 import React, {useRef} from 'react';
 import { Button, Form, FormGroup, Input, Label } from 'reactstrap';
-import { baseURL } from '../../environment';
 
 function TestimonialsCreate(props) {
 
