@@ -4,6 +4,7 @@ import photo2 from "../assets/site photo 3.jpg"
 import photo3 from "../assets/love.jpg"
 import styles from "./AboutMe.module.css"
 import AOS from "aos"
+import { Button } from "reactstrap"
 
 
 
@@ -48,6 +49,7 @@ const AboutMe = () => {
         </h1>
         <p> {about} </p>
         <main></main>
+        
       </header>
 
       <div className={styles.container}>
