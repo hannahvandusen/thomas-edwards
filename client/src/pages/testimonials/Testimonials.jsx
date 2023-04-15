@@ -1,25 +1,98 @@
-import { React } from "react";
-import {  Card, CardImg, CardGroup, CardTitle, CardText, CardBody, CardSubtitle, CardHeader, Row, Col } from "reactstrap";
+import { React, useEffect, useState } from "react";
+import {  Button, Card, CardImg, CardGroup, CardTitle, CardText, CardBody, CardSubtitle, CardHeader, Row, Col } from "reactstrap";
+import { useNavigate } from 'react-router-dom';
+// import TestimonialsTable from "./TestimonialsTable";
 
-const Testimonials = () => {
-return (
+function Testimonials() {
+
+  const navigate = useNavigate();
+  const { testimonials, setTestimonials } = useState([]);
+  const fetchTestimonials = async () => {
+    const url = 'http://localhost:4000/testimonials'
+    const requestOptions = {
+      method: 'GET'
+    }
+
+    try {
+      const res = await fetch(url, requestOptions);
+      const data = await res.json();
+      console.log(data);
+
+      fetchTestimonials(data.testimonials);
+
+    } catch (err) {
+      console.log(err)
+    }
+  };
+
+  useEffect(() => {
+    fetchTestimonials();
+  }, [])
+
+  return (
+  // <>
+  
+  //     <CardGroup>
+  //       { testimonials.map(testimonials => (
+  //         <Card className="my-2" key={testimonials._id} color="primary"
+  //         outline
+  //         style={{
+  //         width: '18rem'}}>
+  //           <img src={URL.createObjectURL(selectedImage)} />
+  //           <CardHeader>
+  //             As a Colleague
+  //           </CardHeader>
+  //           <CardBody>
+  //           <CardTitle tag="h5">
+  //             Jason Line
+  //           </CardTitle>
+  //            <CardSubtitle
+  //           className="mb-2 text-muted"
+  //           tag="h6"
+  //     >
+  //       - Coworker
+  //     </CardSubtitle>
+  //     <CardText>
+  //     Thomas isn't just dedicated to his own success, he is also a champion for the success of others. I struggled for years, to break into the tech sector, but after meeting Thomas, he referred me to an open position with his employer. Three weeks later, I had an offer for my dream job. Since then, I've heard of several others that Thomas has helped. He is a person of great generosity and his good name carries tremendous value!
+  //     </CardText>
+  //   </CardBody>
+
+  //       </Card>
+  //       ))
+  //       }
+  //     </CardGroup>
+  
+  // </>
 	<>
 	<h1 style={{color: "#cddee5"}}>What People Are Saying About Thomas</h1>
 
     <div>
 
-    <Row>
+    {/* <TestimonialsTable /> */}
         
     <CardGroup>
     
 
-  <Col>
-  <Card className="my-2"
-    color="primary"
+  
+  {testimonials.map(testimonials => (<tr key={testimonials._id}>
+                    <th style={{color: "#cddee5"}} scope="row">
+                        {testimonials.firstName}
+                    </th>
+                    <td style={{color: "#cddee5"}}>
+                        {testimonials.lastName}
+                    </td>
+                    <td style={{color: "#cddee5"}}>
+                        {testimonials.association}
+                    </td>
+                    <td style={{color: "#cddee5"}}>
+                        {testimonials.quote}
+                    </td>
+                    </tr>))}
+                    <Card className="my-2" color="primary"
     outline
     style={{
       width: '18rem'
-    }}>
+  }}>
     <CardHeader>
         As a Colleague
     </CardHeader>
@@ -44,11 +117,11 @@ return (
       </CardText>
     </CardBody>
   </Card>
-  </Col>
+  
 
   
 
-  <Col>
+  {/* <Col>
   <Card className="my-2"
     color="primary"
     outline
@@ -188,11 +261,9 @@ Overall, I highly recommend Thomas as a friend, mentor, and professional contact
       </CardText>
     </CardBody>
   </Card>
-  </Col>
+  </Col> */}
   
     </CardGroup>
-
-</Row>
 
 </div>
 
