@@ -12,7 +12,7 @@ function TestimonialsIndex(props) {
     const [ testimonials, setTestimonials ] = useState([]);
 
     const fetchTestimonials = async () => {
-        const url = `http://localhost:4000/testimonialsindex`;
+        const url = `${baseURL}/testimonials/index`;
 
         const requestOptions = {
             headers: new Headers({
