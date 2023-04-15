@@ -6,8 +6,9 @@ function Testimonials() {
 
   const navigate = useNavigate();
   const [ testimonials, setTestimonials ] = useState([]);
+
   const fetchTestimonials = async () => {
-    const url = 'http://localhost:4000/testimonials/index'
+    const url = 'http://localhost:4000/testimonialsindex'
     const requestOptions = {
       method: 'GET'
     }
@@ -15,7 +16,7 @@ function Testimonials() {
     try {
       const res = await fetch(url, requestOptions);
       const data = await res.json();
-      console.log(data);
+      // console.log(data);
 
       setTestimonials(data.testimonials);
 
@@ -63,15 +64,17 @@ function Testimonials() {
   
   // </>
 	<>
-	<h1 style={{color: "#cddee5"}}>What People Are Saying About Thomas</h1>
 
     <div>
+    <h1 style={{color: "#cddee5"}}>What People Are Saying About Thomas</h1>
+
+    {/* <TestimonialsTable /> */}
         
     <CardGroup>
     
 
   
-  {testimonials.map(testimonials => (<tr key={testimonials._id}>
+  {/* {testimonials.map(testimonials => (<tr key={testimonials._id}>
                     <th style={{color: "#cddee5"}} scope="row">
                         {testimonials.firstName}
                     </th>
@@ -84,38 +87,41 @@ function Testimonials() {
                     <td style={{color: "#cddee5"}}>
                         {testimonials.quote}
                     </td>
-                    </tr>))}
-                    <Card className="my-2" color="primary"
-    outline
-    style={{
-      width: '18rem'
-  }}>
-    <CardHeader>
-        As a Colleague
-    </CardHeader>
-    <CardImg
-      alt="Thomas photo 2"
-      src="./images/photo2.jpg"
-      top
-      width="100%"
-    />
-    <CardBody>
-      <CardTitle tag="h5">
-      Jason Line
-      </CardTitle>
-      <CardSubtitle
-        className="mb-2 text-muted"
-        tag="h6"
-      >
-        - Coworker
-      </CardSubtitle>
-      <CardText>
-      Thomas isn't just dedicated to his own success, he is also a champion for the success of others. I struggled for years, to break into the tech sector, but after meeting Thomas, he referred me to an open position with his employer. Three weeks later, I had an offer for my dream job. Since then, I've heard of several others that Thomas has helped. He is a person of great generosity and his good name carries tremendous value!
-      </CardText>
-    </CardBody>
-  </Card>
+                    </tr>))} */}
+    {testimonials.map(testimonial => ( 
+      <Card className="my-2" color="primary"
+      outline
+      key={testimonial._id}
+      style={{
+        width: '18rem'
+      }}>
   
-
+        <CardHeader>
+            Caption
+        </CardHeader>
+        <CardBody>
+          <CardImg
+          alt="Thomas photo 2"
+          src="./images/photo2.jpg"
+          top
+          width="100%"
+          />
+        <CardTitle tag="h5">
+        {testimonial.firstName} {testimonial.lastName}
+        </CardTitle>
+        <CardSubtitle
+          className="mb-2 text-muted"
+          tag="h6"
+        >
+          Thomas {testimonial.association}
+        </CardSubtitle>
+        <CardText>
+        {testimonial.quote}
+        {/* Thomas isn't just dedicated to his own success, he is also a champion for the success of others. I struggled for years, to break into the tech sector, but after meeting Thomas, he referred me to an open position with his employer. Three weeks later, I had an offer for my dream job. Since then, I've heard of several others that Thomas has helped. He is a person of great generosity and his good name carries tremendous value! */}
+        </CardText>
+        </CardBody>
+    </Card>
+    ))}
   
 
   {/* <Col>
