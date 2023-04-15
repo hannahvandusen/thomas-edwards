@@ -1,14 +1,13 @@
 import { React, useEffect, useState } from "react";
 import {  Button, Card, CardImg, CardGroup, CardTitle, CardText, CardBody, CardSubtitle, CardHeader, Row, Col } from "reactstrap";
 import { useNavigate } from 'react-router-dom';
-// import TestimonialsTable from "./TestimonialsTable";
 
 function Testimonials() {
 
   const navigate = useNavigate();
-  const { testimonials, setTestimonials } = useState([]);
+  const [ testimonials, setTestimonials ] = useState([]);
   const fetchTestimonials = async () => {
-    const url = 'http://localhost:4000/testimonials'
+    const url = 'http://localhost:4000/testimonials/index'
     const requestOptions = {
       method: 'GET'
     }
@@ -18,7 +17,7 @@ function Testimonials() {
       const data = await res.json();
       console.log(data);
 
-      fetchTestimonials(data.testimonials);
+      setTestimonials(data.testimonials);
 
     } catch (err) {
       console.log(err)
@@ -67,8 +66,6 @@ function Testimonials() {
 	<h1 style={{color: "#cddee5"}}>What People Are Saying About Thomas</h1>
 
     <div>
-
-    {/* <TestimonialsTable /> */}
         
     <CardGroup>
     
@@ -263,12 +260,12 @@ Overall, I highly recommend Thomas as a friend, mentor, and professional contact
   </Card>
   </Col> */}
   
-    </CardGroup>
+      </CardGroup>
 
 </div>
 
 
-	</>
+// 	</>
 );
 };
 
