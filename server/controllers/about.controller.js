@@ -40,6 +40,26 @@ router.get("/", async(req, res) => {
     }
 }); 
 
+router.get("/:id", async(req, res) => {
+    try {
+        const { id } = req.params;
+        const about = await About.findOne({ _id: id});
+        
+        about ? 
+        res.status(200).json({
+            about
+        }) :
+        res.status(404).json({
+            message: `section not found`
+        })
+    } catch (err) {
+        res.status(500).json({
+            Error: err.message
+        })
+
+    }
+}); 
+
 router.patch("/edit", async(req, res) => {
     try {
         const about = req.body.about;

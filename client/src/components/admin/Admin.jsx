@@ -60,7 +60,13 @@ function Admin() {
                         color="primary" 
                         style={style} 
                         outline
-                        >View Testimonials</Button>
+                        >Edit Testimonials</Button>
+                        <Button
+                        color="primary" 
+                        style={style} 
+                        outline
+                        href="/about/edit"
+                        >Edit About</Button>
                     </Col>
                     <Logout setToken={setSessionToken}/> 
                 </Row>

@@ -9,9 +9,6 @@ import AOS from "aos"
 
 //Scrolling Effect
 const AboutMe = () => {
-  useEffect(() => {
-    AOS.init()
-  }, [])
 
   const [ about, setAbout ] = useState(); 
   const [ story, setStory ] = useState(); 
@@ -19,15 +16,37 @@ const AboutMe = () => {
   const [ value, setValue ] = useState(); 
 
   const fetchAbout = async () => {
-    
+    const url = `http://localhost:4000/about/643ae5920f74ad63f71a205d`
+    const requestOptions = {
+      method: 'GET'
+    };
+
+    try {
+      const res = await fetch(url, requestOptions);
+      const data = await res.json();
+      console.log(data); 
+      const { about, story, mission, value } = data.about;
+      setAbout(about);
+      setStory(story);
+      setMission(mission);
+      setValue(value);
+    } catch (err) {
+      console.error(err)
+    }
   }
+
+  useEffect(() => {
+    AOS.init()
+    fetchAbout(); 
+  }, [])
+
   return (
     <>
       <header className={styles.mainHeader}>
         <h1>
           <span>About</span>Thomas
         </h1>
-        <p>My gift is to Inspire others, and make dreams come true</p>
+        <p> {about} </p>
         <main></main>
       </header>
 
@@ -37,14 +56,7 @@ const AboutMe = () => {
           <div className={styles.description}>
             <h3>My Story</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
-              est quia officia, sunt odio minima harum rerum assumenda
-              asperiores perspiciatis nobis id excepturi
-              doloremipsum20,animirepellendus hic voluptatibus maxime eius.Lorem
-              ipsum dolor sit ametsdfs consectetur adipisicing elithbsll.
-              GreatInventore est quia officia, sunt odio minima harum rerum
-              assumenda asperiores perspiciatis nobis id excepturi dolorem,
-              animi repellendus hic hic voluptatibus maxime eius.
+              {story}
             </p>
           </div>
         </section>
@@ -54,14 +66,7 @@ const AboutMe = () => {
           <div className={styles.description}>
             <h3 data-aos="zoom-in-right">My Mission</h3>
             <p data-aos="fade-up">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
-              est quia officia, sunt odio minima harum rerum assumenda
-              asperiores perspiciatis nobis id excepturi
-              doloremipsum20,animirepellendus hic voluptatibus maxime eius.Lorem
-              ipsum dolor sit ametsdfs consectetur adipisicing elithbsll.
-              asperiores perspiciatis nobis id excepturi
-              doloremipsum20,animirepellendus hic voluptatibus maxime eius.Lorem
-              ipsum dolor sit ametsdfs consectetur adipisicing elithbsll.
+              {mission}
             </p>
           </div>
         </section>
@@ -71,14 +76,7 @@ const AboutMe = () => {
           <div className={styles.description}>
             <h3 data-aos="zoom-in-left">My Values</h3>
             <p data-aos="fade-up">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
-              est quia officia, sunt odio minima harum rerum assumenda
-              asperiores perspiciatis nobis id excepturi
-              doloremipsum20,animirepellendus hic voluptatibus maxime eius.Lorem
-              ipsum dolor sit ametsdfs consectetur adipisicing elithbsll.
-              asperiores perspiciatis nobis id excepturi
-              doloremipsum20,animirepellendus hic voluptatibus maxime eius.Lorem
-              ipsum dolor sit ametsdfs consectetur adipisicing elithbsll.
+              {value}
             </p>
           </div>
         </section>
