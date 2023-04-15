@@ -17,18 +17,15 @@ function TestimonialsEdit(props) {
         
         const requestOptions = {
             method: "GET",
-            headers: new Headers({
-                "Authorization": props.token
-            })
         }
 
         try {
             const res = await fetch(url, requestOptions);
             const data = await res.json();
-
+            console.log(data); 
             const {
                 firstName, lastName, association, quote
-            } = data.testimonials
+            } = data.testimonial
 
             setFirstName(firstName);
             setLastName(lastName);
@@ -42,7 +39,7 @@ function TestimonialsEdit(props) {
     }
 
     useEffect(() => {
-        if(props.token) {
+        if(localStorage.getItem('token') !== null) {
             fetchTestimonials();
         }
     }, [props.token])
@@ -57,9 +54,9 @@ function TestimonialsEdit(props) {
             quote: quote
         })
 
+
         const requestOptions = {
             headers: new Headers({
-                "Authorization": props.token,
                 "Content-Type": "application/json"
             }),
             body: bodyObj,
