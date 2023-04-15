@@ -41,8 +41,8 @@ function Admin() {
             </Row>
             </Container> :
             <Container>
+                <h1 style={{color: "white"}}>Admin Portal</h1>
                 <Row>
-                    <h1 style={{color: "white"}}>Admin Portal</h1>
                 
                     <Col md="8">
                         <PortalIndex />
@@ -67,6 +67,7 @@ function Admin() {
             </Container>
         )
     }
+
     return (
         <>
             {displayForm()}

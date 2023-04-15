@@ -145,7 +145,7 @@ const Intake = () => {
           </Label>
         </FormGroup>
         {' '}
-        <Button type="submit">
+        <Button type="submit" className="button">
           Submit
         </Button>
       </Form>

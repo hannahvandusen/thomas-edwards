@@ -1,11 +1,11 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import photo1 from "../assets/site photo 2.jpg"
 import photo2 from "../assets/site photo 3.jpg"
 import photo3 from "../assets/love.jpg"
-
 import styles from "./AboutMe.module.css"
-
 import AOS from "aos"
+
+
 
 //Scrolling Effect
 const AboutMe = () => {
