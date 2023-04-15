@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { Button, Col, Container, Form, FormGroup, Input, Label, Row } from 'reactstrap';
-import { baseURL } from '../../environment';
 
 function TestimonialsEdit(props) {
 
@@ -12,24 +11,21 @@ function TestimonialsEdit(props) {
     const [association, setAssociation] = useState('');
     const [quote, setQuote] = useState('');
 
-    const url = `${baseURL}/testimonials/${id}`;
+    const url = `http://localhost:4000/testimonialsindex/${id}`;
 
     const fetchTestimonials = async () => {
         
         const requestOptions = {
             method: "GET",
-            headers: new Headers({
-                "Authorization": props.token
-            })
         }
 
         try {
             const res = await fetch(url, requestOptions);
             const data = await res.json();
-
+            console.log(data); 
             const {
                 firstName, lastName, association, quote
-            } = data.testimonials
+            } = data.testimonial
 
             setFirstName(firstName);
             setLastName(lastName);
@@ -43,7 +39,7 @@ function TestimonialsEdit(props) {
     }
 
     useEffect(() => {
-        if(props.token) {
+        if(localStorage.getItem('token') !== null) {
             fetchTestimonials();
         }
     }, [props.token])
@@ -58,9 +54,9 @@ function TestimonialsEdit(props) {
             quote: quote
         })
 
+
         const requestOptions = {
             headers: new Headers({
-                "Authorization": props.token,
                 "Content-Type": "application/json"
             }),
             body: bodyObj,
@@ -79,17 +75,17 @@ function TestimonialsEdit(props) {
 
     return (
         <>
-            <h1 style={{
+            <h1 style={{color: "#cddee5",
                 textAlign: "center", textDecoration: "underline"
-            }}>Edit Movie</h1>
+            }}>Edit Testimonial</h1>
             <Container>
                 <Row>
                     <Col md="4">
-                        <p><b>Testimonial</b>: <br/>{firstName} {lastName}, Thomas's {association}, said {quote}. <br/> What should be edited?</p>
+                        <p style={{color: "#cddee5"}}><b style={{color: "#cddee5"}}>Testimonial</b>: <br/>{firstName} {lastName}, Thomas's {association}, said {quote}. <br/> What should be edited?</p>
                             <Button
                                 color='info'
                                 outline
-                                onClick={() => navigate('/testimonials')}
+                                onClick={() => navigate('/testimonialsindex')}
                             >Back to Table</Button>
                     </Col>
                     <Col md="8">

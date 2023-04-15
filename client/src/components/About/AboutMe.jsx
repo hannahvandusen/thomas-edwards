@@ -1,16 +1,44 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import photo1 from "../assets/site photo 2.jpg"
 import photo2 from "../assets/site photo 3.jpg"
 import photo3 from "../assets/love.jpg"
-
 import styles from "./AboutMe.module.css"
-
 import AOS from "aos"
+import { Button } from "reactstrap"
+
+
 
 //Scrolling Effect
 const AboutMe = () => {
+
+  const [ about, setAbout ] = useState(); 
+  const [ story, setStory ] = useState(); 
+  const [ mission, setMission ] = useState();
+  const [ value, setValue ] = useState(); 
+
+  const fetchAbout = async () => {
+    const url = `http://localhost:4000/about/643ae5920f74ad63f71a205d`
+    const requestOptions = {
+      method: 'GET'
+    };
+
+    try {
+      const res = await fetch(url, requestOptions);
+      const data = await res.json();
+      console.log(data); 
+      const { about, story, mission, value } = data.about;
+      setAbout(about);
+      setStory(story);
+      setMission(mission);
+      setValue(value);
+    } catch (err) {
+      console.error(err)
+    }
+  }
+
   useEffect(() => {
     AOS.init()
+    fetchAbout(); 
   }, [])
 
   return (
@@ -20,9 +48,9 @@ const AboutMe = () => {
           <span>About</span>Thomas
         </h1>
         <p className={styles.p}>
-          My gift is to Inspire others, and make dreams come true
-        </p>
+          {about} </p>
         <main></main>
+        
       </header>
 
       <div className={styles.container}>
@@ -31,14 +59,7 @@ const AboutMe = () => {
           <div className={styles.description}>
             <h3>My Story</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
-              est quia officia, sunt odio minima harum rerum assumenda
-              asperiores perspiciatis nobis id excepturi
-              doloremipsum20,animirepellendus hic voluptatibus maxime eius.Lorem
-              ipsum dolor sit ametsdfs consectetur adipisicing elithbsll.
-              GreatInventore est quia officia, sunt odio minima harum rerum
-              assumenda asperiores perspiciatis nobis id excepturi dolorem,
-              animi repellendus hic hic voluptatibus maxime eius.
+              {story}
             </p>
           </div>
         </section>
@@ -48,14 +69,7 @@ const AboutMe = () => {
           <div className={styles.description}>
             <h3 data-aos="zoom-in-right">My Mission</h3>
             <p data-aos="fade-up">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
-              est quia officia, sunt odio minima harum rerum assumenda
-              asperiores perspiciatis nobis id excepturi
-              doloremipsum20,animirepellendus hic voluptatibus maxime eius.Lorem
-              ipsum dolor sit ametsdfs consectetur adipisicing elithbsll.
-              asperiores perspiciatis nobis id excepturi
-              doloremipsum20,animirepellendus hic voluptatibus maxime eius.Lorem
-              ipsum dolor sit ametsdfs consectetur adipisicing elithbsll.
+              {mission}
             </p>
           </div>
         </section>
@@ -65,14 +79,7 @@ const AboutMe = () => {
           <div className={styles.description}>
             <h3 data-aos="zoom-in-left">My Values</h3>
             <p data-aos="fade-up">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
-              est quia officia, sunt odio minima harum rerum assumenda
-              asperiores perspiciatis nobis id excepturi
-              doloremipsum20,animirepellendus hic voluptatibus maxime eius.Lorem
-              ipsum dolor sit ametsdfs consectetur adipisicing elithbsll.
-              asperiores perspiciatis nobis id excepturi
-              doloremipsum20,animirepellendus hic voluptatibus maxime eius.Lorem
-              ipsum dolor sit ametsdfs consectetur adipisicing elithbsll.
+              {value}
             </p>
           </div>
         </section>
