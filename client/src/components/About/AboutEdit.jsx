@@ -3,31 +3,31 @@ import { CardGroup, Card, CardBody, CardTitle, CardText, ListGroup, ListGroupIte
 import { EditText, EditTextarea } from 'react-edit-text';
 import 'react-edit-text/dist/index.css';
 
-function AboutEdit() {
+function AboutEdit({aboutSection}) {
 
-    const [ aboutSection, setAboutSection ] = useState([]); 
+    // const [ aboutSection, setAboutSection ] = useState([]); 
 
-    const fetchAboutSection = async () => {
-        const url = 'http://localhost:4000/about/643ae5920f74ad63f71a205d';
-        const requestOptions = {
-            method: 'GET'
-        };
+    // const fetchAboutSection = async () => {
+    //     const url = 'http://localhost:4000/about/643ae5920f74ad63f71a205d';
+    //     const requestOptions = {
+    //         method: 'GET'
+    //     };
 
-        try {
-            const res = await fetch(url, requestOptions);
-            const data = await res.json();
-            //console.log(data); 
-            setAboutSection(data.about); 
-        } catch (err) {
-            console.error(err); 
-        }
-    }
+    //     try {
+    //         const res = await fetch(url, requestOptions);
+    //         const data = await res.json();
+    //         //console.log(data); 
+    //         setAboutSection(data.about); 
+    //     } catch (err) {
+    //         console.error(err); 
+    //     }
+    // }
 
-    useEffect(() => {
-        if(localStorage.getItem('token') !== null) {
-            fetchAboutSection();
-        }
-    }, [localStorage.getItem('token')]) 
+    // useEffect(() => {
+    //     if(localStorage.getItem('token') !== null) {
+    //         fetchAboutSection();
+    //     }
+    // }, [localStorage.getItem('token')]) 
 
     const aboutRef = useRef(); 
     const storyRef = useRef(); 
@@ -49,7 +49,7 @@ function AboutEdit() {
         const headers = new Headers({
             "Content-Type": "application/json"
         });
-      
+
         const requestOptions = {
             headers,
             body: bodyObj,
@@ -58,6 +58,7 @@ function AboutEdit() {
         try {
             const res = await fetch(url, requestOptions);
             const data = await res.json();
+            console.log(data); 
     
         } catch (err) {
             console.error(err); 
@@ -81,7 +82,7 @@ function AboutEdit() {
                 </CardBody>
             </Card>
         </CardGroup> */}
-        <Form onSubmit={handleSubmit} >
+        {/* <Form onSubmit={handleSubmit} >
             <FormGroup style={{width: "50vw"}}>
                 <Label for="exampleName">
                 About Description:           
@@ -120,8 +121,20 @@ function AboutEdit() {
                 innerRef={valueRef}
                 /> 
             </FormGroup>
-        </Form>
-        <Button>Edit</Button>
+        </Form> */}
+        {/* <EditText />  */}
+        {/* <Form onSubmit={handleSubmit}> */}
+        <Label>About Description</Label>
+        <EditTextarea defaultValue={aboutSection.about} /> 
+        <Label>My Story:</Label>
+        <EditTextarea defaultValue={aboutSection.story}  /> 
+        <Label>My Mission:</Label>
+        <EditTextarea defaultValue={aboutSection.mission}  /> 
+        <Label>My Values:</Label>
+        <EditText />
+        <EditTextarea defaultValue={aboutSection.value} /> 
+        {/* </Form> */}
+        <Button onSubmit={handleSubmit} type='submit' >Edit</Button>
     </>
   )
 }
