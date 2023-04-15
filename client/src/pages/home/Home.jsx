@@ -5,6 +5,7 @@ import aboutImage from "../../images/site_photo_6.jpg"
 import { useEffect } from "react"
 import { BsTelephone } from "react-icons/bs"
 import { AiOutlineMail } from "react-icons/ai"
+import { Link } from "react-router-dom"
 import AOS from "aos"
 
 function Home() {
@@ -37,7 +38,9 @@ function Home() {
               GreatInventore est quia officia, sunt odio minima harum rerum
               assumenda asperiores perspiciatis nobis id excepturi dolorem.
             </p>
-            <button className={styles.buttonStory}>Read My Story</button>
+            <Link to="./about">
+              <button className={styles.buttonStory}>Read My Story</button>
+            </Link>
           </div>
         </section>
       </div>
@@ -52,7 +55,9 @@ function Home() {
             Join the Newsletter to keep up to date with the latest greatest
             things!
           </p>
-          <button className={styles.button2}>Sign Up Here</button>
+          <Link to="./newsletter">
+            <button className={styles.button2}>Sign Up Here</button>
+          </Link>
         </div>
         <div data-aos="fade-up" className="box2">
           <BsTelephone size={40} />
@@ -61,7 +66,9 @@ function Home() {
           <p className={styles.helpDescription}>
             Schdeule a call and lets build a bright future!
           </p>
-          <button className={styles.button2}>Book A Call</button>
+          <Link to="./contact">
+            <button className={styles.button2}>Book A Call</button>
+          </Link>
         </div>
       </div>
 
