@@ -35,10 +35,9 @@ function App() {
                     <Route path="/" element={<Home />} />
                 </Routes>
             </Router>
-
             <Footer />
         </div>
     );
 }
 
-export default App;
+export default App

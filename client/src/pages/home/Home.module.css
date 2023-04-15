@@ -1,58 +1,282 @@
-*{
-    margin: 0;
-    /* border: 1px solid red; */
+* {
+  margin: 0;
+  padding: 0;
 }
-.container{
-    margin: 0;
-    padding: 0;
+
+.main {
+  padding: 0;
+  position: relative;
 }
+
 .mainPhoto {
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
-.aboutSectionIntro {
-    display: flex;
-    background: url('../../images/newImage1.jpeg');
-    background-position: center;
-    background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    margin: 0 1.7% 0 1.7%;
-    padding: 0;
-    color: #252d2d;
-}
-.aboutMeText {
-    display:flex;
-    color: #1a1f21;
-    justify-content: center;
-    margin-top: 50px;
-}
-#aboutMeTextDiv{
-    padding: 0px;
+.mainHeader {
+  position: absolute;
+  left: 500px;
+  color: #cddee5;
+  font-size: 40px;
+  top: 250px;
+  width: 60%;
+  text-align: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
-#carousel {
+.form {
+  text-align: center;
+  background-color: #cddee5;
+  padding: 35px;
+  background-image: url(../../images/design.jpg);
+  background-size: 100vw;
+}
+
+.form h1 {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: black;
+}
+
+.input {
+  font-size: 15px;
+  width: 50vw;
+}
+
+.button {
+  font-size: 15px;
+  width: 50vw;
+  border-radius: 50px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.button:hover {
+  background-color: #252d2d;
+  font-size: 15px;
+  width: 50vw;
+  border-radius: 50px;
+}
+
+.buttonStory {
+  border-radius: 30px;
+}
+
+/* ------ ABOUT ME CARD ------ */
+
+.boxIdea {
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 2rem 5rem;
+  overflow-y: hidden;
+  border: 1px solid rgb(125, 127, 129, 0.5);
+}
+
+.card h3 {
+  margin-bottom: 1rem;
+  overflow-y: hidden;
+}
+
+.card span {
+  margin-bottom: 2rem;
+  overflow-y: hidden;
+  color: #cddee5;
+}
+
+.card img {
+  margin-bottom: 20px;
+  margin-top: 25px;
+  height: 350px;
+  object-fit: cover;
+  overflow-y: hidden;
+}
+
+.card h3 {
+  color: #cddee5;
+  overflow-y: hidden;
+}
+
+.card p {
+  color: #cddee5;
+}
+
+.card > div {
+  padding: 1rem;
+  overflow-y: hidden;
+}
+
+/* ------ HOW I CAN HELP  ------ */
+
+.help {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #cddee5;
+  margin: 5%;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  padding-right: 15px;
+}
+
+.help p {
+  color: #cddee5;
+  margin: 0% 20%;
+}
+
+.help button {
+  border-radius: 50px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+h1 {
+  padding-top: 20px;
+  margin-left: 10%;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.form {
+  padding: 60px;
+  margin: 0 auto;
+}
+
+form input {
+  margin: 1px;
+}
+
+/* ------ MEDIA QUIRES ------ */
+
+@media screen and (max-width: 1200px) {
+  .mainHeader {
+    position: absolute;
+    left: 350px;
+    color: #cddee5;
+    font-size: 40px;
+    top: 200px;
+    width: 60%;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .mainHeader {
+    position: absolute;
+    left: 350px;
+    color: #cddee5;
+    font-size: 40px;
+    top: 150px;
+    width: 60%;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .mainHeader {
+    position: absolute;
+    left: 300px;
+    color: #cddee5;
+    font-size: 35px;
+    top: 150px;
+    width: 60%;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .mainHeader {
+    position: absolute;
+    left: 250px;
+    color: #cddee5;
+    font-size: 30px;
+    top: 80px;
+    width: 60%;
+    text-align: center;
+  }
+
+  @media screen and (max-width: 790px) {
+    .mainHeader {
+      position: absolute;
+      left: 250px;
+      color: #cddee5;
+      font-size: 30px;
+      top: 80px;
+      width: 60%;
+      text-align: center;
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    .mainHeader {
+      position: absolute;
+      left: 190px;
+      color: #cddee5;
+      font-size: 30px;
+      top: 80px;
+      width: 60%;
+      text-align: center;
+    }
+  }
+}
+
+/* MEDIA NEEDS WORK */
+
+@media screen and (max-width: 800px) {
+  * {
+    margin-left: 0px;
+    padding-left: 0px;
+  }
+
+  .header {
     width: 100vw;
-    height: 100vh;
-    background-size: cover;
-    margin: 0;
-    padding: 0;
+  }
+  .container {
+    width: 100vw;
     display: flex;
-}
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 
-.container-fluid{
-    width: 100%;
-}
-
-#opaqueLayer{
+  .card > div {
+    width: 100vw;
+  }
+  .card {
     display: flex;
-    background-color: #cddee5;
-    opacity: 40%;
+    flex-direction: column;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+  }
+  .card > img {
+    width: 450px;
+    height: 600px;
+  }
+
+  .card:nth-child(even) img {
+    order: 0;
+    overflow-y: hidden;
+    width: 100vw;
+  }
+
+  .description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+  }
+
+  .form {
+    width: 100vw;
+  }
+  .card p {
+    width: 100vw;
+    overflow-x: hidden;
+  }
 }

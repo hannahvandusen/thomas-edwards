@@ -11,7 +11,7 @@
   color: #cddee5 ;
   background-color:#252d2d; 
   border-bottom: 2px solid black;
-  opacity: .5;
+  /* opacity: .5; */
 }
 .link:hover {
   /* color: white; */
@@ -41,4 +41,18 @@
 
 .intake {
   color: #252d2d;
+}
+
+.button {
+  font-size: 15px;
+  width: 50vw;
+  border-radius: 50px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.button:hover {
+  background-color: #252d2d;
+  font-size: 15px;
+  width: 50vw;
+  border-radius: 50px;
 }
