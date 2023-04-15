@@ -17,12 +17,6 @@ function Admin() {
 
     const token = {sessionToken}
 
-    useEffect(() => {
-        if(localStorage.getItem('token')) {
-        setSessionToken(localStorage.getItem('token'));
-        }
-    }, [])
-
     // console.log(localStorage.getItem("token"))
 
     const style = {
@@ -30,6 +24,12 @@ function Admin() {
         margin: "1em",
     }
 
+    useEffect(() => {
+        if(localStorage.getItem('token')) {
+        setSessionToken(localStorage.getItem('token'));
+        }
+    }, [])
+    
     const displayForm = () => {
         return (
             localStorage.getItem('token') === null ?

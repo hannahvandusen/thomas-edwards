@@ -1,7 +1,10 @@
-import React, { useEffect, useState } from 'react'
-import { CardGroup, Card, CardBody, CardTitle, CardText, ListGroup, ListGroupItem } from 'reactstrap';
+import React, { useEffect, useRef, useState } from 'react'
+import { CardGroup, Card, CardBody, CardTitle, CardText, ListGroup, ListGroupItem, Button, Form, FormGroup, Input, Label } from 'reactstrap';
+import { useNavigate } from 'react-router-dom';
 
 function AboutEdit() {
+
+    const navigate = useNavigate(); 
 
     const [ aboutSection, setAboutSection ] = useState([]); 
 
@@ -27,23 +30,73 @@ function AboutEdit() {
         }
     }, [localStorage.getItem('token')]) 
 
-  return (
+    const aboutRef = useRef(); 
+    const storyRef = useRef(); 
+    const missionRef = useRef(); 
+    const valueRef = useRef(); 
+
+
+    const handleSubmit = async (e) => {
+        e.preventDefault(); 
+
+        const about = aboutRef.current.value;
+        const story = storyRef.current.value;
+        const mission = missionRef.current.value;
+        const value = valueRef.current.value;
+
+        const bodyObj = JSON.stringify({ about, story, mission, value })
+        const url = 'http://localhost:4000/about/edit'
+
+        const headers = new Headers({
+            "Content-Type": "application/json"
+        });
+
+        const requestOptions = {
+            headers,
+            body: bodyObj,
+            method: 'PATCH'
+        };
+        try {
+            const res = await fetch(url, requestOptions);
+            const data = await res.json();
+            console.log(data); 
+    
+        } catch (err) {
+            console.error(err); 
+        }
+    }
+
+    return (
     <>
-        <CardGroup>
-            <Card>
-                <CardBody>
-                    <CardTitle>
-                        About Section
-                    </CardTitle>
-                    <ListGroup>
-                        <ListGroupItem>About Description: {aboutSection.about} </ListGroupItem>
-                        <ListGroupItem> My Story: {aboutSection.story} </ListGroupItem>
-                        <ListGroupItem> My Mission: {aboutSection.mission} </ListGroupItem>
-                        <ListGroupItem> My Values: {aboutSection.value} </ListGroupItem>
-                    </ListGroup>
-                </CardBody>
-            </Card>
-        </CardGroup>
+        <Form onSubmit={handleSubmit}>
+            <Label>About Description</Label>
+            <Input type='textarea' defaultValue={aboutSection.about} innerRef={aboutRef}/> 
+            
+            {/* <EditTextarea defaultValue={aboutSection.about} />  */}
+            <Label>My Story:</Label>
+            <Input 
+            type='textarea' 
+            defaultValue={aboutSection.story} 
+            innerRef={storyRef}
+            style={{height: "30vh"}}
+            /> 
+            <Label>My Mission:</Label>
+            <Input 
+            type='textarea' 
+            defaultValue={aboutSection.mission} 
+            innerRef={missionRef}
+            style={{height: "20vh"}}
+            /> 
+            <Label>My Values:</Label>
+            <Input 
+            type='textarea' 
+            defaultValue={aboutSection.value} 
+            innerRef={valueRef}
+            style={{height: "20vh"}}
+            /> 
+            <Button type='submit' outline color='primary' >Edit</Button>
+        </Form>
+        <Button onClick={() => navigate('/admin')} outline color='primary'>Admin Portal</Button>
     </>
   )
 }
