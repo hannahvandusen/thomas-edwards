@@ -19,7 +19,9 @@ const AboutMe = () => {
         <h1>
           <span>About</span>Thomas
         </h1>
-        <p>My gift is to Inspire others, and make dreams come true</p>
+        <p className={styles.p}>
+          My gift is to Inspire others, and make dreams come true
+        </p>
         <main></main>
       </header>
 

@@ -46,20 +46,22 @@ function Home() {
 
       <div className={styles.help}>
         <div data-aos="fade-up" className="box1">
-          <AiOutlineMail size={70} />
+          <AiOutlineMail size={45} />
           <span>My Free Newsletter;</span>
-          <p>
+          <p className={styles.helpDescription}>
             Join the Newsletter to keep up to date with the latest greatest
             things!
           </p>
-          <button>Sign Up Here</button>
+          <button className={styles.button2}>Sign Up Here</button>
         </div>
         <div data-aos="fade-up" className="box2">
-          <BsTelephone size={60} />
+          <BsTelephone size={40} />
 
           <span>1:1 Coaching</span>
-          <p>Schdeule a call and lets build a bright future!</p>
-          <button>Book A Call</button>
+          <p className={styles.helpDescription}>
+            Schdeule a call and lets build a bright future!
+          </p>
+          <button className={styles.button2}>Book A Call</button>
         </div>
       </div>
 
