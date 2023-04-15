@@ -2,32 +2,35 @@ import React, { useEffect, useRef, useState } from 'react'
 import { CardGroup, Card, CardBody, CardTitle, CardText, ListGroup, ListGroupItem, Button, Form, FormGroup, Input, Label } from 'reactstrap';
 import { EditText, EditTextarea } from 'react-edit-text';
 import 'react-edit-text/dist/index.css';
+import { useNavigate } from 'react-router-dom';
 
-function AboutEdit({aboutSection}) {
+function AboutEdit() {
 
-    // const [ aboutSection, setAboutSection ] = useState([]); 
+    const navigate = useNavigate(); 
 
-    // const fetchAboutSection = async () => {
-    //     const url = 'http://localhost:4000/about/643ae5920f74ad63f71a205d';
-    //     const requestOptions = {
-    //         method: 'GET'
-    //     };
+    const [ aboutSection, setAboutSection ] = useState([]); 
 
-    //     try {
-    //         const res = await fetch(url, requestOptions);
-    //         const data = await res.json();
-    //         //console.log(data); 
-    //         setAboutSection(data.about); 
-    //     } catch (err) {
-    //         console.error(err); 
-    //     }
-    // }
+    const fetchAboutSection = async () => {
+        const url = 'http://localhost:4000/about/643ae5920f74ad63f71a205d';
+        const requestOptions = {
+            method: 'GET'
+        };
 
-    // useEffect(() => {
-    //     if(localStorage.getItem('token') !== null) {
-    //         fetchAboutSection();
-    //     }
-    // }, [localStorage.getItem('token')]) 
+        try {
+            const res = await fetch(url, requestOptions);
+            const data = await res.json();
+            //console.log(data); 
+            setAboutSection(data.about); 
+        } catch (err) {
+            console.error(err); 
+        }
+    }
+
+    useEffect(() => {
+        if(localStorage.getItem('token') !== null) {
+            fetchAboutSection();
+        }
+    }, [localStorage.getItem('token')]) 
 
     const aboutRef = useRef(); 
     const storyRef = useRef(); 
@@ -67,74 +70,35 @@ function AboutEdit({aboutSection}) {
 
     return (
     <>
-        {/* <CardGroup>
-            <Card>
-                <CardBody>
-                    <CardTitle>
-                        About Section
-                    </CardTitle>
-                    <ListGroup>
-                        <ListGroupItem>About Description: {aboutSection.about} </ListGroupItem>
-                        <ListGroupItem> My Story: {aboutSection.story} </ListGroupItem>
-                        <ListGroupItem> My Mission: {aboutSection.mission} </ListGroupItem>
-                        <ListGroupItem> My Values: {aboutSection.value} </ListGroupItem>
-                    </ListGroup>
-                </CardBody>
-            </Card>
-        </CardGroup> */}
-        {/* <Form onSubmit={handleSubmit} >
-            <FormGroup style={{width: "50vw"}}>
-                <Label for="exampleName">
-                About Description:           
-                </Label>
-                <Input 
-                placeholder={aboutSection.about}
-                type='textarea'
-                style={{height: "inherit", width: "inherit"}}
-                innerRef={aboutRef}
-                /> 
-                <Label for="exampleName">
-                My Story:           
-                </Label>
-                <Input 
-                placeholder={aboutSection.story}
-                type='textarea'
-                innerRef={storyRef}
-                style={{height: "15em"}}
-                /> 
-                <Label for="exampleName">
-                My Mission:           
-                </Label>
-                <Input 
-                placeholder={aboutSection.mission}
-                type='textarea'
-                style={{height: "5em"}}
-                innerRef={missionRef}
-                /> 
-                <Label for="exampleName">
-                My Values:           
-                </Label>
-                <Input 
-                placeholder={aboutSection.value}
-                type='textarea'
-                style={{height: "15vh"}}
-                innerRef={valueRef}
-                /> 
-            </FormGroup>
-        </Form> */}
-        {/* <EditText />  */}
-        {/* <Form onSubmit={handleSubmit}> */}
-        <Label>About Description</Label>
-        <EditTextarea defaultValue={aboutSection.about} /> 
-        <Label>My Story:</Label>
-        <EditTextarea defaultValue={aboutSection.story}  /> 
-        <Label>My Mission:</Label>
-        <EditTextarea defaultValue={aboutSection.mission}  /> 
-        <Label>My Values:</Label>
-        <EditText />
-        <EditTextarea defaultValue={aboutSection.value} /> 
-        {/* </Form> */}
-        <Button onSubmit={handleSubmit} type='submit' >Edit</Button>
+        <Form onSubmit={handleSubmit}>
+            <Label>About Description</Label>
+            <Input type='textarea' defaultValue={aboutSection.about} innerRef={aboutRef}/> 
+            
+            {/* <EditTextarea defaultValue={aboutSection.about} />  */}
+            <Label>My Story:</Label>
+            <Input 
+            type='textarea' 
+            defaultValue={aboutSection.story} 
+            innerRef={storyRef}
+            style={{height: "30vh"}}
+            /> 
+            <Label>My Mission:</Label>
+            <Input 
+            type='textarea' 
+            defaultValue={aboutSection.mission} 
+            innerRef={missionRef}
+            style={{height: "20vh"}}
+            /> 
+            <Label>My Values:</Label>
+            <Input 
+            type='textarea' 
+            defaultValue={aboutSection.value} 
+            innerRef={valueRef}
+            style={{height: "20vh"}}
+            /> 
+            <Button type='submit' outline color='primary' >Edit</Button>
+        </Form>
+        <Button onClick={() => navigate('/admin')} outline color='primary'>Admin Portal</Button>
     </>
   )
 }

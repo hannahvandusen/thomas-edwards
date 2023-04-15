@@ -17,25 +17,6 @@ function Admin() {
 
     const token = {sessionToken}
 
-    const [ aboutSection, setAboutSection ] = useState([]); 
-
-    const fetchAboutSection = async () => {
-        const url = 'http://localhost:4000/about/643ae5920f74ad63f71a205d';
-        const requestOptions = {
-            method: 'GET'
-        };
-
-        try {
-            const res = await fetch(url, requestOptions);
-            const data = await res.json();
-            //console.log(data); 
-            setAboutSection(data.about); 
-        } catch (err) {
-            console.error(err); 
-        }
-    }
-
-
     // console.log(localStorage.getItem("token"))
 
     const style = {
@@ -46,7 +27,6 @@ function Admin() {
     useEffect(() => {
         if(localStorage.getItem('token')) {
         setSessionToken(localStorage.getItem('token'));
-        fetchAboutSection(); 
         }
     }, [])
     
@@ -86,7 +66,6 @@ function Admin() {
                         style={style} 
                         outline
                         href="/about/edit"
-                        aboutSection={aboutSection}
                         >Edit About</Button>
                     </Col>
                     <Logout setToken={setSessionToken}/> 
