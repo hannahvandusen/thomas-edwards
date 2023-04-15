@@ -25,7 +25,7 @@ function App() {
                 <Routes>
                     <Route path="/testimonials" element={<Testimonials />} />
                     <Route path="/testimonialsindex" element={<TestimonialsIndex />} />
-                    <Route path="/testimonialsindex/update:id" element={<TestimonialsEdit />} />
+                    <Route path="/testimonialsindex/update/:id" element={<TestimonialsEdit />} />
                     <Route path="/intake/:id" element={<PortalView />} /> 
                     <Route path="/store" element={<StoreIndex />} />
                     <Route path="/about" element={<AboutMe />} />

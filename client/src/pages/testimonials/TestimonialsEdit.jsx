@@ -11,7 +11,7 @@ function TestimonialsEdit(props) {
     const [association, setAssociation] = useState('');
     const [quote, setQuote] = useState('');
 
-    const url = `http://localhost:4000/testimonialsindex/${id}`;
+    const url = `http://localhost:4000/testimonialsindex/update/${id}`;
 
     const fetchTestimonials = async () => {
         
@@ -78,17 +78,17 @@ function TestimonialsEdit(props) {
 
     return (
         <>
-            <h1 style={{
+            <h1 style={{color: "#cddee5",
                 textAlign: "center", textDecoration: "underline"
             }}>Edit Testimonial</h1>
             <Container>
                 <Row>
                     <Col md="4">
-                        <p><b>Testimonial</b>: <br/>{firstName} {lastName}, Thomas's {association}, said {quote}. <br/> What should be edited?</p>
+                        <p style={{color: "#cddee5"}}><b style={{color: "#cddee5"}}>Testimonial</b>: <br/>{firstName} {lastName}, Thomas's {association}, said {quote}. <br/> What should be edited?</p>
                             <Button
                                 color='info'
                                 outline
-                                onClick={() => navigate('/testimonials')}
+                                onClick={() => navigate('/testimonialsindex')}
                             >Back to Table</Button>
                     </Col>
                     <Col md="8">
