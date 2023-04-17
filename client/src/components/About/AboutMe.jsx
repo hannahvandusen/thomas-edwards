@@ -47,7 +47,8 @@ const AboutMe = () => {
         <h1>
           <span>About</span>Thomas
         </h1>
-        <p> {about} </p>
+        <p className={styles.p}>
+          {about} </p>
         <main></main>
         
       </header>

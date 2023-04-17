@@ -1,17 +1,23 @@
 .App {
   text-align: center;
-  background-color:#252d2d; 
+  background-color:#110e08; 
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.nav{
+  --bs-nav-link-color: #ffcd51;
+  background-color: #252d2d;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #d2d5d1;
 }
 
 .navigation {
   height: 8vh;
   /* text-align: center; */
-  color: #cddee5 ;
-  background-color:#252d2d; 
+  color: #c2cdc0;
+  background-color:#110e08; 
   border-bottom: 2px solid black;
-  /* opacity: .5; */
+  opacity: .8;
 }
 .link:hover {
   /* color: white; */
@@ -24,11 +30,11 @@
 }
 
 .navbarbrand {
-  color:#17bcde;
+  color:#ffcd51;
 }
 
 .footer {
-  border-top:2px solid #cddee5;
+  border-top: 2px solid #cddee5;
   position: relative;
   width: 100%;
   bottom: 0;
@@ -43,6 +49,76 @@
   color: #252d2d;
 }
 
+.hamburger {
+  display: none;
+}
+
+.media {
+  display: none;
+}
+
+/*-----NAVBAR MEDIA QUIERES-----*/
+
+@media screen and (max-width: 650px) {
+  .navbarbrand {
+    display: block;
+  }
+  .sticky-top {
+    display: none;
+  }
+
+  .media {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    text-align: center;
+    padding: 10px 0px;
+  }
+
+  /* The dropdown container */
+  .dropDown {
+    margin: 10px 0px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Dropdown button */
+  .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    background-color: inherit;
+    font-family: inherit;
+  }
+
+  .dropdown-content {
+    background-color: #cbc9c9;
+    margin-top: 15px;
+    background-color: #252d2d;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 20px 0px;
+    text-decoration: none;
+    text-align: left;
+    width: 100vw;
+    text-align: center;
+    font-size: larger;
+    color: white;
+  }
+  .dropdown-content a:hover {
+    background-color: #8f9698;
+    color: #252d2d;
+  }
+ }
 .button {
   font-size: 15px;
   width: 50vw;
