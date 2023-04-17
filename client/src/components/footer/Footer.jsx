@@ -8,11 +8,11 @@ function Footer() {
     const currentYear = new Date().getFullYear();
 
     return(
-        <footer className="footer">Copyright innerfamous.com &copy; {currentYear}
+       <footer className="footer" style={{color: "#c2cdc0"}}>innerfamous.com &copy; {currentYear}
 
-        <p> <a href="https://twitter.com/innerfamousone" className="twitter-social" style={{color: " #17bcde"}}> <FontAwesomeIcon icon={faTwitter} size="2x" /></a> </p>
-        <p> <a href="https://www.instagram.com/innerfamous/" className="instagram-social" style={{color: " #17bcde"}}> <FontAwesomeIcon icon={faInstagram} size="2x" /></a> </p>
-        <p> <a href="https://www.facebook.com/profile.php?id=100088780985542" className="facebook-social" style={{color: " #17bcde"}}> <FontAwesomeIcon icon={faFacebook} size="2x" /></a> </p>
+        <p> <a href="https://twitter.com/innerfamousone" className="twitter-social" style={{color: "#c2cdc0"}}> <FontAwesomeIcon icon={faTwitter} size="1x" /></a>
+        <a href="https://www.instagram.com/innerfamous/" className="instagram-social" style={{color: "#c2cdc0"}}> <FontAwesomeIcon icon={faInstagram} size="1x" /></a>
+        <a href="https://www.facebook.com/profile.php?id=100088780985542" className="facebook-social" style={{color: "#c2cdc0"}}> <FontAwesomeIcon icon={faFacebook} size="1x" /></a> </p>
         <a href="/admin/" style={{fontSize: "small"}} className="link">Admin</a>
         </footer>
     )
