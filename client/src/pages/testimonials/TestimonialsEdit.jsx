@@ -81,7 +81,7 @@ function TestimonialsEdit(props) {
             <Container>
                 <Row>
                     <Col md="4">
-                        <p style={{color: "#cddee5"}}><b style={{color: "#cddee5"}}>Testimonial</b>: <br/>{firstName} {lastName}, Thomas's {association}, said {quote}. <br/> What should be edited?</p>
+                        <p style={{color: "#cddee5"}}><b style={{color: "#cddee5"}}>Current Testimonial</b>: <br/>{firstName} {lastName}, Thomas's {association}, said: {quote}. <br/> What should be edited?</p>
                             <Button
                                 color='info'
                                 outline
