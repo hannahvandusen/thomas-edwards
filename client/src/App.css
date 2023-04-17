@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-color:#110e08; 
+  background-color:#16181e; 
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -15,7 +15,7 @@
   height: 8vh;
   /* text-align: center; */
   color: #c2cdc0;
-  background-color:#110e08; 
+  background-color:#16181e; 
   border-bottom: 2px solid black;
   opacity: .8;
 }
