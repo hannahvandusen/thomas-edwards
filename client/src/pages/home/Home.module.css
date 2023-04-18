@@ -300,8 +300,9 @@ svg {
     justify-content: center;
   }
   .card > img {
-    width: 450px;
-    height: 600px;
+    width: 500px;
+    height: 630px;
+    padding: 7px;
   }
 
   .card:nth-child(even) img {
