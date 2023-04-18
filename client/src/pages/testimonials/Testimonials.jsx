@@ -1,10 +1,13 @@
 import { React, useEffect, useState } from "react";
-import {  Button, Card, CardImg, CardGroup, CardTitle, CardText, CardBody, CardSubtitle, CardHeader, Row, Col } from "reactstrap";
+// import {  Button, Card, CardImg, CardGroup, CardTitle, CardText, CardBody, CardSubtitle, Row, Col } from "reactstrap";
 import { useNavigate } from 'react-router-dom';
+import styles from "./Testimonials.module.css"
+import AOS from "aos";
 
 function Testimonials() {
 
   const navigate = useNavigate();
+  
   const [ testimonials, setTestimonials ] = useState([]);
 
   const fetchTestimonials = async () => {
@@ -26,31 +29,61 @@ function Testimonials() {
   };
 
   useEffect(() => {
+    AOS.init()
     fetchTestimonials();
   }, [])
 
+  // useEffect(() => {
+  //   AOS.init()
+  //   fetchTestimonials(); 
+  // }, [])
+
   return (
-
 	<>
+    <header className={styles.mainHeader}>
+        <h1>
+          <span>What People Say About</span>Working With Thomas
+        </h1>
+        <p className={styles.p}> </p>
+        {/* <main></main> */}
+      </header>
 
-    <div>
-    <h1 style={{color: "#c59045"}}>What People Are Saying About Thomas</h1>
-        
-    {/* <CardGroup> */}
-  <Row style={{justifyContent: "space-evenly", padding: "1em"}}>
+      {testimonials.map(testimonial => (
+
+      <div className={styles.container}>
+
+        <section className={styles.card}>
+          <img className={styles.image} data-aos="fade-up"
+           data-aos-anchor-placement="top-bottom"
+           data-aos-easing="ease-in-sine"
+           data-aos-duration="1000" src="./images/photo2.jpg" alt="Thomas Photo" />
+            <div className={styles.association}>
+              <h3 data-aos="zoom-in-right">As a {testimonial.association}</h3>
+                <p data-aos="fade-up">{testimonial.quote}</p>
+                  <p> - {testimonial.firstName} {testimonial.lastName}</p>
+            </div>
+        </section>
+
+      </div>
+      ))};
+    {/* <header overflow-y= "hidden" justify-content="center" margin-bottom="10px">
+    <h1 overflow-y= "hidden" style={{color: "#c2cdc0"}}>What People Are Saying About Thomas</h1>  
+    </header>
+    
     {testimonials.map(testimonial => ( 
-      <Col sm="9">
-      <Card className="my-2" 
+    <Card className="my-2" color="#ffcd51"
       outline
       key={testimonial._id}
-      style={{backgroundColor: "#a65b24", color: "#16181e"}}
-      >
-  
-        <CardHeader style={{fontSize: "x-large"}}>
-            {testimonial.caption}
-        </CardHeader>
+      style={{
+        width: '18rem'
+      }}>
+
         <CardBody>
           <CardImg
+           data-aos="fade-up"
+           data-aos-anchor-placement="top-bottom"
+           data-aos-easing="ease-in-sine"
+           data-aos-duration="1000"
           alt="Thomas photo 2"
           src="./images/photo2.jpg"
           top
@@ -60,22 +93,19 @@ function Testimonials() {
         {testimonial.name}
         </CardTitle>
         <CardSubtitle
+          className="mb-2 text-muted"
           tag="h6"
-          style={{color: "#16181e"}}
         >
-          {testimonial.association}
+          Thomas {testimonial.association}
         </CardSubtitle>
-        <CardText style={{color: "#16181e"}}>
+        <CardText data-aos="fade-right">
         {testimonial.quote}
         </CardText>
         </CardBody>
     </Card>
-    </Col>
-    ))}
-  
-  </Row>
-</div>
-</>
+    
+    ))} */}
+      </>
 );
 };
 
