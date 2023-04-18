@@ -36,7 +36,6 @@ function Testimonials() {
     <div>
     <h1 style={{color: "#c59045"}}>What People Are Saying About Thomas</h1>
         
-    {/* <CardGroup> */}
   <Row style={{justifyContent: "space-evenly", padding: "1em"}}>
     {testimonials.map(testimonial => ( 
       <Col sm="9">

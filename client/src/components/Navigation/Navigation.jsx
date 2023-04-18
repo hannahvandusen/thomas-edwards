@@ -14,6 +14,7 @@ import {
   DropdownItem,
 } from "reactstrap"
 
+
 function Navigation(args) {
   let style = {
     width: "100%",
@@ -33,6 +34,7 @@ function Navigation(args) {
       <a href="/testimonials">Testimonials</a>
       <a href="/newsletter">Newsletter</a>
       <a href="/about">About</a>
+      <a href="/intake">Contact</a>
     </div>
   ) : null
 
@@ -67,7 +69,7 @@ function Navigation(args) {
             <DropdownToggle nav caret className="link">
               About
             </DropdownToggle>
-            <DropdownMenu end dark>
+            <DropdownMenu end dark >
               <DropdownItem href="/about" className="link">
                 About Thomas
               </DropdownItem>
@@ -91,7 +93,7 @@ function Navigation(args) {
 
         <div className="dropDown">
           <i onClick={handleClick} className="dropbtn">
-            <GiHamburgerMenu size={30} />
+            <GiHamburgerMenu size={30} style={{backgroundColor: "white"}} />
           </i>
           <div>{toggle}</div>
         </div>
