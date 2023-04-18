@@ -3,9 +3,9 @@ import { Button, Form, FormGroup, Input, Label } from 'reactstrap';
 
 function TestimonialsCreate(props) {
 
-    const formRef = useRef();
-    const firstNameRef = useRef();
-    const lastNameRef = useRef();
+    // const formRef = useRef("");
+    const captionRef = useRef();
+    const nameRef = useRef();
     const associationRef = useRef();
     const quoteRef = useRef();
 
@@ -16,8 +16,8 @@ function TestimonialsCreate(props) {
     //console.log(url);
 
     const bodyObj = JSON.stringify({
-        firstName: firstNameRef.current.value,
-        lastName: lastNameRef.current.value,
+        caption: captionRef.current.value,
+        name: nameRef.current.value,
         association: associationRef.current.value,
         quote: quoteRef.current.value,
     });
@@ -41,7 +41,7 @@ function TestimonialsCreate(props) {
 
             // console.log(data.newTestimonials);
 
-            formRef.current.reset(); 
+            // formRef.current.reset(); 
             props.fetchTestimonials();
 
         } catch (err) {
@@ -56,15 +56,15 @@ function TestimonialsCreate(props) {
                 // innerRef={formRef}
                 onSubmit={handleSubmit}>
                 <FormGroup>
-                    <Label style={{color: "#cddee5"}}>First Name</Label>
+                    <Label style={{color: "#cddee5"}}>Caption</Label>
                     <Input 
-                        innerRef={firstNameRef}
+                        innerRef={captionRef}
                         autoComplete='off' />
                 </FormGroup>
                 <FormGroup>
-                    <Label style={{color: "#cddee5"}}>Last Name</Label>
+                    <Label style={{color: "#cddee5"}}>Name</Label>
                     <Input 
-                        innerRef={lastNameRef}
+                        innerRef={nameRef}
                         autoComplete='off' />
                 </FormGroup>
                 <FormGroup>

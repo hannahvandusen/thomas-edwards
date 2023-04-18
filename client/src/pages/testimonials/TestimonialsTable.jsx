@@ -40,10 +40,10 @@ function TestimonialsTable(props) {
             <thead>
                 <tr>
                     <th style={{color: "#cddee5"}}>
-                        First Name
+                        Caption
                     </th>
                     <th style={{color: "#cddee5"}}>
-                        Last Name
+                        Name
                     </th>
                     <th style={{color: "#cddee5"}}>
                         Association
@@ -58,10 +58,10 @@ function TestimonialsTable(props) {
                 props.testimonials.map(testimonials => (
                 <tr key={testimonials._id}>
                     <th style={{color: "#cddee5"}} scope="row">
-                        {testimonials.firstName}
+                        {testimonials.caption}
                     </th>
                     <td style={{color: "#cddee5"}}>
-                        {testimonials.lastName}
+                        {testimonials.name}
                     </td>
                     <td style={{color: "#cddee5"}}>
                         {testimonials.association}

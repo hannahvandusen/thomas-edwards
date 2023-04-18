@@ -37,6 +37,7 @@ function Login({ updateToken }) {
             if(data.admin) {
                 console.log(data);
                 localStorage.setItem("token", `${data.token}`);
+                localStorage.setItem("subscriber", `${data.token}`)
                 window.location.reload(false); 
                 
             } else {

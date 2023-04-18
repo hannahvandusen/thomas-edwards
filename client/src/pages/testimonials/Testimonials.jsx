@@ -34,20 +34,20 @@ function Testimonials() {
 	<>
 
     <div>
-    <h1 style={{color: "#cddee5"}}>What People Are Saying About Thomas</h1>
+    <h1 style={{color: "#c59045"}}>What People Are Saying About Thomas</h1>
         
-    <CardGroup>
-    
+    {/* <CardGroup> */}
+  <Row style={{justifyContent: "space-evenly", padding: "1em"}}>
     {testimonials.map(testimonial => ( 
-      <Card className="my-2" color="primary"
+      <Col sm="9">
+      <Card className="my-2" 
       outline
       key={testimonial._id}
-      style={{
-        width: '18rem'
-      }}>
+      style={{backgroundColor: "#a65b24", color: "#16181e"}}
+      >
   
-        <CardHeader>
-            Caption
+        <CardHeader style={{fontSize: "x-large"}}>
+            {testimonial.caption}
         </CardHeader>
         <CardBody>
           <CardImg
@@ -57,23 +57,23 @@ function Testimonials() {
           width="100%"
           />
         <CardTitle tag="h5">
-        {testimonial.firstName} {testimonial.lastName}
+        {testimonial.name}
         </CardTitle>
         <CardSubtitle
-          className="mb-2 text-muted"
           tag="h6"
+          style={{color: "#16181e"}}
         >
-          Thomas {testimonial.association}
+          {testimonial.association}
         </CardSubtitle>
-        <CardText>
+        <CardText style={{color: "#16181e"}}>
         {testimonial.quote}
         </CardText>
         </CardBody>
     </Card>
+    </Col>
     ))}
   
-      </CardGroup>
-
+  </Row>
 </div>
 </>
 );

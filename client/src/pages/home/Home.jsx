@@ -121,7 +121,7 @@ function Home() {
             {/* <form className={styles.form}> */}
                 {/* <label > */}
                 <div>
-                    <h1 className="titles">Lets Connect</h1>
+                    <h1 className="titles">Let's Connect</h1>
                     <Form onSubmit={handleSubmit}>
                         <FormGroup>
                             <Input placeholder="Email" innerRef={emailRef} />

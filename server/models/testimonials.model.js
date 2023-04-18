@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 
 const Testimonials = new mongoose.Schema({
-    firstName: {
+    caption: {
         type: String,
         required: true,
     },
-    lastName: {
+    name: {
         type: String,
         required: true,
     },
