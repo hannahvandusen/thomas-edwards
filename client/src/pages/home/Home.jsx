@@ -4,9 +4,11 @@ import mainPhoto from "../../images/mainPhoto.png"
 import aboutImage from "../../images/site_photo_6.jpg"
 import { BsTelephone } from "react-icons/bs"
 import { AiOutlineMail } from "react-icons/ai"
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom"
 import AOS from "aos"
 import { FormGroup, Form, Input, Button } from "reactstrap"
+
+import newImage from "../../images/site_photo_2.jpg"
 
 function Home() {
 
@@ -72,14 +74,17 @@ function Home() {
         fetchAbout(); 
     }, [])
 
-    return (
-        <>
-            <main className={styles.main}>
-                <img className={styles.mainPhoto} src={mainPhoto} alt="mainPhoto" />
+  //Header Ideas
+  //Create A Plan, Change Careers, Transform Your Life!
+  return (
+    <>
+      <main className={styles.main}>
+        <img className={styles.mainPhoto} src={newImage} alt="mainPhoto" />
 
-                <h3 className={styles.mainHeader}>
-                    Create A Plan, Change Careers, Transform Your Life!
-                </h3>
+        {/* <h3 className={styles.mainHeader}>
+          Lets Create a Bright Future Together!
+        </h3> */}
+      
             </main>
             <div className={styles.container}>
                 <section className={styles.card}>
@@ -147,6 +152,6 @@ function Home() {
             {/* </form> */}
         </>
     )
-}
+]}
 
 export default Home

@@ -3,7 +3,7 @@
   padding: 0;
 }
 
-.paragraph{
+.paragraph {
   padding: 10%;
   font-size: medium;
 }
@@ -14,29 +14,36 @@
 }
 
 .mainPhoto {
+  /* width: 100%; */
+  /* height: auto; */
+  height: 60vh;
   width: 100%;
-  height: auto;
+  padding: 2%;
+
   object-fit: cover;
 }
 
 .mainHeader {
   position: absolute;
   left: 500px;
-  color: #ffcd51;
+  color: #c2cdc0;
   /* font-size: 30rem; */
   top: 250px;
   width: 60%;
   text-align: center;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 50px;
 }
 
 .form {
   text-align: center;
-  background-color: #ffcd51;
   padding: 35px;
-  background-image: url(../../images/design.jpg);
+  /* opacity: 0.9; */
+  background-image: url(../../images/stockPhoto.jpg);
+  /* background-image: url(../../images/design.jpg); */
   background-size: 100vw;
+  /* filter: sepia(0.1); */
 }
 
 .form h1 {
@@ -48,6 +55,12 @@
 .input {
   font-size: 15px;
   width: 50vw;
+  border: 0.1px solid #989796;
+  /* opacity: 0.5; */
+}
+
+.button1:hover {
+  background-color: #ffcd51;
 }
 
 .button {
@@ -56,9 +69,10 @@
   border-radius: 50px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  /* opacity: 0.5; */
 }
 .button:hover {
-  background-color: #252d2d;
+  background-color: #ffcd51;
   font-size: 15px;
   width: 50vw;
   border-radius: 50px;
@@ -66,6 +80,10 @@
 
 .buttonStory {
   border-radius: 30px;
+}
+
+.buttonStory:hover {
+  background-color: #ffcd51;
 }
 
 /* ------ ABOUT ME CARD ------ */
@@ -81,7 +99,7 @@
   padding: 2rem 5rem;
   overflow-y: hidden;
   overflow-x: hidden;
-  border: 1px solid rgb(125, 127, 129, 0.5);
+  /* border: 1px solid rgb(125, 127, 129, 0.5); */
 }
 
 .card h3 {
@@ -109,12 +127,25 @@
 }
 
 .card p {
-  color: #cddee5;
+  /* color: #cddee5; */
+  color: #c8cbd0;
 }
 
 .card > div {
   padding: 1rem;
   overflow-y: hidden;
+}
+
+.titles {
+  color: #cddee5;
+}
+
+.span1 {
+  color: #ffcd51;
+}
+
+.aboutThomas {
+  color: #ffcd51;
 }
 
 /* ------ HOW I CAN HELP  ------ */
@@ -156,14 +187,15 @@ form input {
   margin: 1px;
 }
 
-svg{
-    padding: 20px;
+svg {
+  padding: 20px;
 }
 
-.titles{
+.titles {
   display: flex;
   justify-content: center;
 }
+
 /* ------ MEDIA QUIRES ------ */
 
 @media screen and (max-width: 1200px) {
@@ -268,8 +300,9 @@ svg{
     justify-content: center;
   }
   .card > img {
-    width: 450px;
-    height: 600px;
+    width: 500px;
+    height: 630px;
+    padding: 7px;
   }
 
   .card:nth-child(even) img {
