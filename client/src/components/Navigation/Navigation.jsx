@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { GiHamburgerMenu } from "react-icons/gi"
+import { FiMenu } from "react-icons/fi"
 import {
   Collapse,
   Navbar,
@@ -13,6 +14,8 @@ import {
   DropdownMenu,
   DropdownItem,
 } from "reactstrap"
+
+import Hamburger from "hamburger-react"
 
 function Navigation(args) {
   let style = {
@@ -29,10 +32,10 @@ function Navigation(args) {
 
   let toggle = btnState ? (
     <div className="dropdown-content">
-      <a href="/">Home</a>
-      <a href="/testimonials">Testimonials</a>
-      <a href="/newsletter">Newsletter</a>
-      <a href="/about">About</a>
+      <NavLink to="/">Home</NavLink>
+      <NavLink href="/testimonials">Testimonials</NavLink>
+      <NavLink href="/newsletter">Newsletter</NavLink>
+      <NavLink href="/about">About</NavLink>
     </div>
   ) : null
 
@@ -52,22 +55,33 @@ function Navigation(args) {
           </i>
 
           <NavItem className="link">
-            <NavLink href="/">Home</NavLink>
+            <NavLink style={{ color: "white" }} href="/">
+              Home
+            </NavLink>
           </NavItem>
           {/* <NavItem>
                             <NavLink href="/store">Store</NavLink>
                         </NavItem> */}
           <NavItem className="link">
-            <NavLink href="/testimonials">Testimonials</NavLink>
+            <NavLink style={{ color: "white" }} href="/testimonials">
+              Testimonials
+            </NavLink>
           </NavItem>
-          <NavItem className="link">
-            <NavLink href="/newsletter">Newsletter</NavLink>
+          <NavItem style={{ color: "white" }} className="link">
+            <NavLink style={{ color: "white" }} href="/newsletter">
+              Newsletter
+            </NavLink>
           </NavItem>
           <UncontrolledDropdown className="link" nav inNavbar>
-            <DropdownToggle nav caret className="link">
+            <DropdownToggle
+              style={{ color: "white" }}
+              nav
+              caret
+              className="link"
+            >
               About
             </DropdownToggle>
-            <DropdownMenu end dark>
+            <DropdownMenu style={{ backgroundColor: "#16181e" }} end dark>
               <DropdownItem href="/about" className="link">
                 About Thomas
               </DropdownItem>
@@ -91,7 +105,7 @@ function Navigation(args) {
 
         <div className="dropDown">
           <i onClick={handleClick} className="dropbtn">
-            <GiHamburgerMenu size={30} />
+            <Hamburger />
           </i>
           <div>{toggle}</div>
         </div>

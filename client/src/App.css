@@ -1,36 +1,37 @@
 .App {
   text-align: center;
-  background-color:#110e08; 
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* background-color: #110e08; */
+  background-color: #16181e;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.nav{
-  --bs-nav-link-color: #ffcd51;
-  background-color: #252d2d;
+.sticky-top {
+  text-align: center;
+  height: 8vh;
+}
+
+.nav {
+  background-color: #16181e;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #d2d5d1;
 }
 
 .navigation {
-  height: 8vh;
-  /* text-align: center; */
-  color: #c2cdc0;
-  background-color:#110e08; 
-  border-bottom: 2px solid black;
-  opacity: .8;
-}
-.link:hover {
-  /* color: white; */
-  background-color: rgba(255, 255, 255, 0.07);
+  color: #ffcd51;
+  background-color: #16181e;
+  text-align: center;
+  margin: 0 20px;
+  padding: 0 10px;
 }
 
-.link:focus {
-  /* color: #cddee5; */
-  background-color: rgba(255, 255, 255, 0.07);
+.link:hover {
+  background-color: #ffcd51;
+  border-radius: 7px;
 }
 
 .navbarbrand {
-  color:#ffcd51;
+  margin: 0 3px;
+  text-align: center;
 }
 
 .footer {
@@ -72,7 +73,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-
+    color: #ffcd51;
     text-align: center;
     padding: 10px 0px;
   }
@@ -82,6 +83,7 @@
     margin: 10px 0px;
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
 
   /* Dropdown button */
@@ -90,17 +92,19 @@
     border: none;
     outline: none;
     color: white;
-    background-color: inherit;
-    font-family: inherit;
+
+    /* background-color: inherit;
+    font-family: inherit; */
   }
 
   .dropdown-content {
-    background-color: #cbc9c9;
+    background-color: #16181e;
     margin-top: 15px;
-    background-color: #252d2d;
+
     display: flex;
     justify-content: center;
     flex-direction: column;
+    color: "#c2cdc0";
   }
 
   /* Links inside the dropdown */
@@ -115,10 +119,10 @@
     color: white;
   }
   .dropdown-content a:hover {
-    background-color: #8f9698;
+    background-color: #ffcd51;
     color: #252d2d;
   }
- }
+}
 .button {
   font-size: 15px;
   width: 50vw;
@@ -127,7 +131,7 @@
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 .button:hover {
-  background-color: #252d2d;
+  background-color: #ffcd51;
   font-size: 15px;
   width: 50vw;
   border-radius: 50px;
