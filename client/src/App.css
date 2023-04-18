@@ -1,23 +1,27 @@
 .App {
   text-align: center;
-  background-color:#110e08; 
+  background-color:#16181e; 
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .nav{
   --bs-nav-link-color: #ffcd51;
-  background-color: #252d2d;
+  background-color: #16181e;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #d2d5d1;
 }
 
 .navigation {
   height: 8vh;
+  font-size: large;
   /* text-align: center; */
   color: #c2cdc0;
-  background-color:#110e08; 
+  background-color:#16181e; 
   border-bottom: 2px solid black;
   opacity: .8;
+  justify-content: space-evenly;
+  align-items: center;
+  /* padding: 1em; */
 }
 .link:hover {
   /* color: white; */
@@ -29,6 +33,9 @@
   background-color: rgba(255, 255, 255, 0.07);
 }
 
+.link {
+  padding: .5em;
+}
 .navbarbrand {
   color:#ffcd51;
 }
@@ -88,7 +95,7 @@
   .dropbtn {
     font-size: 16px;
     border: none;
-    outline: none;
+    outline: white;
     color: white;
     background-color: inherit;
     font-family: inherit;

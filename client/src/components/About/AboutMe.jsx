@@ -5,11 +5,14 @@ import photo3 from "../assets/love.jpg"
 import styles from "./AboutMe.module.css"
 import AOS from "aos"
 import { Button } from "reactstrap"
+import { useNavigate } from "react-router-dom"
 
 
 
 //Scrolling Effect
 const AboutMe = () => {
+
+  const navigate = useNavigate(); 
 
   const [ about, setAbout ] = useState(); 
   const [ story, setStory ] = useState(); 
@@ -85,7 +88,9 @@ const AboutMe = () => {
         </section>
       </div>
       <div className={styles.form}>
-        <h1 data-aos="fade-down">Get in Touch</h1>
+        <Button style={{ backgroundColor: "#ffcd51", color: "black"}} onClick={() => navigate('/intake')}>Get in Touch</Button>
+      {/* <a href="/intake" data-aos="fade-down">Get in Touch</a> */}
+        {/* <h1 data-aos="fade-down" >Get in Touch</h1> */}
       </div>
     </>
   )

@@ -42,7 +42,7 @@ function Testimonials() {
 	<>
     <header className={styles.mainHeader}>
         <h1>
-          <span>What Peaople Say About</span>Working With Thomas
+          <span>What People Say About</span>Working With Thomas
         </h1>
         <p className={styles.p}> </p>
         {/* <main></main> */}
@@ -60,51 +60,51 @@ function Testimonials() {
             <div className={styles.association}>
               <h3 data-aos="zoom-in-right">As a {testimonial.association}</h3>
                 <p data-aos="fade-up">{testimonial.quote}</p>
-                  <p> - {testimonial.firstName} {testimonial.lastName}</p>
+                  <p>{testimonial.name}</p>
             </div>
         </section>
 
-      </div>
-      ))};
-    {/* <header overflow-y= "hidden" justify-content="center" margin-bottom="10px">
-    <h1 overflow-y= "hidden" style={{color: "#c2cdc0"}}>What People Are Saying About Thomas</h1>  
-    </header>
-    
-    {testimonials.map(testimonial => ( 
-    <Card className="my-2" color="#ffcd51"
-      outline
-      key={testimonial._id}
-      style={{
-        width: '18rem'
-      }}>
+    </div>
+  //   <h1 style={{color: "#c59045"}}>What People Are Saying About Thomas</h1>
+        
+  //   {/* <CardGroup> */}
+  // <Row style={{justifyContent: "space-evenly", padding: "1em"}}>
+  //   {testimonials.map(testimonial => ( 
+  //   <Card className="my-2" color="#ffcd51"
+  //     outline
+  //     key={testimonial._id}
+  //     style={{
+  //       width: '18rem'
+  //     }}>
 
-        <CardBody>
-          <CardImg
-           data-aos="fade-up"
-           data-aos-anchor-placement="top-bottom"
-           data-aos-easing="ease-in-sine"
-           data-aos-duration="1000"
-          alt="Thomas photo 2"
-          src="./images/photo2.jpg"
-          top
-          width="100%"
-          />
-        <CardTitle tag="h5">
-        {testimonial.firstName} {testimonial.lastName}
-        </CardTitle>
-        <CardSubtitle
-          className="mb-2 text-muted"
-          tag="h6"
-        >
-          Thomas {testimonial.association}
-        </CardSubtitle>
-        <CardText data-aos="fade-right">
-        {testimonial.quote}
-        </CardText>
-        </CardBody>
-    </Card>
+  //       <CardBody>
+  //         <CardImg
+  //          data-aos="fade-up"
+  //          data-aos-anchor-placement="top-bottom"
+  //          data-aos-easing="ease-in-sine"
+  //          data-aos-duration="1000"
+  //         alt="Thomas photo 2"
+  //         src="./images/photo2.jpg"
+  //         top
+  //         width="100%"
+  //         />
+  //       <CardTitle tag="h5">
+  //       {testimonial.name}
+  //       </CardTitle>
+  //       <CardSubtitle
+  //         className="mb-2 text-muted"
+  //         tag="h6"
+  //       >
+  //         Thomas {testimonial.association}
+  //       </CardSubtitle>
+  //       <CardText data-aos="fade-right">
+  //       {testimonial.quote}
+  //       </CardText>
+  //       </CardBody>
+  //   </Card>
     
-    ))} */}
+  //   ))} */}
+      ))};
       </>
 );
 };
