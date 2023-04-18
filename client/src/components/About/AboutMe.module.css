@@ -118,12 +118,14 @@
   overflow-y: hidden;
 }
 
-.form h1 {
+/* .form h1 {
   justify-content: center;
   text-align: center;
   color: #ffcd51;
   overflow-y: hidden;
-}
+  margin-right: 10%;
+} */
+
 
 .inTouch {
   display: flex;

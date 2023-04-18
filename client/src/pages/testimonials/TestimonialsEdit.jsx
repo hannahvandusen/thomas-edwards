@@ -6,8 +6,7 @@ function TestimonialsEdit(props) {
 
     const { id } = useParams();
     const navigate = useNavigate();
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
+    const [name, setName] = useState('');
     const [association, setAssociation] = useState('');
     const [quote, setQuote] = useState('');
 
@@ -24,11 +23,10 @@ function TestimonialsEdit(props) {
             const data = await res.json();
             console.log(data); 
             const {
-                firstName, lastName, association, quote
+                name, association, quote
             } = data.testimonial
 
-            setFirstName(firstName);
-            setLastName(lastName);
+            setName(name);
             setAssociation(association);
             setQuote(quote);
 
@@ -48,8 +46,7 @@ function TestimonialsEdit(props) {
         e.preventDefault();
 
         let bodyObj = JSON.stringify({
-            firstName: firstName,
-            lastName: lastName,
+            name: name,
             association: association,
             quote: quote
         })
@@ -81,7 +78,7 @@ function TestimonialsEdit(props) {
             <Container>
                 <Row>
                     <Col md="4">
-                        <p style={{color: "#cddee5"}}><b style={{color: "#cddee5"}}>Current Testimonial</b>: <br/>{firstName} {lastName}, Thomas's {association}, said: {quote}. <br/> What should be edited?</p>
+                        <p style={{color: "#cddee5"}}><b style={{color: "#cddee5"}}>Current Testimonial</b>: <br/>{name}, Thomas's {association}, said: {quote}. <br/> What should be edited?</p>
                             <Button
                                 color='info'
                                 outline
@@ -91,17 +88,10 @@ function TestimonialsEdit(props) {
                     <Col md="8">
                         <Form onSubmit={handleSubmit}>
                             <FormGroup>
-                                <Label>First Name</Label>
+                                <Label>Name</Label>
                                 <Input
-                                    value={firstName}
-                                    onChange={e => setFirstName(e.target.value)}
-                                    autoComplete='off' />
-                            </FormGroup>
-                            <FormGroup>
-                                <Label>Last Name</Label>
-                                <Input
-                                    value={lastName}
-                                    onChange={e => setLastName(e.target.value)}
+                                    value={name}
+                                    onChange={e => setName(e.target.value)}
                                     autoComplete='off' />
                             </FormGroup>
                             <FormGroup>

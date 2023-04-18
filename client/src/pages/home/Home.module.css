@@ -152,7 +152,7 @@
 
 .help {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   color: #cddee5;
   margin: 5%;

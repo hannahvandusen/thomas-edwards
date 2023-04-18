@@ -10,7 +10,8 @@
   height: 8vh;
 }
 
-.nav {
+.nav{
+  --bs-nav-link-color: #ffcd51;
   background-color: #16181e;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #d2d5d1;
@@ -21,14 +22,33 @@
   background-color: #16181e;
   text-align: center;
   margin: 0 20px;
-  padding: 0 10px;
+  padding: 0 10px; 
+  }
+
+/* height: 8vh;
+  font-size: large;
+  /* text-align: center; */
+  color: #c2cdc0;
+  background-color:#16181e; 
+  border-bottom: 2px solid black;
+  opacity: .8;
+  justify-content: space-evenly;
+  align-items: center;
+  /* padding: 1em; */
 }
+.link:hover {
+  /* color: white; */
+  background-color: rgba(255, 255, 255, 0.07);
+} */
 
 .link:hover {
   background-color: #ffcd51;
   border-radius: 7px;
 }
 
+.link {
+  padding: .5em;
+}
 .navbarbrand {
   margin: 0 3px;
   text-align: center;
@@ -90,7 +110,7 @@
   .dropbtn {
     font-size: 16px;
     border: none;
-    outline: none;
+    outline: white;
     color: white;
 
     /* background-color: inherit;

@@ -36,6 +36,7 @@ function Navigation(args) {
       <NavLink href="/testimonials">Testimonials</NavLink>
       <NavLink href="/newsletter">Newsletter</NavLink>
       <NavLink href="/about">About</NavLink>
+      <NavLink href="/intake">Contact</NavLink>
     </div>
   ) : null
 
@@ -106,6 +107,7 @@ function Navigation(args) {
         <div className="dropDown">
           <i onClick={handleClick} className="dropbtn">
             <Hamburger />
+
           </i>
           <div>{toggle}</div>
         </div>
