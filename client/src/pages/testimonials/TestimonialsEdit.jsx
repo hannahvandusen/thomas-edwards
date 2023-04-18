@@ -6,7 +6,6 @@ function TestimonialsEdit(props) {
 
     const { id } = useParams();
     const navigate = useNavigate();
-    const [caption, setCaption] = useState('');
     const [name, setName] = useState('');
     const [association, setAssociation] = useState('');
     const [quote, setQuote] = useState('');
@@ -24,10 +23,9 @@ function TestimonialsEdit(props) {
             const data = await res.json();
             console.log(data); 
             const {
-                caption, name, association, quote
+                name, association, quote
             } = data.testimonial
 
-            setCaption(caption);
             setName(name);
             setAssociation(association);
             setQuote(quote);
@@ -48,7 +46,6 @@ function TestimonialsEdit(props) {
         e.preventDefault();
 
         let bodyObj = JSON.stringify({
-            caption: caption,
             name: name,
             association: association,
             quote: quote
@@ -81,7 +78,7 @@ function TestimonialsEdit(props) {
             <Container>
                 <Row>
                     <Col md="4">
-                        <p style={{color: "#cddee5"}}><b style={{color: "#cddee5"}}>Current Testimonial</b>: <br/>{caption} {name}, Thomas's {association}, said: {quote}. <br/> What should be edited?</p>
+                        <p style={{color: "#cddee5"}}><b style={{color: "#cddee5"}}>Current Testimonial</b>: <br/>{name}, Thomas's {association}, said: {quote}. <br/> What should be edited?</p>
                             <Button
                                 color='info'
                                 outline
@@ -90,13 +87,6 @@ function TestimonialsEdit(props) {
                     </Col>
                     <Col md="8">
                         <Form onSubmit={handleSubmit}>
-                            <FormGroup>
-                                <Label>Caption</Label>
-                                <Input
-                                    value={caption}
-                                    onChange={e => setCaption(e.target.value)}
-                                    autoComplete='off' />
-                            </FormGroup>
                             <FormGroup>
                                 <Label>Name</Label>
                                 <Input

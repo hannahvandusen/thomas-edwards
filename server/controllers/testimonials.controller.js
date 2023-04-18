@@ -8,7 +8,7 @@ router.post('/', async (req, res) => {
 
     try {
 
-        const { caption, name, association, quote } = req.body;
+        const { name, association, quote } = req.body;
         // if (!firstName) throw new Error(
         //     "Please enter a first name."
         // )
@@ -23,7 +23,6 @@ router.post('/', async (req, res) => {
         // )
 
         const testimonials = new Testimonials({
-            caption: caption,
             name: name,
             association: association,
             quote: quote
