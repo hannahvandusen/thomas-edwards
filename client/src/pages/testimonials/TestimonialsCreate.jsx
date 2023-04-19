@@ -1,43 +1,67 @@
 import React, {useRef} from 'react';
 import { Button, Form, FormGroup, Input, Label } from 'reactstrap';
+import { baseURL } from '../../environment';
 
 function TestimonialsCreate(props) {
 
-    // const formRef = useRef("");
+    const formRef = useRef();
+    const captionRef = useRef();
     const nameRef = useRef();
     const associationRef = useRef();
     const quoteRef = useRef();
+    const photoRef = useRef();
+
+    function previewFile() {
+        const preview = document.querySelector("img");
+        const file = document.querySelector("input[type=file]").files[0];
+        const reader = new FileReader();
+      
+        reader.addEventListener(
+          "load",
+          () => {
+            preview.src = reader.result;
+          },
+          false
+        );
+      
+        if (file) {
+          reader.readAsDataURL(file);
+        }
+      }
+      
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        // console.log(firstNameRef.current.value);
+        console.log(nameRef.current.value);
 
-    //console.log(url);
+        const url = `${baseURL}/testimonialsindex`
+            console.log(url);
 
     const bodyObj = JSON.stringify({
+        caption: captionRef.current.value,
         name: nameRef.current.value,
         association: associationRef.current.value,
         quote: quoteRef.current.value,
+        photo: photoRef.current.value
     });
     // console.log(bodyObj);
 
-    const url = `http://localhost:4000/testimonialsindex`
-    const headers = new Headers({
-        "Content-Type": "application/json"
-    });
+    let myHeader = new Headers();
+        myHeader.append("Content-Type", "application/json");
+        myHeader.append('Authorization', props.token);
 
         const requestOptions = {
-            headers,
+            headers: myHeader,
             body: bodyObj,
             method: 'POST'
         }
-        //console.log(bodyObj);
+        console.log(bodyObj);
 
         try {
             const res = await fetch(url, requestOptions)
             const data = await res.json();
 
-            // console.log(data.newTestimonials);
+            // console.log(data);
 
             // formRef.current.reset(); 
             props.fetchTestimonials();
@@ -51,7 +75,7 @@ function TestimonialsCreate(props) {
         <>
             <h1 style={{color: "#cddee5"}}>Add Testimonial</h1>
             <Form 
-                // innerRef={formRef}
+                innerRef={formRef}
                 onSubmit={handleSubmit}>
                 <FormGroup>
                     <Label style={{color: "#cddee5"}}>Name</Label>
@@ -71,6 +95,13 @@ function TestimonialsCreate(props) {
                         innerRef={quoteRef}
                         autoComplete='off' 
                         type='textarea'/>
+                </FormGroup>
+                <FormGroup>
+                    <Label style={{color: "#cddee5"}}>Photo</Label>
+                    <Input 
+                        innerRef={photoRef} 
+                        type='file'
+                        onchange="previewFile()"/>
                 </FormGroup>
                 
                 <Button type='submit' color="success" >Add Testimonial</Button>
