@@ -6,9 +6,11 @@ function TestimonialsEdit(props) {
 
     const { id } = useParams();
     const navigate = useNavigate();
+    const [caption, setCaption] = useState('');
     const [name, setName] = useState('');
     const [association, setAssociation] = useState('');
     const [quote, setQuote] = useState('');
+    const [photo, setPhoto] = useState('');
 
     const url = `http://localhost:4000/testimonialsindex/${id}`;
 
@@ -23,12 +25,14 @@ function TestimonialsEdit(props) {
             const data = await res.json();
             console.log(data); 
             const {
-                name, association, quote
+                caption, name, association, quote
             } = data.testimonial
 
+            setCaption(caption);
             setName(name);
             setAssociation(association);
             setQuote(quote);
+            setPhoto(photo);
 
         } catch (error) {
             console.error(error);
@@ -42,13 +46,33 @@ function TestimonialsEdit(props) {
         }
     }, [props.token])
 
+    function previewFile() {
+        const preview = document.querySelector("img");
+        const file = document.querySelector("input[type=file]").files[0];
+        const reader = new FileReader();
+      
+        reader.addEventListener(
+          "load",
+          () => {
+            preview.src = reader.result;
+          },
+          false
+        );
+      
+        if (file) {
+          reader.readAsDataURL(file);
+        }
+      }
+
     async function handleSubmit(e) {
         e.preventDefault();
 
         let bodyObj = JSON.stringify({
+            caption: caption,
             name: name,
             association: association,
-            quote: quote
+            quote: quote,
+            photo: photo
         })
 
 
@@ -78,7 +102,7 @@ function TestimonialsEdit(props) {
             <Container>
                 <Row>
                     <Col md="4">
-                        <p style={{color: "#cddee5"}}><b style={{color: "#cddee5"}}>Current Testimonial</b>: <br/>{name}, Thomas's {association}, said: {quote}. <br/> What should be edited?</p>
+                    <p style={{color: "#cddee5"}}><b style={{color: "#cddee5"}}>Current Testimonial</b>: <br/>{caption} {name}, Thomas's {association}, said: {quote}. <br/> What should be edited?</p>
                             <Button
                                 color='info'
                                 outline
@@ -87,6 +111,13 @@ function TestimonialsEdit(props) {
                     </Col>
                     <Col md="8">
                         <Form onSubmit={handleSubmit}>
+                            <FormGroup>
+                                <Label>Caption</Label>
+                                <Input
+                                    value={caption}
+                                    onChange={e => setCaption(e.target.value)}
+                                    autoComplete='off' />
+                            </FormGroup>
                             <FormGroup>
                                 <Label>Name</Label>
                                 <Input
@@ -106,6 +137,14 @@ function TestimonialsEdit(props) {
                                 <Input
                                     value={quote}
                                     onChange={e => setQuote(e.target.value)}
+                                    autoComplete='off' />
+                            </FormGroup>
+                            <FormGroup>
+                                <Label>Photo</Label>
+                                <Input
+                                    value={photo}
+                                    type='file'
+                                    onChange={e => setPhoto(e.target.value)}
                                     autoComplete='off' />
                             </FormGroup>
                                 <Button color='success'>Update Testimonial</Button>
