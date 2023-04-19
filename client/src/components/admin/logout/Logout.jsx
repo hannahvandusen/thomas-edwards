@@ -14,15 +14,15 @@ function Logout({setToken}) {
 
     const style = {
         float: "right",
-        margin: "1em"
+        margin: "1em",
+        backgroundColor: "#ffcd51", 
+        color: "black"
     }
     return (
     <>
         <Button
             onClick={signout}
-            color="primary"
             style={style}
-            outline
         >Logout</Button>
     </>
     )

@@ -94,9 +94,11 @@ function AboutEdit() {
             innerRef={valueRef}
             style={{height: "20vh"}}
             /> 
-            <Button type='submit' outline color='primary' >Edit</Button>
+            <Button type='submit' style={{backgroundColor: "#ffcd51", 
+        color: "black"}} >Edit</Button>
         </Form>
-        <Button onClick={() => navigate('/admin')} outline color='primary'>Admin Portal</Button>
+        <Button onClick={() => navigate('/admin')} style={{backgroundColor: "#ffcd51", 
+        color: "black"}}>Admin Portal</Button>
     </>
   )
 }

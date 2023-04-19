@@ -67,7 +67,8 @@ function Login({ updateToken }) {
                     type='password'
                     /> 
                 </FormGroup>
-                <Button type='submit' color='dark'>Login</Button>
+                <Button type='submit' style={{backgroundColor: "#ffcd51", 
+        color: "black"}}>Login</Button>
             </Form>
         </>
     )
