@@ -32,7 +32,7 @@ function Navigation(args) {
 
   let toggle = btnState ? (
     <div className="dropdown-content">
-      <NavLink to="/">Home</NavLink>
+      <NavLink href="/">Home</NavLink>
       <NavLink href="/testimonials">Testimonials</NavLink>
       <NavLink href="/newsletter">Newsletter</NavLink>
       <NavLink href="/about">About</NavLink>
