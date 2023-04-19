@@ -8,11 +8,11 @@ router.post('/', async (req, res) => {
 
     try {
 
-        const { firstName, lastName, association, quote } = req.body;
-        // if (!firstName) throw new Error(
+        const { caption, name, association, quote } = req.body;
+        // if (!caption) throw new Error(
         //     "Please enter a first name."
         // )
-        // if (!lastName) throw new Error(
+        // if (!name) throw new Error(
         //     "Please enter a last name."
         // )
         // if (!association) throw new Error(
@@ -23,8 +23,8 @@ router.post('/', async (req, res) => {
         // )
 
         const testimonials = new Testimonials({
-            firstName: firstName,
-            lastName: lastName,
+            caption: caption,
+            name: name,
             association: association,
             quote: quote
         }); 

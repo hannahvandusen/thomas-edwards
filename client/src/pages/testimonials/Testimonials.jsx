@@ -7,7 +7,6 @@ import AOS from "aos";
 function Testimonials() {
 
   const navigate = useNavigate();
-  
   const [ testimonials, setTestimonials ] = useState([]);
 
   const fetchTestimonials = async () => {
@@ -33,16 +32,11 @@ function Testimonials() {
     fetchTestimonials();
   }, [])
 
-  // useEffect(() => {
-  //   AOS.init()
-  //   fetchTestimonials(); 
-  // }, [])
-
   return (
 	<>
     <header className={styles.mainHeader}>
         <h1>
-          <span>What Peaople Say About</span>Working With Thomas
+          <span>What People Say About|</span>|Working With Thomas
         </h1>
         <p className={styles.p}> </p>
         {/* <main></main> */}
@@ -58,9 +52,9 @@ function Testimonials() {
            data-aos-easing="ease-in-sine"
            data-aos-duration="1000" src="./images/photo2.jpg" alt="Thomas Photo" />
             <div className={styles.association}>
-              <h3 data-aos="zoom-in-right">As a {testimonial.association}</h3>
+              <h3 data-aos="zoom-in-right">{testimonial.caption}</h3>
                 <p data-aos="fade-up">{testimonial.quote}</p>
-                  <p> - {testimonial.firstName} {testimonial.lastName}</p>
+                  <p data-aos="fade-left"><i> - {testimonial.name}, Thomas' {testimonial.association}</i></p>
             </div>
         </section>
 

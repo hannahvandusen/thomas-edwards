@@ -29,7 +29,6 @@
     font-size: 60px;
     overflow-y: hidden;
   
-    /* color: white; */
   }
   
   .mainHeader h1 span {
@@ -64,7 +63,6 @@
   .card h3 {
     margin-bottom: 1rem;
     overflow-y: hidden;
-    /* color: #cddee5; */
   }
   
   .card p {
@@ -73,6 +71,10 @@
   .card span {
     margin-bottom: 2rem;
     overflow-y: hidden;
+  }
+
+  .card i {
+    color: #ffcd51;
   }
   
   .card img {
