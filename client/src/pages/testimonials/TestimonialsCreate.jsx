@@ -63,7 +63,7 @@ function TestimonialsCreate(props) {
 
             // console.log(data);
 
-            formRef.current.reset(); 
+            // formRef.current.reset(); 
             props.fetchTestimonials();
 
         } catch (err) {
@@ -77,12 +77,6 @@ function TestimonialsCreate(props) {
             <Form 
                 innerRef={formRef}
                 onSubmit={handleSubmit}>
-                <FormGroup>
-                    <Label style={{color: "#cddee5"}}>Caption</Label>
-                    <Input 
-                        innerRef={captionRef}
-                        autoComplete='off' />
-                </FormGroup>
                 <FormGroup>
                     <Label style={{color: "#cddee5"}}>Name</Label>
                     <Input 

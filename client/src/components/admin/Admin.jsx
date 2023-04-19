@@ -22,6 +22,8 @@ function Admin() {
     const style = {
         float: "right",
         margin: "1em",
+        backgroundColor: "#ffcd51", 
+        color: "black"
     }
 
     useEffect(() => {
@@ -50,21 +52,16 @@ function Admin() {
                     <Col md="3">
                         <Button 
                         href="/admin/account" 
-                        color="primary" 
                         style={style} 
-                        outline>
+                        >
                             Update Email/Password 
                         </Button>
                         <Button 
                         href="/testimonialsindex"
-                        color="primary" 
                         style={style} 
-                        outline
                         >Edit Testimonials</Button>
                         <Button
-                        color="primary" 
                         style={style} 
-                        outline
                         href="/about/edit"
                         >Edit About</Button>
                     </Col>

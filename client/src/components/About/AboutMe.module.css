@@ -28,18 +28,18 @@
   font-size: 60px;
   overflow-y: hidden;
 
-  /* color: white; */
+  color: #c2cdc0;
 }
 
 .mainHeader h1 span {
-  color: #17bcde;
+  color: #ffcd51;
   font-size: 60px;
   overflow-y: hidden;
 }
 
 .mainHeader p {
   overflow-y: hidden;
-  color: #cddee5;
+  color: #c2cdc0;
   justify-content: center;
   text-align: center;
   margin-bottom: 10px;
@@ -51,7 +51,8 @@
   grid-template-columns: repeat(2, 1fr);
   padding: 4rem 5rem;
   overflow-y: hidden;
-  border: 1px solid rgb(125, 127, 129, 0.5);
+  border-top: 1px solid rgb(125, 127, 129, 0.5);
+  border-bottom: 1px solid rgb(125, 127, 129, 0.5);
 }
 
 .card:nth-child(even) img {
@@ -67,7 +68,7 @@
 }
 
 .card p {
-  color: #cddee5;
+  color: #c2cdc0;
 }
 .card span {
   margin-bottom: 2rem;
@@ -83,7 +84,7 @@
 }
 
 .card h3 {
-  color: #17bcde;
+  color: #ffcd51;
   overflow-y: hidden;
 }
 
@@ -113,16 +114,24 @@
   justify-content: center;
   padding-top: 100px;
   padding-bottom: 100px;
-  font-size: larger;
+  /* font-size: larger; */
   overflow-y: hidden;
 }
 
-.form h1 {
+/* .form h1 {
   justify-content: center;
   text-align: center;
-  color: #17bcde;
+  color: #ffcd51;
   overflow-y: hidden;
   margin-right: 10%;
+} */
+
+
+.inTouch {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 0;
 }
 
 @media screen and (max-width: 800px) {

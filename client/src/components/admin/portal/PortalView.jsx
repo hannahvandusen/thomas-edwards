@@ -59,7 +59,7 @@ function PortalView() {
     return (
     <>
         <>
-        <h1>Message from {name}</h1>
+        <h1 style={{color: "#d2d5d1"}}>Message from {name}</h1>
             <CardGroup>
             <Card>
                 <CardBody >
@@ -74,7 +74,8 @@ function PortalView() {
                 </CardBody>
             </Card>
             </CardGroup>
-            <Button onClick={() => navigate('/admin')} color="primary" outline >Back to Admin Portal</Button>
+            <Button onClick={() => navigate('/admin')} style={{backgroundColor: "#ffcd51", 
+        color: "black"}} >Back to Admin Portal</Button>
         </>
     </>
     )
