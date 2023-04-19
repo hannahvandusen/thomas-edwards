@@ -17,19 +17,21 @@ function Admin() {
 
     const token = {sessionToken}
 
-    useEffect(() => {
-        if(localStorage.getItem('token')) {
-        setSessionToken(localStorage.getItem('token'));
-        }
-    }, [])
-
     // console.log(localStorage.getItem("token"))
 
     const style = {
         float: "right",
         margin: "1em",
+        backgroundColor: "#ffcd51", 
+        color: "black"
     }
 
+    useEffect(() => {
+        if(localStorage.getItem('token')) {
+        setSessionToken(localStorage.getItem('token'));
+        }
+    }, [])
+    
     const displayForm = () => {
         return (
             localStorage.getItem('token') === null ?
@@ -41,8 +43,8 @@ function Admin() {
             </Row>
             </Container> :
             <Container>
+                <h1 style={{color: "white"}}>Admin Portal</h1>
                 <Row>
-                    <h1 style={{color: "white"}}>Admin Portal</h1>
                 
                     <Col md="8">
                         <PortalIndex />
@@ -50,23 +52,25 @@ function Admin() {
                     <Col md="3">
                         <Button 
                         href="/admin/account" 
-                        color="primary" 
                         style={style} 
-                        outline>
+                        >
                             Update Email/Password 
                         </Button>
                         <Button 
                         href="/testimonialsindex"
-                        color="primary" 
                         style={style} 
-                        outline
-                        >View Testimonials</Button>
+                        >Edit Testimonials</Button>
+                        <Button
+                        style={style} 
+                        href="/about/edit"
+                        >Edit About</Button>
                     </Col>
                     <Logout setToken={setSessionToken}/> 
                 </Row>
             </Container>
         )
     }
+
     return (
         <>
             {displayForm()}

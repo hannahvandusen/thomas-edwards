@@ -62,9 +62,11 @@ function Account() {
                     type='password'
                 /> 
             </FormGroup>
-            <Button type='submit' color='primary' outline>Update Account Info</Button>
+            <Button type='submit' style={{backgroundColor: "#ffcd51", 
+        color: "black"}}>Update Account Info</Button>
         </Form>
-        <Button color='primary' outline onClick={() => navigate('/admin')}>Cancel</Button>
+        <Button style={{backgroundColor: "#ffcd51", 
+        color: "black"}} onClick={() => navigate('/admin')}>Cancel</Button>
     </>
   )
 }

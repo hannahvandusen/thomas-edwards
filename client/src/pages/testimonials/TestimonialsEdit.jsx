@@ -1,40 +1,38 @@
 import React, { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { Button, Col, Container, Form, FormGroup, Input, Label, Row } from 'reactstrap';
-import { baseURL } from '../../environment';
 
 function TestimonialsEdit(props) {
 
     const { id } = useParams();
     const navigate = useNavigate();
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
+    const [caption, setCaption] = useState('');
+    const [name, setName] = useState('');
     const [association, setAssociation] = useState('');
     const [quote, setQuote] = useState('');
+    const [photo, setPhoto] = useState('');
 
-    const url = `${baseURL}/testimonials/${id}`;
+    const url = `http://localhost:4000/testimonialsindex/${id}`;
 
     const fetchTestimonials = async () => {
         
         const requestOptions = {
             method: "GET",
-            headers: new Headers({
-                "Authorization": props.token
-            })
         }
 
         try {
             const res = await fetch(url, requestOptions);
             const data = await res.json();
-
+            console.log(data); 
             const {
-                firstName, lastName, association, quote
-            } = data.testimonials
+                caption, name, association, quote
+            } = data.testimonial
 
-            setFirstName(firstName);
-            setLastName(lastName);
+            setCaption(caption);
+            setName(name);
             setAssociation(association);
             setQuote(quote);
+            setPhoto(photo);
 
         } catch (error) {
             console.error(error);
@@ -43,24 +41,43 @@ function TestimonialsEdit(props) {
     }
 
     useEffect(() => {
-        if(props.token) {
+        if(localStorage.getItem('token') !== null) {
             fetchTestimonials();
         }
     }, [props.token])
+
+    function previewFile() {
+        const preview = document.querySelector("img");
+        const file = document.querySelector("input[type=file]").files[0];
+        const reader = new FileReader();
+      
+        reader.addEventListener(
+          "load",
+          () => {
+            preview.src = reader.result;
+          },
+          false
+        );
+      
+        if (file) {
+          reader.readAsDataURL(file);
+        }
+      }
 
     async function handleSubmit(e) {
         e.preventDefault();
 
         let bodyObj = JSON.stringify({
-            firstName: firstName,
-            lastName: lastName,
+            caption: caption,
+            name: name,
             association: association,
-            quote: quote
+            quote: quote,
+            photo: photo
         })
+
 
         const requestOptions = {
             headers: new Headers({
-                "Authorization": props.token,
                 "Content-Type": "application/json"
             }),
             body: bodyObj,
@@ -79,33 +96,33 @@ function TestimonialsEdit(props) {
 
     return (
         <>
-            <h1 style={{
+            <h1 style={{color: "#cddee5",
                 textAlign: "center", textDecoration: "underline"
-            }}>Edit Movie</h1>
+            }}>Edit Testimonial</h1>
             <Container>
                 <Row>
                     <Col md="4">
-                        <p><b>Testimonial</b>: <br/>{firstName} {lastName}, Thomas's {association}, said {quote}. <br/> What should be edited?</p>
+                    <p style={{color: "#cddee5"}}><b style={{color: "#cddee5"}}>Current Testimonial</b>: <br/>{caption} {name}, Thomas's {association}, said: {quote}. <br/> What should be edited?</p>
                             <Button
                                 color='info'
                                 outline
-                                onClick={() => navigate('/testimonials')}
+                                onClick={() => navigate('/testimonialsindex')}
                             >Back to Table</Button>
                     </Col>
                     <Col md="8">
                         <Form onSubmit={handleSubmit}>
                             <FormGroup>
-                                <Label>First Name</Label>
+                                <Label>Caption</Label>
                                 <Input
-                                    value={firstName}
-                                    onChange={e => setFirstName(e.target.value)}
+                                    value={caption}
+                                    onChange={e => setCaption(e.target.value)}
                                     autoComplete='off' />
                             </FormGroup>
                             <FormGroup>
-                                <Label>Last Name</Label>
+                                <Label>Name</Label>
                                 <Input
-                                    value={lastName}
-                                    onChange={e => setLastName(e.target.value)}
+                                    value={name}
+                                    onChange={e => setName(e.target.value)}
                                     autoComplete='off' />
                             </FormGroup>
                             <FormGroup>
@@ -120,6 +137,14 @@ function TestimonialsEdit(props) {
                                 <Input
                                     value={quote}
                                     onChange={e => setQuote(e.target.value)}
+                                    autoComplete='off' />
+                            </FormGroup>
+                            <FormGroup>
+                                <Label>Photo</Label>
+                                <Input
+                                    value={photo}
+                                    type='file'
+                                    onChange={e => setPhoto(e.target.value)}
                                     autoComplete='off' />
                             </FormGroup>
                                 <Button color='success'>Update Testimonial</Button>

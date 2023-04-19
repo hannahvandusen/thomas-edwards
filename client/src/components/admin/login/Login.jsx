@@ -37,6 +37,7 @@ function Login({ updateToken }) {
             if(data.admin) {
                 console.log(data);
                 localStorage.setItem("token", `${data.token}`);
+                localStorage.setItem("subscriber", `${data.token}`)
                 window.location.reload(false); 
                 
             } else {
@@ -66,7 +67,8 @@ function Login({ updateToken }) {
                     type='password'
                     /> 
                 </FormGroup>
-                <Button type='submit' color='dark'>Login</Button>
+                <Button type='submit' style={{backgroundColor: "#ffcd51", 
+        color: "black"}}>Login</Button>
             </Form>
         </>
     )

@@ -34,7 +34,8 @@ function PortalTable({intakes}) {
                             <td> {intake.contactMethod} </td>
                             <td> {intake.message} </td> */}
                             <td><Button onClick={() => navigate(`/intake/${intake._id}`)}
-                            color="primary" outline
+                            style={{backgroundColor: "#ffcd51", 
+                            color: "black"}}
                             >View</Button></td>
                         </tr>
                     ))

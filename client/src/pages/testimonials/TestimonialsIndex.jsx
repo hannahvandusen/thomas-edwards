@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Button, Col, Container, Row } from 'reactstrap'
-import { baseURL } from '../../environment'
 import TestimonialsCreate from './TestimonialsCreate'
 import TestimonialsTable from './TestimonialsTable'
 

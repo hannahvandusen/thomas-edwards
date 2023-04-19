@@ -40,16 +40,19 @@ function TestimonialsTable(props) {
             <thead>
                 <tr>
                     <th style={{color: "#cddee5"}}>
-                        First Name
+                        Caption
                     </th>
                     <th style={{color: "#cddee5"}}>
-                        Last Name
+                        Name
                     </th>
                     <th style={{color: "#cddee5"}}>
                         Association
                     </th>
                     <th style={{color: "#cddee5"}}>
                         Quote
+                    </th>
+                    <th style={{color: "#cddee5"}}>
+                        Photo
                     </th>
                 </tr>
             </thead>
@@ -58,10 +61,10 @@ function TestimonialsTable(props) {
                 props.testimonials.map(testimonials => (
                 <tr key={testimonials._id}>
                     <th style={{color: "#cddee5"}} scope="row">
-                        {testimonials.firstName}
+                        {testimonials.caption}
                     </th>
                     <td style={{color: "#cddee5"}}>
-                        {testimonials.lastName}
+                        {testimonials.name}
                     </td>
                     <td style={{color: "#cddee5"}}>
                         {testimonials.association}
@@ -69,9 +72,12 @@ function TestimonialsTable(props) {
                     <td style={{color: "#cddee5"}}>
                         {testimonials.quote}
                     </td>
+                    <td style={{color: "#cddee5"}}>
+                        {testimonials.photo}
+                    </td>
                     <td>
                         <Button
-                            onClick={() => navigate(`/testimonialsindex/update/${testimonials._id}`)}
+                            onClick={() => navigate(`/testimonialsindex/${testimonials._id}`)}
                             color="warning">Edit</Button>
                         <Button
                             onClick={() => deleteTestimonial(testimonials._id)}
