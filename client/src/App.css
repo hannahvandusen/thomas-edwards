@@ -57,7 +57,8 @@
 }
 
 .footer {
-  border-top: 2px solid #cddee5;
+  /* border-top: 1px solid #ffcd51; */
+  background-color: #d2d5d1;
   position: relative;
   width: 100%;
   bottom: 0;
