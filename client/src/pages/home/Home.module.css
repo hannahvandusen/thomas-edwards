@@ -172,6 +172,10 @@
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
+.buttonHelp:hover {
+  background-color: #ffcd51;
+}
+
 h1 {
   padding-top: 20px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
@@ -194,6 +198,7 @@ svg {
 .titles {
   display: flex;
   justify-content: center;
+  color: #c8cbd0;
 }
 
 /* ------ MEDIA QUIRES ------ */
