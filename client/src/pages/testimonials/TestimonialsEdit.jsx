@@ -10,6 +10,7 @@ function TestimonialsEdit(props) {
     const [name, setName] = useState('');
     const [association, setAssociation] = useState('');
     const [quote, setQuote] = useState('');
+    const [photo, setPhoto] = useState('');
 
     const url = `http://localhost:4000/testimonialsindex/${id}`;
 
@@ -31,6 +32,7 @@ function TestimonialsEdit(props) {
             setName(name);
             setAssociation(association);
             setQuote(quote);
+            setPhoto(photo);
 
         } catch (error) {
             console.error(error);
@@ -44,6 +46,24 @@ function TestimonialsEdit(props) {
         }
     }, [props.token])
 
+    function previewFile() {
+        const preview = document.querySelector("img");
+        const file = document.querySelector("input[type=file]").files[0];
+        const reader = new FileReader();
+      
+        reader.addEventListener(
+          "load",
+          () => {
+            preview.src = reader.result;
+          },
+          false
+        );
+      
+        if (file) {
+          reader.readAsDataURL(file);
+        }
+      }
+
     async function handleSubmit(e) {
         e.preventDefault();
 
@@ -51,7 +71,8 @@ function TestimonialsEdit(props) {
             caption: caption,
             name: name,
             association: association,
-            quote: quote
+            quote: quote,
+            photo: photo
         })
 
 
@@ -116,6 +137,14 @@ function TestimonialsEdit(props) {
                                 <Input
                                     value={quote}
                                     onChange={e => setQuote(e.target.value)}
+                                    autoComplete='off' />
+                            </FormGroup>
+                            <FormGroup>
+                                <Label>Photo</Label>
+                                <Input
+                                    value={photo}
+                                    type='file'
+                                    onChange={e => setPhoto(e.target.value)}
                                     autoComplete='off' />
                             </FormGroup>
                                 <Button color='success'>Update Testimonial</Button>

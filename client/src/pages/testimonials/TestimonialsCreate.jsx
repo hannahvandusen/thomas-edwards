@@ -9,6 +9,26 @@ function TestimonialsCreate(props) {
     const nameRef = useRef();
     const associationRef = useRef();
     const quoteRef = useRef();
+    const photoRef = useRef();
+
+    function previewFile() {
+        const preview = document.querySelector("img");
+        const file = document.querySelector("input[type=file]").files[0];
+        const reader = new FileReader();
+      
+        reader.addEventListener(
+          "load",
+          () => {
+            preview.src = reader.result;
+          },
+          false
+        );
+      
+        if (file) {
+          reader.readAsDataURL(file);
+        }
+      }
+      
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -22,6 +42,7 @@ function TestimonialsCreate(props) {
         name: nameRef.current.value,
         association: associationRef.current.value,
         quote: quoteRef.current.value,
+        photo: photoRef.current.value
     });
     // console.log(bodyObj);
 
@@ -80,6 +101,13 @@ function TestimonialsCreate(props) {
                         innerRef={quoteRef}
                         autoComplete='off' 
                         type='textarea'/>
+                </FormGroup>
+                <FormGroup>
+                    <Label style={{color: "#cddee5"}}>Photo</Label>
+                    <Input 
+                        innerRef={photoRef} 
+                        type='file'
+                        onchange="previewFile()"/>
                 </FormGroup>
                 
                 <Button type='submit' color="success" >Add Testimonial</Button>

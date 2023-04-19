@@ -51,6 +51,9 @@ function TestimonialsTable(props) {
                     <th style={{color: "#cddee5"}}>
                         Quote
                     </th>
+                    <th style={{color: "#cddee5"}}>
+                        Photo
+                    </th>
                 </tr>
             </thead>
             <tbody>
@@ -68,6 +71,9 @@ function TestimonialsTable(props) {
                     </td>
                     <td style={{color: "#cddee5"}}>
                         {testimonials.quote}
+                    </td>
+                    <td style={{color: "#cddee5"}}>
+                        {testimonials.photo}
                     </td>
                     <td>
                         <Button
