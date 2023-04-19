@@ -118,13 +118,13 @@
     overflow-y: hidden;
   }
   
-  .form h1 {
+  /* .form h1 {
     justify-content: center;
     text-align: center;
     color: #17bcde;
     overflow-y: hidden;
     margin-right: 10%;
-  }
+  } */
   
   @media screen and (max-width: 800px) {
     * {
