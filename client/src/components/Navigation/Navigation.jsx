@@ -107,7 +107,6 @@ function Navigation(args) {
         <div className="dropDown">
           <i onClick={handleClick} className="dropbtn">
             <Hamburger />
-
           </i>
           <div>{toggle}</div>
         </div>
