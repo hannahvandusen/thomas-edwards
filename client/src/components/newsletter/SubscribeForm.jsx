@@ -105,6 +105,7 @@ function SubscribeForm() {
                         <Label>Name</Label>
                         <Input innerRef={nameRef} />
                     </FormGroup>
+                    <button></button>
                     <Button type="submit">Subscribe</Button>
                 </Form>
             

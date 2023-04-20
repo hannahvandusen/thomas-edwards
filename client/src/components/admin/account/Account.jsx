@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import { Button, Form, FormGroup, Input, Label } from 'reactstrap'
 import { useNavigate } from 'react-router-dom';
 
@@ -6,6 +6,23 @@ function Account() {
     const emailRef = useRef();
     const passwordRef = useRef();
     const navigate = useNavigate();
+    const [ email, setEmail ] = useState();
+    
+    const fetchEmail = async () => {
+        const url = `http://localhost:4000/admin/6431c2a6469670d90b412885`
+        const requestOptions = {
+            method: "GET",
+        }
+        try {
+            const res = await fetch(url, requestOptions);
+            const data = await res.json();
+            const { email } = data.admin;
+            setEmail(email); 
+
+        } catch (err) {
+            console.error(err); 
+        }
+    }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -30,9 +47,10 @@ function Account() {
         try {
             const res = await fetch(url, requestOptions);
             const data = await res.json();
-            // console.log(data);
+            console.log(data);
             if(data.updated) {
                 // console.log(data);
+                alert('Account updated!'); 
                 navigate('/admin/'); 
             } else {
                 alert(`${data.error}. Try again!`)
@@ -41,7 +59,9 @@ function Account() {
             console.error(err)
         }
     }
-
+    useEffect(() => {
+        fetchEmail()
+    }, []); 
 
 
   return (
@@ -53,6 +73,8 @@ function Account() {
                 <Input 
                     innerRef={emailRef}
                     type='email'
+                    defaultValue={email}
+                    required={true}
                 /> 
             </FormGroup>
             <FormGroup>
@@ -60,6 +82,7 @@ function Account() {
                 <Input 
                     innerRef={passwordRef}
                     type='password'
+                    required={true}
                 /> 
             </FormGroup>
             <Button type='submit' style={{backgroundColor: "#ffcd51", 

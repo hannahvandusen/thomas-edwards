@@ -19,6 +19,7 @@
   text-align: center;
   padding: 2rem;
   overflow-y: hidden;
+
 }
 
 .mainHeader h1 {
@@ -26,8 +27,8 @@
   margin-bottom: 2rem;
   line-height: 1.2;
   font-size: 60px;
+  font-family: Georgia, serif;
   overflow-y: hidden;
-
   color: #c2cdc0;
 }
 
@@ -126,7 +127,6 @@
   margin-right: 10%;
 } */
 
-
 .inTouch {
   display: flex;
   justify-content: center;
@@ -141,15 +141,18 @@
   }
 
   .header {
+    overflow-x: hidden;
     width: 100vw;
   }
 
   .p {
+    overflow-x: hidden;
     justify-content: center;
     margin-bottom: 10px;
     text-align: center;
   }
   .container {
+    overflow-x: hidden;
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -161,6 +164,7 @@
     width: 100vw;
   }
   .card {
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
     width: 100vw;
@@ -168,10 +172,12 @@
     justify-content: center;
   }
   .card > img {
+    overflow-x: hidden;
     width: 100vw;
   }
 
   .card:nth-child(even) img {
+    overflow-x: hidden;
     order: 0;
     overflow-y: hidden;
     width: 100vw;
@@ -179,6 +185,7 @@
   }
 
   .description {
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -186,9 +193,11 @@
   }
 
   .form {
+    overflow-x: hidden;
     width: 100vw;
   }
   .card p {
+    overflow-x: hidden;
     width: 100vw;
     overflow-x: hidden;
   }

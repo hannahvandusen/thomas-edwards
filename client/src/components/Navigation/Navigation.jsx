@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react"
 import { GiHamburgerMenu } from "react-icons/gi"
-import { FiMenu } from "react-icons/fi"
 import {
   Collapse,
   Navbar,
@@ -32,7 +31,7 @@ function Navigation(args) {
 
   let toggle = btnState ? (
     <div className="dropdown-content">
-      <NavLink to="/">Home</NavLink>
+      <NavLink href="/">Home</NavLink>
       <NavLink href="/testimonials">Testimonials</NavLink>
       <NavLink href="/newsletter">Newsletter</NavLink>
       <NavLink href="/about">About</NavLink>
@@ -107,7 +106,6 @@ function Navigation(args) {
         <div className="dropDown">
           <i onClick={handleClick} className="dropbtn">
             <Hamburger />
-
           </i>
           <div>{toggle}</div>
         </div>
