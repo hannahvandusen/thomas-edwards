@@ -65,7 +65,6 @@ function Home() {
   useEffect(() => {
     // scrolling effect
     AOS.init()
-
     fetchAbout()
   }, [])
 
@@ -96,7 +95,6 @@ function Home() {
       </div>
 
       <h1 className={styles.titles}>How I can Help You</h1>
-
       <div className={styles.help}>
         <div data-aos="fade-up" className="box1">
           <AiOutlineMail size={70} />
@@ -109,7 +107,7 @@ function Home() {
           <BsTelephone size={60} />
           <br />
           <Link to="/intake">
-            <button className={styles.buttonHelp}>Book A Call</button>
+            <button className={styles.buttonHelp}>Schedule A Meeting</button>
           </Link>
         </div>
       </div>
@@ -123,7 +121,7 @@ function Home() {
             <Input placeholder="Email" innerRef={emailRef} />
             <Input placeholder="Name" innerRef={nameRef} />
           </FormGroup>
-          <Button type="submit">Subscribe</Button>
+          <button className={styles.buttonHelp}>Subscribe</button>
         </Form>
       </div>
       {/* <input

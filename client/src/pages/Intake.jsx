@@ -1,5 +1,7 @@
 import { React, useRef } from "react";
 import { Form, FormGroup, Input, Label, Button } from "reactstrap";
+import styles from "../pages/home/Home.module.css"
+
 
 const Intake = () => {
 
@@ -51,7 +53,7 @@ const Intake = () => {
   }
     return (
         <div>
-        <h1 style={{color: "white"}}>Contact Thomas</h1>
+        <h1 style={{color: "white", fontFamily: "Georgia, serif"}}>Contact Thomas</h1>
       {/* <h6 style={{color: "white"}}>
         If you would like to reach out to me directly as an individual client or a business please fill out the below form and I will contact you ASAP!
       </h6> */}
@@ -145,9 +147,9 @@ const Intake = () => {
           </Label>
         </FormGroup>
         {' '}
-        <Button type="submit" className="button">
+        <button type="submit" className={styles.buttonHelp}>
           Submit
-        </Button>
+        </button>
       </Form>
     </div>
 

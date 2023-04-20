@@ -19,6 +19,7 @@
   text-align: center;
   padding: 2rem;
   overflow-y: hidden;
+
 }
 
 .mainHeader h1 {
@@ -26,8 +27,8 @@
   margin-bottom: 2rem;
   line-height: 1.2;
   font-size: 60px;
+  font-family: Georgia, serif;
   overflow-y: hidden;
-
   color: #c2cdc0;
 }
 

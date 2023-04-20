@@ -23,7 +23,8 @@ function Admin() {
         float: "right",
         margin: "1em",
         backgroundColor: "#ffcd51", 
-        color: "black"
+        color: "black",
+        fontFamily: "Georgia, serif"
     }
 
     useEffect(() => {
@@ -43,7 +44,7 @@ function Admin() {
             </Row>
             </Container> :
             <Container>
-                <h1 style={{color: "white"}}>Admin Portal</h1>
+                <h1 style={{color: "white", fontFamily: "Georgia, serif"}}>Admin Portal</h1>
                 <Row>
                 
                     <Col md="8">

@@ -28,7 +28,8 @@
     line-height: 1.2;
     font-size: 60px;
     overflow-y: hidden;
-  
+    font-family: Georgia, serif;
+
   }
   
   .mainHeader h1 span {
