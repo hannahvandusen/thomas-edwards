@@ -122,7 +122,7 @@ function Home() {
             <Input placeholder="Email" innerRef={emailRef} />
             <Input placeholder="Name" innerRef={nameRef} />
           </FormGroup>
-          <button className={styles.buttonHelp}>Subscribe</button>
+          <button className={styles.button2}>Subscribe</button>
         </Form>
       </div>
       {/* <input

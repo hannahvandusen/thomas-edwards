@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { GiHamburgerMenu } from "react-icons/gi"
+// import { GiHamburgerMenu } from "react-icons/gi"
 import {
     Collapse,
     Navbar,
@@ -39,21 +39,20 @@ function Navigation(args) {
     </div>
   ) : null
 
-    return (
-        <>
-            <div className="sticky-top" style={style}>
-                <Nav className="navigation">
-                    <NavbarBrand
-                        href="/"
-                        className="navbarbrand"
-                        style={{ fontSize: "1.5em" }}
-                    >
-                        Inner Famous
-                    </NavbarBrand>
-                    <i className="hamburger">
-                        <GiHamburgerMenu size={25} />
-                    </i>
-
+  return (
+    <>
+      <div className="sticky-top" style={style}>
+        <Nav className="navigation">
+          <NavbarBrand
+            href="/"
+            className="navbarbrand"
+            style={{ fontSize: "1.5em" }}
+          >
+            Inner Famous
+          </NavbarBrand>
+          {/* <i className="hamburger">
+            <GiHamburgerMenu size={25} />
+          </i> */}
                     <NavItem className="link">
                         <NavLink style={{ color: "white" }} href="/">
                             Home
