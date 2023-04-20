@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { GiHamburgerMenu } from "react-icons/gi"
-import { FiMenu } from "react-icons/fi"
+// import { GiHamburgerMenu } from "react-icons/gi"
 import {
   Collapse,
   Navbar,
@@ -51,9 +50,9 @@ function Navigation(args) {
           >
             Inner Famous
           </NavbarBrand>
-          <i className="hamburger">
+          {/* <i className="hamburger">
             <GiHamburgerMenu size={25} />
-          </i>
+          </i> */}
 
           <NavItem className="link">
             <NavLink style={{ color: "white" }} href="/">

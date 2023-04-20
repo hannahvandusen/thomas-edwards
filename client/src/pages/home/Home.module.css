@@ -176,6 +176,14 @@
   background-color: #ffcd51;
 }
 
+.button2 {
+  border-radius: 50px;
+}
+
+.button2:hover {
+  background-color: #ffcd51;
+}
+
 h1 {
   padding-top: 20px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
