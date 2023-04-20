@@ -52,8 +52,8 @@
   grid-template-columns: repeat(2, 1fr);
   padding: 4rem 5rem;
   overflow-y: hidden;
-  border-top: 1px solid rgb(125, 127, 129, 0.5);
-  border-bottom: 1px solid rgb(125, 127, 129, 0.5);
+  border-top: .5px solid rgb(125, 127, 129, 0.5);
+  border-bottom: .5px solid rgb(125, 127, 129, 0.5);
 }
 
 .card:nth-child(even) img {
