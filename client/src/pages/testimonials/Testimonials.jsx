@@ -50,7 +50,7 @@ function Testimonials() {
           <img className={styles.image} data-aos="fade-up"
            data-aos-anchor-placement="top-bottom"
            data-aos-easing="ease-in-sine"
-           data-aos-duration="1000" src="./images/photo2.jpg" alt="Thomas Photo" />
+           data-aos-duration="1000" src={testimonial.photo} alt="Testimonial Photo" />
             <div className={styles.association}>
               <h3 data-aos="zoom-in-right">{testimonial.caption}</h3>
                 <p data-aos="fade-up">{testimonial.quote}</p>
@@ -59,45 +59,7 @@ function Testimonials() {
         </section>
 
     </div>
-  //   <h1 style={{color: "#c59045"}}>What People Are Saying About Thomas</h1>
-        
-  //   {/* <CardGroup> */}
-  // <Row style={{justifyContent: "space-evenly", padding: "1em"}}>
-  //   {testimonials.map(testimonial => ( 
-  //   <Card className="my-2" color="#ffcd51"
-  //     outline
-  //     key={testimonial._id}
-  //     style={{
-  //       width: '18rem'
-  //     }}>
-
-  //       <CardBody>
-  //         <CardImg
-  //          data-aos="fade-up"
-  //          data-aos-anchor-placement="top-bottom"
-  //          data-aos-easing="ease-in-sine"
-  //          data-aos-duration="1000"
-  //         alt="Thomas photo 2"
-  //         src="./images/photo2.jpg"
-  //         top
-  //         width="100%"
-  //         />
-  //       <CardTitle tag="h5">
-  //       {testimonial.name}
-  //       </CardTitle>
-  //       <CardSubtitle
-  //         className="mb-2 text-muted"
-  //         tag="h6"
-  //       >
-  //         Thomas {testimonial.association}
-  //       </CardSubtitle>
-  //       <CardText data-aos="fade-right">
-  //       {testimonial.quote}
-  //       </CardText>
-  //       </CardBody>
-  //   </Card>
-    
-  //   ))} */}
+  
       ))};
       </>
 );

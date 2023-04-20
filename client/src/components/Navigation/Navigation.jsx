@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react"
 import { GiHamburgerMenu } from "react-icons/gi"
-import { FiMenu } from "react-icons/fi"
 import {
   Collapse,
   Navbar,
