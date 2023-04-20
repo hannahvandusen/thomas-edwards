@@ -92,4 +92,24 @@ router.patch("/account", async(req, res) => {
         }
 }); 
 
+router.get("/:id", async(req, res) => {
+    try {
+        const { id } = req.params;
+        const admin = await Admin.findOne({ _id: id }); 
+
+        admin ?
+        res.status(200).json({
+            admin
+        }) :
+        res.status(404).json({
+            message: `Admin not found`
+        })
+    } catch (err) {
+        res.status(500).json({
+            Error: err.message
+        })
+
+    }
+})
+
 module.exports = router;

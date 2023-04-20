@@ -11,7 +11,7 @@ import StoreIndex from "./components/Store/StoreIndex";
 import AboutMe from "./components/About/AboutMe";
 import Admin from "./components/admin/Admin";
 import Intake from "./pages/Intake";
-import Logout from "./components/admin/logout/Logout";
+// import Logout from "./components/admin/logout/Logout";
 import Account from "./components/admin/account/Account";
 import Newsletter from "./pages/Newsletter";
 import PortalView from "./components/admin/portal/PortalView";

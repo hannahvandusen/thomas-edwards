@@ -1,14 +1,14 @@
-import React, { useEffect, useState, useRef } from "react"
-import styles from "./Home.module.css"
-import mainPhoto from "../../images/mainPhoto.png"
-import aboutImage from "../../images/site_photo_6.jpg"
-import { BsTelephone } from "react-icons/bs"
-import { AiOutlineMail } from "react-icons/ai"
-import { Outlet, Link } from "react-router-dom"
-import AOS from "aos"
-import { FormGroup, Form, Input, Button } from "reactstrap"
-
-import newImage from "../../images/site_photo_2.jpg"
+import React, { useEffect, useState, useRef} from "react";
+import styles from "./Home.module.css";
+import mainPhoto from "../../images/mainPhoto.png";
+//import Carousel from 'react';
+import aboutImage from "../../images/site_photo_6.jpg";
+import { BsTelephone } from "react-icons/bs";
+import { AiOutlineMail } from "react-icons/ai";
+import { Outlet, Link } from "react-router-dom";
+import AOS from "aos";
+import { FormGroup, Form, Input, Button } from "reactstrap";
+import newImage from "../../images/site_photo_2.jpg";
 
 function Home() {
   const [story, setStory] = useState()
@@ -65,7 +65,6 @@ function Home() {
   useEffect(() => {
     // scrolling effect
     AOS.init()
-
     fetchAbout()
   }, [])
 
@@ -96,7 +95,6 @@ function Home() {
       </div>
 
       <h1 className={styles.titles}>How I can Help You</h1>
-
       <div className={styles.help}>
         <div data-aos="fade-up" className="box1">
           <AiOutlineMail size={70} />
@@ -109,14 +107,15 @@ function Home() {
           <BsTelephone size={60} />
           <br />
           <Link to="/intake">
-            <button className={styles.buttonHelp}>Book A Call</button>
+            <button className={styles.buttonHelp}>Schedule A Meeting</button>
           </Link>
         </div>
       </div>
 
       {/* <form className={styles.form}> */}
       {/* <label > */}
-      <div>
+      <br />
+      <div className={styles.connect} >
         <h1 className={styles.titles}>Let's Connect</h1>
         <Form onSubmit={handleSubmit}>
           <FormGroup>

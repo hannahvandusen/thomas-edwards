@@ -8,7 +8,7 @@ function PortalTable({intakes}) {
     //console.log(props)
     return (
     <>
-        <Table style={{color: "#cddee5"}}>
+        <Table style={{color: "#cddee5", fontFamily: "Georgia, serif"}}>
             <thead>
                 <tr>
                     <th>Request Date</th>

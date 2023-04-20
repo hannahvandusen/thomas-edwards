@@ -37,7 +37,7 @@ function PortalIndex() {
                 {/* <Col>
                     <h1 style={{color: "white", fontSize: "large"}}>Analytics</h1>
                 </Col> */}
-                <h1 style={{color: "white", fontSize: "x-large"}}>Messages</h1>
+                <h1 style={{color: "white", fontSize: "x-large", fontFamily: "Georgia, serif"}}>Messages</h1>
 
                 <Col>
                     <PortalTable intakes={intakes} />
