@@ -43,6 +43,7 @@
   /* background-image: url(../../images/design.jpg); */
   background-size: 100vw;
   /* filter: sepia(0.1); */
+
 }
 
 .form h1 {
@@ -96,7 +97,7 @@
   padding: 2rem 5rem;
   overflow-y: hidden;
   overflow-x: hidden;
-  /* border: 1px solid rgb(125, 127, 129, 0.5); */
+  border-bottom: .5px solid rgb(125, 127, 129, 0.5);
 }
 
 .card h3 {
@@ -201,6 +202,10 @@ svg {
   display: flex;
   justify-content: center;
   color: #c8cbd0;
+}
+
+.connect {
+  border-top: .5px solid rgb(125, 127, 129, 0.5);
 }
 
 /* ------ MEDIA QUIRES ------ */

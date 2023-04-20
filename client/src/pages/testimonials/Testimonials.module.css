@@ -53,7 +53,7 @@
     padding: 4rem 5rem;
     overflow-y: hidden;
     align-items: center;
-    /* border: 1px solid rgb(125, 127, 129, 0.5); */
+    border-top: .5px solid rgb(125, 127, 129, 0.5);
   }
   
   .card:nth-child(even) img {
@@ -88,7 +88,7 @@
   }
   
   .card h3 {
-    color: #17bcde;
+    color: #ffcd51;
     overflow-y: hidden;
   }
   

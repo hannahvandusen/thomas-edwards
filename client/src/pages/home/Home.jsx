@@ -114,7 +114,8 @@ function Home() {
 
       {/* <form className={styles.form}> */}
       {/* <label > */}
-      <div>
+      <br />
+      <div className={styles.connect} >
         <h1 className={styles.titles}>Let's Connect</h1>
         <Form onSubmit={handleSubmit}>
           <FormGroup>

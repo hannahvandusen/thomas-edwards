@@ -33,7 +33,7 @@ function Navigation(args) {
     <div className="dropdown-content">
       <NavLink href="/">Home</NavLink>
       <NavLink href="/testimonials">Testimonials</NavLink>
-      <NavLink href="/newsletter">Newsletter</NavLink>
+      {/* <NavLink href="/newsletter">Newsletter</NavLink> */}
       <NavLink href="/about">About</NavLink>
       <NavLink href="/intake">Contact</NavLink>
     </div>
@@ -67,12 +67,22 @@ function Navigation(args) {
               Testimonials
             </NavLink>
           </NavItem>
-          <NavItem style={{ color: "white" }} className="link">
+          <NavItem className="link">
+            <NavLink style={{ color: "white" }} href="/about">
+              About
+            </NavLink>
+          </NavItem>
+          <NavItem className="link">
+            <NavLink style={{ color: "white" }} href="/intake">
+              Contact
+            </NavLink>
+          </NavItem>
+          {/* <NavItem style={{ color: "white" }} className="link">
             <NavLink style={{ color: "white" }} href="/newsletter">
               Newsletter
             </NavLink>
-          </NavItem>
-          <UncontrolledDropdown className="link" nav inNavbar>
+          </NavItem> */}
+          {/* <UncontrolledDropdown className="link" nav inNavbar>
             <DropdownToggle
               style={{ color: "white" }}
               nav
@@ -90,7 +100,7 @@ function Navigation(args) {
               </DropdownItem>
               <DropdownItem divider />
             </DropdownMenu>
-          </UncontrolledDropdown>
+          </UncontrolledDropdown> */}
         </Nav>
       </div>
 
