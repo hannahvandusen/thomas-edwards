@@ -69,7 +69,7 @@ function AboutEdit() {
     return (
     <>
         <Form onSubmit={handleSubmit}>
-            <Label>About Description</Label>
+            <Label>About Description:</Label>
             <Input type='textarea' defaultValue={aboutSection.about} innerRef={aboutRef}/> 
             
             {/* <EditTextarea defaultValue={aboutSection.about} />  */}

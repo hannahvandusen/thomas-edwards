@@ -2,7 +2,8 @@
   text-align: center;
   /* background-color: #110e08; */
   background-color: #16181e;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  /* font-family: "Segoe UI", Tahoma, Geneva, Verdana, cursive; */
+  font-family: Georgia, serif;
 }
 
 .sticky-top {
@@ -13,7 +14,7 @@
 .nav{
   --bs-nav-link-color: #ffcd51;
   background-color: #16181e;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Georgia, serif;
   color: #d2d5d1;
 }
 
@@ -71,6 +72,8 @@
 
 .intake {
   color: #252d2d;
+  font-family: Georgia, serif;
+
 }
 
 .hamburger {
