@@ -1,14 +1,14 @@
-import React, { useEffect, useState, useRef } from "react"
-import styles from "./Home.module.css"
-import mainPhoto from "../../images/mainPhoto.png"
-import aboutImage from "../../images/site_photo_6.jpg"
-import { BsTelephone } from "react-icons/bs"
-import { AiOutlineMail } from "react-icons/ai"
-import { Outlet, Link } from "react-router-dom"
-import AOS from "aos"
-import { FormGroup, Form, Input, Button } from "reactstrap"
-
-import newImage from "../../images/site_photo_2.jpg"
+import React, { useEffect, useState, useRef} from "react";
+import styles from "./Home.module.css";
+import mainPhoto from "../../images/mainPhoto.png";
+//import Carousel from 'react';
+import aboutImage from "../../images/site_photo_6.jpg";
+import { BsTelephone } from "react-icons/bs";
+import { AiOutlineMail } from "react-icons/ai";
+import { Outlet, Link } from "react-router-dom";
+import AOS from "aos";
+import { FormGroup, Form, Input, Button } from "reactstrap";
+import newImage from "../../images/site_photo_2.jpg";
 
 function Home() {
 
@@ -88,7 +88,7 @@ function Home() {
             </main>
             <div className={styles.container}>
                 <section className={styles.card}>
-                    <img className={styles.image} src={aboutImage} alt="My Story" />
+                    <img className='img-fluid' src={aboutImage} alt="My Story" />
                     <div className={styles.description}>
                         <h3>About Thomas Edwards</h3>
                         <p className={styles.paragraph} data-aos="fade-up">
@@ -101,7 +101,7 @@ function Home() {
                     </div>
                 </section>
             </div>
-
+{/* <Carousel /> */}
             <h1 className="titles" styles={[styles.titles]}>How I can Help You</h1>
 
             <div className={styles.help}>
@@ -109,7 +109,7 @@ function Home() {
                     <AiOutlineMail size={70} />
                     <br />
                     <Link to='/newsletter'>
-                    <button>Sign Up Here</button>
+                    <button className={styles.buttonStory} >Sign Up Here</button>
                     </Link>
                     
                 </div>
@@ -117,7 +117,7 @@ function Home() {
                     <BsTelephone size={60} />
                     <br />
                     <Link to='/intake'>
-                        <button>Book A Call</button>
+                        <button className={styles.buttonStory} >Book A Call</button>
                     </Link>
                     
                 </div>
@@ -132,7 +132,7 @@ function Home() {
                             <Input placeholder="Email" innerRef={emailRef} />
                             <Input placeholder="Name" innerRef={nameRef} />
                         </FormGroup>
-                        <Button type="submit">Subscribe</Button>
+                        <button type="submit" className={styles.buttonStory}>Subscribe</button>
                     </Form>
                 </div>
                     {/* <input
