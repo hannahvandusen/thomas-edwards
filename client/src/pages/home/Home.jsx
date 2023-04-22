@@ -1,6 +1,17 @@
 import React, { useEffect, useState, useRef } from "react";
 import styles from "./Home.module.css";
 import mainPhoto from "../../images/mainPhoto.png";
+//import Carousel from 'react';
+import aboutImage from "../../images/site_photo_6.jpg";
+import { BsTelephone } from "react-icons/bs";
+import { AiOutlineMail } from "react-icons/ai";
+import { Outlet, Link } from "react-router-dom";
+import AOS from "aos";
+import { FormGroup, Form, Input, Button } from "reactstrap";
+import newImage from "../../images/site_photo_2.jpg";
+import React, { useEffect, useState, useRef } from "react";
+import styles from "./Home.module.css";
+import mainPhoto from "../../images/mainPhoto.png";
 import aboutImage from "../../images/site_photo_6.jpg";
 import { BsTelephone } from "react-icons/bs";
 import { AiOutlineMail } from "react-icons/ai";
@@ -130,14 +141,15 @@ function Home() {
 
             {/* <form className={styles.form}> */}
             {/* <label > */}
-            <div>
+            <br />
+            <div className={styles.connect}>
                 <h1 className={styles.titles}>Let's Connect</h1>
                 <Form onSubmit={handleSubmit}>
                     <FormGroup>
                         <Input placeholder="Email" innerRef={emailRef} />
                         <Input placeholder="Name" innerRef={nameRef} />
                     </FormGroup>
-                    <Button type="submit">Subscribe</Button>
+                    <button className={styles.buttonHelp}>Subscribe</button>
                 </Form>
             </div>
             {/* <input

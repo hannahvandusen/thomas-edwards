@@ -1,33 +1,33 @@
 import React, { useEffect, useState } from "react"
-import { GiHamburgerMenu } from "react-icons/gi"
+// import { GiHamburgerMenu } from "react-icons/gi"
 import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
+    Collapse,
+    Navbar,
+    NavbarToggler,
+    NavbarBrand,
+    Nav,
+    NavItem,
+    NavLink,
+    UncontrolledDropdown,
+    DropdownToggle,
+    DropdownMenu,
+    DropdownItem,
 } from "reactstrap"
 
 import Hamburger from "hamburger-react"
 
 function Navigation(args) {
-  let style = {
-    width: "100%",
-    // background: "black",
-    // opacity: ".5",
-    // color: "white",
-  }
+    let style = {
+        width: "100%",
+        // background: "black",
+        // opacity: ".5",
+        // color: "white",
+    }
 
-  const [btnState, setBtnState] = useState(false)
-  const handleClick = () => {
-    setBtnState((btnState) => !btnState)
-  }
+    const [btnState, setBtnState] = useState(false)
+    const handleClick = () => {
+        setBtnState((btnState) => !btnState)
+    }
 
   let toggle = btnState ? (
     <div className="dropdown-content">
@@ -50,16 +50,15 @@ function Navigation(args) {
           >
             Inner Famous
           </NavbarBrand>
-          <i className="hamburger">
+          {/* <i className="hamburger">
             <GiHamburgerMenu size={25} />
-          </i>
-
-          <NavItem className="link">
-            <NavLink style={{ color: "white" }} href="/">
-              Home
-            </NavLink>
-          </NavItem>
-          {/* <NavItem>
+          </i> */}
+                    <NavItem className="link">
+                        <NavLink style={{ color: "white" }} href="/">
+                            Home
+                        </NavLink>
+                    </NavItem>
+                    {/* <NavItem>
                             <NavLink href="/store">Store</NavLink>
                         </NavItem> */}
           <NavItem className="link">
@@ -104,14 +103,14 @@ function Navigation(args) {
         </Nav>
       </div>
 
-      <div className="media">
-        <NavbarBrand
-          href="/"
-          className="navbarbrandMedia"
-          style={{ fontSize: "1.5em" }}
-        >
-          Inner Famous
-        </NavbarBrand>
+            <div className="media">
+                <NavbarBrand
+                    href="/"
+                    className="navbarbrandMedia"
+                    style={{ fontSize: "1.5em" }}
+                >
+                    Inner Famous
+                </NavbarBrand>
 
         <div className="dropDown">
           <i onClick={handleClick} className="dropbtn">
