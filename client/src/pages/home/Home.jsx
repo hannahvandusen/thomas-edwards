@@ -9,17 +9,6 @@ import { Outlet, Link } from "react-router-dom";
 import AOS from "aos";
 import { FormGroup, Form, Input, Button } from "reactstrap";
 import newImage from "../../images/site_photo_2.jpg";
-import React, { useEffect, useState, useRef } from "react";
-import styles from "./Home.module.css";
-import mainPhoto from "../../images/mainPhoto.png";
-import aboutImage from "../../images/site_photo_6.jpg";
-import { BsTelephone } from "react-icons/bs";
-import { AiOutlineMail } from "react-icons/ai";
-import { Outlet, Link } from "react-router-dom";
-import AOS from "aos";
-import { FormGroup, Form, Input, Button } from "reactstrap";
-
-import newImage from "../../images/site_photo_2.jpg";
 
 function Home() {
     const [story, setStory] = useState();
@@ -76,7 +65,6 @@ function Home() {
     useEffect(() => {
         // scrolling effect
         AOS.init();
-
         fetchAbout();
     }, []);
 
@@ -117,7 +105,6 @@ function Home() {
             </div>
 
             <h1 className={styles.titles}>How I can Help You</h1>
-
             <div className={styles.help}>
                 <div data-aos="fade-up" className="box1">
                     <AiOutlineMail size={70} />
@@ -133,7 +120,7 @@ function Home() {
                     <br />
                     <Link to="/intake">
                         <button className={styles.buttonHelp}>
-                            Book A Call
+                            Schedule A Meeting
                         </button>
                     </Link>
                 </div>
@@ -149,7 +136,7 @@ function Home() {
                         <Input placeholder="Email" innerRef={emailRef} />
                         <Input placeholder="Name" innerRef={nameRef} />
                     </FormGroup>
-                    <button className={styles.buttonHelp}>Subscribe</button>
+                    <button className={styles.button2}>Subscribe</button>
                 </Form>
             </div>
             {/* <input
