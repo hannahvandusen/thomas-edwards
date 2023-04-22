@@ -106,7 +106,7 @@ function Home() {
         <div data-aos="fade-up" className="box2">
           <BsTelephone size={60} />
           <br />
-          <Link to="/intake">
+          <Link to="https://calendly.com/innerfamous">
             <button className={styles.buttonHelp}>Schedule A Meeting</button>
           </Link>
         </div>

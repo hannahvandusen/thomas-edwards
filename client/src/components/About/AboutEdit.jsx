@@ -95,7 +95,9 @@ function AboutEdit() {
             style={{height: "20vh"}}
             /> 
             <Button type='submit' style={{backgroundColor: "#ffcd51", 
-        color: "black"}} >Edit</Button>
+        color: "black"}}> Publish Changes</Button>
+        <Button style={{backgroundColor: "#ffcd51", 
+        color: "black"}} onClick={() => navigate('/about')}>View About Page</Button>
         </Form>
         <Button onClick={() => navigate('/admin')} style={{backgroundColor: "#ffcd51", 
         color: "black"}}>Admin Portal</Button>
