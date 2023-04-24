@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import styles from "./Home.module.css";
 import mainPhoto from "../../images/mainPhoto.png";
-//import Carousel from 'react';
+import Carousel from '../../components/carousel/Carousel';
 import aboutImage from "../../images/site_photo_6.jpg";
 import { BsTelephone } from "react-icons/bs";
 import { AiOutlineMail } from "react-icons/ai";
@@ -90,7 +90,7 @@ function Home() {
                 <section className={styles.card}>
                     <img id="about-image" className='img-fluid' src={aboutImage} alt="My Story" />
                     <div className={styles.description}>
-                        <h3>About Thomas Edwards</h3>
+                        <h3 className={styles.titles}>About Thomas Edwards</h3>
                         <p className={styles.paragraph} data-aos="fade-up">
                             {story}
                         </p>
@@ -102,6 +102,15 @@ function Home() {
                     </div>
                 </section>
             </div>
+            <div class="container-fluid py-2">
+    <div class="d-flex flex-row flex-nowrap">
+        <div class="card card-body">Card</div>
+        <div class="card card-body">Card</div>
+        <div class="card card-body">Card</div>
+        <div class="card card-body">Card</div>
+        <div class="card card-body">Card</div>
+    </div>
+</div>
 
             <h1 className={styles.titles}>How I can Help You</h1>
             <div className={styles.help}>
@@ -177,15 +186,12 @@ function Home() {
                 <h1 className={styles.titles}>Let's Connect</h1>
                 <Form onSubmit={handleSubmit}>
                     <FormGroup>
-                        <Input placeholder="Email" innerRef={emailRef} />
-                        <Input placeholder="Name" innerRef={nameRef} />
+                        <Input aria-label='Email input' placeholder="Email" innerRef={emailRef} />
+                        <Input placeholder="Name" aria-label='Name input' innerRef={nameRef} />
                     </FormGroup>
                     <button className={styles.button2}>Subscribe</button>
                 </Form>
             </div>
-            {/* </label> */}
-            {/* <input className={styles.button} type="submit" value="Submit" /> */}
-            {/* </form> */}
         </>
     )
 }
