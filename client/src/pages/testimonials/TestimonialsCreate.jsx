@@ -26,7 +26,7 @@ function TestimonialsCreate(props) {
         if (file) {
             reader.readAsDataURL(file);
         }
-        }
+    }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
