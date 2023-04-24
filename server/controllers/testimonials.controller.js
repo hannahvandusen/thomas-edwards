@@ -3,6 +3,7 @@ const { Testimonials } = require('../models');
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const validateSession = require("../middleware/validate-session");
+const cloudinary = require("cloudinary").v2;
 
 router.post('/', async (req, res) => {
 
