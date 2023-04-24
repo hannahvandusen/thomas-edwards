@@ -122,6 +122,21 @@
     overflow-y: hidden;
   }
   
+  .button {
+    font-size: 15px;
+    width: 75%;
+    /* border-radius: 30px;     */
+    font-family: Georgia, serif;
+    margin: 3%;
+    /* opacity: 0.5; */
+  }
+  .button:hover {
+    background-color: #ffcd51;
+    font-size: 15px;
+    border-radius: 50px;
+  }
+  
+  
   /* .form h1 {
     justify-content: center;
     text-align: center;

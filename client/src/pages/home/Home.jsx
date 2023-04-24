@@ -138,7 +138,57 @@ function Home() {
                         <button type="submit" className={styles.buttonStory}>Subscribe</button>
                     </Form>
                 </div>
-                    {/* <input
+                    
+{/* <input
+
+      </main>
+      <div className={styles.container}>
+        <section className={styles.card}>
+          <img className={styles.image} src={aboutImage} alt="My Story" />
+          <div className={styles.description}>
+            <h3>About Thomas Edwards</h3>
+            <p className={styles.paragraph} data-aos="fade-up">
+              {story}
+            </p>
+            <Link to="/about" >
+              <button className={styles.buttonStory} onClick="window.location.href='#top'">Read My Story</button>
+            </Link>
+          </div>
+        </section>
+      </div>
+
+      <h1 className={styles.titles}>How I can Help You</h1>
+      <div className={styles.help}>
+        <div data-aos="fade-up" className="box1">
+          <AiOutlineMail size={70} />
+          <br />
+          <Link to="/newsletter">
+            <button className={styles.buttonHelp}>Sign Up Here</button>
+          </Link>
+        </div>
+        <div data-aos="fade-up" className="box2">
+          <BsTelephone size={60} />
+          <br />
+          <Link to="https://calendly.com/innerfamous" target="_blank" rel="noopener noreferrer">
+            <button className={styles.buttonHelp}>Schedule A Meeting</button>
+          </Link>
+        </div>
+      </div>
+
+      {/* <form className={styles.form}> */}
+      {/* <label > */}
+      <br />
+      <div className={styles.connect} >
+        <h1 className={styles.titles}>Let's Connect</h1>
+        <Form onSubmit={handleSubmit}>
+          <FormGroup>
+            <Input placeholder="Email" innerRef={emailRef} />
+            <Input placeholder="Name" innerRef={nameRef} />
+          </FormGroup>
+          <button className={styles.button2}>Subscribe</button>
+        </Form>
+      </div>
+
                         className={styles.input}
                         type="text"
                         name="name"
@@ -149,7 +199,8 @@ function Home() {
                         type="text"
                         name="name"
                         placeholder="Email"
-                    /> */}
+                    /> 
+*/}
                 {/* </label> */}
                 {/* <input className={styles.button} type="submit" value="Submit" /> */}
             {/* </form> */}

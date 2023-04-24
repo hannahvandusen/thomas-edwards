@@ -15,20 +15,18 @@ function TestimonialsCreate(props) {
         const preview = document.querySelector("img");
         const file = document.querySelector("input[type=file]").files[0];
         const reader = new FileReader();
-      
+
         reader.addEventListener(
-          "load",
-          () => {
-            preview.src = reader.result;
-          },
-          false
+            "load",
+            () => {
+                preview.src = reader.result;
+            },
+            false
         );
-      
         if (file) {
-          reader.readAsDataURL(file);
+            reader.readAsDataURL(file);
         }
-      }
-      
+        }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -71,12 +69,25 @@ function TestimonialsCreate(props) {
         }
     }
 
+    const style = {
+        backgroundColor: "#ffcd51", 
+        color: "black",
+        fontFamily: "Georgia, serif"
+    }
+
     return (
         <>
-            <h1 style={{color: "#cddee5"}}>Add Testimonial</h1>
+            <h1 style={{color: "#cddee5", fontFamily: "Georgia, serif"}}>Add a Testimonial</h1>
             <Form 
                 innerRef={formRef}
                 onSubmit={handleSubmit}>
+                <FormGroup>
+                    <Label style={{color: "#cddee5"}}>Caption</Label>
+                    <Input 
+                        innerRef={captionRef}
+                        autoComplete='off'
+                    /> 
+                </FormGroup>
                 <FormGroup>
                     <Label style={{color: "#cddee5"}}>Name</Label>
                     <Input 
@@ -104,7 +115,7 @@ function TestimonialsCreate(props) {
                         onchange="previewFile()"/>
                 </FormGroup>
                 
-                <Button type='submit' color="success" >Add Testimonial</Button>
+                <Button type='submit' style={style} >Add Testimonial</Button>
             </Form>
         </>
     )

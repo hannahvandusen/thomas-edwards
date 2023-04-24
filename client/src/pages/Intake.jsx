@@ -1,8 +1,7 @@
 import "../App.css"
-import { React, useRef } from "react";
-import { Form, FormGroup, Input, Label, Button } from "reactstrap";
+import { React, useRef } from "react"
+import { Form, FormGroup, Input, Label, Button } from "reactstrap"
 import styles from "../pages/home/Home.module.css"
-
 
 const Intake = () => {
   const nameRef = useRef()
@@ -60,7 +59,10 @@ const Intake = () => {
   return (
     <div>
       <h1 style={{ color: "white" }}>
-        <span style={{ color: "#ffcd51", fontFamily: "Georgia, serif"}}>Contact</span>Thomas
+        <span style={{ color: "#ffcd51", fontFamily: "Georgia, serif" }}>
+          Contact
+        </span>
+        Thomas
       </h1>
       {/* <h6 style={{color: "white"}}>
         If you would like to reach out to me directly as an individual client or a business please fill out the below form and I will contact you ASAP!
@@ -192,8 +194,7 @@ const Intake = () => {
             Leave me a brief message about yourself, your organization, or
             goals!
           </Label>
-        </FormGroup>
-        {' '}
+        </FormGroup>{" "}
         <button type="submit" className={styles.buttonHelp}>
           Submit
         </button>
