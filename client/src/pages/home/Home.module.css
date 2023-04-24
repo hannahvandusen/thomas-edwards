@@ -43,7 +43,6 @@
   /* background-image: url(../../images/design.jpg); */
   background-size: 100vw;
   /* filter: sepia(0.1); */
-
 }
 
 .form h1 {
@@ -101,14 +100,13 @@
   padding: 2rem 5rem;
   overflow-y: hidden;
   overflow-x: hidden;
-  border-bottom: .5px solid rgb(125, 127, 129, 0.5);
+  border-bottom: 0.5px solid rgb(125, 127, 129, 0.5);
 }
 
 .card h3 {
   margin-bottom: 1rem;
   overflow-y: hidden;
   font-family: Georgia, serif;
-
 }
 
 .card span {
@@ -133,7 +131,6 @@
 .card p {
   /* color: #cddee5; */
   color: #c8cbd0;
-  
 }
 
 .card > div {
@@ -144,7 +141,6 @@
 .titles {
   color: #cddee5;
   font-family: Georgia, serif;
-
 }
 
 .span1 {
@@ -153,7 +149,6 @@
 
 .aboutThomas {
   color: #ffcd51;
-
 }
 
 /* ------ HOW I CAN HELP  ------ */
@@ -217,7 +212,11 @@ svg {
 }
 
 .connect {
-  border-top: .5px solid rgb(125, 127, 129, 0.5);
+  border-top: 0.5px solid rgb(125, 127, 129, 0.5);
+}
+
+.buttonHelp {
+  border-radius: 50px;
 }
 
 /* ------ MEDIA QUIRES ------ */

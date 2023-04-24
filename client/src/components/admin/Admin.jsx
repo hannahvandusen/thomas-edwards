@@ -1,82 +1,87 @@
-import React from 'react'
-import { useState, useEffect } from 'react';
-import { Button, Col, Container, Row } from 'reactstrap'
-import Login from './login/Login'
-import Logout from './logout/Logout';
-import PortalIndex from './portal/PortalIndex';
+import React from "react"
+import { useState, useEffect } from "react"
+import { Button, Col, Container, Row } from "reactstrap"
+import Login from "./login/Login"
+import Logout from "./logout/Logout"
+import PortalIndex from "./portal/PortalIndex"
 
 function Admin() {
+  const [sessionToken, setSessionToken] = useState("")
 
+  const updateToken = (newToken) => {
+    localStorage.setItem("token", newToken)
+    setSessionToken(newToken)
+  }
 
-    const [ sessionToken, setSessionToken ] = useState('');
+  const token = { sessionToken }
 
-    const updateToken = newToken => {
-    localStorage.setItem("token", newToken);
-    setSessionToken(newToken); 
+  // console.log(localStorage.getItem("token"))
+
+  const style = {
+    float: "right",
+    margin: "1em",
+    backgroundColor: "#ffcd51",
+    color: "black",
+    fontFamily: "Georgia, serif",
+  }
+
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      setSessionToken(localStorage.getItem("token"))
     }
+  }, [])
 
-    const token = {sessionToken}
-
-    // console.log(localStorage.getItem("token"))
-
-    const style = {
-        float: "right",
-        margin: "1em",
-        backgroundColor: "#ffcd51", 
-        color: "black",
-        fontFamily: "Georgia, serif"
-    }
-
-    useEffect(() => {
-        if(localStorage.getItem('token')) {
-        setSessionToken(localStorage.getItem('token'));
-        }
-    }, [])
-    
-    const displayForm = () => {
-        return (
-            localStorage.getItem('token') === null ?
-            <Container>
-            <Row>
-                <Col>
-                    <Login updateToken={sessionToken}/> 
-                </Col>
-            </Row>
-            </Container> :
-            <Container>
-                <h1 style={{color: "white", fontFamily: "Georgia, serif"}}>Admin Portal</h1>
-                <Row>
-                
-                    <Col md="8">
-                        <PortalIndex />
-                    </Col>
-                    <Col md="3">
-                        <Button 
-                        href="/admin/account" 
-                        style={style} 
-                        >
-                            Update Email/Password 
-                        </Button>
-                        <Button 
-                        href="/testimonialsindex"
-                        style={style} 
-                        >Edit Testimonials</Button>
-                        <Button
-                        style={style} 
-                        href="/about/edit"
-                        >Edit About</Button>
-                    </Col>
-                    <Logout setToken={setSessionToken}/> 
-                </Row>
-            </Container>
-        )
-    }
-
-    return (
-        <>
-            {displayForm()}
-        </>
+  const displayForm = () => {
+    return localStorage.getItem("token") === null ? (
+      <Container>
+        <Row>
+          <Col>
+            <Login updateToken={sessionToken} />
+          </Col>
+        </Row>
+      </Container>
+    ) : (
+      <Container>
+        <h1 style={{ color: "white", fontFamily: "Georgia, serif" }}>
+          Admin Portal
+        </h1>
+        <Row>
+          <Col md="8">
+            <PortalIndex />
+          </Col>
+          <Col md="3">
+            <button
+              style={{ borderRadius: "10px", width: "200px", fontSize: "15px" }}
+              href="/admin/account"
+            >
+              Update Email/Password
+            </button>
+            <button
+              style={{
+                borderRadius: "10px",
+                margin: "15px 10px",
+                textAlign: "center",
+                width: "200px",
+                fontSize: "15px",
+              }}
+              href="/testimonialsindex"
+            >
+              Edit Testimonials
+            </button>
+            <button
+              style={{ borderRadius: "10px", width: "200px", fontSize: "15px" }}
+              href="/about/edit"
+            >
+              Edit About
+            </button>
+          </Col>
+          <Logout setToken={setSessionToken} />
+        </Row>
+      </Container>
     )
+  }
+
+  return <>{displayForm()}</>
 }
 
 export default Admin
