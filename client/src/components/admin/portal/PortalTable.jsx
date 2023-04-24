@@ -5,7 +5,20 @@ import { Button, Table } from 'reactstrap';
 function PortalTable({intakes}) {
     const navigate = useNavigate();
 
-    //console.log(props)
+    // const arr = intakes.splice(0);
+    // arr.reverse();
+    // console.log(`New intakes: ${arr}`); 
+
+    // const copy = intakes;
+    //     intakes.splice(0)
+    //     intakes.reverse();
+    //     intakes.map(intake => {
+    //         console.log(`Intakes: ${intake}`)
+    //     }); 
+
+    const copy  = intakes.reverse(); 
+    console.log(`new array: ${copy}`)
+    console.log(intakes);
     return (
     <>
         <Table style={{color: "#cddee5", fontFamily: "Georgia, serif"}}>
@@ -23,7 +36,7 @@ function PortalTable({intakes}) {
             </thead>
             <tbody>
                 {
-                    intakes.map(intake => (
+                    copy.map(intake => (
                         <tr key={intake._id}>
                             <th scope='row'>{intake.date}</th>
 
