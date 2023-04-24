@@ -103,28 +103,23 @@ function Home() {
                 </section>
             </div>
 
-{/* <Carousel /> */} //! TODO fix Carousel functionality
-
-            <h1 className="titles" styles={[styles.titles]}>How I can Help You</h1>
-
-            <div className={styles.help}>
-                <div data-aos="fade-up" className="box1">
-                    <AiOutlineMail size={70} />
-                    <br />
-                    <Link to='/newsletter'>
-                    <button className={styles.buttonStory} >Sign Up Here</button>
-                    </Link>
-                    
-                </div>
-                <div data-aos="fade-up" className="box2">
-                    <BsTelephone size={60} />
-                    <br />
-                    <Link to='/intake'>
-                        <button className={styles.buttonStory} >Book A Call</button>
-                    </Link>
-                    
-                </div>
-            </div>
+      <h1 className={styles.titles}>How I can Help You</h1>
+      <div className={styles.help}>
+        <div data-aos="fade-up" className="box1">
+          <AiOutlineMail size={70} />
+          <br />
+          <Link to="/newsletter">
+            <button className={styles.buttonHelp}>Sign Up Here</button>
+          </Link>
+        </div>
+        <div data-aos="fade-up" className="box2">
+          <BsTelephone size={60} />
+          <br />
+          <Link to="/intake">
+            <button className={styles.buttonHelp}>Schedule A Meeting</button>
+          </Link>
+        </div>
+      </div>
 
             {/* <form className={styles.form}> */}
                 {/* <label > */}

@@ -29,6 +29,12 @@ function TestimonialsIndex(props) {
         }
     }
 
+    const style = {
+        backgroundColor: "#ffcd51", 
+        color: "black",
+        fontFamily: "Georgia, serif"
+    }
+
     useEffect(() => {
         if(localStorage.getItem('token') !== null) {
             fetchTestimonials();
@@ -48,7 +54,7 @@ function TestimonialsIndex(props) {
                             testimonials={testimonials} />
                     </Col>
                 </Row>
-                <Button onClick={() => navigate('/admin')} outline color='primary'>Admin Portal</Button>
+                <Button onClick={() => navigate('/admin')} style={style} >Admin Portal</Button>
             </Container>
         </>
 

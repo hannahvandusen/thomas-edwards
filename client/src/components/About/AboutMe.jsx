@@ -79,7 +79,7 @@ const AboutMe = () => {
       </div>
       <div className={styles.form}>
 
-        <Button style={{ backgroundColor: "#ffcd51", color: "black"}} onClick={() => navigate('/intake')}>Get in Touch</Button>
+        <Button style={{ backgroundColor: "#ffcd51", color: "black"}} onClick={() => navigate('/intake')} href='#top'>Get in Touch</Button>
       {/* <a href="/intake" data-aos="fade-down">Get in Touch</a> */}
         {/* <h1 data-aos="fade-down" >Get in Touch</h1> */}
       </div>
