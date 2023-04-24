@@ -87,7 +87,11 @@
   background-color: #ffcd51;
 }
 
-#about-image{
+.header {
+  color: #ffcd51;
+}
+
+#about-image {
   display: flex;
   justify-content: center;
 }

@@ -1,8 +1,7 @@
-import React, { useEffect, useState, useRef} from "react";
-import styles from "./Home.module.css";
-import mainPhoto from "../../images/mainPhoto.png";
+import React, { useEffect, useState, useRef } from "react"
+import styles from "./Home.module.css"
+import mainPhoto from "../../images/mainPhoto.png"
 //import Carousel from 'react';
-
 import aboutImage from "../../images/site_photo_6.jpg";
 import { BsTelephone } from "react-icons/bs";
 import { AiOutlineMail } from "react-icons/ai";
