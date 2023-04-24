@@ -26,7 +26,7 @@ function TestimonialsCreate(props) {
         if (file) {
             reader.readAsDataURL(file);
         }
-        }
+    }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -46,7 +46,6 @@ function TestimonialsCreate(props) {
 
     let myHeader = new Headers();
         myHeader.append("Content-Type", "application/json");
-        myHeader.append('Authorization', props.token);
 
         const requestOptions = {
             headers: myHeader,

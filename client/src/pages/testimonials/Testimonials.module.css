@@ -11,30 +11,29 @@
   }
   
   .mainHeader {
-    height: 35rem;
+    height: 15rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: .5rem;
+    padding-bottom: .5rem;
     overflow-y: hidden;
   }
   
   .mainHeader h1 {
     color: #c2cdc0;
-    font: 4rem;
-    margin-bottom: 2rem;
-    line-height: 1.2;
-    font-size: 60px;
-    overflow-y: hidden;
+    margin-bottom: .5rem;
+    /* line-height: 1.2; */
+    font-size: 3rem; 
+    overflow-y:auto;
     font-family: Georgia, serif;
 
   }
   
   .mainHeader h1 span {
     color: #ffcd51;
-    font-size: 60px;
+    /* font-size: 10rem; */
     overflow-y: hidden;
   }
   

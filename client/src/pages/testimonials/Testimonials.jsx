@@ -34,10 +34,10 @@ function Testimonials() {
 	<>
     <header className={styles.mainHeader}>
         <h1>
-          <span>What People Say About{""}</span>Working With Thomas
+          <span>What People Say About</span>{" "}Working With Thomas
         </h1>
         <p className={styles.p}> </p>
-      </header>
+    </header>
 
       {testimonials.map(testimonial => (
 

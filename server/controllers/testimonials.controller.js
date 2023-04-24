@@ -130,10 +130,10 @@ router.delete('/:id', async (req, res) => {
 
         deleteTestimonial.deletedCount > 0 ?
             res.status(200).json({
-                message: 'Testimonial deleted.'
+                message: 'Testimonial Removed'
             })  :
             res.status(404).json({
-                message: 'Did not delete testimonial.'
+                message: 'Did not delete testimonial'
             });
 
     } catch (err) {

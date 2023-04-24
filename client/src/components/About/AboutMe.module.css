@@ -11,7 +11,7 @@
 }
 
 .mainHeader {
-  height: 35rem;
+  height: 25rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,14 +19,13 @@
   text-align: center;
   padding: .5rem;
   overflow-y: hidden;
-
 }
 
 .mainHeader h1 {
-  font: 4rem;
+  /* font: 4rem; */
   margin-bottom: 2rem;
-  line-height: 1.2;
-  font-size: 60px;
+  /* line-height: 1.2; */
+  font-size: 3rem;
   font-family: Georgia, serif;
   overflow-y: hidden;
   color: #c2cdc0;
@@ -34,7 +33,7 @@
 
 .mainHeader h1 span {
   color: #ffcd51;
-  font-size: 60px;
+  /* font-size: 60px; */
   overflow-y: hidden;
 }
 
@@ -44,6 +43,7 @@
   justify-content: center;
   text-align: center;
   margin-bottom: 10px;
+  /* margin-left: 8%; */
 }
 
 .card {
@@ -51,8 +51,8 @@
   grid-template-columns: repeat(2, 1fr);
   padding: 4rem 5rem;
   overflow-y: hidden;
-  border-top: .5px solid rgb(125, 127, 129, 0.5);
-  border-bottom: .5px solid rgb(125, 127, 129, 0.5);
+  border-top: 0.5px solid rgb(125, 127, 129, 0.5);
+  border-bottom: 0.5px solid rgb(125, 127, 129, 0.5);
 }
 
 .card:nth-child(even) img {
@@ -126,6 +126,14 @@
   margin-right: 10%;
 } */
 
+.p {
+  overflow-x: hidden;
+  justify-content: center;
+  margin-bottom: 10px;
+  text-align: center;
+  max-width: fit-content;
+}
+
 .inTouch {
   display: flex;
   justify-content: center;
@@ -150,6 +158,7 @@
     margin-bottom: 10px;
     text-align: center;
   }
+
   .container {
     overflow-x: hidden;
     width: 100vw;
