@@ -14,9 +14,6 @@ function TestimonialsIndex(props) {
         const url = `http://localhost:4000/testimonialsindex`;
 
         const requestOptions = {
-            headers: new Headers({
-                "Authorization": props.token
-            }),
             method: "GET"
         }
 

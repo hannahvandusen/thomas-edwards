@@ -47,7 +47,7 @@ function Login({ updateToken }) {
 
   return (
     <>
-      <h1>Login</h1>
+      <h1 style={{color: "white"}}>Login</h1>
       <Form onSubmit={handleSubmit}>
         <FormGroup>
           <Label>Email</Label>

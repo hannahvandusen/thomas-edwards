@@ -47,8 +47,7 @@ const AboutMe = () => {
         <h1>
           <span>About</span>Thomas
         </h1>
-        <p className={styles.p}>{about} </p>
-        <main></main>
+        <p> {about} </p>
       </header>
 
       <div className={styles.container}>
