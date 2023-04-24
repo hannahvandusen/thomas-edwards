@@ -11,7 +11,7 @@
 }
 
 .mainHeader {
-  height: 35vh;
+  height: 25rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,10 +23,10 @@
 }
 
 .mainHeader h1 {
-  font: 4rem;
+  /* font: 4rem; */
   margin-bottom: 2rem;
-  line-height: 1.2;
-  font-size: 60px;
+  /* line-height: 1.2; */
+  font-size: 3rem;
   font-family: Georgia, serif;
   overflow-y: hidden;
   color: #c2cdc0;
@@ -34,7 +34,7 @@
 
 .mainHeader h1 span {
   color: #ffcd51;
-  font-size: 60px;
+  /* font-size: 60px; */
   overflow-y: hidden;
 }
 
@@ -44,7 +44,7 @@
   justify-content: center;
   text-align: center;
   margin-bottom: 10px;
-  margin-left: 8%;
+  /* margin-left: 8%; */
 }
 
 .card {

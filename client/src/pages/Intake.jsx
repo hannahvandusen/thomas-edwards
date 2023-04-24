@@ -1,6 +1,6 @@
 import "../App.css"
 import { React, useRef } from "react"
-import { Form, FormGroup, Input, Label, Button } from "reactstrap"
+import { Form, FormGroup, Input, Label, Button, Container, Row, Col } from "reactstrap"
 import styles from "../pages/home/Home.module.css"
 
 const Intake = () => {
@@ -58,15 +58,19 @@ const Intake = () => {
   }
   return (
     <div>
-      <h1 style={{ color: "white" }}>
+      <Container>
+        <Row>
+          <Col>
+          <h1 style={{ color: "white" }}>
         <span style={{ color: "#ffcd51", fontFamily: "Georgia, serif" }}>
           Contact
-        </span>
+        </span> {" "}
         Thomas
       </h1>
       {/* <h6 style={{color: "white"}}>
         If you would like to reach out to me directly as an individual client or a business please fill out the below form and I will contact you ASAP!
       </h6> */}
+
       <Form className="intake" onSubmit={handleSubmit}>
         <FormGroup
           style={{
@@ -89,7 +93,7 @@ const Intake = () => {
             innerRef={nameRef}
           />
         </FormGroup>{" "}
-        <FormGroup style={{ display: "flex", justifyContent: "center" }} row>
+        <FormGroup style={{ display: "flex", justifyContent: "center"}} row>
           <Label for="exampleEmail">Email</Label>
           <Input
             style={{
@@ -143,27 +147,26 @@ const Intake = () => {
             </Input>
           </div>
         </FormGroup>
-        <FormGroup tag="fieldset" style={{ color: "white" }}>
-          <label>Best Method of Contact:</label>
-          <FormGroup check>
+        <FormGroup style={{ color: "white" }}>
+          <label>Best Method of Contact: </label>
+          <div
+            className="timeContainer"
+            style={{ display: "flex", justifyContent: "center" }}
+          >
             <Input
-              name="radio1"
-              type="radio"
+              style={{
+                width: "450px",
+              }}
+              name="select"
+              type="select"
               innerRef={methodRef}
-              value={"Email"}
-            />{" "}
-            <Label check> Email</Label>
-          </FormGroup>
-          <FormGroup check>
-            <Input
-              name="radio1"
-              type="radio"
-              innerRef={methodRef}
-              value={"Phone"}
-            />{" "}
-            <Label check>Phone</Label>
-          </FormGroup>
-        </FormGroup>{" "}
+            >
+              <option></option>
+              <option value={"Phone"}>Phone</option>
+              <option value={"Email"}>Email</option>
+            </Input>
+          </div>
+        </FormGroup>
         <FormGroup
           style={{
             display: "flex",
@@ -171,10 +174,20 @@ const Intake = () => {
             flexDirection: "column",
           }}
         >
+          <Label
+            style={{
+              margin: "24px",
+              width: "450px",
+            }}
+            for="exampleMessage"
+          >
+            Leave Thomas a Message:
+          </Label>
           <Input
             id="Message"
             name="message"
-            placeholder="Message"
+            placeholder="Leave a brief message about yourself, your organization, or
+            goals!"
             type="textarea"
             style={{
               // height: "20vh",
@@ -184,21 +197,19 @@ const Intake = () => {
             innerRef={messageRef}
           />
 
-          <Label
-            style={{
-              margin: "24px",
-              width: "450px",
-            }}
-            for="exampleMessage"
-          >
-            Leave me a brief message about yourself, your organization, or
-            goals!
-          </Label>
-        </FormGroup>{" "}
+        </FormGroup>
+        <br />
         <button type="submit" className={styles.buttonHelp}>
           Submit
         </button>
       </Form>
+
+          </Col>
+          <Col>
+          <img src="" alt="" />
+          </Col>
+        </Row>
+      </Container>
     </div>
   )
 }
