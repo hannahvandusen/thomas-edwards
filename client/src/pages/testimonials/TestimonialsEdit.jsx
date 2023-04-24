@@ -12,6 +12,9 @@ function TestimonialsEdit(props) {
     const [quote, setQuote] = useState('');
     const [photo, setPhoto] = useState('');
 
+    // setting photo URL
+    const [ photoUrl, setPhotoUrl ] = useState("")
+
     const url = `http://localhost:4000/testimonialsindex/${id}`;
 
     const fetchTestimonials = async () => {
@@ -94,6 +97,23 @@ function TestimonialsEdit(props) {
         }
     }
 
+    // uploading image
+    const uploadPhoto = () => {
+        const data = new FormData()
+        data.append("file", photo)
+        data.append("upload_preset", "pwhkfjz3")
+        data.append("cloud_name", "dfofj3ppu")
+        fetch("  https://api.cloudinary.com/v1_1/dfofj3ppu/image/upload",{
+            method:"post",
+            body: data
+        })
+        .then(resp =>resp.json())
+        .then(data => {
+            setPhotoUrl(data.photoUrl)
+        })
+        .catch(err => console.log(err))
+    }
+
     return (
         <>
             <h1 style={{color: "#cddee5",
@@ -144,7 +164,7 @@ function TestimonialsEdit(props) {
                                 <Input
                                     value={photo}
                                     type='file'
-                                    onChange={e => setPhoto(e.target.value)}
+                                    onChange={e => setPhoto(e.target.files[0])}
                                     autoComplete='off' />
                             </FormGroup>
                                 <Button color='success'>Update Testimonial</Button>

@@ -1,5 +1,4 @@
 import { React, useEffect, useState } from "react";
-// import {  Button, Card, CardImg, CardGroup, CardTitle, CardText, CardBody, CardSubtitle, Row, Col } from "reactstrap";
 import { useNavigate } from 'react-router-dom';
 import styles from "./Testimonials.module.css"
 import AOS from "aos";
@@ -18,7 +17,6 @@ function Testimonials() {
     try {
       const res = await fetch(url, requestOptions);
       const data = await res.json();
-      // console.log(data);
 
       setTestimonials(data.testimonials);
 
@@ -39,7 +37,6 @@ function Testimonials() {
           <span>What People Say About</span>Working With Thomas
         </h1>
         <p className={styles.p}> </p>
-        {/* <main></main> */}
       </header>
 
       {testimonials.map(testimonial => (
