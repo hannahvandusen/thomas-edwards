@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { Button, Col, Container, Form, FormGroup, Input, Label, Row } from 'reactstrap';
+import style from './Testimonials.module.css'
 
 function TestimonialsEdit(props) {
 
@@ -13,7 +14,7 @@ function TestimonialsEdit(props) {
     const [photo, setPhoto] = useState('');
 
     const url = `http://localhost:4000/testimonialsindex/${id}`;
-
+    
     const fetchTestimonials = async () => {
         
         const requestOptions = {
@@ -24,6 +25,7 @@ function TestimonialsEdit(props) {
             const res = await fetch(url, requestOptions);
             const data = await res.json();
             console.log(data); 
+            
             const {
                 caption, name, association, quote
             } = data.testimonial
@@ -50,19 +52,19 @@ function TestimonialsEdit(props) {
         const preview = document.querySelector("img");
         const file = document.querySelector("input[type=file]").files[0];
         const reader = new FileReader();
-      
+
         reader.addEventListener(
-          "load",
-          () => {
-            preview.src = reader.result;
-          },
-          false
-        );
-      
+            "load",
+            () => {
+                preview.src = reader.result;
+            },
+            false
+            );
+
         if (file) {
-          reader.readAsDataURL(file);
+            reader.readAsDataURL(file);
         }
-      }
+        }
 
     async function handleSubmit(e) {
         e.preventDefault();
@@ -97,49 +99,54 @@ function TestimonialsEdit(props) {
     return (
         <>
             <h1 style={{color: "#cddee5",
-                textAlign: "center", textDecoration: "underline"
+                textAlign: "center",
+                fontFamily: "Georgia, serif"
+
             }}>Edit Testimonial</h1>
             <Container>
                 <Row>
                     <Col md="4">
-                    <p style={{color: "#cddee5"}}><b style={{color: "#cddee5"}}>Current Testimonial</b>: <br/>{caption} {name}, Thomas's {association}, said: {quote}. <br/> What should be edited?</p>
-                            <Button
-                                color='info'
-                                outline
-                                onClick={() => navigate('/testimonialsindex')}
-                            >Back to Table</Button>
+                    <p style={{color: "#cddee5"}}>
+                    <h3>Caption: {caption}</h3>
+                    <h4>{name}, {association}</h4>
+                    <section>
+                    {quote}
+                    </section>
+                    </p>
                     </Col>
                     <Col md="8">
-                        <Form onSubmit={handleSubmit}>
-                            <FormGroup>
+                        <Form onSubmit={handleSubmit} >
+                            <FormGroup style={{width: "80%"}}>
                                 <Label>Caption</Label>
                                 <Input
                                     value={caption}
                                     onChange={e => setCaption(e.target.value)}
                                     autoComplete='off' />
                             </FormGroup>
-                            <FormGroup>
+                            <FormGroup style={{width: "80%"}}>
                                 <Label>Name</Label>
                                 <Input
                                     value={name}
                                     onChange={e => setName(e.target.value)}
                                     autoComplete='off' />
                             </FormGroup>
-                            <FormGroup>
+                            <FormGroup style={{width: "80%"}}>
                                 <Label>Association</Label>
                                 <Input
                                     value={association}
                                     onChange={e => setAssociation(e.target.value)}
                                     autoComplete='off' />
                             </FormGroup>
-                            <FormGroup>
+                            <FormGroup style={{width: "80%"}}>
                                 <Label>Quote</Label>
                                 <Input
                                     value={quote}
+                                    type="textarea"
+                                    style={{height: "50vh"}}
                                     onChange={e => setQuote(e.target.value)}
                                     autoComplete='off' />
                             </FormGroup>
-                            <FormGroup>
+                            <FormGroup style={{width: "80%"}}>
                                 <Label>Photo</Label>
                                 <Input
                                     value={photo}
@@ -147,10 +154,17 @@ function TestimonialsEdit(props) {
                                     onChange={e => setPhoto(e.target.value)}
                                     autoComplete='off' />
                             </FormGroup>
-                                <Button color='success'>Update Testimonial</Button>
+                            <Button className={style.button}>Update Testimonial</Button>
                         </Form>
+                        <Button
+                            className={style.button}
+                            onClick="window.location.href='#top'"
+                            href='/testimonialsindex'
+                            >Back to Table
+                        </Button>
                     </Col>
                 </Row>
+
             </Container>
         </>
     )

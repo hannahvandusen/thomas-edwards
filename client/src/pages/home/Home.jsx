@@ -87,8 +87,8 @@ function Home() {
             <p className={styles.paragraph} data-aos="fade-up">
               {story}
             </p>
-            <Link to="/about">
-              <button className={styles.buttonStory}>Read My Story</button>
+            <Link to="/about" >
+              <button className={styles.buttonStory} onClick="window.location.href='#top'">Read My Story</button>
             </Link>
           </div>
         </section>
@@ -106,7 +106,7 @@ function Home() {
         <div data-aos="fade-up" className="box2">
           <BsTelephone size={60} />
           <br />
-          <Link to="https://calendly.com/innerfamous">
+          <Link to="https://calendly.com/innerfamous" target="_blank" rel="noopener noreferrer">
             <button className={styles.buttonHelp}>Schedule A Meeting</button>
           </Link>
         </div>
