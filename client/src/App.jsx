@@ -16,6 +16,7 @@ import Account from "./components/admin/account/Account";
 import Newsletter from "./pages/Newsletter";
 import PortalView from "./components/admin/portal/PortalView";
 import AboutEdit from "./components/About/AboutEdit";
+import Subscribers from "./components/admin/subscribers/SubscribersTable";
 
 function App() {
     return (
@@ -35,6 +36,7 @@ function App() {
                     <Route path="/intake" element={<Intake />} />
                     <Route path="/admin/account" element={<Account />} />
                     <Route path="/" element={<Home />} />
+                    <Route path="/subscribe" element={<Subscribers/>} /> 
                 </Routes>
             </Router>
             <Footer />

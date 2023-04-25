@@ -13,6 +13,26 @@ function Admin() {
     setSessionToken(newToken)
   }
 
+  const [ subscribers, setSubscribers ] = useState();
+
+  const fetchSubscribers = async () => {
+      const url = 'http://localhost:4000/subscribe'
+      const requestOptions = {
+          method: 'GET'
+      }
+
+      try {
+          const res = await fetch(url, requestOptions);
+          const data = await res.json();
+
+          console.log(data);
+
+          setSubscribers(data.subscribers); 
+      } catch (err) {
+          console.error(err)
+      }
+  }
+
   const token = { sessionToken }
 
   // console.log(localStorage.getItem("token"))
@@ -29,6 +49,9 @@ function Admin() {
     if (localStorage.getItem("token")) {
       setSessionToken(localStorage.getItem("token"))
     }
+    if(localStorage.getItem('token') !== null) {
+      fetchSubscribers();
+  }
   }, [])
 
   const displayForm = () => {
@@ -68,6 +91,8 @@ function Admin() {
             >
               Edit About
             </Button>
+            <Button style={{ borderRadius: "10px", width: "200px", fontSize: "15px" }}
+              href="/subscribe" subscribers={subscribers} >View Subscribers</Button>
           </Col>
           <Logout setToken={setSessionToken} />
         </Row>

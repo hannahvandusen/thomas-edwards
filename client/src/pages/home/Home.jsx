@@ -56,8 +56,11 @@ function Home() {
       const data = await res.json()
 
       console.log(data)
-      alert("Thanks for subscribing!")
-      localStorage.setItem("subscriber", `${data.token}`)
+      if(data.newSubscriber) {
+        alert("Thanks for subscribing!")
+      } else {
+        alert(data.Error)
+      }
     } catch (err) {
       console.error(err)
     }

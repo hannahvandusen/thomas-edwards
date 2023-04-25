@@ -61,8 +61,8 @@ const Intake = () => {
       <Container>
         <Row>
           <Col>
-          <h1 style={{ color: "white" }}>
-        <span style={{ color: "#ffcd51", fontFamily: "Georgia, serif" }}>
+          <h1 style={{ color: "white", fontFamily: "Georgia, serif"}}>
+        <span style={{ color: "#ffcd51"}}>
           Contact
         </span> {" "}
         Thomas
