@@ -1,6 +1,7 @@
 import "../App.css"
 import { React, useRef } from "react"
 import { Form, FormGroup, Input, Label, Button, Container, Row, Col } from "reactstrap"
+import photo from "../images/photo5.jpg"
 import styles from "../pages/home/Home.module.css"
 
 const Intake = () => {
@@ -206,7 +207,10 @@ const Intake = () => {
 
           </Col>
           <Col>
-          <img src="" alt="" />
+          <img src={photo} style={{
+              justifyContent: "center",
+              marginTop: "25%"
+            }} height="500rem" width="500rem" alt="Build a Better Future with Thomas" />
           </Col>
         </Row>
       </Container>

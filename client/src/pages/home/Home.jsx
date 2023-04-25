@@ -70,6 +70,9 @@ function Home() {
 
   //Header Ideas
   //Create A Plan, Change Careers, Transform Your Life!
+  
+  // Carousel
+
   return (
     <>
       <main className={styles.main}>
@@ -93,6 +96,10 @@ function Home() {
           </div>
         </section>
       </div>
+
+        {/* Image Carousel */}
+        
+
 
       <Container>
         <Row>
