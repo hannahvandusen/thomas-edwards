@@ -26,13 +26,13 @@ function TestimonialsCreate(props) {
         if (file) {
             reader.readAsDataURL(file);
         }
-        }
+    }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         console.log(nameRef.current.value);
 
-        const url = `${baseURL}/testimonialsindex`
+        const url = `http://localhost:4000/testimonialsindex`
             console.log(url);
 
     const bodyObj = JSON.stringify({
@@ -46,7 +46,6 @@ function TestimonialsCreate(props) {
 
     let myHeader = new Headers();
         myHeader.append("Content-Type", "application/json");
-        myHeader.append('Authorization', props.token);
 
         const requestOptions = {
             headers: myHeader,

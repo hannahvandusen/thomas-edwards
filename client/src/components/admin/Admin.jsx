@@ -50,30 +50,24 @@ function Admin() {
             <PortalIndex />
           </Col>
           <Col md="3">
-            <button
+            <Button
               style={{ borderRadius: "10px", width: "200px", fontSize: "15px" }}
               href="/admin/account"
             >
               Update Email/Password
-            </button>
-            <button
-              style={{
-                borderRadius: "10px",
-                margin: "15px 10px",
-                textAlign: "center",
-                width: "200px",
-                fontSize: "15px",
-              }}
+            </Button>
+            <Button
+              style={{ borderRadius: "10px", width: "200px", fontSize: "15px" }}
               href="/testimonialsindex"
             >
               Edit Testimonials
-            </button>
-            <button
+            </Button>
+            <Button
               style={{ borderRadius: "10px", width: "200px", fontSize: "15px" }}
               href="/about/edit"
             >
               Edit About
-            </button>
+            </Button>
           </Col>
           <Logout setToken={setSessionToken} />
         </Row>
