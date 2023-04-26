@@ -109,7 +109,6 @@
   overflow-y: hidden;
   overflow-x: hidden;
   border-bottom: 0.5px solid rgb(125, 127, 129, 0.5);
-  
 }
 
 .card h3 {
@@ -348,7 +347,7 @@ svg {
     flex-direction: column;
     align-items: center;
     overflow-x: hidden;
-    color: #ffcd51
+    color: #ffcd51;
   }
 
   .form {

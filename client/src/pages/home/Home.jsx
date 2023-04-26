@@ -2,13 +2,13 @@ import React, { useEffect, useState, useRef } from "react"
 import styles from "./Home.module.css"
 import mainPhoto from "../../images/mainPhoto.png"
 //import Carousel from 'react';
-import aboutImage from "../../images/site_photo_6.jpg";
-import { BsTelephone } from "react-icons/bs";
-import { AiOutlineMail } from "react-icons/ai";
-import { Outlet, Link } from "react-router-dom";
-import AOS from "aos";
-import { Form, FormGroup, Input, Label, Button, Container, Row, Col } from "reactstrap"
-import newImage from "../../images/site_photo_2.jpg";
+import aboutImage from "../../images/site_photo_6.jpg"
+import { BsTelephone } from "react-icons/bs"
+import { AiOutlineMail } from "react-icons/ai"
+import { Outlet, Link } from "react-router-dom"
+import AOS from "aos"
+import { FormGroup, Form, Input, Button } from "reactstrap"
+import newImage from "../../images/site_photo_2.jpg"
 
 function Home() {
   const [story, setStory] = useState()
@@ -83,34 +83,39 @@ function Home() {
         <section className={styles.card}>
           <img className={styles.image} src={aboutImage} alt="My Story" />
           <div className={styles.description}>
-            <h3 style={{color: "#ffcd51"}}>About Thomas Edwards</h3>
+            <h3>About Thomas Edwards</h3>
             <p className={styles.paragraph} data-aos="fade-up">
               {story}
             </p>
-            <Link to="/about" href='#top'>
+            <Link to="/about">
               <button className={styles.buttonStory}>Read My Story</button>
             </Link>
           </div>
         </section>
       </div>
 
-      <Container>
-        <Row>
-        <h1 className={styles.titles}>How I Can Help You</h1>
-
-          <Col>
-          <div data-aos="fade-up" className="box2">
+      <h1 className={styles.titles}>How I can Help You</h1>
+      <div className={styles.help}>
+        <div data-aos="fade-up" className="box1">
+          <AiOutlineMail size={70} />
+          <br />
+          <Link to="/newsletter">
+            <button className={styles.buttonHelp}>Sign Up Here</button>
+          </Link>
+        </div>
+        <div data-aos="fade-up" className="box2">
           <BsTelephone size={60} />
           <br />
-          <Link to="https://calendly.com/innerfamous" target="_blank" rel="noopener noreferrer"
->
+          <Link to="/intake">
             <button className={styles.buttonHelp}>Schedule A Meeting</button>
           </Link>
         </div>
+      </div>
 
-          </Col>
-          <Col>
-          <div >
+      {/* <form className={styles.form}> */}
+      {/* <label > */}
+      <br />
+      <div className={styles.connect}>
         <h1 className={styles.titles}>Let's Connect</h1>
         <Form onSubmit={handleSubmit}>
           <FormGroup>
@@ -120,31 +125,6 @@ function Home() {
           <button className={styles.button2}>Subscribe</button>
         </Form>
       </div>
-
-          </Col>
-        </Row>
-      </Container>
-      {/* <div className={styles.help}> */}
-        {/* <div data-aos="fade-up" className="box1">
-          <AiOutlineMail size={70} />
-          <br />
-          <Link to="/newsletter">
-            <button className={styles.buttonHelp}>Sign Up Here</button>
-          </Link>
-        </div> */}
-        {/* <div data-aos="fade-up" className="box2">
-          <BsTelephone size={60} />
-          <br />
-          <Link to="https://calendly.com/innerfamous" target="_blank" rel="noopener noreferrer"
->
-            <button className={styles.buttonHelp}>Schedule A Meeting</button>
-          </Link>
-        </div>
-      </div> */}
-
-      {/* <form className={styles.form}> */}
-      {/* <label > */}
-      <br />
       {/* <input
                         className={styles.input}
                         type="text"

@@ -53,6 +53,7 @@ const AboutMe = () => {
       <div className={styles.container}>
         <section className={styles.card}>
           <img className={styles.image} src={photo1} alt="My Story" />
+
           <div className={styles.description}>
             <h3>My Story</h3>
             <p>{story}</p>
