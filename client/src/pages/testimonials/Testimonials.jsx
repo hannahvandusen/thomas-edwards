@@ -7,6 +7,7 @@ import AOS from "aos";
 
 function Testimonials() {
     const navigate = useNavigate();
+
     const [testimonials, setTestimonials] = useState([]);
 
     const fetchTestimonials = async () => {
@@ -20,6 +21,7 @@ function Testimonials() {
             const data = await res.json();
 
             setTestimonials(data.testimonials);
+            console.log(testimonials);
         } catch (err) {
             console.log(err);
         }
@@ -29,6 +31,8 @@ function Testimonials() {
         AOS.init();
         fetchTestimonials();
     }, []);
+
+    // console.log(testimonials);
 
     // const [ uploadFile, setUploadFile ] = useState("");
     // const [ cloudinaryImage, setCloudinaryImage ] = useState("")
@@ -54,8 +58,8 @@ function Testimonials() {
                 </h1>
                 <p className={styles.p}> </p>
             </header>
-            {testimonials.map((testimonial) => (
-                <div className={styles.container}>
+            <div className={styles.container}>
+                {testimonials.map((testimonial) => (
                     <section className={styles.card}>
                         <img
                             className={styles.image}
@@ -76,10 +80,10 @@ function Testimonials() {
                             </p>
                         </div>
                     </section>
-                </div>
-            ))}
-            ;
+                ))}
+            </div>
         </>
     );
 }
+
 export default Testimonials;
