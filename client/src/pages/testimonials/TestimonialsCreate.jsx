@@ -1,6 +1,6 @@
-import React, {useRef} from 'react';
+import { React, useEffect, useState, useRef } from "react";
 import { Button, Form, FormGroup, Input, Label } from 'reactstrap';
-import { baseURL } from '../../environment';
+import Axios from 'axios';
 
 function TestimonialsCreate(props) {
 
@@ -74,6 +74,23 @@ function TestimonialsCreate(props) {
         fontFamily: "Georgia, serif"
     }
 
+    const [ uploadFile, setUploadFile ] = useState("");
+    const [ cloudinaryImage, setCloudinaryImage ] = useState("")
+
+    const handleUpload = (e) => {
+      e.preventDefault();
+      const formData = new FormData();
+      formData.append("file", uploadFile);
+      formData.append("upload_preset", "qhhdabdz");
+
+    Axios.post("https://api.cloudinary.com/v1_1/dfofj3ppu/image/upload", formData).then((response) => {
+      console.log(response);
+      setCloudinaryImage(response.data.secure_url);
+    }).catch((error) => {
+      console.log(error);
+    });
+};
+
     return (
         <>
             <h1 style={{color: "#cddee5", fontFamily: "Georgia, serif"}}>Add a Testimonial</h1>
@@ -111,7 +128,9 @@ function TestimonialsCreate(props) {
                     <Input 
                         innerRef={photoRef} 
                         type='file'
-                        onchange="previewFile()"/>
+                        onChange={(event)=> {setUploadFile(event.target.files[0]);}} />
+                        <button onClick={handleUpload}> Upload Image</button>
+                        {cloudinaryImage && ( <img src={cloudinaryImage} /> )}
                 </FormGroup>
                 
                 <Button type='submit' style={style} >Add Testimonial</Button>
