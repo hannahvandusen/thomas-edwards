@@ -66,7 +66,7 @@ function Home() {
     } catch (err) {
       console.error(err)
     }
-
+  }
 
 
   useEffect(() => {
@@ -211,5 +211,4 @@ function Home() {
     </>
   };
 }
-
 export default Home
