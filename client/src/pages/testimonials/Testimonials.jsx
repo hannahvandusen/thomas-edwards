@@ -8,6 +8,7 @@ import AOS from "aos";
 function Testimonials() {
 
   const navigate = useNavigate();
+
   const [ testimonials, setTestimonials ] = useState([]);
 
   const fetchTestimonials = async () => {
@@ -21,16 +22,19 @@ function Testimonials() {
       const data = await res.json();
 
       setTestimonials(data.testimonials);
+      console.log(testimonials);
 
     } catch (err) {
       console.log(err)
     }
-  };
+  }
 
   useEffect(() => {
     AOS.init()
-    fetchTestimonials();
+    fetchTestimonials()
   }, [])
+  
+  // console.log(testimonials);
 
     // const [ uploadFile, setUploadFile ] = useState("");
     // const [ cloudinaryImage, setCloudinaryImage ] = useState("")
@@ -47,9 +51,8 @@ function Testimonials() {
     // }).catch((error) => {
     //   console.log(error);
     // });
-  };
 
-  return (
+return (
 	<>
     <header className={styles.mainHeader}>
         <h1>
@@ -57,10 +60,10 @@ function Testimonials() {
         </h1>
         <p className={styles.p}> </p>
     </header>
+    <div className={styles.container}>
+      {
+      testimonials.map(testimonial => (
 
-      {testimonials.map(testimonial => (
-
-      <div className={styles.container}>
 
         <section className={styles.card}>
           <img className={styles.image} data-aos="fade-up"
@@ -73,10 +76,12 @@ function Testimonials() {
                   <p data-aos="fade-left"><i> - {testimonial.name}</i></p>
             </div>
         </section>
+      ))
+      }
     </div>
-  
-      ))};
-    </>
-  );
 
-export default Testimonials;
+  </>
+)
+}
+
+export default Testimonials

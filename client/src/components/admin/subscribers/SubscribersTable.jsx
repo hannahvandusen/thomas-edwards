@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { Table } from 'reactstrap';
+import { useNavigate } from 'react-router-dom';
+import { Container, Table, Button } from 'reactstrap';
 
 function Subscribers() {
-    const [ subscribers, setSubscribers ] = useState();
-
+    const [ subscribers, setSubscribers ] = useState([]);
+const navigate = useNavigate(); 
 
     const fetchSubscribers = async () => {
         const url = 'http://localhost:4000/subscribe'
@@ -15,7 +16,7 @@ function Subscribers() {
             const res = await fetch(url, requestOptions);
             const data = await res.json();
  
-            console.log(data.subscribers);
+            // console.log(data.subscribers);
 
             setSubscribers(data.subscribers); 
         } catch (err) {
@@ -26,13 +27,15 @@ function Subscribers() {
     useEffect(() => {
         if(localStorage.getItem('token') !== null) {
             fetchSubscribers();
-            console.log(subscribers); 
+            // console.log(subscribers); 
         }
     }, [localStorage.getItem('token')])
 
 
     return (
     <>
+        <h2 style={{color: "#cddee5", fontFamily: "Georgia, serif"}}>Subscribers</h2>
+        <Container style={{width: "80%"}}>
         <Table style={{color: "#cddee5", fontFamily: "Georgia, serif"}}>
             <thead>
                 <tr>
@@ -41,18 +44,21 @@ function Subscribers() {
                 </tr>
             </thead>
             <tbody>
-                {/* {
-                    subscribers.map(subscriber => {
+                {
+                    subscribers.map(subscriber => (
                         <tr key={subscriber._id}>
-                            <th>{subscriber.name}</th>
+                            <th scope = 'row'>{subscriber.name}</th>
                             <th> {subscriber.email} </th>
                         </tr>
-                    })
-                } */}
+                    ))
+                }
             </tbody>
         </Table>
+        <Button onClick={() => navigate('/admin')} style={{backgroundColor: "#ffcd51", 
+        color: "black"}} >Back to Admin Portal</Button>
+        </Container>
     </>
-  )
+    )
 }
 
 export default Subscribers
