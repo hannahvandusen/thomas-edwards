@@ -57,12 +57,14 @@ function Home() {
             const res = await fetch(url, requestOptions);
             const data = await res.json();
 
-            console.log(data);
-            alert('Thanks for subscribing!');
-            localStorage.setItem("subscriber", `${data.token}`)
-        } catch (err) {
-            console.error(err);
-        }
+      console.log(data)
+      if(data.newSubscriber) {
+        alert("Thanks for subscribing!")
+      } else {
+        alert(data.Error)
+      }
+    } catch (err) {
+      console.error(err)
     }
 
 

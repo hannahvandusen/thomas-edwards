@@ -71,13 +71,13 @@ const Intake = () => {
       <Container>
         <Row>
           <Col>
-            <h1 style={{ color: "white" }}>
-              <span style={{ color: "#ffcd51", fontFamily: "Georgia, serif" }}>
-                Contact
-              </span>{" "}
-              Thomas
-            </h1>
-            {/* <h6 style={{color: "white"}}>
+          <h1 style={{ color: "white", fontFamily: "Georgia, serif"}}>
+        <span style={{ color: "#ffcd51"}}>
+          Contact
+        </span> {" "}
+        Thomas
+      </h1>
+      {/* <h6 style={{color: "white"}}>
         If you would like to reach out to me directly as an individual client or a business please fill out the below form and I will contact you ASAP!
       </h6> */}
 

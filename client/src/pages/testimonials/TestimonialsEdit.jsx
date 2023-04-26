@@ -125,7 +125,7 @@ function TestimonialsEdit(props) {
             }}>Edit Testimonial</h1>
             <Container>
                 <Row>
-                    <Col md="4">
+                    <Col>
                     <p style={{color: "#cddee5"}}>
                     <h3>Caption: {caption}</h3>
                     <h4>{name}, {association}</h4>
@@ -134,7 +134,7 @@ function TestimonialsEdit(props) {
                     </section>
                     </p>
                     </Col>
-                    <Col md="8">
+                    <Col>
                         <Form onSubmit={handleSubmit} >
                             <FormGroup style={{width: "80%"}}>
                                 <Label>Caption</Label>
@@ -143,7 +143,9 @@ function TestimonialsEdit(props) {
                                     onChange={e => setCaption(e.target.value)}
                                     autoComplete='off' />
                             </FormGroup>
-                            <FormGroup style={{width: "80%"}}>
+                            <FormGroup 
+                            style={{width: "80%"}}
+                            >
                                 <Label>Name</Label>
                                 <Input
                                     value={name}
@@ -176,13 +178,14 @@ function TestimonialsEdit(props) {
                             </FormGroup>
                             <Button className={style.button}>Update Testimonial</Button>
                         </Form>
-                        <Button
+                    </Col>
+                    <Button
                             className={style.button}
                             onClick="window.location.href='#top'"
                             href='/testimonialsindex'
                             >Back to Table
                         </Button>
-                    </Col>
+
                 </Row>
 
             </Container>

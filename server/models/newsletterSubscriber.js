@@ -9,10 +9,6 @@ const Subscriber = new mongoose.Schema({
     name: {
         type: String,
         required: true
-    },
-    dateSubscribed: {
-        type: String
-        // default: Date.now
     }
 });
 
