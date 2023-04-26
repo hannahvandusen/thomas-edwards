@@ -8,7 +8,7 @@ import AOS from "aos";
 function Testimonials() {
 
   const navigate = useNavigate();
-  const [testimonials, setTestimonials] = useState([]);
+  const [ testimonials, setTestimonials ] = useState([]);
 
   const fetchTestimonials = async () => {
     const url = 'http://localhost:4000/testimonialsindex'
@@ -21,16 +21,19 @@ function Testimonials() {
       const data = await res.json();
 
       setTestimonials(data.testimonials);
+      console.log(testimonials);
 
     } catch (err) {
       console.log(err)
     }
-  };
+  }
 
   useEffect(() => {
     AOS.init()
-    fetchTestimonials();
+    fetchTestimonials()
   }, [])
+  
+  // console.log(testimonials);
 
   // const [ uploadFile, setUploadFile ] = useState("");
   // const [ cloudinaryImage, setCloudinaryImage ] = useState("")
@@ -41,25 +44,26 @@ function Testimonials() {
   //   formData.append("file", uploadFile);
   //   formData.append("upload_preset", "qhhdabdz");
 
-  // Axios.post("https://api.cloudinary.com/v1_1/dfofj3ppu/image/upload", formData).then((response) => {
-  //   console.log(response);
-  //   setCloudinaryImage(response.data.secure_url);
-  // }).catch((error) => {
-  //   console.log(error);
-  // });
+    // Axios.post("https://api.cloudinary.com/v1_1/dfofj3ppu/image/upload", formData).then((response) => {
+    //   console.log(response);
+    //   setCloudinaryImage(response.data.secure_url);
+    // }).catch((error) => {
+    //   console.log(error);
+    // });
+  };
 
   return (
-    <>
-      <header className={styles.mainHeader}>
+	<>
+    <header className={styles.mainHeader}>
         <h1>
           <span>What People Say About</span>{" "}Working With Thomas
         </h1>
         <p className={styles.p}> </p>
-      </header>
-      <div>
-        {testimonials.map(testimonial => (
+    </header>
 
-          <div className={styles.container}>
+      {testimonials.map(testimonial => (
+
+      <div className={styles.container}>
 
             <section className={styles.card}>
               <img className={styles.image} data-aos="fade-up"
@@ -69,14 +73,13 @@ function Testimonials() {
               <div className={styles.association}>
                 <h3 data-aos="zoom-in-right">{testimonial.caption}</h3>
                 <p data-aos="fade-up">{testimonial.quote}</p>
-                <p data-aos="fade-left"><i> - {testimonial.name}</i></p>
-              </div>
-            </section>
-          </div>
-
-        ))};
-      </div>
+                  <p data-aos="fade-left"><i> - {testimonial.name}</i></p>
+            </div>
+        </section>
+    </div>
+  
+      ))};
     </>
   );
-}
+
 export default Testimonials;
