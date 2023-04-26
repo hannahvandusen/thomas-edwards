@@ -52,5 +52,18 @@ router.post("/", async (req, res) => {
     }
 });
 
+router.get("/", async(req, res) => {
+    try {
+        const subscribers = await NewsletterSubscriber.find();
+        res.status(200).json({
+            subscribers
+        })
+    } catch (err) {
+        res.status(500).json({
+            Error: err.message
+    })
+}
+}); 
+
 // export the router object for use in other files
 module.exports = router;

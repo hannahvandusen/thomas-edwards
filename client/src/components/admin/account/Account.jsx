@@ -65,8 +65,8 @@ function Account() {
 
 
   return (
-    <>
-        <h1>Update Account Info</h1>
+    <div style={{height: "80vh"}}>
+        <h1 style={{color: "white", fontFamily: "Georgia, serif"}}>Update Account Info</h1>
         <Form onSubmit={handleSubmit}>
             <FormGroup>
                 <Label>Email</Label>
@@ -90,7 +90,7 @@ function Account() {
         </Form>
         <Button style={{backgroundColor: "#ffcd51", 
         color: "black"}} onClick={() => navigate('/admin')}>Cancel</Button>
-    </>
+    </div>
   )
 }
 

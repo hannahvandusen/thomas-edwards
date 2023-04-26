@@ -9,7 +9,7 @@ import {
 
 const items = [
   {
-    src: './client/src/images/site_photo_2.jpg',
+    src: '../',
     altText: 'Slide 1',
     caption: 'Slide 1',
     key: 1,
