@@ -68,6 +68,8 @@ function Admin() {
             >
               Edit About
             </Button>
+            <Button style={{ borderRadius: "10px", width: "200px", fontSize: "15px" }}
+              href="/subscribe">View Subscribers</Button>
           </Col>
           <Logout setToken={setSessionToken} />
         </Row>
