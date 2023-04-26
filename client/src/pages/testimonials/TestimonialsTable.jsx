@@ -9,6 +9,7 @@ function TestimonialsTable(props) {
     const navigate = useNavigate();
 
     async function deleteTestimonial(id) {
+        // const id = props.testimonials._id
         const url = `http://localhost:4000/testimonialsindex/${id}`;
 
         let requestOptions = {
@@ -21,8 +22,10 @@ function TestimonialsTable(props) {
             let data = await res.json();
 
             // console.log(data.message);
-            if(data.message === "Testimonial Removed") {
+            if(data.message.toLowerCase() === "testimonial removed") {
                 props.fetchTestimonials();
+                alert("Testimonial Removed"); 
+                Location.reload(); 
             } else {
                 throw new Error("Testimonial was not removed!")
             }

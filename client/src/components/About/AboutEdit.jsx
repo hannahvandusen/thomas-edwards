@@ -93,6 +93,7 @@ function AboutEdit() {
             defaultValue={aboutSection.value} 
             innerRef={valueRef}
             style={{height: "20vh"}}
+            
             /> 
             <Button type='submit' style={{backgroundColor: "#ffcd51", 
         color: "black"}}> Publish Changes</Button>
