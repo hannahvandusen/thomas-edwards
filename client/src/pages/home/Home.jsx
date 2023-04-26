@@ -66,7 +66,7 @@ function Home() {
     } catch (err) {
       console.error(err)
     }
-
+  }
 
 
   useEffect(() => {
@@ -103,6 +103,7 @@ function Home() {
                     </div>
                 </section>
             </div>
+            {/* Cards */}
             <div class="container-fluid py-2">
     <div class="d-flex flex-row flex-nowrap">
         <div class="card card-body">Card</div>
