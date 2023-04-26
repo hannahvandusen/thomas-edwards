@@ -1,5 +1,6 @@
 import "../App.css"
 import { React, useRef } from "react"
+import photo from "../images/photo5.jpg"
 import contactImage from "../images/contact.jpg"
 import {
   Form,
@@ -220,6 +221,12 @@ const Intake = () => {
             </Form>
           </Col>
           <Col>
+ //photos
+          <img src={photo} style={{
+              justifyContent: "center",
+              marginTop: "25%"
+            }} height="500rem" width="500rem" alt="Build a Better Future with Thomas" />
+//photos
             <div className="">
               <img
                 style={{
