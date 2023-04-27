@@ -72,13 +72,10 @@ const Intake = () => {
       <Container>
         <Row>
           <Col>
-          <h1 style={{ color: "white", fontFamily: "Georgia, serif"}}>
-        <span style={{ color: "#ffcd51"}}>
-          Contact
-        </span> {" "}
-        Thomas
-      </h1>
-      {/* <h6 style={{color: "white"}}>
+            <h1 style={{ color: "white", fontFamily: "Georgia, serif" }}>
+              <span style={{ color: "#ffcd51" }}>Contact</span> Thomas
+            </h1>
+            {/* <h6 style={{color: "white"}}>
         If you would like to reach out to me directly as an individual client or a business please fill out the below form and I will contact you ASAP!
       </h6> */}
 
@@ -221,12 +218,6 @@ const Intake = () => {
             </Form>
           </Col>
           <Col>
- //photos
-          <img src={photo} style={{
-              justifyContent: "center",
-              marginTop: "25%"
-            }} height="500rem" width="500rem" alt="Build a Better Future with Thomas" />
-//photos
             <div className="">
               <img
                 style={{
@@ -234,12 +225,10 @@ const Intake = () => {
 
                   marginTop: "80px",
                   marginBottom: "200px",
-                  borderRadius: "20px",
                   opacity: ".7",
                   backgroundColor: "#555",
-                  boxShadow: "0 0 5px 2px #555",
                 }}
-                src={contactImage}
+                src={photo}
                 alt="conact image"
               />
             </div>
