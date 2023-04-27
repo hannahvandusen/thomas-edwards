@@ -65,8 +65,8 @@ function Home() {
       }
     } catch (err) {
       console.error(err)
-    }
-  }
+    
+  }}
 
 
   useEffect(() => {
@@ -209,6 +209,6 @@ function Home() {
       {/* <input className={styles.button} type="submit" value="Submit" /> */}
       {/* </form> */}
     </>
-  };
+  )
 }
 export default Home
