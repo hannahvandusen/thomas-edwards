@@ -222,7 +222,6 @@ const Intake = () => {
             </Form>
           </Col>
           <Col>
-          
           {/* <img src={photo} style={{
               marginTop: "5%", 
               alignContent: "center", justifyContent: "center"
@@ -235,13 +234,11 @@ const Intake = () => {
 
                   marginTop: "80px",
                   marginBottom: "200px",
-                  borderRadius: "20px",
                   opacity: ".7",
                   backgroundColor: "#555",
-                  boxShadow: "0 0 5px 2px #555",
                 }}
                 src={photo}
-                alt="conact image"
+                alt="contact image"
               />
             </div>
           </Col>
