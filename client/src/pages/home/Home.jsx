@@ -1,18 +1,21 @@
 import React, { useEffect, useState, useRef } from "react";
 import styles from "./Home.module.css";
 import mainPhoto from "../../images/mainPhoto.png";
-// import Carousel from '../../components/carousel/Carousel';
+import TestimonialCarousel from '../../components/carousel/Carousel';
 import aboutImage from "../../images/site_photo_6.jpg";
 import { BsTelephone } from "react-icons/bs";
 import { AiOutlineMail } from "react-icons/ai";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link, useNavigate } from "react-router-dom";
 import AOS from "aos";
-import { Form, FormGroup, Input, Label, Button, Container, Row, Col, UncontrolledCarousel } from "reactstrap"
+import { Form, FormGroup, Input, Label, Button, Container, Row, Col } from "reactstrap"
 import newImage from "../../images/site_photo_2.jpg";
 
 function Home() {
 
+    const navigate = useNavigate(); 
     const [story, setStory] = useState();
+    const [ testimonials, setTestimonials ] = useState();
+    
     const emailRef = useRef();
     const nameRef = useRef();
 
@@ -20,21 +23,37 @@ function Home() {
   const fetchAbout = async () => {
     const url = `http://localhost:4000/about/643ae5920f74ad63f71a205d`
     const requestOptions = {
-          method: "GET",
+      method: "GET",
     }
 
-        try {
-            const res = await fetch(url, requestOptions);
-            const data = await res.json();
-            // console.log(data); 
-            const { about, story, mission, value } = data.about;
-            setStory(story);
-        } catch (err) {
-            console.error(err)
-        }
+    try {
+      const res = await fetch(url, requestOptions)
+      const data = await res.json()
+      // console.log(data);
+      const { about, story, mission, value } = data.about
+      setStory(story)
+    } catch (err) {
+      console.error(err)
     }
-
-
+  }
+    const fetchTestimonials = async () => {
+      const url = 'http://localhost:4000/testimonialsindex'
+      const requestOptions = {
+        method: 'GET'
+      }
+  
+      try {
+        const res = await fetch(url, requestOptions);
+        const data = await res.json();
+  
+        setTestimonials(data.testimonials);
+        console.log(testimonials);
+  
+      } catch (err) {
+        console.log(err)
+      }
+    }; 
+  
   const handleSubmit = async (e) => {
     e.preventDefault()
 
@@ -53,126 +72,118 @@ function Home() {
       method: "POST",
     }
 
-        try {
-            const res = await fetch(url, requestOptions);
-            const data = await res.json();
+    try {
+      const res = await fetch(url, requestOptions)
+      const data = await res.json()
 
       console.log(data)
-      if(data.newSubscriber) {
+      if (data.newSubscriber) {
         alert("Thanks for subscribing!")
       } else {
         alert(data.Error)
       }
     } catch (err) {
       console.error(err)
-    
-  }}
-
-  const [ testimonials, setTestimonials ] = useState([]);
-
-  const fetchTestimonials = async () => {
-    const url = 'http://localhost:4000/testimonialsindex'
-    const requestOptions = {
-      method: 'GET'
-    }
-
-    try {
-      const res = await fetch(url, requestOptions);
-      const data = await res.json();
-
-      setTestimonials(data.testimonials);
-
-    } catch (err) {
-      console.log(err)
     }
   }
-
-  useEffect(() => {
-    AOS.init()
-    fetchTestimonials()
-  }, [])
 
 
   useEffect(() => {
     // scrolling effect
     AOS.init()
     fetchAbout()
-  }, [])
+    fetchTestimonials()
+  }, []) 
 
-    //Header Ideas
-    //Create A Plan, Change Careers, Transform Your Life!
-    return (
-        <>
-            <main className={styles.main}>
-                <img className={styles.mainPhoto} src={newImage} alt="mainPhoto" />
+  //Header Ideas
+  //Create A Plan, Change Careers, Transform Your Life!
+  return (
+    <>
+      <main className={styles.main}>
+        <img className={styles.mainPhoto} src={newImage} alt="mainPhoto" />
 
-                {/* <h3 className={styles.mainHeader}>
+        {/* <h3 className={styles.mainHeader}>
           Lets Create a Bright Future Together!
         </h3> */}
+      </main>
+      <div className={styles.container}>
+        <section className={styles.card}>
+          <img
+            id="about-image"
+            className="img-fluid"
+            src={aboutImage}
+            alt="My Story"
+          />
+          <div className={styles.description}>
+            <h3 className={styles.titles}>About Thomas Edwards</h3>
+            <p className={styles.paragraph} data-aos="fade-up">
+              {story}
+            </p>
+            <Link to="/about">
+              <button className={styles.buttonStory}>Read My Story</button>
+            </Link>
+          </div>
+        </section>
+      </div>
+      {/* <div class="container-fluid py-2">
+        <div class="d-flex flex-row flex-nowrap">
+          <div class="card card-body">Card</div>
+          <div class="card card-body">Card</div>
+          <div class="card card-body">Card</div>
+          <div class="card card-body">Card</div>
+          <div class="card card-body">Card</div>
+        </div>
+      </div> */}
 
-            </main>
-            <div className={styles.container}>
-                <section className={styles.card}>
-                    <img id="about-image" className='img-fluid' src={aboutImage} alt="My Story" />
-                    <div className={styles.description}>
-                        <h3 className={styles.titles}>About Thomas Edwards</h3>
-                        <p className={styles.paragraph} data-aos="fade-up">
-                            {story}
-                        </p>
-                        <Link to='/about'>
-
-                            <button className={styles.buttonStory}>Read My Story</button>
-                        </Link>
-
-                    </div>
-                </section>
-            </div>
             <div class="container-fluid py-2">
-    <div class="d-flex flex-row flex-nowrap">
-    {testimonials.map(testimonial => (
-    <UncontrolledCarousel
-  items={[
-    {
-      altText: 'Slide 1',
-      caption: 'Slide 1',
-      key: 1,
-      src: 'https://picsum.photos/id/123/1200/600'
-    },
-    {
-      altText: 'Slide 2',
-      caption: 'Slide 2',
-      key: 2,
-      src: 'https://picsum.photos/id/456/1200/600'
-    },
-    {
-      altText: 'Slide 3',
-      caption: 'Slide 3',
-      key: 3,
-      src: 'https://picsum.photos/id/678/1200/600'
-    }
-  ]}
- />
-      ))}
-    </div>
+    {/* <div class="d-flex flex-row flex-nowrap">
+        <div class="card card-body">Card</div>
+        <div class="card card-body">Card</div>
+        <div class="card card-body">Card</div>
+        <div class="card card-body">Card</div>
+        <div class="card card-body">Card</div>
+    </div> */}
+    
+      <TestimonialCarousel testimonials={testimonials} /> 
 </div>
-
-            <h1 className={styles.titles}>How I can Help You</h1>
-            <div className={styles.help}>
-                <div data-aos="fade-up" className="box1">
-                    <AiOutlineMail size={70} />
+            <h1 className={styles.titles}>How I Can Help You</h1>
+            <br /> 
+            <Container>
+              <Row>
+                <Col>
+                <div data-aos="fade-up" >
+                    {/* <AiOutlineMail size={70} />
                     <br />
-                    <Link to="/newsletter">
+                    
+                    <a id="bottom">
                         <button className={styles.buttonHelp}>Sign Up Here</button>
-                    </Link>
+                        </a>  */}
+                          {/* <h4 >Let's Connect</h4> */}
+        <Form onSubmit={handleSubmit}>
+          <FormGroup>
+            <Input placeholder="Email" innerRef={emailRef} />
+            <Input placeholder="Name" innerRef={nameRef} />
+          </FormGroup>
+          <button className={styles.button2}>Subscribe</button>
+        </Form>
+
+
                 </div>
-                <div data-aos="fade-up" className="box2">
+
+                </Col>
+
+                <Col>
+                <div data-aos="fade-up" >
                     <BsTelephone size={60} />
                     <br />
-                    <Link to="/intake">
-                        <button className={styles.buttonHelp}>Schedule A Meeting</button>
+                    <Link to="https://calendly.com/innerfamous" target="_blank" rel="noopener noreferrer">
+                        <button className={styles.buttonHelp} style={{color: "white"}}>Schedule A Meeting</button>
                     </Link>
                 </div>
-            </div>
+
+                </Col>
+              </Row>
+            </Container>
 
             {/* <form className={styles.form}> */}
             {/* <label > */}
@@ -187,7 +198,7 @@ function Home() {
                 </Form>
             </div> */}
 
-            {/* <input
+      {/* <input
 
       </main>
       <div className={styles.container}>
@@ -225,7 +236,8 @@ function Home() {
 
       {/* <form className={styles.form}> */}
       {/* <label > */}
-      <br />
+
+      {/* <br />
       <div className={styles.connect}>
         <h1 className={styles.titles}>Let's Connect</h1>
         <Form onSubmit={handleSubmit}>
@@ -235,7 +247,8 @@ function Home() {
           </FormGroup>
           <button className={styles.button2}>Subscribe</button>
         </Form>
-      </div>
+      </div> */}
+
       {/* <input
                         className={styles.input}
                         type="text"
@@ -254,4 +267,5 @@ function Home() {
     </>
   )
 }
+
 export default Home

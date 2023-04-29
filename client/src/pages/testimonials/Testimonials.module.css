@@ -81,6 +81,7 @@
   
   .card p {
     color: #cddee5;
+    padding: 1rem;
   }
   .card span {
     margin-bottom: 2rem;
@@ -118,11 +119,14 @@
     order: 2;
     overflow-y: hidden;
     grid-gap: 50px;
+    overflow-x: hidden;
+
   }
   
   .card:nth-child(even) span {
     order: 2;
     overflow-y: hidden;
+    overflow-x: hidden;
   }
   
   .form {

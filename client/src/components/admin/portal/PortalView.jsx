@@ -27,7 +27,7 @@ function PortalView() {
             const res = await fetch(url, requestOptions);
             const data = await res.json();
 
-            //console.log(data);
+            console.log(data);
 
             const { name, email, phone, contactTime, contactMethod, message, date } = data.intake;
             setName(name); 
@@ -51,11 +51,29 @@ function PortalView() {
     }, [localStorage.getItem('token')])
 
 
-    const handleSubmit = async (e) => {
-        e.preventDefault(); 
+    async function deleteMessage(id) {
+        const url = `http://localhost:4000/intake/${id}`
+        let requestOptions = {
+            method: 'DELETE'
+        }
+
+        try {
+            let res = await fetch(url, requestOptions);
+            let data = await res.json();
+
+            console.log(data);
+            if(data.message.toLowerCase() === "message deleted") {
+                alert("Message Removed"); 
+                navigate('/admin')
+            } else {
+                throw new Error("Message was not removed!")
+            }
+
+        } catch (err) {
+            console.error(err)
+        }
 
     }
-
     return (
     <>
         <>
@@ -74,6 +92,8 @@ function PortalView() {
                 </CardBody>
             </Card>
             </CardGroup>
+            <Button onClick={() => deleteMessage({id})} style={{backgroundColor: "#ffcd51", 
+        color: "black"}}>Delete Message</Button>
             <Button onClick={() => navigate('/admin')} style={{backgroundColor: "#ffcd51", 
         color: "black"}} >Back to Admin Portal</Button>
         </>
