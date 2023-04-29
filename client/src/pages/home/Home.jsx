@@ -12,10 +12,10 @@ import newImage from "../../images/site_photo_2.jpg";
 
 function Home() {
 
-  const navigate = useNavigate(); 
-
+    const navigate = useNavigate(); 
     const [story, setStory] = useState();
     const [ testimonials, setTestimonials ] = useState();
+    
     const emailRef = useRef();
     const nameRef = useRef();
 
@@ -35,6 +35,7 @@ function Home() {
     } catch (err) {
       console.error(err)
     }
+  }
     const fetchTestimonials = async () => {
       const url = 'http://localhost:4000/testimonialsindex'
       const requestOptions = {
@@ -83,34 +84,16 @@ function Home() {
       }
     } catch (err) {
       console.error(err)
-    
-  }}
-
-  const [ testimonials, setTestimonials ] = useState([]);
-
-  const fetchTestimonials = async () => {
-    const url = 'http://localhost:4000/testimonialsindex'
-    const requestOptions = {
-      method: 'GET'
-    }
-
-    try {
-      const res = await fetch(url, requestOptions);
-      const data = await res.json();
-
-      setTestimonials(data.testimonials);
-
-    } catch (err) {
-      console.log(err)
     }
   }
+
 
   useEffect(() => {
     // scrolling effect
     AOS.init()
     fetchAbout()
     fetchTestimonials()
-  }, [])
+  }, []) 
 
   //Header Ideas
   //Create A Plan, Change Careers, Transform Your Life!
@@ -142,7 +125,7 @@ function Home() {
           </div>
         </section>
       </div>
-      <div class="container-fluid py-2">
+      {/* <div class="container-fluid py-2">
         <div class="d-flex flex-row flex-nowrap">
           <div class="card card-body">Card</div>
           <div class="card card-body">Card</div>
@@ -150,23 +133,8 @@ function Home() {
           <div class="card card-body">Card</div>
           <div class="card card-body">Card</div>
         </div>
-      </div>
+      </div> */}
 
-            </main>
-            <div className={styles.container}>
-                <section className={styles.card}>
-                    <img id="about-image" className='img-fluid' src={aboutImage} alt="My Story" />
-                    <div className={styles.description}>
-                        <h3 className={styles.titles}>About Thomas Edwards</h3>
-                        <p className={styles.paragraph} data-aos="fade-up">
-                            {story}
-                        </p>
-                          <a>
-                            <button onClick={() => navigate('/about')} href='#top' className={styles.buttonStory}>Read My Story</button>
-                          </a>
-                    </div>
-                </section>
-            </div>
             <div class="container-fluid py-2">
     {/* <div class="d-flex flex-row flex-nowrap">
         <div class="card card-body">Card</div>
@@ -176,9 +144,7 @@ function Home() {
         <div class="card card-body">Card</div>
     </div> */}
     
-    <div>
       <TestimonialCarousel testimonials={testimonials} /> 
-      </div>
 </div>
             <h1 className={styles.titles}>How I Can Help You</h1>
             <br /> 
@@ -301,4 +267,5 @@ function Home() {
     </>
   )
 }
+
 export default Home
