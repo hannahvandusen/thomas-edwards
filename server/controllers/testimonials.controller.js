@@ -6,30 +6,30 @@ const validateSession = require("../middleware/validate-session");
 const cloudinary = require("cloudinary");
 const upload = require('../utils/multer');
 
-const uploadImage = async (imagePath) => {
-    const option = {
-        use_filename: true,
-        unique_filename: false,
-        overwrite: true
-    }
+// const uploadImage = async (imagePath) => {
+//     const option = {
+//         use_filename: true,
+//         unique_filename: false,
+//         overwrite: true
+//     }
 
-    try {
+//     try {
         
-        const result = await cloudinary.uploader.upload(imagePath, option)
-        const url = await result.secure_url;
-        console.log('RESULT: ', url)
-        return url;
+//         const result = await cloudinary.uploader.upload(imagePath, option)
+//         const url = await result.secure_url;
+//         console.log('RESULT: ', url)
+//         return url;
 
-    } catch (err) {
-        console.error(err);
-    }
-}
+//     } catch (err) {
+//         console.error(err);
+//     }
+// }
 
-router.post('/', upload.single('photo'), async (req, res) => {
+router.post('/', async (req, res) => {
 
     try {
 
-        const cloud_url = await uploadImage(req.file.path)
+        // const cloud_url = await uploadImage(req.file.path)
 
         // const { caption, name, association, quote, photo } = req.body;
 
@@ -38,7 +38,7 @@ router.post('/', upload.single('photo'), async (req, res) => {
             name: req.body.body,
             association: req.body.association,
             quote: req.body.quote,
-            photo: cloud_url ? cloud_url : ""
+            // photo: cloud_url ? cloud_url : ""
         }); 
 
         const newTestimonials = await testimonials.save();
