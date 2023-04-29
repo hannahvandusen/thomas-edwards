@@ -1,6 +1,5 @@
 import { React, useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
-// import Axios from 'axios';
 import styles from "./Testimonials.module.css"
 import AOS from "aos";
 import newImage from "../../images/site_photo_2.jpg";

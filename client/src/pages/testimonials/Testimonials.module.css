@@ -61,7 +61,7 @@
   .card {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    padding: 4rem 5rem;
+    padding: 0rem .5rem;
     overflow-y: hidden;
     overflow-x: hidden;
     align-items: center;
@@ -81,7 +81,7 @@
   
   .card p {
     color: #cddee5;
-    padding: 1rem;
+    /* padding: 1rem; */
   }
   .card span {
     margin-bottom: 2rem;
@@ -141,25 +141,15 @@
   .button {
     font-size: 15px;
     width: 75%;
-    /* border-radius: 30px;     */
     font-family: Georgia, serif;
     margin: 3%;
-    /* opacity: 0.5; */
+
   }
   .button:hover {
     background-color: #ffcd51;
     font-size: 15px;
     border-radius: 50px;
   }
-  
-  
-  /* .form h1 {
-    justify-content: center;
-    text-align: center;
-    color: #17bcde;
-    overflow-y: hidden;
-    margin-right: 10%;
-  } */
   
   @media screen and (max-width: 800px) {
     * {
@@ -194,9 +184,10 @@
       align-items: center;
       justify-content: center;
     }
-    .card > img {
+
+    /* .card > img {
       width: 100vw;
-    }
+    } */
   
     .card:nth-child(even) img {
       order: 0;

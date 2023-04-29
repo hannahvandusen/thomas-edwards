@@ -3,32 +3,10 @@ const { Testimonials } = require('../models');
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const validateSession = require("../middleware/validate-session");
-// const cloudinary = require("cloudinary");
-// const upload = require('../utils/multer');
-
-// const uploadImage = async (imagePath) => {
-//     const option = {
-//         use_filename: true,
-//         unique_filename: false,
-//         overwrite: true
-//     }
-
-//     try {
-        
-//         const result = await cloudinary.uploader.upload(imagePath, option)
-//         const url = await result.secure_url;
-//         console.log('RESULT: ', url)
-//         return url;
-
-//     } catch (err) {
-//         console.error(err);
-//     }
-// }
 
 router.post('/', async (req, res) => {
 
     try {
-
 
         // const { caption, name, association, quote } = req.body;
 
