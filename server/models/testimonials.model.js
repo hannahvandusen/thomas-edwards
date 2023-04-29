@@ -18,7 +18,8 @@ const Testimonials = new mongoose.Schema({
         required: true
     },
     photo: {
-        type: Object
+        type: String,
+        required: false
     }
 });
 

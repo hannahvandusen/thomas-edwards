@@ -1,11 +1,11 @@
 import React, { useEffect, useState, useRef } from "react";
 import styles from "./Home.module.css";
 import mainPhoto from "../../images/mainPhoto.png";
-import Carousel from "../../components/carousel/Carousel";
+import TestimonialCarousel from "../../components/carousel/Carousel";
 import aboutImage from "../../images/site_photo_6.jpg";
 import { BsTelephone } from "react-icons/bs";
 import { AiOutlineMail } from "react-icons/ai";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link, useNavigate } from "react-router-dom";
 import AOS from "aos";
 import {
     Form,
@@ -20,7 +20,10 @@ import {
 import newImage from "../../images/site_photo_2.jpg";
 
 function Home() {
+    const navigate = useNavigate();
     const [story, setStory] = useState();
+    const [testimonials, setTestimonials] = useState();
+
     const emailRef = useRef();
     const nameRef = useRef();
 
@@ -38,6 +41,22 @@ function Home() {
             setStory(story);
         } catch (err) {
             console.error(err);
+        }
+    };
+    const fetchTestimonials = async () => {
+        const url = "http://localhost:4000/testimonialsindex";
+        const requestOptions = {
+            method: "GET",
+        };
+
+        try {
+            const res = await fetch(url, requestOptions);
+            const data = await res.json();
+
+            setTestimonials(data.testimonials);
+            console.log(testimonials);
+        } catch (err) {
+            console.log(err);
         }
     };
 
@@ -78,6 +97,7 @@ function Home() {
         // scrolling effect
         AOS.init();
         fetchAbout();
+        fetchTestimonials();
     }, []);
 
     //Header Ideas
@@ -116,37 +136,77 @@ function Home() {
                     </div>
                 </section>
             </div>
-            <div class="container-fluid py-2">
-                <div class="d-flex flex-row flex-nowrap">
-                    <div class="card card-body">Card</div>
-                    <div class="card card-body">Card</div>
-                    <div class="card card-body">Card</div>
-                    <div class="card card-body">Card</div>
-                    <div class="card card-body">Card</div>
-                </div>
-            </div>
+            {/* <div class="container-fluid py-2">
+        <div class="d-flex flex-row flex-nowrap">
+          <div class="card card-body">Card</div>
+          <div class="card card-body">Card</div>
+          <div class="card card-body">Card</div>
+          <div class="card card-body">Card</div>
+          <div class="card card-body">Card</div>
+        </div>
+      </div> */}
 
-            <h1 className={styles.titles}>How I can Help You</h1>
-            <div className={styles.help}>
-                <div data-aos="fade-up" className="box1">
-                    <AiOutlineMail size={70} />
-                    <br />
-                    <Link to="/newsletter">
-                        <button className={styles.buttonHelp}>
-                            Sign Up Here
-                        </button>
-                    </Link>
-                </div>
-                <div data-aos="fade-up" className="box2">
-                    <BsTelephone size={60} />
-                    <br />
-                    <Link to="/intake">
-                        <button className={styles.buttonHelp}>
-                            Schedule A Meeting
-                        </button>
-                    </Link>
-                </div>
+            {/* <div class="d-flex flex-row flex-nowrap">
+        <div class="card card-body">Card</div>
+        <div class="card card-body">Card</div>
+        <div class="card card-body">Card</div>
+        <div class="card card-body">Card</div>
+        <div class="card card-body">Card</div>
+    </div> */}
+            <div class="container-fluid py-2">
+                <TestimonialCarousel testimonials={testimonials} />
             </div>
+            <h1 className={styles.titles}>How I Can Help You</h1>
+            <br />
+            <Container>
+                <Row>
+                    <Col>
+                        <div data-aos="fade-up">
+                            {/* <AiOutlineMail size={70} />
+                    <br />
+                    
+                    <a id="bottom">
+                        <button className={styles.buttonHelp}>Sign Up Here</button>
+                        </a>  */}
+                            {/* <h4 >Let's Connect</h4> */}
+                            <Form onSubmit={handleSubmit}>
+                                <FormGroup>
+                                    <Input
+                                        placeholder="Email"
+                                        innerRef={emailRef}
+                                    />
+                                    <Input
+                                        placeholder="Name"
+                                        innerRef={nameRef}
+                                    />
+                                </FormGroup>
+                                <button className={styles.button2}>
+                                    Subscribe
+                                </button>
+                            </Form>
+                        </div>
+                    </Col>
+
+                    <Col>
+                        <div data-aos="fade-up">
+                            <BsTelephone size={60} />
+                            <br />
+                            <Link
+                                to="https://calendly.com/innerfamous"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <button
+                                    className={styles.buttonHelp}
+                                    style={{ color: "white" }}
+                                >
+                                    Schedule A Meeting
+                                </button>
+                            </Link>
+                        </div>
+                    </Col>
+                </Row>
+            </Container>
 
             {/* <form className={styles.form}> */}
             {/* <label > */}
@@ -199,17 +259,19 @@ function Home() {
 
       {/* <form className={styles.form}> */}
             {/* <label > */}
-            <br />
-            <div className={styles.connect}>
-                <h1 className={styles.titles}>Let's Connect</h1>
-                <Form onSubmit={handleSubmit}>
-                    <FormGroup>
-                        <Input placeholder="Email" innerRef={emailRef} />
-                        <Input placeholder="Name" innerRef={nameRef} />
-                    </FormGroup>
-                    <button className={styles.button2}>Subscribe</button>
-                </Form>
-            </div>
+
+            {/* <br />
+      <div className={styles.connect}>
+        <h1 className={styles.titles}>Let's Connect</h1>
+        <Form onSubmit={handleSubmit}>
+          <FormGroup>
+            <Input placeholder="Email" innerRef={emailRef} />
+            <Input placeholder="Name" innerRef={nameRef} />
+          </FormGroup>
+          <button className={styles.button2}>Subscribe</button>
+        </Form>
+      </div> */}
+
             {/* <input
                         className={styles.input}
                         type="text"
@@ -228,4 +290,5 @@ function Home() {
         </>
     );
 }
+
 export default Home;

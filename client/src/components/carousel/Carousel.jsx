@@ -7,28 +7,31 @@ import {
   CarouselCaption,
 } from 'reactstrap';
 
-const items = [
-  {
-    src: '../',
-    altText: 'Slide 1',
-    caption: 'Slide 1',
-    key: 1,
-  },
-  {
-    src: './client/src/images/site_photo_3.jpg',
-    altText: 'Slide 2',
-    caption: 'Slide 2',
-    key: 2,
-  },
-  {
-    src: 'https://picsum.photos/id/678/1200/400',
-    altText: 'Slide 3',
-    caption: 'Slide 3',
-    key: 3,
-  },
-];
+function TestimonialCarousel(props) {
+  console.log(props.testimonials)
 
-function Example(args) {
+  const items = [
+    {
+      id: 1,
+      altText: `${props.testimonials[0].name}`,
+      caption: `${props.testimonials[0].quote}`,
+    },
+    {
+      id: 2,
+      altText: `${props.testimonials[1].name}`,
+      caption: `${props.testimonials[1].quote}`,
+    },
+    {
+      id: 3,
+      altText: `${props.testimonials[2].name}`,
+      caption: `${props.testimonials[2].quote}`,
+    },
+    {
+      id: 4,
+      altText: `${props.testimonials[3].name}`,
+      caption: `${props.testimonials[3].quote}`
+    }
+  ];
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
 
@@ -52,13 +55,15 @@ function Example(args) {
   const slides = items.map((item) => {
     return (
       <CarouselItem
+        className="custom-tag"
+        tag="div"
+        key={item.id}
         onExiting={() => setAnimating(true)}
         onExited={() => setAnimating(false)}
-        key={item.src}
       >
-        <img src={item.src} alt={item.altText} />
         <CarouselCaption
-          captionText={item.caption}
+          className="text-danger"
+          captionText={item.altText}
           captionHeader={item.caption}
         />
       </CarouselItem>
@@ -66,30 +71,34 @@ function Example(args) {
   });
 
   return (
-    <Carousel
-      activeIndex={activeIndex}
-      next={next}
-      previous={previous}
-      {...args}
-    >
-      <CarouselIndicators
-        items={items}
-        activeIndex={activeIndex}
-        onClickHandler={goToIndex}
-      />
-      {slides}
-      <CarouselControl
-        direction="prev"
-        directionText="Previous"
-        onClickHandler={previous}
-      />
-      <CarouselControl
-        direction="next"
-        directionText="Next"
-        onClickHandler={next}
-      />
-    </Carousel>
+    <div>
+      <style>
+        {`.custom-tag {
+              max-width: 100%;
+              height: 500px;
+              background: #ffcd51;
+            }`}
+      </style>
+      <Carousel activeIndex={activeIndex} next={next} previous={previous}>
+        <CarouselIndicators
+          items={items}
+          activeIndex={activeIndex}
+          onClickHandler={goToIndex}
+        />
+        {slides}
+        <CarouselControl
+          direction="prev"
+          directionText="Previous"
+          onClickHandler={previous}
+        />
+        <CarouselControl
+          direction="next"
+          directionText="Next"
+          onClickHandler={next}
+        />
+      </Carousel>
+    </div>
   );
 }
 
-export default Example;
+export default TestimonialCarousel;

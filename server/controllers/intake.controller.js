@@ -58,6 +58,27 @@ router.get("/", async(req, res) => {
 }
 }); 
 
+router.delete("/:id", async(req, res) => {
+
+    try {
+        const { id } = req.params;
+
+        const deleteMessage = await Intake.deleteOne({ _id: id });
+        deleteMessage.deletedCount > 0 ?
+        res.status(200).json({
+            message: `Message deleted`
+        }) :
+        res.status(404).json({
+            message: 'Did not delete testimonial'
+        });
+    
+    } catch (err) {
+        res.status(500).json({
+            Error: err.message
+        })
+    }
+})
+
 router.get('/:id', async(req, res) => {
     try {
         const { id } = req.params;
