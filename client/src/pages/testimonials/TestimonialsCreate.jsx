@@ -130,7 +130,7 @@ function TestimonialsCreate(props) {
                         type='file'
                         onChange={(event)=> {setUploadFile(event.target.files[0]);}} />
                         <button onClick={handleUpload}> Upload Image</button>
-                        {cloudinaryImage && ( <img src={cloudinaryImage} /> )}
+                        {/* {cloudinaryImage && ( <img src={cloudinaryImage} /> )} */}
                 </FormGroup>
                 
                 <Button type='submit' style={style} >Add Testimonial</Button>
