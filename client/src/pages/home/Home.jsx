@@ -1,13 +1,13 @@
 import React, { useEffect, useState, useRef } from "react";
 import styles from "./Home.module.css";
 import mainPhoto from "../../images/mainPhoto.png";
-import Carousel from '../../components/carousel/Carousel';
+// import Carousel from '../../components/carousel/Carousel';
 import aboutImage from "../../images/site_photo_6.jpg";
 import { BsTelephone } from "react-icons/bs";
 import { AiOutlineMail } from "react-icons/ai";
 import { Outlet, Link } from "react-router-dom";
 import AOS from "aos";
-import { Form, FormGroup, Input, Label, Button, Container, Row, Col } from "reactstrap"
+import { Form, FormGroup, Input, Label, Button, Container, Row, Col, UncontrolledCarousel } from "reactstrap"
 import newImage from "../../images/site_photo_2.jpg";
 
 function Home() {
@@ -68,6 +68,30 @@ function Home() {
     
   }}
 
+  const [ testimonials, setTestimonials ] = useState([]);
+
+  const fetchTestimonials = async () => {
+    const url = 'http://localhost:4000/testimonialsindex'
+    const requestOptions = {
+      method: 'GET'
+    }
+
+    try {
+      const res = await fetch(url, requestOptions);
+      const data = await res.json();
+
+      setTestimonials(data.testimonials);
+
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+  useEffect(() => {
+    AOS.init()
+    fetchTestimonials()
+  }, [])
+
 
   useEffect(() => {
     // scrolling effect
@@ -105,11 +129,30 @@ function Home() {
             </div>
             <div class="container-fluid py-2">
     <div class="d-flex flex-row flex-nowrap">
-        <div class="card card-body">Card</div>
-        <div class="card card-body">Card</div>
-        <div class="card card-body">Card</div>
-        <div class="card card-body">Card</div>
-        <div class="card card-body">Card</div>
+    {testimonials.map(testimonial => (
+    <UncontrolledCarousel
+  items={[
+    {
+      altText: 'Slide 1',
+      caption: 'Slide 1',
+      key: 1,
+      src: 'https://picsum.photos/id/123/1200/600'
+    },
+    {
+      altText: 'Slide 2',
+      caption: 'Slide 2',
+      key: 2,
+      src: 'https://picsum.photos/id/456/1200/600'
+    },
+    {
+      altText: 'Slide 3',
+      caption: 'Slide 3',
+      key: 3,
+      src: 'https://picsum.photos/id/678/1200/600'
+    }
+  ]}
+ />
+      ))}
     </div>
 </div>
 
