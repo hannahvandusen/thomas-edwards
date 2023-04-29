@@ -71,12 +71,15 @@ const Intake = () => {
   }
   return (
     <div className="idea">
-      <Container className="intakeWrapper">
+      <Container>
+        <Row>
         <h1 style={{ color: "white", fontFamily: "Georgia, serif" }}>
           <span style={{ color: "#ffcd51" }}>Contact</span> Thomas
         </h1>
-
-        <Col className="photoWrapper">
+            <Col md="6" className="photo-section" >
+                    <img className="contactPhoto" src={photo} alt="contact image" />
+            </Col>
+        <Col md="6">
           <Form onSubmit={handleSubmit}>
             <FormGroup
               style={{
@@ -90,7 +93,7 @@ const Intake = () => {
               <Label for="exampleName">Name or Name of Organization</Label>
               <Input
                 style={{
-                  width: "450px",
+                  width: "15rem",
                 }}
                 id="Name"
                 name="name"
@@ -106,7 +109,7 @@ const Intake = () => {
               <Label for="exampleEmail">Email</Label>
               <Input
                 style={{
-                  width: "450px",
+                  width: "15rem",
                 }}
                 id="email"
                 name="email"
@@ -130,7 +133,7 @@ const Intake = () => {
               </Label>
               <Input
                 style={{
-                  width: "450px",
+                  width: "15rem",
                 }}
                 id="Phone"
                 name="phone"
@@ -146,7 +149,7 @@ const Intake = () => {
               >
                 <Input
                   style={{
-                    width: "450px",
+                    width: "15rem",
                   }}
                   name="select"
                   type="select"
@@ -167,7 +170,7 @@ const Intake = () => {
               >
                 <Input
                   style={{
-                    width: "450px",
+                     width: "15rem",
                   }}
                   name="select"
                   type="select"
@@ -179,22 +182,11 @@ const Intake = () => {
                 </Input>
               </div>
             </FormGroup>
-            <FormGroup
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                flexDirection: "column",
-              }}
-            >
-              <Label
-                style={{
-                  margin: "24px",
-                  width: "450px",
-                }}
-                for="exampleMessage"
-              >
-                Leave Thomas a Message:
-              </Label>
+
+            <FormGroup style={{ color: "white" }}>
+              <label>Leave Thomas a Message:</label>
+              <div style={{ display: "flex", justifyContent: "center" }}
+>
               <Input
                 id="Message"
                 name="message"
@@ -202,12 +194,12 @@ const Intake = () => {
             goals!"
                 type="textarea"
                 style={{
-                  // height: "20vh",
-                  width: "450px",
-                  marginLeft: "25px",
-                }}
+                  height: "20vh",
+                  width: "15rem"}}
                 innerRef={messageRef}
               />
+
+              </div>
             </FormGroup>
             <br />
             <button type="submit" className={styles.buttonHelp}>
@@ -215,10 +207,8 @@ const Intake = () => {
             </button>
           </Form>
         </Col>
+        </Row>
       </Container>
-      <div className="contactPhotoWrapper">
-        <img className="contactPhoto" src={photo} alt="contact image" />
-      </div>
     </div>
   )
 }

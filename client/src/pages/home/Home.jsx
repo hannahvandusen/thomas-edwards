@@ -22,11 +22,12 @@ import newImage from "../../images/site_photo_2.jpg";
 function Home() {
     const navigate = useNavigate();
     const [story, setStory] = useState();
-    const [testimonials, setTestimonials] = useState();
+    const [testimonials, setTestimonials] = useState([]);
 
     const emailRef = useRef();
     const nameRef = useRef();
 
+    //fetch about section
     const fetchAbout = async () => {
         const url = `http://localhost:4000/about/643ae5920f74ad63f71a205d`;
         const requestOptions = {
@@ -41,22 +42,6 @@ function Home() {
             setStory(story);
         } catch (err) {
             console.error(err);
-        }
-    };
-    const fetchTestimonials = async () => {
-        const url = "http://localhost:4000/testimonialsindex";
-        const requestOptions = {
-            method: "GET",
-        };
-
-        try {
-            const res = await fetch(url, requestOptions);
-            const data = await res.json();
-
-            setTestimonials(data.testimonials);
-            console.log(testimonials);
-        } catch (err) {
-            console.log(err);
         }
     };
 
@@ -97,7 +82,6 @@ function Home() {
         // scrolling effect
         AOS.init();
         fetchAbout();
-        fetchTestimonials();
     }, []);
 
     //Header Ideas
@@ -110,10 +94,6 @@ function Home() {
                     src={newImage}
                     alt="mainPhoto"
                 />
-
-                {/* <h3 className={styles.mainHeader}>
-          Lets Create a Bright Future Together!
-        </h3> */}
             </main>
             <div className={styles.container}>
                 <section className={styles.card}>
@@ -136,26 +116,16 @@ function Home() {
                     </div>
                 </section>
             </div>
-            {/* <div class="container-fluid py-2">
-        <div class="d-flex flex-row flex-nowrap">
-          <div class="card card-body">Card</div>
-          <div class="card card-body">Card</div>
-          <div class="card card-body">Card</div>
-          <div class="card card-body">Card</div>
-          <div class="card card-body">Card</div>
-        </div>
-      </div> */}
 
-            {/* <div class="d-flex flex-row flex-nowrap">
-        <div class="card card-body">Card</div>
-        <div class="card card-body">Card</div>
-        <div class="card card-body">Card</div>
-        <div class="card card-body">Card</div>
-        <div class="card card-body">Card</div>
-    </div> */}
-            <div class="container-fluid py-2">
-                <TestimonialCarousel testimonials={testimonials} />
+            {/* carousel component */}
+            <div
+                class="container-fluid py-2"
+                style={{ alignItems: "center", justifyContent: "center" }}
+            >
+                <TestimonialCarousel />
             </div>
+
+            {/* How can I help section */}
             <h1 className={styles.titles}>How I Can Help You</h1>
             <br />
             <Container>
@@ -207,86 +177,6 @@ function Home() {
                     </Col>
                 </Row>
             </Container>
-
-            {/* <form className={styles.form}> */}
-            {/* <label > */}
-            {/* <div>
-                <h1 className="titles">Let's Connect</h1>
-                <Form onSubmit={handleSubmit}>
-                    <FormGroup>
-                        <Input placeholder="Email" aria-label="Email" innerRef={emailRef} />
-                        <Input placeholder="Name" aria-label="Password" innerRef={nameRef} />
-                    </FormGroup>
-                    <button type="submit" className={styles.buttonStory}>Subscribe</button>
-                </Form>
-            </div> */}
-
-            {/* <input
-
-      </main>
-      <div className={styles.container}>
-        <section className={styles.card}>
-          <img className={styles.image} src={aboutImage} alt="My Story" />
-          <div className={styles.description}>
-            <h3>About Thomas Edwards</h3>
-            <p className={styles.paragraph} data-aos="fade-up">
-              {story}
-            </p>
-            <Link to="/about">
-              <button className={styles.buttonStory}>Read My Story</button>
-            </Link>
-          </div>
-        </section>
-      </div>
-
-      <h1 className={styles.titles}>How I can Help You</h1>
-      <div className={styles.help}>
-        <div data-aos="fade-up" className="box1">
-          <AiOutlineMail size={70} />
-          <br />
-          <Link to="/newsletter">
-            <button className={styles.buttonHelp}>Sign Up Here</button>
-          </Link>
-        </div>
-        <div data-aos="fade-up" className="box2">
-          <BsTelephone size={60} />
-          <br />
-          <Link to="/intake">
-            <button className={styles.buttonHelp}>Schedule A Meeting</button>
-          </Link>
-        </div>
-      </div>
-
-      {/* <form className={styles.form}> */}
-            {/* <label > */}
-
-            {/* <br />
-      <div className={styles.connect}>
-        <h1 className={styles.titles}>Let's Connect</h1>
-        <Form onSubmit={handleSubmit}>
-          <FormGroup>
-            <Input placeholder="Email" innerRef={emailRef} />
-            <Input placeholder="Name" innerRef={nameRef} />
-          </FormGroup>
-          <button className={styles.button2}>Subscribe</button>
-        </Form>
-      </div> */}
-
-            {/* <input
-                        className={styles.input}
-                        type="text"
-                        name="name"
-                        placeholder="Name"
-                    />
-                    <input
-                        className={styles.input}
-                        type="text"
-                        name="name"
-                        placeholder="Email"
-                    /> */}
-            {/* </label> */}
-            {/* <input className={styles.button} type="submit" value="Submit" /> */}
-            {/* </form> */}
         </>
     );
 }
