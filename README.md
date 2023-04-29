@@ -115,7 +115,7 @@ Instructor:
 
 -   Eric WineBrenner
 
-We would like to thank all those who helped us throughout the project, including our classmates, friends, and family who provided support and feedback. We would also like to thank the open-source community for creating the libraries and tools that were used in this project.
+We would like to thank all those who helped throughout the project, including our classmates, friends, and family who provided support and feedback. We would also like to thank the open-source community for creating the libraries and tools that were used in this project.
 
 # License
 
