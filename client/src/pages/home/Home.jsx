@@ -142,7 +142,7 @@ function Home() {
                 <div data-aos="fade-up" >
                     <BsTelephone size={60} />
                     <br />
-                    <Link to="/intake">
+                    <Link to="https://calendly.com/innerfamous">
                         <button className={styles.buttonHelp} style={{color: "white"}}>Schedule A Meeting</button>
                     </Link>
                 </div>
