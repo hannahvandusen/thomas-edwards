@@ -57,7 +57,7 @@ return (
            data-aos-anchor-placement="top-bottom"
            data-aos-easing="ease-in-sine"
            data-aos-duration="1000" 
-           src="" 
+           src="" alt=""
             />
             <div className={styles.association}>
               <h3 data-aos="zoom-in-right">{testimonial.caption}</h3>

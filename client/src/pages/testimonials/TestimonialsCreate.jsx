@@ -1,4 +1,4 @@
-import { React, useState, useRef } from "react";
+import { React, useEffect, useState, useRef } from "react";
 import { Button, Form, FormGroup, Input, Label } from 'reactstrap';
 // import Axios from 'axios';
 
@@ -39,10 +39,10 @@ function TestimonialsCreate(props) {
         caption: captionRef.current.value,
         name: nameRef.current.value,
         association: associationRef.current.value,
-        quote: quoteRef.current.value,
+        quote: quoteRef.current.value
         // photo: photoRef.current.value
     });
-    // console.log(bodyObj);
+    console.log(bodyObj);
 
     let myHeader = new Headers();
         myHeader.append("Content-Type", "application/json");
@@ -57,8 +57,7 @@ function TestimonialsCreate(props) {
         try {
             const res = await fetch(url, requestOptions)
             const data = await res.json();
-
-            // console.log(data);
+            console.log(data);
 
             // formRef.current.reset(); 
             props.fetchTestimonials();
@@ -77,9 +76,9 @@ function TestimonialsCreate(props) {
     // const [ uploadFile, setUploadFile ] = useState("");
     // const [ cloudinaryImage, setCloudinaryImage ] = useState("")
 
-    const handleUpload = (e) => {
-      e.preventDefault();
-      const formData = new FormData();
+    // const handleUpload = (e) => {
+    //   e.preventDefault();
+    //   const formData = new FormData();
     //   formData.append("file", uploadFile);
     //   formData.append("upload_preset", "qhhdabdz");
 
@@ -89,7 +88,7 @@ function TestimonialsCreate(props) {
     // }).catch((error) => {
     //   console.log(error);
     // });
-};
+    // };
 
     return (
         <>

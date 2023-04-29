@@ -3,8 +3,8 @@ const { Testimonials } = require('../models');
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const validateSession = require("../middleware/validate-session");
-const cloudinary = require("cloudinary");
-const upload = require('../utils/multer');
+// const cloudinary = require("cloudinary");
+// const upload = require('../utils/multer');
 
 // const uploadImage = async (imagePath) => {
 //     const option = {
@@ -31,7 +31,7 @@ router.post('/', async (req, res) => {
 
         // const cloud_url = await uploadImage(req.file.path)
 
-        // const { caption, name, association, quote, photo } = req.body;
+        // const { caption, name, association, quote } = req.body;
 
         const testimonials = new Testimonials({
             caption: req.body.caption,
