@@ -9,6 +9,18 @@
     width: 400px;
     height: 200px;
   }
+
+  .main {
+    padding: 0;
+    position: relative;
+  }
+  
+  .mainPhoto {
+    height: 60vh;
+    width: 100%;
+    padding: 1%;
+    object-fit: cover;
+  }
   
   .mainHeader {
     height: 15rem;
@@ -53,7 +65,7 @@
     overflow-y: hidden;
     overflow-x: hidden;
     align-items: center;
-    border-top: .5px solid rgb(125, 127, 129, 0.5);
+    /* border-top: .5px solid rgb(125, 127, 129, 0.5); */
   }
   
   .card:nth-child(even) img {
@@ -198,6 +210,7 @@
       flex-direction: column;
       align-items: center;
       overflow-x: hidden;
+      overflow-y: hidden;
     }
   
     .form {

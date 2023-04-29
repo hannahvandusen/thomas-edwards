@@ -1,6 +1,5 @@
 import { React, useEffect, useState, useRef } from "react";
 import { Button, Form, FormGroup, Input, Label } from 'reactstrap';
-import Axios from 'axios';
 
 function TestimonialsCreate(props) {
 

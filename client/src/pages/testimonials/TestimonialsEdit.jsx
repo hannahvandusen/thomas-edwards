@@ -11,10 +11,10 @@ function TestimonialsEdit(props) {
     const [name, setName] = useState('');
     const [association, setAssociation] = useState('');
     const [quote, setQuote] = useState('');
-    const [photo, setPhoto] = useState('');
+    // const [photo, setPhoto] = useState('');
 
     // setting photo URL
-    const [ photoUrl, setPhotoUrl ] = useState("")
+    // const [ photoUrl, setPhotoUrl ] = useState("")
 
     const url = `http://localhost:4000/testimonialsindex/${id}`;
     
@@ -37,7 +37,7 @@ function TestimonialsEdit(props) {
             setName(name);
             setAssociation(association);
             setQuote(quote);
-            setPhoto(photo);
+            // setPhoto(photo);
 
         } catch (error) {
             console.error(error);
@@ -51,23 +51,23 @@ function TestimonialsEdit(props) {
         }
     }, [props.token])
 
-    function previewFile() {
-        const preview = document.querySelector("img");
-        const file = document.querySelector("input[type=file]").files[0];
-        const reader = new FileReader();
+    // function previewFile() {
+    //     const preview = document.querySelector("img");
+    //     const file = document.querySelector("input[type=file]").files[0];
+    //     const reader = new FileReader();
 
-        reader.addEventListener(
-            "load",
-            () => {
-                preview.src = reader.result;
-            },
-            false
-            );
+    //     reader.addEventListener(
+    //         "load",
+    //         () => {
+    //             preview.src = reader.result;
+    //         },
+    //         false
+    //         );
 
-        if (file) {
-            reader.readAsDataURL(file);
-        }
-        }
+    //     if (file) {
+    //         reader.readAsDataURL(file);
+    //     }
+    //     }
 
     async function handleSubmit(e) {
         e.preventDefault();
@@ -77,7 +77,7 @@ function TestimonialsEdit(props) {
             name: name,
             association: association,
             quote: quote,
-            photo: photo
+            // photo: photo
         })
 
 
@@ -100,21 +100,21 @@ function TestimonialsEdit(props) {
     }
 
     // uploading image
-    const uploadPhoto = () => {
-        const data = new FormData()
-        data.append("file", photo)
-        data.append("upload_preset", "qhhdabdz")
-        data.append("cloud_name", "dfofj3ppu")
-        fetch("  https://api.cloudinary.com/v1_1/dfofj3ppu/image/upload",{
-            method:"post",
-            body: data
-        })
-        .then(resp =>resp.json())
-        .then(data => {
-            setPhotoUrl(data.photoUrl)
-        })
-        .catch(err => console.log(err))
-    }
+    // const uploadPhoto = () => {
+    //     const data = new FormData()
+    //     data.append("file", photo)
+    //     data.append("upload_preset", "qhhdabdz")
+    //     data.append("cloud_name", "dfofj3ppu")
+    //     fetch("  https://api.cloudinary.com/v1_1/dfofj3ppu/image/upload",{
+    //         method:"post",
+    //         body: data
+    //     })
+    //     .then(resp =>resp.json())
+    //     .then(data => {
+    //         setPhotoUrl(data.photoUrl)
+    //     })
+    //     .catch(err => console.log(err))
+    // }
 
     return (
         <>
@@ -168,14 +168,14 @@ function TestimonialsEdit(props) {
                                     onChange={e => setQuote(e.target.value)}
                                     autoComplete='off' />
                             </FormGroup>
-                            <FormGroup style={{width: "80%"}}>
+                            {/* <FormGroup style={{width: "80%"}}>
                                 <Label>Photo</Label>
                                 <Input
                                     value={photo}
                                     type='file'
                                     onChange={e => setPhoto(e.target.files[0])}
                                     autoComplete='off' />
-                            </FormGroup>
+                            </FormGroup> */}
                             <Button className={style.button}>Update Testimonial</Button>
                         </Form>
                     </Col>

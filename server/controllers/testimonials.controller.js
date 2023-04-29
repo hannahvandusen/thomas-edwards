@@ -3,39 +3,39 @@ const { Testimonials } = require('../models');
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const validateSession = require("../middleware/validate-session");
-const cloudinary = require("cloudinary");
-const upload = require('../utils/multer');
+// const cloudinary = require("cloudinary");
+// const upload = require('../utils/multer');
 
-const uploadImage = async (imagePath) => {
-    const option = {
-        use_filename: true,
-        unique_filename: false,
-        overwrite: true
-    }
+// const uploadImage = async (imagePath) => {
+//     const option = {
+//         use_filename: true,
+//         unique_filename: false,
+//         overwrite: true
+//     }
 
-    try {
+//     try {
         
-        const result = await cloudinary.uploader.upload(imagePath, option)
-        const url = await result.secure_url;
-        console.log('RESULT: ', url)
-        return url;
+//         const result = await cloudinary.uploader.upload(imagePath, option)
+//         const url = await result.secure_url;
+//         console.log('RESULT: ', url)
+//         return url;
 
-    } catch (err) {
-        console.error(err);
-    }
-}
+//     } catch (err) {
+//         console.error(err);
+//     }
+// }
 
-router.post('/', upload.single('photo'), async (req, res) => {
+router.post('/', async (req, res) => {
 
     try {
 
 
-        // const { caption, name, association, quote, photo } = req.body;
+        // const { caption, name, association, quote } = req.body;
 
         const testimonials = new Testimonials({
 
             caption: req.body.caption,
-            name: req.body.body,
+            name: req.body.name,
             association: req.body.association,
             quote: req.body.quote,
         }); 

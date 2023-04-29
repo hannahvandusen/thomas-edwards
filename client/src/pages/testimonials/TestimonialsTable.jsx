@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button, Table } from 'reactstrap'
-import { baseURL } from '../../environment'
+// import { baseURL } from '../../environment'
 import { useNavigate } from 'react-router-dom';
 
 function TestimonialsTable(props) {
@@ -59,9 +59,9 @@ function TestimonialsTable(props) {
                     <th style={{color: "#cddee5"}}>
                         Quote
                     </th>
-                    <th style={{color: "#cddee5"}}>
+                    {/* <th style={{color: "#cddee5"}}>
                         Photo
-                    </th>
+                    </th> */}
                     <th style={{color: "#cddee5"}}>
                         Update
                     </th>
@@ -83,9 +83,9 @@ function TestimonialsTable(props) {
                     <td style={{color: "#cddee5"}}>
                         {testimonials.quote}
                     </td>
-                    <td style={{color: "#cddee5"}}>
+                    {/* <td style={{color: "#cddee5"}}>
                         {testimonials.photo}
-                    </td>
+                    </td> */}
                     <td>
                         <Button
                             href='#top'

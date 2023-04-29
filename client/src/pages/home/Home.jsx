@@ -12,49 +12,29 @@ import newImage from "../../images/site_photo_2.jpg";
 
 function Home() {
 
-  const navigate = useNavigate(); 
-
+    const navigate = useNavigate(); 
     const [story, setStory] = useState();
-    const [ testimonials, setTestimonials ] = useState();
+    
     const emailRef = useRef();
     const nameRef = useRef();
 
-
+//fetch about section 
   const fetchAbout = async () => {
     const url = `http://localhost:4000/about/643ae5920f74ad63f71a205d`
     const requestOptions = {
           method: "GET",
     }
 
-        try {
-            const res = await fetch(url, requestOptions);
-            const data = await res.json();
-            // console.log(data); 
-            const { about, story, mission, value } = data.about;
-            setStory(story);
-        } catch (err) {
-            console.error(err)
-        }
+    try {
+      const res = await fetch(url, requestOptions)
+      const data = await res.json()
+      // console.log(data);
+      const { about, story, mission, value } = data.about
+      setStory(story)
+    } catch (err) {
+      console.error(err)
     }
-    const fetchTestimonials = async () => {
-      const url = 'http://localhost:4000/testimonialsindex'
-      const requestOptions = {
-        method: 'GET'
-      }
-  
-      try {
-        const res = await fetch(url, requestOptions);
-        const data = await res.json();
-  
-        setTestimonials(data.testimonials);
-        console.log(testimonials);
-  
-      } catch (err) {
-        console.log(err)
-      }
-    }; 
-  
-
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -94,8 +74,7 @@ function Home() {
     // scrolling effect
     AOS.init()
     fetchAbout()
-    fetchTestimonials()
-  }, [])
+  }, []) 
 
     //Header Ideas
     //Create A Plan, Change Careers, Transform Your Life!
@@ -104,44 +83,38 @@ function Home() {
             <main className={styles.main}>
                 <img className={styles.mainPhoto} src={newImage} alt="mainPhoto" />
 
-                {/* <h3 className={styles.mainHeader}>
-          Lets Create a Bright Future Together!
-        </h3> */}
+      </main>
+      <div className={styles.container}>
+        <section className={styles.card}>
+          <img
+            id="about-image"
+            className="img-fluid"
+            src={aboutImage}
+            alt="My Story"
+          />
+          <div className={styles.description}>
+            <h3 className={styles.titles}>About Thomas Edwards</h3>
+            <p className={styles.paragraph} data-aos="fade-up">
+              {story}
+            </p>
+            <Link to="/about">
+              <button className={styles.buttonStory}>Read My Story</button>
+            </Link>
+          </div>
+        </section>
+      </div>
 
-            </main>
-            <div className={styles.container}>
-                <section className={styles.card}>
-                    <img id="about-image" className='img-fluid' src={aboutImage} alt="My Story" />
-                    <div className={styles.description}>
-                        <h3 className={styles.titles}>About Thomas Edwards</h3>
-                        <p className={styles.paragraph} data-aos="fade-up">
-                            {story}
-                        </p>
-                          <a>
-                            <button onClick={() => navigate('/about')} href='#top' className={styles.buttonStory}>Read My Story</button>
-                          </a>
-                    </div>
-                </section>
-            </div>
-            <div class="container-fluid py-2">
-    {/* <div class="d-flex flex-row flex-nowrap">
-        <div class="card card-body">Card</div>
-        <div class="card card-body">Card</div>
-        <div class="card card-body">Card</div>
-        <div class="card card-body">Card</div>
-        <div class="card card-body">Card</div>
-    </div> */}
-    
-    <div>
-      <TestimonialCarousel testimonials={testimonials} /> 
+  {/* carousel component */}
+    <div class="container-fluid py-2" style={{alignItems: "center", justifyContent: "center"}}>
+      <TestimonialCarousel/> 
     </div>
-
-</div>
-            <h1 className={styles.titles}>How I Can Help You</h1>
-            <br /> 
-            <Container>
-              <Row>
-                <Col>
+    
+  {/* How can I help section */}
+  <h1 className={styles.titles}>How I Can Help You</h1>
+  <br /> 
+  <Container>
+    <Row>
+      <Col>
                 <div data-aos="fade-up" >
                     {/* <AiOutlineMail size={70} />
                     <br />
@@ -178,4 +151,5 @@ function Home() {
     </>
   )
 }
+
 export default Home
