@@ -1,6 +1,6 @@
 import { React, useEffect, useState, useRef } from "react";
 import { Button, Form, FormGroup, Input, Label } from 'reactstrap';
-import Axios from 'axios';
+// import Axios from 'axios';
 
 function TestimonialsCreate(props) {
 
@@ -9,24 +9,24 @@ function TestimonialsCreate(props) {
     const nameRef = useRef();
     const associationRef = useRef();
     const quoteRef = useRef();
-    const photoRef = useRef();
+    // const photoRef = useRef();
 
-    function previewFile() {
-        const preview = document.querySelector("img");
-        const file = document.querySelector("input[type=file]").files[0];
-        const reader = new FileReader();
+    // function previewFile() {
+    //     const preview = document.querySelector("img");
+    //     const file = document.querySelector("input[type=file]").files[0];
+    //     const reader = new FileReader();
 
-        reader.addEventListener(
-            "load",
-            () => {
-                preview.src = reader.result;
-            },
-            false
-        );
-        if (file) {
-            reader.readAsDataURL(file);
-        }
-    }
+    //     reader.addEventListener(
+    //         "load",
+    //         () => {
+    //             preview.src = reader.result;
+    //         },
+    //         false
+    //     );
+    //     if (file) {
+    //         reader.readAsDataURL(file);
+    //     }
+    // }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -39,10 +39,10 @@ function TestimonialsCreate(props) {
         caption: captionRef.current.value,
         name: nameRef.current.value,
         association: associationRef.current.value,
-        quote: quoteRef.current.value,
-        photo: photoRef.current.value
+        quote: quoteRef.current.value
+        // photo: photoRef.current.value
     });
-    // console.log(bodyObj);
+    console.log(bodyObj);
 
     let myHeader = new Headers();
         myHeader.append("Content-Type", "application/json");
@@ -57,8 +57,7 @@ function TestimonialsCreate(props) {
         try {
             const res = await fetch(url, requestOptions)
             const data = await res.json();
-
-            // console.log(data);
+            console.log(data);
 
             // formRef.current.reset(); 
             props.fetchTestimonials();
@@ -74,22 +73,22 @@ function TestimonialsCreate(props) {
         fontFamily: "Georgia, serif"
     }
 
-    const [ uploadFile, setUploadFile ] = useState("");
-    const [ cloudinaryImage, setCloudinaryImage ] = useState("")
+    // const [ uploadFile, setUploadFile ] = useState("");
+    // const [ cloudinaryImage, setCloudinaryImage ] = useState("")
 
-    const handleUpload = (e) => {
-      e.preventDefault();
-      const formData = new FormData();
-      formData.append("file", uploadFile);
-      formData.append("upload_preset", "qhhdabdz");
+    // const handleUpload = (e) => {
+    //   e.preventDefault();
+    //   const formData = new FormData();
+    //   formData.append("file", uploadFile);
+    //   formData.append("upload_preset", "qhhdabdz");
 
-    Axios.post("https://api.cloudinary.com/v1_1/dfofj3ppu/image/upload", formData).then((response) => {
-      console.log(response);
-      setCloudinaryImage(response.data.secure_url);
-    }).catch((error) => {
-      console.log(error);
-    });
-};
+    // Axios.post("https://api.cloudinary.com/v1_1/dfofj3ppu/image/upload", formData).then((response) => {
+    //   console.log(response);
+    //   setCloudinaryImage(response.data.secure_url);
+    // }).catch((error) => {
+    //   console.log(error);
+    // });
+    // };
 
     return (
         <>
@@ -123,15 +122,14 @@ function TestimonialsCreate(props) {
                         autoComplete='off' 
                         type='textarea'/>
                 </FormGroup>
-                <FormGroup>
+                {/* <FormGroup>
                     <Label style={{color: "#cddee5"}}>Photo</Label>
                     <Input 
                         innerRef={photoRef} 
                         type='file'
                         onChange={(event)=> {setUploadFile(event.target.files[0]);}} />
                         <button onClick={handleUpload}> Upload Image</button>
-                        {/* {cloudinaryImage && ( <img src={cloudinaryImage} /> )} */}
-                </FormGroup>
+                </FormGroup> */}
                 
                 <Button type='submit' style={style} >Add Testimonial</Button>
             </Form>
