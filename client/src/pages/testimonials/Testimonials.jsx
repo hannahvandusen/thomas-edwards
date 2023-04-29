@@ -37,8 +37,8 @@ function Testimonials() {
 return (
 	<>
   <main className={styles.main}>
-                <img className={styles.mainPhoto} src={newImage} alt="mainPhoto" />
-            </main>
+      <img className={styles.mainPhoto} src={newImage} alt="mainPhoto" />
+  </main>
     <header className={styles.mainHeader}>
         <h1>
           <span>What People Say About</span>{" "}Working With Thomas
