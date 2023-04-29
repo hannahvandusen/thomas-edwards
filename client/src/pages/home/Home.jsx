@@ -1,24 +1,31 @@
-import React, { useEffect, useState, useRef } from "react";
-import styles from "./Home.module.css";
-import mainPhoto from "../../images/mainPhoto.png";
-import TestimonialCarousel from '../../components/carousel/Carousel';
-import aboutImage from "../../images/site_photo_6.jpg";
-import { BsTelephone } from "react-icons/bs";
-import { AiOutlineMail } from "react-icons/ai";
-import { Outlet, Link, useNavigate } from "react-router-dom";
-import AOS from "aos";
-import { Form, FormGroup, Input, Label, Button, Container, Row, Col } from "reactstrap"
-import newImage from "../../images/site_photo_2.jpg";
+import React, { useEffect, useState, useRef } from "react"
+import styles from "./Home.module.css"
+import mainPhoto from "../../images/mainPhoto.png"
+import TestimonialCarousel from "../../components/carousel/Carousel"
+import aboutImage from "../../images/site_photo_6.jpg"
+import { BsTelephone } from "react-icons/bs"
+import { AiOutlineMail } from "react-icons/ai"
+import { Outlet, Link, useNavigate } from "react-router-dom"
+import AOS from "aos"
+import {
+  Form,
+  FormGroup,
+  Input,
+  Label,
+  Button,
+  Container,
+  Row,
+  Col,
+} from "reactstrap"
+import newImage from "../../images/site_photo_2.jpg"
 
 function Home() {
+  const navigate = useNavigate()
+  const [story, setStory] = useState()
+  const [testimonials, setTestimonials] = useState()
 
-    const navigate = useNavigate(); 
-    const [story, setStory] = useState();
-    const [ testimonials, setTestimonials ] = useState();
-    
-    const emailRef = useRef();
-    const nameRef = useRef();
-
+  const emailRef = useRef()
+  const nameRef = useRef()
 
   const fetchAbout = async () => {
     const url = `http://localhost:4000/about/643ae5920f74ad63f71a205d`
@@ -36,24 +43,23 @@ function Home() {
       console.error(err)
     }
   }
-    const fetchTestimonials = async () => {
-      const url = 'http://localhost:4000/testimonialsindex'
-      const requestOptions = {
-        method: 'GET'
-      }
-  
-      try {
-        const res = await fetch(url, requestOptions);
-        const data = await res.json();
-  
-        setTestimonials(data.testimonials);
-        console.log(testimonials);
-  
-      } catch (err) {
-        console.log(err)
-      }
-    }; 
-  
+  const fetchTestimonials = async () => {
+    const url = "http://localhost:4000/testimonialsindex"
+    const requestOptions = {
+      method: "GET",
+    }
+
+    try {
+      const res = await fetch(url, requestOptions)
+      const data = await res.json()
+
+      setTestimonials(data.testimonials)
+      console.log(testimonials)
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault()
 
@@ -87,13 +93,12 @@ function Home() {
     }
   }
 
-
   useEffect(() => {
     // scrolling effect
     AOS.init()
     fetchAbout()
     fetchTestimonials()
-  }, []) 
+  }, [])
 
   //Header Ideas
   //Create A Plan, Change Careers, Transform Your Life!
@@ -135,59 +140,68 @@ function Home() {
         </div>
       </div> */}
 
-            <div class="container-fluid py-2">
-    {/* <div class="d-flex flex-row flex-nowrap">
+      <div class="container-fluid py-2">
+        {/* <div class="d-flex flex-row flex-nowrap">
         <div class="card card-body">Card</div>
         <div class="card card-body">Card</div>
         <div class="card card-body">Card</div>
         <div class="card card-body">Card</div>
         <div class="card card-body">Card</div>
     </div> */}
-    
-      <TestimonialCarousel testimonials={testimonials} /> 
-</div>
-            <h1 className={styles.titles}>How I Can Help You</h1>
-            <br /> 
-            <Container>
-              <Row>
-                <Col>
-                <div data-aos="fade-up" >
-                    {/* <AiOutlineMail size={70} />
+
+        <TestimonialCarousel testimonials={testimonials} />
+      </div>
+      <h1 className={styles.titles}>How I Can Help You</h1>
+      <br />
+      <Container>
+        <Row>
+          <Col>
+            <div data-aos="fade-up">
+              {/* <AiOutlineMail size={70} />
                     <br />
                     
                     <a id="bottom">
                         <button className={styles.buttonHelp}>Sign Up Here</button>
                         </a>  */}
-                          {/* <h4 >Let's Connect</h4> */}
-        <Form onSubmit={handleSubmit}>
-          <FormGroup>
-            <Input placeholder="Email" innerRef={emailRef} />
-            <Input placeholder="Name" innerRef={nameRef} />
-          </FormGroup>
-          <button className={styles.button2}>Subscribe</button>
-        </Form>
+              {/* <h4 >Let's Connect</h4> */}
+              <Form onSubmit={handleSubmit}>
+                <FormGroup>
+                  <Input placeholder="Email" innerRef={emailRef} />
+                  <Input placeholder="Name" innerRef={nameRef} />
+                </FormGroup>
+                <button className={styles.button2}>Subscribe</button>
+              </Form>
+            </div>
+          </Col>
 
+          <Col>
+            <div data-aos="fade-up">
+              <BsTelephone style={{ color: "white" }} size={80} />
+              <br />
+              <Link
+                to="https://calendly.com/innerfamous"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button
+                  className={styles.button2}
+                  style={{
+                    // color: "white",
+                    marginTop: "20px",
+                    // fontSize: "12px",
+                  }}
+                >
+                  Schedule A Meeting
+                </button>
+              </Link>
+            </div>
+          </Col>
+        </Row>
+      </Container>
 
-                </div>
-
-                </Col>
-
-                <Col>
-                <div data-aos="fade-up" >
-                    <BsTelephone size={60} />
-                    <br />
-                    <Link to="https://calendly.com/innerfamous" target="_blank" rel="noopener noreferrer">
-                        <button className={styles.buttonHelp} style={{color: "white"}}>Schedule A Meeting</button>
-                    </Link>
-                </div>
-
-                </Col>
-              </Row>
-            </Container>
-
-            {/* <form className={styles.form}> */}
-            {/* <label > */}
-            {/* <div>
+      {/* <form className={styles.form}> */}
+      {/* <label > */}
+      {/* <div>
                 <h1 className="titles">Let's Connect</h1>
                 <Form onSubmit={handleSubmit}>
                     <FormGroup>
