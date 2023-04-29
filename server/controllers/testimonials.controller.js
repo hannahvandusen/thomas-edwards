@@ -29,16 +29,15 @@ router.post('/', async (req, res) => {
 
     try {
 
-        // const cloud_url = await uploadImage(req.file.path)
 
         // const { caption, name, association, quote } = req.body;
 
         const testimonials = new Testimonials({
+
             caption: req.body.caption,
             name: req.body.name,
             association: req.body.association,
             quote: req.body.quote,
-            // photo: cloud_url ? cloud_url : ""
         }); 
 
         const newTestimonials = await testimonials.save();

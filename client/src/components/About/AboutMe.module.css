@@ -10,6 +10,11 @@
   height: 200px;
 }
 
+.aboutedit {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
 .mainHeader {
   height: 15rem;
   display: flex;
@@ -51,8 +56,8 @@
   grid-template-columns: repeat(2, 1fr);
   padding: 4rem 5rem;
   overflow-y: hidden;
-  border-top: 0.5px solid rgb(125, 127, 129, 0.5);
-  border-bottom: 0.5px solid rgb(125, 127, 129, 0.5);
+  /* border-top: 0.5px solid rgb(125, 127, 129, 0.5);
+  border-bottom: 0.5px solid rgb(125, 127, 129, 0.5); */
 }
 
 .card:nth-child(even) img {
