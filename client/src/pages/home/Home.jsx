@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import styles from "./Home.module.css";
 import mainPhoto from "../../images/mainPhoto.png";
-import Carousel from '../../components/carousel/Carousel';
+import TestimonialCarousel from '../../components/carousel/Carousel';
 import aboutImage from "../../images/site_photo_6.jpg";
 import { BsTelephone } from "react-icons/bs";
 import { AiOutlineMail } from "react-icons/ai";
@@ -13,6 +13,7 @@ import newImage from "../../images/site_photo_2.jpg";
 function Home() {
 
     const [story, setStory] = useState();
+    const [ testimonials, setTestimonials ] = useState();
     const emailRef = useRef();
     const nameRef = useRef();
 
@@ -33,6 +34,24 @@ function Home() {
             console.error(err)
         }
     }
+    const fetchTestimonials = async () => {
+      const url = 'http://localhost:4000/testimonialsindex'
+      const requestOptions = {
+        method: 'GET'
+      }
+  
+      try {
+        const res = await fetch(url, requestOptions);
+        const data = await res.json();
+  
+        setTestimonials(data.testimonials);
+        console.log(testimonials);
+  
+      } catch (err) {
+        console.log(err)
+      }
+    }; 
+  
 
 
   const handleSubmit = async (e) => {
@@ -73,6 +92,7 @@ function Home() {
     // scrolling effect
     AOS.init()
     fetchAbout()
+    fetchTestimonials()
   }, [])
 
     //Header Ideas
@@ -104,13 +124,18 @@ function Home() {
                 </section>
             </div>
             <div class="container-fluid py-2">
-    <div class="d-flex flex-row flex-nowrap">
+    {/* <div class="d-flex flex-row flex-nowrap">
         <div class="card card-body">Card</div>
         <div class="card card-body">Card</div>
         <div class="card card-body">Card</div>
         <div class="card card-body">Card</div>
         <div class="card card-body">Card</div>
-    </div>
+    </div> */}
+    
+    {/* <div>
+      <TestimonialCarousel testimonials={testimonials} /> 
+    </div> */}
+
 </div>
             <h1 className={styles.titles}>How I Can Help You</h1>
             <br /> 
@@ -142,7 +167,7 @@ function Home() {
                 <div data-aos="fade-up" >
                     <BsTelephone size={60} />
                     <br />
-                    <Link to="https://calendly.com/innerfamous">
+                    <Link to="https://calendly.com/innerfamous" target="_blank" rel="noopener noreferrer">
                         <button className={styles.buttonHelp} style={{color: "white"}}>Schedule A Meeting</button>
                     </Link>
                 </div>
