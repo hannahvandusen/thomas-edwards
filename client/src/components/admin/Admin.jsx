@@ -51,24 +51,24 @@ function Admin() {
           </Col>
           <Col md="3">
             <Button
-              style={{ borderRadius: "10px", width: "200px", fontSize: "15px" }}
+              style={{ borderRadius: "10px", width: "200px", fontSize: "15px", backgroundColor: "#ffcd51", color: "black", margin: "2%" }}
               href="/admin/account"
             >
               Update Email/Password
             </Button>
             <Button
-              style={{ borderRadius: "10px", width: "200px", fontSize: "15px" }}
+              style={{ borderRadius: "10px", width: "200px", fontSize: "15px", backgroundColor: "#ffcd51", color: "black", margin: "2%" }}
               href="/testimonialsindex"
             >
               Edit Testimonials
             </Button>
             <Button
-              style={{ borderRadius: "10px", width: "200px", fontSize: "15px" }}
+              style={{ borderRadius: "10px", width: "200px", fontSize: "15px", backgroundColor: "#ffcd51", color: "black", margin: "2%" }}
               href="/about/edit"
             >
               Edit About
             </Button>
-            <Button style={{ borderRadius: "10px", width: "200px", fontSize: "15px" }}
+            <Button style={{ borderRadius: "10px", width: "200px", fontSize: "15px", backgroundColor: "#ffcd51", color: "black", margin: "2%" }}
               href="/subscribe">View Subscribers</Button>
           </Col>
           <Logout setToken={setSessionToken} />

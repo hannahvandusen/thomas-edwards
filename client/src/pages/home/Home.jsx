@@ -14,7 +14,6 @@ function Home() {
 
     const navigate = useNavigate(); 
     const [story, setStory] = useState();
-    const [ testimonials, setTestimonials ] = useState([]);
     
     const emailRef = useRef();
     const nameRef = useRef();
@@ -23,7 +22,7 @@ function Home() {
   const fetchAbout = async () => {
     const url = `http://localhost:4000/about/643ae5920f74ad63f71a205d`
     const requestOptions = {
-      method: "GET",
+          method: "GET",
     }
 
     try {
@@ -55,12 +54,12 @@ function Home() {
       method: "POST",
     }
 
-    try {
-      const res = await fetch(url, requestOptions)
-      const data = await res.json()
+        try {
+            const res = await fetch(url, requestOptions);
+            const data = await res.json();
 
       console.log(data)
-      if (data.newSubscriber) {
+      if(data.newSubscriber) {
         alert("Thanks for subscribing!")
       } else {
         alert(data.Error)
@@ -77,12 +76,12 @@ function Home() {
     fetchAbout()
   }, []) 
 
-  //Header Ideas
-  //Create A Plan, Change Careers, Transform Your Life!
-  return (
-    <>
-      <main className={styles.main}>
-        <img className={styles.mainPhoto} src={newImage} alt="mainPhoto" />
+    //Header Ideas
+    //Create A Plan, Change Careers, Transform Your Life!
+    return (
+        <>
+            <main className={styles.main}>
+                <img className={styles.mainPhoto} src={newImage} alt="mainPhoto" />
 
       </main>
       <div className={styles.container}>
