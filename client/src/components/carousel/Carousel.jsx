@@ -7,6 +7,7 @@ import {
   CarouselCaption,
 } from 'reactstrap';
 
+
 function TestimonialCarousel() {
   
   const [ testimonials, setTestimonials ] = useState([]);
@@ -90,7 +91,7 @@ function TestimonialCarousel() {
         onExited={() => setAnimating(false)}
       >
         <CarouselCaption
-          className="text-danger"
+          className="text-black"
           captionText={item.name}
           captionHeader={item.quote}
         />
@@ -103,9 +104,9 @@ function TestimonialCarousel() {
       <style>
         {`.custom-tag {
               max-width: 100%;
-              height: 500px;
+              height: 600px;
               background: #ffcd51;
-            }`}
+}`}
       </style>
       <Carousel activeIndex={activeIndex} next={next} previous={previous}>
         <CarouselIndicators

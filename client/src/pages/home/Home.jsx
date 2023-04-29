@@ -106,8 +106,8 @@ function Home() {
       </div>
 
   {/* carousel component */}
-    <div class="container-fluid py-2">
-      <TestimonialCarousel /> 
+    <div class="container-fluid py-2" style={{alignItems: "center", justifyContent: "center"}}>
+      <TestimonialCarousel/> 
     </div>
     
   {/* How can I help section */}
