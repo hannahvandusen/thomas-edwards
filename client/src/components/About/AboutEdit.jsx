@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Button, Form, FormGroup, Input, Label } from 'reactstrap';
 import { useNavigate } from 'react-router-dom';
+import styles from "./AboutMe.module.css"
 
 function AboutEdit() {
 
@@ -67,7 +68,7 @@ function AboutEdit() {
     }
 
     return (
-    <>
+    <div className={styles.aboutedit}>
         <Form onSubmit={handleSubmit}>
             <Label>About Description:</Label>
             <Input type='textarea' defaultValue={aboutSection.about} innerRef={aboutRef}/> 
@@ -102,7 +103,7 @@ function AboutEdit() {
         </Form>
         <Button onClick={() => navigate('/admin')} href='#top' style={{backgroundColor: "#ffcd51", 
         color: "black"}}>Admin Portal</Button>
-    </>
+    </div>
   )
 }
 

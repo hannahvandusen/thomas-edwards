@@ -8,24 +8,6 @@ function TestimonialsCreate(props) {
     const nameRef = useRef();
     const associationRef = useRef();
     const quoteRef = useRef();
-    // const photoRef = useRef();
-
-    // function previewFile() {
-    //     const preview = document.querySelector("img");
-    //     const file = document.querySelector("input[type=file]").files[0];
-    //     const reader = new FileReader();
-
-    //     reader.addEventListener(
-    //         "load",
-    //         () => {
-    //             preview.src = reader.result;
-    //         },
-    //         false
-    //     );
-    //     if (file) {
-    //         reader.readAsDataURL(file);
-    //     }
-    // }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -58,7 +40,6 @@ function TestimonialsCreate(props) {
 
             // console.log(data);
 
-            // formRef.current.reset(); 
             props.fetchTestimonials();
 
         } catch (err) {
