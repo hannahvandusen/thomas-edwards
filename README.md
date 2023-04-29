@@ -68,7 +68,8 @@ To run InnerFamous.com on your local machine, follow these steps:
 3. Install the necessary dependencies using the command npm install
 4. Start the development server using the command npm start
 5. Open a web browser and navigate to http://localhost:3000 to view the website.
-   Please note that you will need to have Node.js and MongoDB installed on your machine before running the above commands.
+
+Please note that you will need to have Node.js and MongoDB installed on your machine before running the above commands.
 
 InnerFamous.com is built using Node.js, React, and MongoDB. It also uses Cloudinary to handle image uploading and management.
 
@@ -118,7 +119,7 @@ We would like to thank all those who helped us throughout the project, including
 
 # License
 
-This project is released under the [MIT License](https://opensource.org/licenses/MIT).
+Is this project licensed?
 
 This project uses the following third-party libraries:
 
@@ -130,7 +131,11 @@ This project uses the following third-party libraries:
 # Contact
 
 Hannah Van Dusen <hannahvandusen@yahoo.com>, https://www.linkedin.com/in/
+
 Ethan Moskowitz <moskowitz.e.m@gmail.com>, https://www.linkedin.com/in/
+
 Luke Mitrani <lukemitrani@gmail.com>, https://www.linkedin.com/in/
+
 Micah Cole <micahjaxoncole@gmail.com>, https://www.linkedin.com/in/
+
 Marcel Prisacari <marcel.prisacari@gmail.com>, https://www.linkedin.com/in/
