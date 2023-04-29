@@ -28,8 +28,7 @@ router.post('/', async (req, res) => {
             caption: caption,
             name: name,
             association: association,
-            quote: quote,
-            photo: photo
+            quote: quote
         }); 
 
         const newTestimonials = await testimonials.save();
