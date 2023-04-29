@@ -7,32 +7,26 @@ import {
   CarouselCaption,
 } from 'reactstrap';
 
+const items = [
+  {
+    id: 1,
+    altText: 'Slide 1',
+    caption: 'Slide 1',
+  },
+  {
+    id: 2,
+    altText: 'Slide 2',
+    caption: 'Slide 2',
+  },
+  {
+    id: 3,
+    altText: 'Slide 3',
+    caption: 'Slide 3',
+  },
+];
+
 function TestimonialCarousel(props) {
-  // console.log(props.testimonials[0]); 
-  // console.log(props.testimonials[0])
-  const testimonials = props.testimonials;
-  // console.log(testimonials[0])
-  console.log(testimonials[0])
-
-  const items = [
-    {
-      id: 1,
-      altText: 'Slide 1',
-      caption: 'Slide 1',
-    },
-    {
-      id: 2,
-      altText: 'Slide 2',
-      caption: 'Slide 2',
-    },
-    {
-      id: 3,
-      altText: 'Slide 3',
-      caption: 'Slide 3',
-    },
-  ];
-  
-
+  console.log(props.testimonials)
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
 
@@ -77,7 +71,7 @@ function TestimonialCarousel(props) {
         {`.custom-tag {
               max-width: 100%;
               height: 500px;
-              background: black;
+              background: #ffcd51;
             }`}
       </style>
       <Carousel activeIndex={activeIndex} next={next} previous={previous}>

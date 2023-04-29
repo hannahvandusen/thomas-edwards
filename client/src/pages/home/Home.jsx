@@ -5,12 +5,14 @@ import TestimonialCarousel from '../../components/carousel/Carousel';
 import aboutImage from "../../images/site_photo_6.jpg";
 import { BsTelephone } from "react-icons/bs";
 import { AiOutlineMail } from "react-icons/ai";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link, useNavigate } from "react-router-dom";
 import AOS from "aos";
 import { Form, FormGroup, Input, Label, Button, Container, Row, Col } from "reactstrap"
 import newImage from "../../images/site_photo_2.jpg";
 
 function Home() {
+
+  const navigate = useNavigate(); 
 
     const [story, setStory] = useState();
     const [ testimonials, setTestimonials ] = useState();
@@ -115,11 +117,9 @@ function Home() {
                         <p className={styles.paragraph} data-aos="fade-up">
                             {story}
                         </p>
-                        <Link to='/about'>
-
-                            <button className={styles.buttonStory}>Read My Story</button>
-                        </Link>
-
+                          <a>
+                            <button onClick={() => navigate('/about')} href='#top' className={styles.buttonStory}>Read My Story</button>
+                          </a>
                     </div>
                 </section>
             </div>
@@ -132,9 +132,9 @@ function Home() {
         <div class="card card-body">Card</div>
     </div> */}
     
-    {/* <div>
+    <div>
       <TestimonialCarousel testimonials={testimonials} /> 
-    </div> */}
+    </div>
 
 </div>
             <h1 className={styles.titles}>How I Can Help You</h1>
