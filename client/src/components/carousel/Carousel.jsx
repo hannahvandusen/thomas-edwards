@@ -9,26 +9,24 @@ import {
 
 const items = [
   {
-    src: '../',
+    id: 1,
     altText: 'Slide 1',
     caption: 'Slide 1',
-    key: 1,
   },
   {
-    src: './client/src/images/site_photo_3.jpg',
+    id: 2,
     altText: 'Slide 2',
     caption: 'Slide 2',
-    key: 2,
   },
   {
-    src: 'https://picsum.photos/id/678/1200/400',
+    id: 3,
     altText: 'Slide 3',
     caption: 'Slide 3',
-    key: 3,
   },
 ];
 
-function Example(args) {
+function TestimonialCarousel(props) {
+  console.log(props.testimonials)
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
 
@@ -52,12 +50,14 @@ function Example(args) {
   const slides = items.map((item) => {
     return (
       <CarouselItem
+        className="custom-tag"
+        tag="div"
+        key={item.id}
         onExiting={() => setAnimating(true)}
         onExited={() => setAnimating(false)}
-        key={item.src}
       >
-        <img src={item.src} alt={item.altText} />
         <CarouselCaption
+          className="text-danger"
           captionText={item.caption}
           captionHeader={item.caption}
         />
@@ -66,30 +66,34 @@ function Example(args) {
   });
 
   return (
-    <Carousel
-      activeIndex={activeIndex}
-      next={next}
-      previous={previous}
-      {...args}
-    >
-      <CarouselIndicators
-        items={items}
-        activeIndex={activeIndex}
-        onClickHandler={goToIndex}
-      />
-      {slides}
-      <CarouselControl
-        direction="prev"
-        directionText="Previous"
-        onClickHandler={previous}
-      />
-      <CarouselControl
-        direction="next"
-        directionText="Next"
-        onClickHandler={next}
-      />
-    </Carousel>
+    <div>
+      <style>
+        {`.custom-tag {
+              max-width: 100%;
+              height: 500px;
+              background: #ffcd51;
+            }`}
+      </style>
+      <Carousel activeIndex={activeIndex} next={next} previous={previous}>
+        <CarouselIndicators
+          items={items}
+          activeIndex={activeIndex}
+          onClickHandler={goToIndex}
+        />
+        {slides}
+        <CarouselControl
+          direction="prev"
+          directionText="Previous"
+          onClickHandler={previous}
+        />
+        <CarouselControl
+          direction="next"
+          directionText="Next"
+          onClickHandler={next}
+        />
+      </Carousel>
+    </div>
   );
 }
 
-export default Example;
+export default TestimonialCarousel;
