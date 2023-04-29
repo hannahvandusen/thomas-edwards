@@ -9,13 +9,12 @@ import { useNavigate } from "react-router-dom"
 
 //Scrolling Effect
 const AboutMe = () => {
+  const navigate = useNavigate()
 
-  const navigate = useNavigate(); 
-
-  const [ about, setAbout ] = useState(); 
-  const [ story, setStory ] = useState(); 
-  const [ mission, setMission ] = useState();
-  const [ value, setValue ] = useState(); 
+  const [about, setAbout] = useState()
+  const [story, setStory] = useState()
+  const [mission, setMission] = useState()
+  const [value, setValue] = useState()
 
   const fetchAbout = async () => {
     const url = `http://localhost:4000/about/643ae5920f74ad63f71a205d`
@@ -54,6 +53,7 @@ const AboutMe = () => {
       <div className={styles.container}>
         <section className={styles.card}>
           <img className={styles.image} src={photo1} alt="My Story" />
+
           <div className={styles.description}>
             <h3>My Story</h3>
             <p>{story}</p>
@@ -77,9 +77,14 @@ const AboutMe = () => {
         </section>
       </div>
       <div className={styles.form}>
-
-        <Button style={{ backgroundColor: "#ffcd51", color: "black"}} onClick={() => navigate('/intake')} href='#top'>Get in Touch</Button>
-      {/* <a href="/intake" data-aos="fade-down">Get in Touch</a> */}
+        <Button
+          style={{ backgroundColor: "#ffcd51", color: "black" }}
+          onClick={() => navigate("/intake")}
+          href="#top"
+        >
+          Get in Touch
+        </Button>
+        {/* <a href="/intake" data-aos="fade-down">Get in Touch</a> */}
         {/* <h1 data-aos="fade-down" >Get in Touch</h1> */}
       </div>
     </>

@@ -1,6 +1,17 @@
 import "../App.css"
 import { React, useRef } from "react"
-import { Form, FormGroup, Input, Label, Button, Container, Row, Col } from "reactstrap"
+import photo from "../images/photo5.jpg"
+import contactImage from "../images/contact.jpg"
+import {
+  Form,
+  FormGroup,
+  Input,
+  Label,
+  Button,
+  Container,
+  Row,
+  Col,
+} from "reactstrap"
 import styles from "../pages/home/Home.module.css"
 
 const Intake = () => {
@@ -57,156 +68,179 @@ const Intake = () => {
     }
   }
   return (
-    <div>
+    <div style={{ display: "flex" }}>
       <Container>
         <Row>
-          <Col>
-          <h1 style={{ color: "white", fontFamily: "Georgia, serif"}}>
+        <h1 style={{ color: "white", fontFamily: "Georgia, serif"}}>
         <span style={{ color: "#ffcd51"}}>
           Contact
         </span> {" "}
         Thomas
       </h1>
+
+          <Col>
       {/* <h6 style={{color: "white"}}>
         If you would like to reach out to me directly as an individual client or a business please fill out the below form and I will contact you ASAP!
       </h6> */}
 
-      <Form className="intake" onSubmit={handleSubmit}>
-        <FormGroup
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            paddingTop: "20px",
-          }}
-          row
-        >
-          {" "}
-          <Label for="exampleName">Name or Name of Organization</Label>
-          <Input
-            style={{
-              width: "450px",
-            }}
-            id="Name"
-            name="name"
-            placeholder="Name"
-            type="name"
-            innerRef={nameRef}
-          />
-        </FormGroup>{" "}
-        <FormGroup style={{ display: "flex", justifyContent: "center"}} row>
-          <Label for="exampleEmail">Email</Label>
-          <Input
-            style={{
-              width: "450px",
-            }}
-            id="email"
-            name="email"
-            placeholder="Email"
-            type="email"
-            innerRef={emailRef}
-          />
-        </FormGroup>{" "}
-        <FormGroup style={{ display: "flex", justifyContent: "center" }} row>
-          <Label
-            style={{
-              // opacity: ".4",
-              color: "white",
-            }}
-            for="examplePhone"
-          >
-            Phone Number
-          </Label>
-          <Input
-            style={{
-              width: "450px",
-            }}
-            id="Phone"
-            name="phone"
-            placeholder="Phone"
-            innerRef={phoneRef}
-          />
-        </FormGroup>{" "}
-        <FormGroup style={{ color: "white" }}>
-          <label>Best Time to Contact You: </label>
-          <div
-            className="timeContainer"
-            style={{ display: "flex", justifyContent: "center" }}
-          >
-            <Input
-              style={{
-                width: "450px",
-              }}
-              name="select"
-              type="select"
-              innerRef={timeRef}
-            >
-              <option></option>
-              <option value={"Morning"}>Morning</option>
-              <option value={"Afternoon"}>Afternoon</option>
-              <option value={"Evening"}>Evening</option>
-            </Input>
-          </div>
-        </FormGroup>
-        <FormGroup style={{ color: "white" }}>
-          <label>Best Method of Contact: </label>
-          <div
-            className="timeContainer"
-            style={{ display: "flex", justifyContent: "center" }}
-          >
-            <Input
-              style={{
-                width: "450px",
-              }}
-              name="select"
-              type="select"
-              innerRef={methodRef}
-            >
-              <option></option>
-              <option value={"Phone"}>Phone</option>
-              <option value={"Email"}>Email</option>
-            </Input>
-          </div>
-        </FormGroup>
-        <FormGroup
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            flexDirection: "column",
-          }}
-        >
-          <Label
-            style={{
-              margin: "24px",
-              width: "450px",
-            }}
-            for="exampleMessage"
-          >
-            Leave Thomas a Message:
-          </Label>
-          <Input
-            id="Message"
-            name="message"
-            placeholder="Leave a brief message about yourself, your organization, or
+            <Form className="intake" onSubmit={handleSubmit}>
+              <FormGroup
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  paddingTop: "20px",
+                }}
+                row
+              >
+                {" "}
+                <Label for="exampleName">Name or Name of Organization</Label>
+                <Input
+                  style={{
+                    width: "450px",
+                  }}
+                  id="Name"
+                  name="name"
+                  placeholder="Name"
+                  type="name"
+                  innerRef={nameRef}
+                />
+              </FormGroup>{" "}
+              <FormGroup
+                style={{ display: "flex", justifyContent: "center" }}
+                row
+              >
+                <Label for="exampleEmail">Email</Label>
+                <Input
+                  style={{
+                    width: "450px",
+                  }}
+                  id="email"
+                  name="email"
+                  placeholder="Email"
+                  type="email"
+                  innerRef={emailRef}
+                />
+              </FormGroup>{" "}
+              <FormGroup
+                style={{ display: "flex", justifyContent: "center" }}
+                row
+              >
+                <Label
+                  style={{
+                    // opacity: ".4",
+                    color: "white",
+                  }}
+                  for="examplePhone"
+                >
+                  Phone Number
+                </Label>
+                <Input
+                  style={{
+                    width: "450px",
+                  }}
+                  id="Phone"
+                  name="phone"
+                  placeholder="Phone"
+                  innerRef={phoneRef}
+                />
+              </FormGroup>{" "}
+              <FormGroup style={{ color: "white" }}>
+                <label>Best Time to Contact You: </label>
+                <div
+                  className="timeContainer"
+                  style={{ display: "flex", justifyContent: "center" }}
+                >
+                  <Input
+                    style={{
+                      width: "450px",
+                    }}
+                    name="select"
+                    type="select"
+                    innerRef={timeRef}
+                  >
+                    <option></option>
+                    <option value={"Morning"}>Morning</option>
+                    <option value={"Afternoon"}>Afternoon</option>
+                    <option value={"Evening"}>Evening</option>
+                  </Input>
+                </div>
+              </FormGroup>
+              <FormGroup style={{ color: "white" }}>
+                <label>Best Method of Contact: </label>
+                <div
+                  className="timeContainer"
+                  style={{ display: "flex", justifyContent: "center" }}
+                >
+                  <Input
+                    style={{
+                      width: "450px",
+                    }}
+                    name="select"
+                    type="select"
+                    innerRef={methodRef}
+                  >
+                    <option></option>
+                    <option value={"Phone"}>Phone</option>
+                    <option value={"Email"}>Email</option>
+                  </Input>
+                </div>
+              </FormGroup>
+              <FormGroup
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  flexDirection: "column",
+                }}
+              >
+                <Label
+                  style={{
+                    margin: "24px",
+                    width: "450px",
+                  }}
+                  for="exampleMessage"
+                >
+                  Leave Thomas a Message:
+                </Label>
+                <Input
+                  id="Message"
+                  name="message"
+                  placeholder="Leave a brief message about yourself, your organization, or
             goals!"
-            type="textarea"
-            style={{
-              // height: "20vh",
-              width: "450px",
-              marginLeft: "25px",
-            }}
-            innerRef={messageRef}
-          />
-
-        </FormGroup>
-        <br />
-        <button type="submit" className={styles.buttonHelp}>
-          Submit
-        </button>
-      </Form>
-
+                  type="textarea"
+                  style={{
+                    // height: "20vh",
+                    width: "450px",
+                    marginLeft: "25px",
+                  }}
+                  innerRef={messageRef}
+                />
+              </FormGroup>
+              <br />
+              <button type="submit" className={styles.buttonHelp}>
+                Submit
+              </button>
+            </Form>
           </Col>
           <Col>
-          <img src="" alt="" />
+          {/* <img src={photo} style={{
+              marginTop: "5%", 
+              alignContent: "center", justifyContent: "center"
+            }} height="500rem" width="500rem" alt="Build a Better Future with Thomas" />
+//photos */}
+            <div className="">
+              <img
+                style={{
+                  width: "100%",
+
+                  marginTop: "80px",
+                  marginBottom: "200px",
+                  opacity: ".7",
+                  backgroundColor: "#555",
+                }}
+                src={photo}
+                alt="contact image"
+              />
+            </div>
           </Col>
         </Row>
       </Container>

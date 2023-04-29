@@ -1,11 +1,14 @@
 import { React, useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
+import Axios from 'axios';
+// import {Image} from "cloudinary-react"
 import styles from "./Testimonials.module.css"
 import AOS from "aos";
 
 function Testimonials() {
 
   const navigate = useNavigate();
+
   const [ testimonials, setTestimonials ] = useState([]);
 
   const fetchTestimonials = async () => {
@@ -19,18 +22,37 @@ function Testimonials() {
       const data = await res.json();
 
       setTestimonials(data.testimonials);
+      console.log(testimonials);
 
     } catch (err) {
       console.log(err)
     }
-  };
+  }
 
   useEffect(() => {
     AOS.init()
-    fetchTestimonials();
+    fetchTestimonials()
   }, [])
+  
+  // console.log(testimonials);
 
-  return (
+    // const [ uploadFile, setUploadFile ] = useState("");
+    // const [ cloudinaryImage, setCloudinaryImage ] = useState("")
+
+    // const handleUpload = (e) => {
+    //   e.preventDefault();
+    //   const formData = new FormData();
+    //   formData.append("file", uploadFile);
+    //   formData.append("upload_preset", "qhhdabdz");
+
+    // Axios.post("https://api.cloudinary.com/v1_1/dfofj3ppu/image/upload", formData).then((response) => {
+    //   console.log(response);
+    //   setCloudinaryImage(response.data.secure_url);
+    // }).catch((error) => {
+    //   console.log(error);
+    // });
+
+return (
 	<>
     <header className={styles.mainHeader}>
         <h1>
@@ -38,10 +60,10 @@ function Testimonials() {
         </h1>
         <p className={styles.p}> </p>
     </header>
+    <div className={styles.container}>
+      {
+      testimonials.map(testimonial => (
 
-      {testimonials.map(testimonial => (
-
-      <div className={styles.container}>
 
         <section className={styles.card}>
           <img className={styles.image} data-aos="fade-up"
@@ -54,12 +76,12 @@ function Testimonials() {
                   <p data-aos="fade-left"><i> - {testimonial.name}</i></p>
             </div>
         </section>
-
+      ))
+      }
     </div>
-  
-      ))};
-      </>
-);
-};
 
-export default Testimonials;
+  </>
+)
+}
+
+export default Testimonials

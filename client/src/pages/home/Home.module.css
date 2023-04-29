@@ -18,7 +18,6 @@
   /* height: auto; */
   height: 60vh;
   width: 100%;
-  padding: 2%;
 
   object-fit: cover;
 }
@@ -87,7 +86,14 @@
   background-color: #ffcd51;
 }
 
-#about-image{
+<<<<<<< HEAD
+=======
+.header {
+  color: #ffcd51;
+}
+
+>>>>>>> ade5c7869d474622c6591e7c115cdc3175d75170
+#about-image {
   display: flex;
   justify-content: center;
 }
@@ -105,13 +111,6 @@
   overflow-y: hidden;
   overflow-x: hidden;
   border-bottom: 0.5px solid rgb(125, 127, 129, 0.5);
-  
-}
-
-.card h3 {
-  margin-bottom: 1rem;
-  overflow-y: hidden;
-  font-family: Georgia, serif;
 }
 
 .card span {
@@ -121,16 +120,20 @@
 }
 
 .card img {
+  position: relative;
+  left: 30px;
   margin-bottom: 20px;
   margin-top: 25px;
-  height: 350px;
+  height: 550px;
   object-fit: cover;
   overflow-y: hidden;
 }
 
 .card h3 {
-  color: #cddee5;
+  color: #ffcd51;
   overflow-y: hidden;
+  margin-bottom: 1rem;
+  font-family: Georgia, serif;
 }
 
 .card p {
@@ -141,11 +144,6 @@
 .card > div {
   padding: 1rem;
   overflow-y: hidden;
-}
-
-.titles {
-  color: #cddee5;
-  font-family: Georgia, serif;
 }
 
 .span1 {
@@ -213,7 +211,8 @@ svg {
 .titles {
   display: flex;
   justify-content: center;
-  color: #c8cbd0;
+  font-family: Georgia, serif;
+  color: #ffcd51;
 }
 
 .connect {
@@ -344,7 +343,7 @@ svg {
     flex-direction: column;
     align-items: center;
     overflow-x: hidden;
-    color: #ffcd51
+    color: #ffcd51;
   }
 
   .form {

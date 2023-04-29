@@ -3,6 +3,8 @@ const { Testimonials } = require('../models');
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const validateSession = require("../middleware/validate-session");
+const cloudinary = require("cloudinary");
+const upload = require('../utils/multer');
 
 router.post('/', async (req, res) => {
 
