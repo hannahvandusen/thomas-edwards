@@ -113,24 +113,44 @@ function Home() {
         <div class="card card-body">Card</div>
     </div>
 </div>
-
-            <h1 className={styles.titles}>How I can Help You</h1>
-            <div className={styles.help}>
-                <div data-aos="fade-up" className="box1">
-                    <AiOutlineMail size={70} />
+            <h1 className={styles.titles}>How I Can Help You</h1>
+            <br /> 
+            <Container>
+              <Row>
+                <Col>
+                <div data-aos="fade-up" >
+                    {/* <AiOutlineMail size={70} />
                     <br />
-                    <Link to="/newsletter">
+                    
+                    <a id="bottom">
                         <button className={styles.buttonHelp}>Sign Up Here</button>
-                    </Link>
+                        </a>  */}
+                          {/* <h4 >Let's Connect</h4> */}
+        <Form onSubmit={handleSubmit}>
+          <FormGroup>
+            <Input placeholder="Email" innerRef={emailRef} />
+            <Input placeholder="Name" innerRef={nameRef} />
+          </FormGroup>
+          <button className={styles.button2}>Subscribe</button>
+        </Form>
+
+
                 </div>
-                <div data-aos="fade-up" className="box2">
+
+                </Col>
+
+                <Col>
+                <div data-aos="fade-up" >
                     <BsTelephone size={60} />
                     <br />
-                    <Link to="/intake">
-                        <button className={styles.buttonHelp}>Schedule A Meeting</button>
+                    <Link to="https://calendly.com/innerfamous">
+                        <button className={styles.buttonHelp} style={{color: "white"}}>Schedule A Meeting</button>
                     </Link>
                 </div>
-            </div>
+
+                </Col>
+              </Row>
+            </Container>
 
             {/* <form className={styles.form}> */}
             {/* <label > */}
@@ -183,7 +203,8 @@ function Home() {
 
       {/* <form className={styles.form}> */}
       {/* <label > */}
-      <br />
+
+      {/* <br />
       <div className={styles.connect}>
         <h1 className={styles.titles}>Let's Connect</h1>
         <Form onSubmit={handleSubmit}>
@@ -193,7 +214,8 @@ function Home() {
           </FormGroup>
           <button className={styles.button2}>Subscribe</button>
         </Form>
-      </div>
+      </div> */}
+
       {/* <input
                         className={styles.input}
                         type="text"
