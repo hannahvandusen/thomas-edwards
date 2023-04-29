@@ -7,26 +7,31 @@ import {
   CarouselCaption,
 } from 'reactstrap';
 
-const items = [
-  {
-    id: 1,
-    altText: 'Slide 1',
-    caption: 'Slide 1',
-  },
-  {
-    id: 2,
-    altText: 'Slide 2',
-    caption: 'Slide 2',
-  },
-  {
-    id: 3,
-    altText: 'Slide 3',
-    caption: 'Slide 3',
-  },
-];
-
 function TestimonialCarousel(props) {
   console.log(props.testimonials)
+
+  const items = [
+    {
+      id: 1,
+      altText: `${props.testimonials[0].name}`,
+      caption: `${props.testimonials[0].quote}`,
+    },
+    {
+      id: 2,
+      altText: `${props.testimonials[1].name}`,
+      caption: `${props.testimonials[1].quote}`,
+    },
+    {
+      id: 3,
+      altText: `${props.testimonials[2].name}`,
+      caption: `${props.testimonials[2].quote}`,
+    },
+    {
+      id: 4,
+      altText: `${props.testimonials[3].name}`,
+      caption: `${props.testimonials[3].quote}`
+    }
+  ];
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
 
@@ -58,7 +63,7 @@ function TestimonialCarousel(props) {
       >
         <CarouselCaption
           className="text-danger"
-          captionText={item.caption}
+          captionText={item.altText}
           captionHeader={item.caption}
         />
       </CarouselItem>

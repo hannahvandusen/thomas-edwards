@@ -135,7 +135,7 @@ function Home() {
         </div>
       </div> */}
 
-            <div class="container-fluid py-2">
+            
     {/* <div class="d-flex flex-row flex-nowrap">
         <div class="card card-body">Card</div>
         <div class="card card-body">Card</div>
@@ -143,9 +143,9 @@ function Home() {
         <div class="card card-body">Card</div>
         <div class="card card-body">Card</div>
     </div> */}
-    
+    <div class="container-fluid py-2">
       <TestimonialCarousel testimonials={testimonials} /> 
-</div>
+  </div>
             <h1 className={styles.titles}>How I Can Help You</h1>
             <br /> 
             <Container>
