@@ -164,8 +164,10 @@
       margin-bottom: 10px;
       text-align: center;
     }
+
     .container {
       width: 100vw;
+      background-color: #c2cdc0;
       display: flex;
       flex-direction: column;
       align-items: center;

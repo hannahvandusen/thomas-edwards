@@ -144,7 +144,7 @@ function Home() {
         <div class="card card-body">Card</div>
     </div> */}
     
-      <TestimonialCarousel testimonials={testimonials} /> 
+      <TestimonialCarousel className={styles.Container} testimonials={testimonials} /> 
 </div>
             <h1 className={styles.titles}>How I Can Help You</h1>
             <br /> 
