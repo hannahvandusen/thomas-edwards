@@ -71,6 +71,25 @@ function Home() {
       }
     } catch (err) {
       console.error(err)
+    
+  }}
+
+  const [ testimonials, setTestimonials ] = useState([]);
+
+  const fetchTestimonials = async () => {
+    const url = 'http://localhost:4000/testimonialsindex'
+    const requestOptions = {
+      method: 'GET'
+    }
+
+    try {
+      const res = await fetch(url, requestOptions);
+      const data = await res.json();
+
+      setTestimonials(data.testimonials);
+
+    } catch (err) {
+      console.log(err)
     }
   }
 
@@ -78,6 +97,7 @@ function Home() {
     // scrolling effect
     AOS.init()
     fetchAbout()
+    fetchTestimonials()
   }, [])
 
   //Header Ideas
@@ -120,27 +140,93 @@ function Home() {
         </div>
       </div>
 
-      <h1 className={styles.titles}>How I can Help You</h1>
-      <div className={styles.help}>
-        <div data-aos="fade-up" className="box1">
-          <AiOutlineMail size={70} />
-          <br />
-          <Link to="/newsletter">
-            <button className={styles.buttonHelp}>Sign Up Here</button>
-          </Link>
-        </div>
-        <div data-aos="fade-up" className="box2">
-          <BsTelephone size={60} />
-          <br />
-          <Link to="/intake">
-            <button className={styles.buttonHelp}>Schedule A Meeting</button>
-          </Link>
-        </div>
-      </div>
+            </main>
+            <div className={styles.container}>
+                <section className={styles.card}>
+                    <img id="about-image" className='img-fluid' src={aboutImage} alt="My Story" />
+                    <div className={styles.description}>
+                        <h3 className={styles.titles}>About Thomas Edwards</h3>
+                        <p className={styles.paragraph} data-aos="fade-up">
+                            {story}
+                        </p>
+                        <Link to='/about'>
 
-      {/* <form className={styles.form}> */}
-      {/* <label > */}
-      {/* <div>
+                            <button className={styles.buttonStory}>Read My Story</button>
+                        </Link>
+
+                    </div>
+                </section>
+            </div>
+            <div class="container-fluid py-2">
+    <div class="d-flex flex-row flex-nowrap">
+    {testimonials.map(testimonial => (
+    <UncontrolledCarousel
+  items={[
+    {
+      altText: 'Slide 1',
+      caption: 'Slide 1',
+      key: 1,
+      src: 'https://picsum.photos/id/123/1200/600'
+    },
+    {
+      altText: 'Slide 2',
+      caption: 'Slide 2',
+      key: 2,
+      src: 'https://picsum.photos/id/456/1200/600'
+    },
+    {
+      altText: 'Slide 3',
+      caption: 'Slide 3',
+      key: 3,
+      src: 'https://picsum.photos/id/678/1200/600'
+    }
+  ]}
+ />
+      ))}
+    </div>
+</div>
+            <h1 className={styles.titles}>How I Can Help You</h1>
+            <br /> 
+            <Container>
+              <Row>
+                <Col>
+                <div data-aos="fade-up" >
+                    {/* <AiOutlineMail size={70} />
+                    <br />
+                    
+                    <a id="bottom">
+                        <button className={styles.buttonHelp}>Sign Up Here</button>
+                        </a>  */}
+                          {/* <h4 >Let's Connect</h4> */}
+        <Form onSubmit={handleSubmit}>
+          <FormGroup>
+            <Input placeholder="Email" innerRef={emailRef} />
+            <Input placeholder="Name" innerRef={nameRef} />
+          </FormGroup>
+          <button className={styles.button2}>Subscribe</button>
+        </Form>
+
+
+                </div>
+
+                </Col>
+
+                <Col>
+                <div data-aos="fade-up" >
+                    <BsTelephone size={60} />
+                    <br />
+                    <Link to="https://calendly.com/innerfamous" target="_blank" rel="noopener noreferrer">
+                        <button className={styles.buttonHelp} style={{color: "white"}}>Schedule A Meeting</button>
+                    </Link>
+                </div>
+
+                </Col>
+              </Row>
+            </Container>
+
+            {/* <form className={styles.form}> */}
+            {/* <label > */}
+            {/* <div>
                 <h1 className="titles">Let's Connect</h1>
                 <Form onSubmit={handleSubmit}>
                     <FormGroup>
@@ -189,7 +275,8 @@ function Home() {
 
       {/* <form className={styles.form}> */}
       {/* <label > */}
-      <br />
+
+      {/* <br />
       <div className={styles.connect}>
         <h1 className={styles.titles}>Let's Connect</h1>
         <Form onSubmit={handleSubmit}>
@@ -199,7 +286,8 @@ function Home() {
           </FormGroup>
           <button className={styles.button2}>Subscribe</button>
         </Form>
-      </div>
+      </div> */}
+
       {/* <input
                         className={styles.input}
                         type="text"
