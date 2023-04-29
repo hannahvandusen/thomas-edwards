@@ -122,15 +122,6 @@ function TestimonialsCreate(props) {
                         autoComplete='off' 
                         type='textarea'/>
                 </FormGroup>
-                {/* <FormGroup>
-                    <Label style={{color: "#cddee5"}}>Photo</Label>
-                    <Input 
-                        innerRef={photoRef} 
-                        type='file'
-                        onChange={(event)=> {setUploadFile(event.target.files[0]);}} />
-                        <button onClick={handleUpload}> Upload Image</button>
-                        {cloudinaryImage && ( <img src={cloudinaryImage} /> )}
-                </FormGroup> */}
                 
                 <Button type='submit' style={style} >Add Testimonial</Button>
             </Form>

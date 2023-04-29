@@ -103,7 +103,7 @@ function TestimonialsEdit(props) {
     const uploadPhoto = () => {
         const data = new FormData()
         data.append("file", photo)
-        data.append("upload_preset", "pwhkfjz3")
+        data.append("upload_preset", "qhhdabdz")
         data.append("cloud_name", "dfofj3ppu")
         fetch("  https://api.cloudinary.com/v1_1/dfofj3ppu/image/upload",{
             method:"post",

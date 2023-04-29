@@ -6,35 +6,41 @@ const validateSession = require("../middleware/validate-session");
 const cloudinary = require("cloudinary");
 const upload = require('../utils/multer');
 
-router.post('/', async (req, res) => {
+const uploadImage = async (imagePath) => {
+    const option = {
+        use_filename: true,
+        unique_filename: false,
+        overwrite: true
+    }
+
+    try {
+        
+        const result = await cloudinary.uploader.upload(imagePath, option)
+        const url = await result.secure_url;
+        console.log('RESULT: ', url)
+        return url;
+
+    } catch (err) {
+        console.error(err);
+    }
+}
+
+router.post('/', upload.single('photo'), async (req, res) => {
 
     try {
 
-        const { caption, name, association, quote, photo } = req.body;
-        // if (!caption) throw new Error(
-        //     "Please enter a first name."
-        // )
-        // if (!name) throw new Error(
-        //     "Please enter a last name."
-        // )
-        // if (!association) throw new Error(
-        //     "Please enter an association."
-        // )
-        // if (!quote) throw new Error(
-        //     "Please enter a quote."
-        // )
+
+        // const { caption, name, association, quote, photo } = req.body;
 
         const testimonials = new Testimonials({
-            caption: caption,
-            name: name,
-            association: association,
-            quote: quote
+
+            caption: req.body.caption,
+            name: req.body.body,
+            association: req.body.association,
+            quote: req.body.quote,
         }); 
 
         const newTestimonials = await testimonials.save();
-        // const token = jwt.sign({ id: newTestimonials._id}, process.env.JWT, {
-        //     expiresIn: "1 year"
-        // });
         
         newTestimonials ?
             res.status(200).json({
