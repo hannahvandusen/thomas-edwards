@@ -8,7 +8,10 @@ router.post('/', async (req, res) => {
 
     try {
 
+        // const { caption, name, association, quote } = req.body;
+
         const testimonials = new Testimonials({
+
             caption: req.body.caption,
             name: req.body.name,
             association: req.body.association,
