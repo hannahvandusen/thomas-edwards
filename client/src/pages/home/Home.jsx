@@ -22,16 +22,16 @@ import newImage from "../../images/site_photo_2.jpg";
 function Home() {
     const navigate = useNavigate();
     const [story, setStory] = useState();
-    
+
     const emailRef = useRef();
     const nameRef = useRef();
 
-//fetch about section 
-  const fetchAbout = async () => {
-    const url = `http://localhost:4000/about/643ae5920f74ad63f71a205d`
-    const requestOptions = {
-          method: "GET",
-    }
+    //fetch about section
+    const fetchAbout = async () => {
+        const url = `http://localhost:4000/about/643ae5920f74ad63f71a205d`;
+        const requestOptions = {
+            method: "GET",
+        };
 
         try {
             const res = await fetch(url, requestOptions);
@@ -66,17 +66,16 @@ function Home() {
             const res = await fetch(url, requestOptions);
             const data = await res.json();
 
-      console.log(data)
-      if(data.newSubscriber) {
-        alert("Thanks for subscribing!")
-      } else {
-        alert(data.Error)
-      }
-    } catch (err) {
-      console.error(err)
-    }
-  }
-
+            console.log(data);
+            if (data.newSubscriber) {
+                alert("Thanks for subscribing!");
+            } else {
+                alert(data.Error);
+            }
+        } catch (err) {
+            console.error(err);
+        }
+    };
 
     useEffect(() => {
         // scrolling effect
@@ -116,47 +115,23 @@ function Home() {
                     </div>
                 </section>
             </div>
-    //Header Ideas
-    //Create A Plan, Change Careers, Transform Your Life!
-    return (
-        <>
-            <main className={styles.main}>
-                <img className={styles.mainPhoto} src={newImage} alt="mainPhoto" />
 
-      </main>
-      <div className={styles.container}>
-        <section className={styles.card}>
-          <img
-            id="about-image"
-            className="img-fluid"
-            src={aboutImage}
-            alt="My Story"
-          />
-          <div className={styles.description}>
-            <h3 className={styles.titles}>About Thomas Edwards</h3>
-            <p className={styles.paragraph} data-aos="fade-up">
-              {story}
-            </p>
-            <Link to="/about">
-              <button className={styles.buttonStory}>Read My Story</button>
-            </Link>
-          </div>
-        </section>
-      </div>
+            {/* carousel component */}
+            <div
+                class="container-fluid py-2"
+                style={{ alignItems: "center", justifyContent: "center" }}
+            >
+                <TestimonialCarousel />
+            </div>
 
-  {/* carousel component */}
-    <div class="container-fluid py-2" style={{alignItems: "center", justifyContent: "center"}}>
-      <TestimonialCarousel/> 
-    </div>
-    
-  {/* How can I help section */}
-  <h1 className={styles.titles}>How I Can Help You</h1>
-  <br /> 
-  <Container>
-    <Row>
-      <Col>
-                <div data-aos="fade-up" >
-                    {/* <AiOutlineMail size={70} />
+            {/* How can I help section */}
+            <h1 className={styles.titles}>How I Can Help You</h1>
+            <br />
+            <Container>
+                <Row>
+                    <Col>
+                        <div data-aos="fade-up">
+                            {/* <AiOutlineMail size={70} />
                     <br />
                     
                     <a id="bottom">
@@ -205,4 +180,4 @@ function Home() {
     );
 }
 
-export default Home
+export default Home;
