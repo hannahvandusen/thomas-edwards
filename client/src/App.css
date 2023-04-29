@@ -79,6 +79,7 @@
 
 .header {
   color: #ffcd51; 
+  font-style: italic;
 }
 .media {
   display: none;
