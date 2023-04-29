@@ -85,10 +85,76 @@ To install all necessary dependencies used for this project, run command `npm in
 
 # Usage
 
+To run InnerFamous.com on your local machine, follow these steps:
+
+1. Clone the repository using the command git clone https://github.com/hannahvandusen/thomas-edwards
+2. Navigate to the root directory of the project using cd innerfamous
+3. Install the necessary dependencies using the command npm install
+4. Start the development server using the command npm start
+5. Open a web browser and navigate to http://localhost:3000 to view the website.
+   Please note that you will need to have Node.js and MongoDB installed on your machine before running the above commands.
+
+InnerFamous.com is built using Node.js, React, and MongoDB. It also uses Cloudinary to handle image uploading and management.
+
+Feel free to explore the codebase and make any modifications you like. If you find any bugs or issues, please report them in the Issues section of this repository.
+
+To access the admin features of the website, click on the 'Admin' button located at the bottom of the home page. This will take you to the login page where you can enter your credentials. Once logged in, you will have access to a range of features such as adding new images, updating testimonials, creating and changing appointments, and more.
+
 # Contributing
+
+Thank you for considering contributing to our project! We welcome contributions from everyone, whether you're an experienced developer or just starting out.
+
+Reporting Issues
+If you find a bug or have a feature request, please open an issue on GitHub. We'll do our best to respond as quickly as we can.
+
+When reporting issues, please include as much detail as possible, including the steps to reproduce the issue, the expected behavior, and the actual behavior.
+
+Contributing Code
+We welcome pull requests from anyone! If you'd like to contribute code to our project, please follow these steps:
+
+1. Fork the repository
+2. Create a new branch for your changes
+3. Make your changes and commit them
+4. Push your changes to your fork
+5. Submit a pull request
+   When submitting a pull request, please include a clear description of your changes and why they're necessary.
+
+Before submitting your pull request, please make sure that your changes don't break any existing functionality and that they're consistent with the style and conventions of the rest of the codebase.
+
+Code of Conduct
+To ensure that our project is a welcoming and inclusive space for everyone, we ask that all contributors adhere to our Code of Conduct.
 
 # Credits
 
+Project Contributors:
+
+-   Hannah VanDussen
+-   Ethan Moscowitz
+-   Luke Mitrani
+-   Micah Cole
+-   Marcel Prisacari
+
+Instructor:
+
+-   Eric WineBrenner
+
+We would like to thank all those who helped us throughout the project, including our classmates, friends, and family who provided support and feedback. We would also like to thank the open-source community for creating the libraries and tools that were used in this project.
+
 # License
 
+This project is released under the [MIT License](https://opensource.org/licenses/MIT).
+
+This project uses the following third-party libraries:
+
+-   [React](https://reactjs.org/) - [MIT License](https://opensource.org/licenses/MIT)
+-   [Node.js](https://nodejs.org/) - [MIT License](https://opensource.org/licenses/MIT)
+-   [MongoDB](https://www.mongodb.com/) - [Server Side Public License (SSPL)](https://www.mongodb.com/licensing/server-side-public-license)
+-   [Cloudinary](https://cloudinary.com/) - [Cloudinary Terms of Service](https://cloudinary.com/terms)
+
 # Contact
+
+Hannah Van Dusen <hannahvandusen@yahoo.com>, https://www.linkedin.com/in/
+Ethan Moskowitz <moskowitz.e.m@gmail.com>, https://www.linkedin.com/in/
+Luke Mitrani <lukemitrani@gmail.com>, https://www.linkedin.com/in/
+Micah Cole <micahjaxoncole@gmail.com>, https://www.linkedin.com/in/
+Marcel Prisacari <marcel.prisacari@gmail.com>, https://www.linkedin.com/in/
