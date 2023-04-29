@@ -7,15 +7,13 @@
   margin-right: 20px;
 }
 
-.contactPhotoWrapper {
-  width: 100%;
+.photoSection {
+  align-items: center;
+  justify-content: center;
 }
-
 .contactPhoto {
   width: 100%;
-  object-fit: cover;
-  padding: 10px;
-  padding-top: 100px;
+  padding: 1rem;
 }
 
 @media screen and (max-width: 800px) {

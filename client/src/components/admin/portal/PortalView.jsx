@@ -92,7 +92,7 @@ function PortalView() {
                 </CardBody>
             </Card>
             </CardGroup>
-            <Button onClick={() => deleteMessage({id})} style={{backgroundColor: "#ffcd51", 
+            <Button onClick={() => deleteMessage(id)} style={{backgroundColor: "#ffcd51", 
         color: "black"}}>Delete Message</Button>
             <Button onClick={() => navigate('/admin')} style={{backgroundColor: "#ffcd51", 
         color: "black"}} >Back to Admin Portal</Button>
