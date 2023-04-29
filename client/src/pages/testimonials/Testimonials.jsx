@@ -50,7 +50,6 @@ function Testimonials() {
     // }).catch((error) => {
     //   console.log(error);
     // });
-  };
 
   return (
 	<>
@@ -81,5 +80,5 @@ function Testimonials() {
       ))};
     </>
   );
-
+}
 export default Testimonials;
