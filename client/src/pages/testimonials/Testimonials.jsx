@@ -1,29 +1,38 @@
 import { React, useEffect, useState } from "react";
-import { useNavigate } from 'react-router-dom';
-// import Axios from 'axios';
-import styles from "./Testimonials.module.css"
+import { useNavigate } from "react-router-dom";
+import styles from "./Testimonials.module.css";
 import AOS from "aos";
 import newImage from "../../images/site_photo_2.jpg";
 
 function Testimonials() {
+    const navigate = useNavigate();
 
-  const navigate = useNavigate();
+    const [testimonials, setTestimonials] = useState([]);
 
-  const [ testimonials, setTestimonials ] = useState([]);
+    const fetchTestimonials = async () => {
+        const url = "http://localhost:4000/testimonialsindex";
+        const requestOptions = {
+            method: "GET",
+        };
 
-  const fetchTestimonials = async () => {
-    const url = 'http://localhost:4000/testimonialsindex'
-    const requestOptions = {
-      method: 'GET'
-    }
+        try {
+            const res = await fetch(url, requestOptions);
+            const data = await res.json();
 
-    try {
-      const res = await fetch(url, requestOptions);
-      const data = await res.json();
+            setTestimonials(data.testimonials);
+            console.log(testimonials);
+        } catch (err) {
+            console.log(err);
+        }
+    };
 
-      setTestimonials(data.testimonials);
-      console.log(testimonials);
+    useEffect(() => {
+        AOS.init();
+        fetchTestimonials();
+    }, []);
 
+      setTestimonials(data.testimonials)
+      console.log(testimonials)
     } catch (err) {
       console.log(err)
     }
@@ -42,7 +51,7 @@ return (
   </main>
     <header className={styles.mainHeader}>
         <h1>
-          <span>What People Say About</span>{" "}Working With Thomas
+          <span>What People Say About</span> Working With Thomas
         </h1>
         <p className={styles.p}> </p>
     </header>
@@ -52,7 +61,7 @@ return (
 
 
         <section className={styles.card}>
-          <img 
+          <img
            data-aos="fade-up"
            data-aos-anchor-placement="top-bottom"
            data-aos-easing="ease-in-sine"
@@ -61,16 +70,16 @@ return (
             />
             <div className={styles.association}>
               <h3 data-aos="zoom-in-right">{testimonial.caption}</h3>
-                <p data-aos="fade-up">{testimonial.quote}</p>
-                  <p data-aos="fade-left"><i> - {testimonial.name}</i></p>
+              <p data-aos="fade-up">{testimonial.quote}</p>
+              <p data-aos="fade-left">
+                <i> - {testimonial.name}</i>
+              </p>
             </div>
-        </section>
-      ))
-      }
-    </div>
-
-  </>
-)
+          </section>
+        ))}
+      </div>
+    </>
+  )
 }
 
-export default Testimonials
+export default Testimonials;
