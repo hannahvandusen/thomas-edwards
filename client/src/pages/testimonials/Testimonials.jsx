@@ -31,6 +31,8 @@ function Testimonials() {
         fetchTestimonials();
     }, []);
 
+      setTestimonials(data.testimonials)
+      console.log(testimonials)
     } catch (err) {
       console.log(err)
     }
@@ -49,7 +51,7 @@ return (
   </main>
     <header className={styles.mainHeader}>
         <h1>
-          <span>What People Say About</span>{" "}Working With Thomas
+          <span>What People Say About</span> Working With Thomas
         </h1>
         <p className={styles.p}> </p>
     </header>
@@ -68,11 +70,16 @@ return (
             />
             <div className={styles.association}>
               <h3 data-aos="zoom-in-right">{testimonial.caption}</h3>
-                <p data-aos="fade-up">{testimonial.quote}</p>
-                  <p data-aos="fade-left"><i> - {testimonial.name}</i></p>
+              <p data-aos="fade-up">{testimonial.quote}</p>
+              <p data-aos="fade-left">
+                <i> - {testimonial.name}</i>
+              </p>
             </div>
-        </>
-    );
+          </section>
+        ))}
+      </div>
+    </>
+  )
 }
 
 export default Testimonials;

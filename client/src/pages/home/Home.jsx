@@ -158,7 +158,7 @@ function Home() {
 
                     <Col>
                         <div data-aos="fade-up">
-                            <BsTelephone size={60} />
+                            <BsTelephone style={{ color: "white" }} size={80} />
                             <br />
                             <Link
                                 to="https://calendly.com/innerfamous"
