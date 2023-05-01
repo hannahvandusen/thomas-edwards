@@ -49,7 +49,7 @@ function NewNewsletter() {
             <div className="container">
                 <div className="row">
                     <div className="col-md-8">
-                        <h2>Create a New Newsletter</h2>
+                        <h2>...</h2>
                         <form onSubmit={handleSubmit}>
                             <div className="form-group">
                                 <label htmlFor="title">Title</label>
