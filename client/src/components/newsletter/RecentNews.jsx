@@ -18,7 +18,7 @@ function RecentNews() {
 
     return (
         <div className="recent-news">
-            <h3 className="section-title">Recent Newsletters</h3>
+            <h3 className="section-title">Previous Issues</h3>
             <div className="row">
                 {newsletters.slice(0, 3).map((newsletter) => (
                     <div className="col-md-4 mb-4" key={newsletter.id}>
