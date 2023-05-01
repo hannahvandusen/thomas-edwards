@@ -1,6 +1,6 @@
-
 import { React, useEffect, useState, useRef } from "react";
 import { Button, Form, FormGroup, Input, Label } from 'reactstrap';
+import style from './Testimonials.module.css'
 
 function TestimonialsCreate(props) {
 
@@ -102,10 +102,6 @@ function TestimonialsCreate(props) {
             </Form>
         </>
     )
-      .then((response) => {
-        console.log(response)
-        setCloudinaryImage(response.data.secure_url)
-      })
       .catch((error) => {
         console.log(error)
       })
@@ -133,19 +129,6 @@ function TestimonialsCreate(props) {
           <Label style={{ color: "#cddee5" }}>Quote</Label>
           <Input innerRef={quoteRef} autoComplete="off" type="textarea" />
         </FormGroup>
-        <FormGroup>
-          <Label style={{ color: "#cddee5" }}>Photo</Label>
-          <Input
-            innerRef={photoRef}
-            type="file"
-            onChange={(event) => {
-              setUploadFile(event.target.files[0])
-            }}
-          />
-          <button onClick={handleUpload}> Upload Image</button>
-          {/* {cloudinaryImage && ( <img src={cloudinaryImage} /> )} */}
-        </FormGroup>
-
         <Button type="submit" style={style}>
           Add Testimonial
         </Button>

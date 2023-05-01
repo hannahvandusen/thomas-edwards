@@ -52,7 +52,7 @@
   overflow-y: hidden;
   overflow-x: hidden;
   align-items: center;
-  border-top: 0.5px solid rgb(125, 127, 129, 0.5);
+  /* border-top: 0.5px solid rgb(125, 127, 129, 0.5); */
 }
 
 .card:nth-child(even) img {
@@ -172,9 +172,9 @@
     color: #17bcde;
     overflow-y: hidden;
     margin-right: 10%;
-  } */
+  } 
 
-@media screen and (max-width: 800px) {
+/* @media screen and (max-width: 800px) {
   * {
     margin-left: 0px;
     padding-left: 0px;
@@ -195,8 +195,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-  
-  .card {
+  } */
+  /* .card {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     padding: 0rem .5rem;
@@ -204,9 +204,9 @@
     overflow-x: hidden;
     align-items: center;
     /* border-top: .5px solid rgb(125, 127, 129, 0.5); */
-  }
   
-  .card:nth-child(even) img {
+  
+  /* .card:nth-child(even) img {
     order: 1;
     overflow-y: hidden;
     margin: 0 auto;
@@ -220,13 +220,13 @@
   .card p {
     color: #cddee5;
     /* padding: 1rem; */
-  }
-  .card span {
+  
+  /* .card span {
     margin-bottom: 2rem;
     overflow-y: hidden;
-  }
+  } */
 
-  .card > div {
+  /* .card > div {
     width: 100vw;
   }
   .card {
@@ -246,9 +246,9 @@
     overflow-y: hidden;
     width: 100vw;
     margin: 0%;
-  }
+  } */
 
-  .association {
+  /* .association {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -261,19 +261,19 @@
   .card p {
     width: 100vw;
     overflow-x: hidden;
-  
+  }
   .button {
     font-size: 15px;
     width: 75%;
     font-family: Georgia, serif;
     margin: 3%;
-
   }
   .button:hover {
     background-color: #ffcd51;
     font-size: 15px;
     border-radius: 50px;
-  }
+  } */
+
   
   @media screen and (max-width: 800px) {
     * {
@@ -338,4 +338,4 @@
       overflow-x: hidden;
     }
   }
-}
+

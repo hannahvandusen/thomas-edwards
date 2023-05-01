@@ -31,19 +31,6 @@ function Testimonials() {
         fetchTestimonials();
     }, []);
 
-      setTestimonials(data.testimonials)
-      console.log(testimonials)
-    } catch (err) {
-      console.log(err)
-    }
-  }
-
-  useEffect(() => {
-    AOS.init()
-    fetchTestimonials()
-  }, [])
-
-
 return (
 	<>
   <main className={styles.main}>
