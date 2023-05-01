@@ -51,25 +51,57 @@ function Admin() {
           </Col>
           <Col md="3">
             <Button
-              style={{ borderRadius: "10px", width: "200px", fontSize: "15px", backgroundColor: "#ffcd51", color: "black", margin: "2%" }}
+              style={{
+                borderRadius: "10px",
+                width: "200px",
+                fontSize: "15px",
+                margin: "10px",
+                color: "black",
+                backgroundColor: "#ffcd51",
+              }}
               href="/admin/account"
             >
               Update Email/Password
             </Button>
             <Button
-              style={{ borderRadius: "10px", width: "200px", fontSize: "15px", backgroundColor: "#ffcd51", color: "black", margin: "2%" }}
+              style={{
+                borderRadius: "10px",
+                width: "200px",
+                fontSize: "15px",
+                margin: "10px",
+                color: "black",
+                backgroundColor: "#ffcd51",
+              }}
               href="/testimonialsindex"
             >
               Edit Testimonials
             </Button>
             <Button
-              style={{ borderRadius: "10px", width: "200px", fontSize: "15px", backgroundColor: "#ffcd51", color: "black", margin: "2%" }}
+              style={{
+                borderRadius: "10px",
+                width: "200px",
+                fontSize: "15px",
+                margin: "10px",
+                color: "black",
+                backgroundColor: "#ffcd51",
+              }}
               href="/about/edit"
             >
               Edit About
             </Button>
-            <Button style={{ borderRadius: "10px", width: "200px", fontSize: "15px", backgroundColor: "#ffcd51", color: "black", margin: "2%" }}
-              href="/subscribe">View Subscribers</Button>
+            <Button
+              style={{
+                borderRadius: "10px",
+                width: "200px",
+                fontSize: "15px",
+                color: "black",
+                backgroundColor: "#ffcd51",
+                margin: "10px",
+              }}
+              href="/subscribe"
+            >
+              View Subscribers
+            </Button>
           </Col>
           <Logout setToken={setSessionToken} />
         </Row>

@@ -1,3 +1,4 @@
+import "../../App.css"
 import React, { useEffect, useState } from 'react';
 import {
   Carousel,
@@ -5,7 +6,7 @@ import {
   CarouselControl,
   CarouselIndicators,
   CarouselCaption,
-} from 'reactstrap';
+} from "reactstrap"
 
 
 function TestimonialCarousel() {
@@ -75,9 +76,9 @@ function TestimonialCarousel() {
   };
 
   const goToIndex = (newIndex) => {
-    if (animating) return;
-    setActiveIndex(newIndex);
-  };
+    if (animating) return
+    setActiveIndex(newIndex)
+  }
 
   const slides = testimonials.map((item) => {
     console.log(item)
@@ -96,8 +97,8 @@ function TestimonialCarousel() {
           captionHeader={item.quote}
         />
       </CarouselItem>
-    );
-  });
+    )
+  })
 
   return (
     <div>
@@ -108,7 +109,12 @@ function TestimonialCarousel() {
               background: #ffcd51;
 }`}
       </style>
-      <Carousel activeIndex={activeIndex} next={next} previous={previous}>
+      <Carousel
+        className="carouselMedia"
+        activeIndex={activeIndex}
+        next={next}
+        previous={previous}
+      >
         <CarouselIndicators
           items={testimonials}
           activeIndex={activeIndex}
@@ -127,7 +133,7 @@ function TestimonialCarousel() {
         />
       </Carousel>
     </div>
-  );
+  )
 }
 
-export default TestimonialCarousel;
+export default TestimonialCarousel

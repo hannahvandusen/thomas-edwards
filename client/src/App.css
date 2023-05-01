@@ -78,7 +78,7 @@
 }
 
 .header {
-  color: #ffcd51; 
+  color: #ffcd51;
 }
 .media {
   display: none;
@@ -107,6 +107,10 @@
     display: block;
   }
   .sticky-top {
+    display: none;
+  }
+
+  .carouselMedia {
     display: none;
   }
 
@@ -177,4 +181,10 @@
   font-size: 15px;
   width: 50vw;
   border-radius: 50px;
+}
+
+@media screen and (max-width: 750px) {
+  .carouselMedia {
+    display: none;
+  }
 }

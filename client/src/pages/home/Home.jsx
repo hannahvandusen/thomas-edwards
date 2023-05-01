@@ -26,6 +26,7 @@ function Home() {
     const emailRef = useRef();
     const nameRef = useRef();
 
+
     //fetch about section
     const fetchAbout = async () => {
         const url = `http://localhost:4000/about/643ae5920f74ad63f71a205d`;
@@ -158,7 +159,7 @@ function Home() {
 
                     <Col>
                         <div data-aos="fade-up">
-                            <BsTelephone size={60} />
+                            <BsTelephone style={{ color: "white" }} size={80} />
                             <br />
                             <Link
                                 to="https://calendly.com/innerfamous"
