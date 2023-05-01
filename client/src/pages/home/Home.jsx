@@ -7,7 +7,7 @@ import { BsTelephone } from "react-icons/bs";
 import { AiOutlineMail } from "react-icons/ai";
 import { Outlet, Link, useNavigate } from "react-router-dom";
 import AOS from "aos";
-import { Form, FormGroup, Input, Label, Button, Container, Row, Col } from "reactstrap"
+import { Form, FormGroup, Input, Label, Button, Container, Row, Col, Modal, ModalHeader, ModalTitle, ModalBody, ModalFooter } from "reactstrap"
 import newImage from "../../images/site_photo_2.jpg";
 
 function Home() {
@@ -17,6 +17,9 @@ function Home() {
     
     const emailRef = useRef();
     const nameRef = useRef();
+
+    const [ modal, setModal ] = useState(false); 
+    const toggle = () => setModal(!modal);
 
 //fetch about section 
   const fetchAbout = async () => {
@@ -34,6 +37,32 @@ function Home() {
     } catch (err) {
       console.error(err)
     }
+  }
+
+  const successModal = () => {
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
+    return (
+      <>
+        <Button variant="primary" onClick={handleShow}>
+          Launch demo modal
+        </Button>
+        <Modal show={show} onHide={handleClose}>
+          <ModalHeader closeButton>
+          </ModalHeader>
+          <ModalBody>Woohoo, you're reading this text in a modal!</ModalBody>
+          <ModalFooter>
+            <Button variant="secondary" onClick={handleClose}>
+              Close
+            </Button>
+          </ModalFooter>
+        </Modal>
+      </>
+    );
+
   }
 
   const handleSubmit = async (e) => {
@@ -60,7 +89,8 @@ function Home() {
 
       console.log(data)
       if(data.newSubscriber) {
-        alert("Thanks for subscribing!")
+
+        // alert("Thanks for subscribing!")
       } else {
         alert(data.Error)
       }
