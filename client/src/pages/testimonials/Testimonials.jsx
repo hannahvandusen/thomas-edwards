@@ -51,7 +51,7 @@ return (
 
 
         <section className={styles.card}>
-          <img 
+          <img
            data-aos="fade-up"
            data-aos-anchor-placement="top-bottom"
            data-aos-easing="ease-in-sine"

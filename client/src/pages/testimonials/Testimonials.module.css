@@ -185,9 +185,11 @@
       justify-content: center;
     }
 
-    /* .card > img {
+    .card > img {
       width: 100vw;
-    } */
+      border: none;
+      display: none;
+    }
   
     .card:nth-child(even) img {
       order: 0;
