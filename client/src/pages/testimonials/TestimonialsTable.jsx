@@ -32,11 +32,6 @@ function TestimonialsTable(props) {
 
     }
 
-    const style = {
-        backgroundColor: "#ffcd51", 
-        color: "black",
-        fontFamily: "Georgia, serif"
-    }
     return (
         <>
         <h1 style={{color: "#cddee5"}}>Testimonials</h1>
@@ -80,7 +75,11 @@ function TestimonialsTable(props) {
                         <Button
                             href='#top'
                             onClick={() => navigate(`/testimonialsindex/${testimonials._id}`)}
-                            style={style}>Edit</Button>
+                            style={{
+                                backgroundColor: "#ffcd51", 
+                                color: "black",
+                                fontFamily: "Georgia, serif"
+                            }}>Edit</Button>
                         <Button
                             onClick={() => deleteTestimonial(testimonials._id)}
                             color="danger">Delete</Button>

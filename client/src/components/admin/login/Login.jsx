@@ -47,13 +47,15 @@ function Login({ updateToken }) {
 
   return (
     <>
-      <h1 style={{color: "white"}}>Login</h1>
+      <h1 style={{color: "white", }}>Login</h1>
       <Form onSubmit={handleSubmit}>
-        <FormGroup>
+        <FormGroup style={{color: "white"
+        }}>
           <Label>Email</Label>
           <Input innerRef={emailRef} type="email" />
         </FormGroup>
-        <FormGroup>
+        <FormGroup style={{color: "white"
+        }}>
           <Label>Password</Label>
           <Input innerRef={passwordRef} type="password" />
         </FormGroup>

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import photo1 from "../../images/Thomas_Square.png"
 import photo2 from "../assets/site photo 3.jpg"
 import photo3 from "../assets/love.jpg"
+import thomasNews from '../assets/thomasNews.jpg'
 import styles from "./AboutMe.module.css"
 import AOS from "aos"
 import { Button } from "reactstrap"
@@ -53,7 +54,7 @@ const AboutMe = () => {
 
       <div className={styles.container}>
           <section className={styles.card}>
-            <img className={styles.image} src={photo1} alt="My Story" />
+            <img className={styles.image} src={thomasNews} alt="My Story" />
 
             <div className={styles.description}>
               <h3>My Story</h3>

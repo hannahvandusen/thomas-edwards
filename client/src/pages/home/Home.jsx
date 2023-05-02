@@ -109,7 +109,7 @@ function Home() {
                             {story}
                         </p>
                         <Link to="/about">
-                            <button className={styles.buttonStory}>
+                            <button className={styles.buttonStory} style={{width: "10vw"}} >
                                 Read My Story
                             </button>
                         </Link>
@@ -130,7 +130,7 @@ function Home() {
             <br />
             <Container>
                 <Row>
-                    <Col>
+                    <Col md="8">
                         <div data-aos="fade-up">
                             {/* <AiOutlineMail size={70} />
                     <br />
@@ -139,8 +139,10 @@ function Home() {
                         <button className={styles.buttonHelp}>Sign Up Here</button>
                         </a>  */}
                             {/* <h4 >Let's Connect</h4> */}
-                            <Form onSubmit={handleSubmit}>
-                                <FormGroup>
+                            <Form onSubmit={handleSubmit}  
+                            className={styles.formHelp} 
+                            >
+                                <FormGroup >
                                     <Input
                                         placeholder="Email"
                                         innerRef={emailRef}
@@ -150,14 +152,22 @@ function Home() {
                                         innerRef={nameRef}
                                     />
                                 </FormGroup>
-                                <button className={styles.button2}>
+                                <button className={styles.button2}
+                                                  style={{
+                                                    // color: "white",
+                                                    marginBottom: "20px",
+                                                    // fontSize: "12px",
+                                                    width: "10vw"
+                                                  }}
+                                
+                                >
                                     Subscribe
                                 </button>
                             </Form>
                         </div>
                     </Col>
 
-                    <Col>
+                    <Col >
                         <div data-aos="fade-up">
                             <BsTelephone style={{ color: "white" }} size={80} />
                             <br />
@@ -167,8 +177,8 @@ function Home() {
                                 rel="noopener noreferrer"
                             >
                                 <button
-                                    className={styles.buttonHelp}
-                                    style={{ color: "white" }}
+                                    className={styles.button2}
+                                    style={{ width: "10vw" }}
                                 >
                                     Schedule A Meeting
                                 </button>

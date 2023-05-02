@@ -76,9 +76,9 @@ const Intake = () => {
         <h1 style={{ color: "white", fontFamily: "Georgia, serif" }}>
           <span style={{ color: "#ffcd51" }}>Contact</span> Thomas
         </h1>
-            <Col md="6" className="photo-section" >
-                    <img className="contactPhoto" src={photo} alt="contact image" />
-            </Col>
+          <Col md="6" className="photo-section" >
+              <img className="contactPhoto" src={photo} alt="contact image" />
+          </Col>
         <Col md="6">
           <Form onSubmit={handleSubmit}>
             <FormGroup
@@ -86,6 +86,7 @@ const Intake = () => {
                 display: "flex",
                 justifyContent: "center",
                 paddingTop: "20px",
+                color: "white"
               }}
               row
             >
@@ -103,7 +104,7 @@ const Intake = () => {
               />
             </FormGroup>{" "}
             <FormGroup
-              style={{ display: "flex", justifyContent: "center" }}
+              style={{ display: "flex", justifyContent: "center", color:"white" }}
               row
             >
               <Label for="exampleEmail">Email</Label>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { Button, Col, Container, Form, FormGroup, Input, Label, Row } from 'reactstrap';
-import style from './Testimonials.module.css'
+// import styles from './Testimonials.module.css'
 
 function TestimonialsEdit(props) {
 
@@ -127,11 +127,13 @@ function TestimonialsEdit(props) {
                                     onChange={e => setQuote(e.target.value)}
                                     autoComplete='off' />
                             </FormGroup>
-                            <Button className={style.button}>Update Testimonial</Button>
+                            <Button 
+                            // className={styles.button}
+                            >Update Testimonial</Button>
                         </Form>
                     </Col>
                     <Button
-                            className={style.button}
+                            // className={styles.button}
                             onClick="window.location.href='#top'"
                             href='/testimonialsindex'
                             >Back to Table

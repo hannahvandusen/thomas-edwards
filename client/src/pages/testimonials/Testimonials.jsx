@@ -2,7 +2,7 @@ import { React, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Testimonials.module.css";
 import AOS from "aos";
-import newImage from "../../images/site_photo_2.jpg";
+import newImage from "../../images/photo1.jpg";
 
 function Testimonials() {
     const navigate = useNavigate();
@@ -33,15 +33,17 @@ function Testimonials() {
 
 return (
 	<>
-  <main className={styles.main}>
+    <main className={styles.main}>
       <img className={styles.mainPhoto} src={newImage} alt="mainPhoto" />
   </main>
-    <header className={styles.mainHeader}>
+
+      <header className={styles.mainHeader}>
         <h1>
           <span>What People Say About</span> Working With Thomas
         </h1>
         <p className={styles.p}> </p>
     </header>
+
     <div className={styles.container}>
       {
       testimonials.map(testimonial => (
