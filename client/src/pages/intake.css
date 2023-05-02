@@ -1,0 +1,36 @@
+.idea {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  margin-right: 20px;
+}
+
+.photoSection {
+  align-items: center;
+  justify-content: center;
+}
+.contactPhoto {
+  width: 100%;
+  padding: 1rem;
+}
+
+@media screen and (max-width: 800px) {
+  .idea {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+  }
+
+  .contactPhoto {
+    width: 100%;
+    padding-bottom: 50px;
+    padding: 5px;
+  }
+
+  .intakeWrapper {
+    margin: 0;
+    padding: 0;
+  }
+}

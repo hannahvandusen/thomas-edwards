@@ -1,57 +1,94 @@
-import React, { useEffect } from 'react'
-import photo1 from '../assets/site photo 2.jpg'
-import photo2 from '../assets/site photo 3.jpg'
-import photo3 from '../assets/love.jpg'
-
-import styles from './AboutMe.module.css'
-
-import AOS from 'aos';
+import React, { useEffect, useState } from "react"
+import photo1 from "../../images/Thomas_Square.png"
+import photo2 from "../assets/site photo 3.jpg"
+import photo3 from "../assets/love.jpg"
+import thomasNews from '../assets/thomasNews.jpg'
+import styles from "./AboutMe.module.css"
+import AOS from "aos"
+import { Button } from "reactstrap"
+import { useNavigate } from "react-router-dom"
 
 //Scrolling Effect
 const AboutMe = () => {
-    useEffect(() => {
-        AOS.init();
-    }, [])
+  const navigate = useNavigate()
 
+  const [about, setAbout] = useState()
+  const [story, setStory] = useState()
+  const [mission, setMission] = useState()
+  const [value, setValue] = useState()
+
+  const fetchAbout = async () => {
+    const url = `http://localhost:4000/about/643ae5920f74ad63f71a205d`
+    const requestOptions = {
+      method: "GET",
+    }
+
+    try {
+      const res = await fetch(url, requestOptions)
+      const data = await res.json()
+      console.log(data)
+      const { about, story, mission, value } = data.about
+      setAbout(about)
+      setStory(story)
+      setMission(mission)
+      setValue(value)
+    } catch (err) {
+      console.error(err)
+    }
+  }
+
+  useEffect(() => {
+    AOS.init()
+    fetchAbout()
+  }, [])
 
   return (
     <>
-        <header className={styles.mainHeader}>
-            <h1><span>About</span>Thomas</h1>
-            <p>My gift is to Inspire others, and make dreams come true</p>
-            <main></main>
-        </header>
-        <div className={styles.container}>
-            <section className={styles.card}>
-                <img className={styles.image} src={photo1} alt="My Story" />
-                <div>
-                    <h3>My Story</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore est quia officia, sunt odio minima harum rerum assumenda asperiores perspiciatis nobis id excepturi doloremipsum20,animirepellendus hic voluptatibus maxime eius.Lorem ipsum dolor sit ametsdfs consectetur adipisicing elithbsll. GreatInventore est quia officia, sunt odio minima harum rerum assumenda asperiores perspiciatis nobis id excepturi dolorem, animi repellendus hic voluptatibus maxime eius.Lorem ipsum dolor sit amet consectetur adipisicing elit.  GreatInventore est quia officia, sunt odio minima harum rerum assumenda asperiores perspiciatis nobis id excepturi dolorem.</p>
-                </div>
-            </section>
+    
+      <header className={styles.mainHeader}>
+        <h1>
+          <span>About</span>Thomas
+        </h1>
+        <p> {about} </p>
+      </header>
 
-            <section className={styles.card}>
-                <img className={styles.image2} src={photo2} alt="My Values" />
-                <div>
-                    <h3 data-aos="zoom-in-right">My Values</h3>
-                    <p data-aos="fade-right"  >Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore est quia officia, sunt odio minima harum rerum assumenda asperiores perspiciatis nobis id excepturi doloremipsum20,animirepellendus hic voluptatibus maxime eius.Lorem ipsum dolor sit ametsdfs consectetur adipisicing elithbsll. GreatInventore est quia officia, sunt odio minima harum rerum assumenda asperiores perspiciatis nobis id excepturi dolorem, animi repellendus hic voluptatibus maxime eius.Lorem ipsum dolor sit amet consectetur adipisicing elit.  GreatInventore est quia officia, sunt odio minima harum rerum assumenda asperiores perspiciatis nobis id excepturi dolorem.</p>
-                </div>
-            </section>
+      <div className={styles.container}>
+          <section className={styles.card}>
+            <img className={styles.image} src={thomasNews} alt="My Story" />
 
-            <section className={styles.card}>
-                <img className={styles.image} src={photo3} alt="My Mission" />
-                <div>
-                    <h3 data-aos="zoom-in-left">My Mission</h3>
-                    <p data-aos="fade-left">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore est quia officia, sunt odio minima harum rerum assumenda asperiores perspiciatis nobis id excepturi doloremipsum20,animirepellendus hic voluptatibus maxime eius.Lorem ipsum dolor sit ametsdfs consectetur adipisicing elithbsll. GreatInventore est quia officia, sunt odio minima harum rerum assumenda asperiores perspiciatis nobis id excepturi dolorem, animi repellendus hic voluptatibus maxime eius.Lorem ipsum dolor sit amet consectetur adipisicing elit.  GreatInventore est quia officia, sunt odio minima harum rerum assumenda asperiores perspiciatis nobis id excepturi dolorem.</p>
-                </div>
-            </section>
+            <div className={styles.description}>
+              <h3>My Story</h3>
+              <p>{story}</p>
+            </div>
+          </section>
 
+          <section className={styles.card}>
+            <img className={styles.image} src={photo2} alt="My Mission" />
+            <div className={styles.description}>
+              <h3 data-aos="zoom-in-right">My Mission</h3>
+              <p data-aos="fade-up">{mission}</p>
+            </div>
+          </section>
 
-                <div className={styles.form}>
-                    <h1 data-aos="fade-down">Get in Touch</h1>
-                 </div>
-        </div>      
-    </> 
+          <section className={styles.card}>
+            <img className={styles.image} src={photo3} alt="My Mission" />
+            <div className={styles.description}>
+              <h3 data-aos="zoom-in-left">My Values</h3>
+              <p data-aos="fade-up">{value}</p>
+            </div>
+          </section>
+        </div>
+      <div className={styles.form}>
+        <Button
+          data-aos="fade-up"
+          style={{ backgroundColor: "#ffcd51", color: "black" }}
+          onClick={() => navigate("/intake")}
+          href="#top"
+        >
+          Get in Touch
+        </Button>
+      </div>
+    </>
   )
 }
 

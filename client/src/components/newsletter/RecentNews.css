@@ -1,0 +1,49 @@
+.recent-news {
+  margin-top: 60px;
+}
+
+.recent-news h3 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.recent-news .card {
+  border: none;
+}
+
+.recent-news .card img {
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.recent-news .card-body {
+  padding: 20px;
+}
+
+.recent-news .card-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.recent-news .card-title a {
+  color: #000;
+}
+
+.recent-news .card-title a:hover {
+  color: #0056b3;
+}
+
+.recent-news .btn-primary {
+  background-color: #0056b3;
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 10px 20px;
+}
+
+.recent-news .btn-primary:hover {
+  background-color: #003a80;
+}

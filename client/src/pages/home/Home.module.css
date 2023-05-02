@@ -1,0 +1,315 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.paragraph {
+  padding: 10%;
+  font-size: medium;
+}
+
+.main {
+  padding: 0;
+  position: relative;
+}
+
+.mainPhoto {
+  /* width: 100%; */
+  /* height: auto; */
+  height: 60vh;
+  width: 100%;
+  object-fit: cover;
+  padding: 0 7px;
+  overflow-x: hidden;
+  /* margin: 7px; */
+}
+
+.description {
+  color: #ffcd51;
+}
+
+.mainHeader {
+  position: absolute;
+  left: 500px;
+  color: #ffcd51;
+  /* font-size: 30rem; */
+  top: 250px;
+  width: 60%;
+  text-align: center;
+  font-family: Georgia, serif;
+  font-size: 50px;
+}
+
+.form {
+  text-align: center;
+  padding: 35px;
+  /* opacity: 0.9; */
+  background-image: url(../../images/stockPhoto.jpg);
+  /* background-image: url(../../images/design.jpg); */
+  background-size: 100vw;
+  /* filter: sepia(0.1); */
+}
+
+.form h1 {
+  font-family: Georgia, serif;
+  color: black;
+}
+
+.input {
+  font-size: 15px;
+  width: 50vw;
+  /* border: 0.1px solid #989796; */
+  /* opacity: 0.5; */
+}
+
+.formHelp {
+  width: 50%;
+}
+
+.button {
+  font-size: 15px;
+  width: 50vw;
+  border-radius: 50px;
+  font-family: Georgia, serif;
+  /* opacity: 0.5; */
+}
+.button:hover {
+  background-color: #ffcd51;
+  font-size: 15px;
+  width: 50vw;
+  border-radius: 50px;
+}
+
+.buttonStory {
+  border-radius: 30px;
+  color: black;
+}
+
+.buttonStory:hover {
+  background-color: #ffcd51;
+}
+
+.header {
+  color: #ffcd51;
+}
+
+#about-image {
+  display: flex;
+  justify-content: center;
+}
+/* ------ ABOUT ME CARD ------ */
+
+.boxIdea {
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 2rem 5rem;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  /* border-bottom: 0.5px solid rgb(125, 127, 129, 0.5); */
+}
+
+.card span {
+  margin-bottom: 2rem;
+  overflow-y: hidden;
+  color: #cddee5;
+}
+
+.card img {
+  position: relative;
+  /* left: 30px; */
+  margin-bottom: 20px;
+  margin-top: 25px;
+  height: 550px;
+  object-fit: cover;
+  overflow-y: hidden;
+}
+
+.card h3 {
+  color: #ffcd51;
+  overflow-y: hidden;
+  margin-bottom: 1rem;
+  font-family: Georgia, serif;
+}
+
+.card p {
+  /* color: #cddee5; */
+  color: #c8cbd0;
+}
+
+.card > div {
+  padding: 1rem;
+  overflow-y: hidden;
+}
+
+.span1 {
+  color: #ffcd51;
+}
+
+.aboutThomas {
+  color: #ffcd51;
+}
+
+/* ------ HOW I CAN HELP  ------ */
+
+.help {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color: #cddee5;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  padding-right: 15px;
+}
+
+.help p {
+  color: #cddee5;
+  margin: 0% 20%;
+}
+
+.help button {
+  border-radius: 50px;
+  font-family: Georgia, serif;
+}
+
+.buttonHelp:hover {
+  background-color: #ffcd51;
+}
+
+.button2 {
+  border-radius: 50px;
+}
+
+.button2:hover {
+  background-color: #ffcd51;
+}
+
+h1 {
+  padding-top: 20px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.form {
+  padding: 60px;
+  margin: 0 auto;
+}
+
+form input {
+  margin: 1px;
+}
+
+svg {
+  padding: 20px;
+}
+
+.titles {
+  display: flex;
+  justify-content: center;
+  font-family: Georgia, serif;
+  color: #ffcd51;
+}
+
+.connect {
+  border-top: 0.5px solid rgb(125, 127, 129, 0.5);
+}
+
+.buttonHelp {
+  border-radius: 50px;
+}
+
+/* ------ MEDIA QUIRES ------ */
+
+/* MEDIA NEEDS WORK */
+
+@media screen and (max-width: 800px) {
+  * {
+    margin-left: 0px;
+    padding-left: 0px;
+    overflow-x: hidden;
+  }
+
+  .mainPhoto {
+    height: 50vh;
+    width: 100%;
+    object-fit: contain;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+  }
+  .formHelp {
+    width: 100%;
+  }
+  
+  .buttonStory:hover {
+    background-color: #ffcd51;
+  }
+  
+  .card {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+  }
+
+  .card > div {
+    width: 100vw;
+  }
+
+  .card img {
+    display: none;
+  }
+
+  .card > img {
+    width: 500px;
+    height: 630px;
+    padding: 7px;
+  }
+
+  .card:nth-child(even) img {
+    order: 0;
+    overflow-y: hidden;
+    width: 100vw;
+  }
+
+  .description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+    color: #ffcd51;
+  }
+
+  .form {
+    width: 100vw;
+  }
+
+  .helpDescription {
+    display: none;
+  }
+  .help {
+    padding: 30px;
+    margin: 1px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: #cddee5;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  
+  }
+  .button2 {
+    margin: 5px;
+    font-size: 12px;
+  }
+}
