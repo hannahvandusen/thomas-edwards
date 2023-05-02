@@ -69,7 +69,7 @@ function AboutEdit() {
 
     return (
     <div className={styles.aboutedit}>
-        <Form onSubmit={handleSubmit}>
+        <Form onSubmit={handleSubmit} style={{color: "white"}} >
             <Label>About Description:</Label>
             <Input type='textarea' defaultValue={aboutSection.about} innerRef={aboutRef}/> 
             
@@ -97,12 +97,12 @@ function AboutEdit() {
             
             /> 
             <Button type='submit' style={{backgroundColor: "#ffcd51", 
-        color: "black"}}> Publish Changes</Button>
+        color: "black", margin: "1%"}}> Publish Changes</Button>
         <Button style={{backgroundColor: "#ffcd51", 
         color: "black"}} onClick="window.location.href='#top'" href="/about">View About Page</Button>
         </Form>
         <Button onClick={() => navigate('/admin')} href='#top' style={{backgroundColor: "#ffcd51", 
-        color: "black"}}>Admin Portal</Button>
+        color: "black", margin: "1%"}}>Admin Portal</Button>
     </div>
   )
 }

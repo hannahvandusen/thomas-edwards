@@ -41,7 +41,7 @@ function Admin() {
         </Row>
       </Container>
     ) : (
-      <Container>
+      <Container style={{height: "80vh"}}>
         <h1 style={{ color: "white", fontFamily: "Georgia, serif" }}>
           Admin Portal
         </h1>
