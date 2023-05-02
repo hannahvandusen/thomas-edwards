@@ -39,7 +39,7 @@ function TestimonialsCreate(props) {
     try {
       const res = await fetch(url, requestOptions)
       const data = await res.json()
-
+      alert(`Testimonial Added!`)
       // console.log(data);
 
       // formRef.current.reset();

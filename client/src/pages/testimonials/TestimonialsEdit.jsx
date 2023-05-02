@@ -23,7 +23,7 @@ function TestimonialsEdit(props) {
         try {
             const res = await fetch(url, requestOptions);
             const data = await res.json();
-            console.log(data); 
+            //console.log(data); 
             
             const {
                 caption, name, association, quote
@@ -33,7 +33,7 @@ function TestimonialsEdit(props) {
             setName(name);
             setAssociation(association);
             setQuote(quote);
-
+            
         } catch (error) {
             console.error(error);
         }
@@ -69,7 +69,8 @@ function TestimonialsEdit(props) {
             const res = await fetch(url, requestOptions);
             const data = await res.json();
 
-            console.log(data);
+            //console.log(data);
+            alert(`Changes published!`)
         } catch (error) {
             console.error(error);
         }

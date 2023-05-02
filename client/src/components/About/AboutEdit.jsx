@@ -60,7 +60,8 @@ function AboutEdit() {
         try {
             const res = await fetch(url, requestOptions);
             const data = await res.json();
-            console.log(data); 
+            //console.log(data); 
+            alert(`Changes published!`)
     
         } catch (err) {
             console.error(err); 
