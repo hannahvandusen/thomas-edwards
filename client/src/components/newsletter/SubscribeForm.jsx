@@ -70,7 +70,7 @@ function SubscribeForm() {
             ) : ( */}
                 {/* <form action="#" class="row flex-fill" onSubmit={handleSubmit}>
                     <label htmlFor="email-input">
-                        Subscribe to our free newsletter
+                        Stay up to date with the latest news
                     </label>
                     <input
                         type="email"

@@ -1,15 +1,12 @@
 import React from 'react'
 import { Button, Table } from 'reactstrap'
-import { baseURL } from '../../environment'
 import { useNavigate } from 'react-router-dom';
 
 function TestimonialsTable(props) {
 
-    // console.log(props)
     const navigate = useNavigate();
 
     async function deleteTestimonial(id) {
-        // const id = props.testimonials._id
         const url = `http://localhost:4000/testimonialsindex/${id}`;
 
         let requestOptions = {
@@ -21,7 +18,6 @@ function TestimonialsTable(props) {
             let res = await fetch(url, requestOptions);
             let data = await res.json();
 
-            // console.log(data.message);
             if(data.message.toLowerCase() === "testimonial removed") {
                 props.fetchTestimonials();
                 alert("Testimonial Removed"); 
@@ -36,11 +32,6 @@ function TestimonialsTable(props) {
 
     }
 
-    const style = {
-        backgroundColor: "#ffcd51", 
-        color: "black",
-        fontFamily: "Georgia, serif"
-    }
     return (
         <>
         <h1 style={{color: "#cddee5"}}>Testimonials</h1>
@@ -58,9 +49,6 @@ function TestimonialsTable(props) {
                     </th>
                     <th style={{color: "#cddee5"}}>
                         Quote
-                    </th>
-                    <th style={{color: "#cddee5"}}>
-                        Photo
                     </th>
                     <th style={{color: "#cddee5"}}>
                         Update
@@ -83,14 +71,15 @@ function TestimonialsTable(props) {
                     <td style={{color: "#cddee5"}}>
                         {testimonials.quote}
                     </td>
-                    <td style={{color: "#cddee5"}}>
-                        {testimonials.photo}
-                    </td>
                     <td>
                         <Button
                             href='#top'
                             onClick={() => navigate(`/testimonialsindex/${testimonials._id}`)}
-                            style={style}>Edit</Button>
+                            style={{
+                                backgroundColor: "#ffcd51", 
+                                color: "black",
+                                fontFamily: "Georgia, serif"
+                            }}>Edit</Button>
                         <Button
                             onClick={() => deleteTestimonial(testimonials._id)}
                             color="danger">Delete</Button>

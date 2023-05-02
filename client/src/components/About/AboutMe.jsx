@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import photo1 from "../../images/Thomas_Square.png"
 import photo2 from "../assets/site photo 3.jpg"
 import photo3 from "../assets/love.jpg"
+import thomasNews from '../assets/thomasNews.jpg'
 import styles from "./AboutMe.module.css"
 import AOS from "aos"
 import { Button } from "reactstrap"
@@ -43,6 +44,7 @@ const AboutMe = () => {
 
   return (
     <>
+    
       <header className={styles.mainHeader}>
         <h1>
           <span>About</span>Thomas
@@ -51,31 +53,31 @@ const AboutMe = () => {
       </header>
 
       <div className={styles.container}>
-        <section className={styles.card}>
-          <img className={styles.image} src={photo1} alt="My Story" />
+          <section className={styles.card}>
+            <img className={styles.image} src={thomasNews} alt="My Story" />
 
-          <div className={styles.description}>
-            <h3>My Story</h3>
-            <p>{story}</p>
-          </div>
-        </section>
+            <div className={styles.description}>
+              <h3>My Story</h3>
+              <p>{story}</p>
+            </div>
+          </section>
 
-        <section className={styles.card}>
-          <img className={styles.image} src={photo2} alt="My Mission" />
-          <div className={styles.description}>
-            <h3 data-aos="zoom-in-right">My Mission</h3>
-            <p data-aos="fade-up">{mission}</p>
-          </div>
-        </section>
+          <section className={styles.card}>
+            <img className={styles.image} src={photo2} alt="My Mission" />
+            <div className={styles.description}>
+              <h3 data-aos="zoom-in-right">My Mission</h3>
+              <p data-aos="fade-up">{mission}</p>
+            </div>
+          </section>
 
-        <section className={styles.card}>
-          <img className={styles.image} src={photo3} alt="My Mission" />
-          <div className={styles.description}>
-            <h3 data-aos="zoom-in-left">My Values</h3>
-            <p data-aos="fade-up">{value}</p>
-          </div>
-        </section>
-      </div>
+          <section className={styles.card}>
+            <img className={styles.image} src={photo3} alt="My Mission" />
+            <div className={styles.description}>
+              <h3 data-aos="zoom-in-left">My Values</h3>
+              <p data-aos="fade-up">{value}</p>
+            </div>
+          </section>
+        </div>
       <div className={styles.form}>
         <Button
           data-aos="fade-up"

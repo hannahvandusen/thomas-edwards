@@ -56,6 +56,8 @@ function Admin() {
                 width: "200px",
                 fontSize: "15px",
                 margin: "10px",
+                color: "black",
+                backgroundColor: "#ffcd51",
               }}
               href="/admin/account"
             >
@@ -67,6 +69,8 @@ function Admin() {
                 width: "200px",
                 fontSize: "15px",
                 margin: "10px",
+                color: "black",
+                backgroundColor: "#ffcd51",
               }}
               href="/testimonialsindex"
             >
@@ -78,6 +82,8 @@ function Admin() {
                 width: "200px",
                 fontSize: "15px",
                 margin: "10px",
+                color: "black",
+                backgroundColor: "#ffcd51",
               }}
               href="/about/edit"
             >
@@ -88,6 +94,8 @@ function Admin() {
                 borderRadius: "10px",
                 width: "200px",
                 fontSize: "15px",
+                color: "black",
+                backgroundColor: "#ffcd51",
                 margin: "10px",
               }}
               href="/subscribe"
