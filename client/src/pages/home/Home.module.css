@@ -66,28 +66,21 @@
   width: 50%;
 }
 
-.button {
-  font-size: 15px;
-  width: 50vw;
-  border-radius: 50px;
-  font-family: Georgia, serif;
-  /* opacity: 0.5; */
-}
-.button:hover {
+/* .button:hover {
   background-color: #ffcd51;
   font-size: 15px;
   width: 50vw;
   border-radius: 50px;
-}
+} */
 
-.buttonStory {
+/* .buttonStory {
   border-radius: 30px;
   color: black;
-}
+} */
 
-.buttonStory:hover {
+/* .buttonStory:hover {
   background-color: #ffcd51;
-}
+} */
 
 .header {
   color: #ffcd51;
@@ -171,23 +164,6 @@
   margin: 0% 20%;
 }
 
-.help button {
-  border-radius: 50px;
-  font-family: Georgia, serif;
-}
-
-.buttonHelp:hover {
-  background-color: #ffcd51;
-}
-
-.button2 {
-  border-radius: 50px;
-}
-
-.button2:hover {
-  background-color: #ffcd51;
-}
-
 h1 {
   padding-top: 20px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
@@ -217,14 +193,47 @@ svg {
 .connect {
   border-top: 0.5px solid rgb(125, 127, 129, 0.5);
 }
+/* BUTTON STYLING*/
 
-.buttonHelp {
+.button {
+  font-size: 12px;
+  width: 50vw;
   border-radius: 50px;
+  font-family: Georgia, serif;
+  background-color: #d2d5d0;
 }
 
-/* ------ MEDIA QUIRES ------ */
+/* BUTTON ANIMATION IDEA*/
+/* button {
+  --c: #ffcd51;
+  box-shadow: 0 0 0 0.1em inset var(--c);
+  --_g: linear-gradient(var(--c) 0 0) no-repeat;
+  background: var(--_g) calc(var(--_p, 0%) - 100%) 0%,
+    var(--_g) calc(200% - var(--_p, 0%)) 0%,
+    var(--_g) calc(var(--_p, 0%) - 100%) 100%,
+    var(--_g) calc(200% - var(--_p, 0%)) 100%;
+  background-size: 50.5% calc(var(--_p, 0%) / 2 + 0.5%);
+  transition: background-size 0.4s, background-position 0s 0.4s;
+} */
 
-/* MEDIA NEEDS WORK */
+button:hover {
+  --_p: 100%;
+  transition: background-position 0.4s, background-size 0s;
+  background-color: #ffcd51;
+}
+button:active {
+  box-shadow: 0 0 9e9Q inset #0009;
+  background-color: var(--c);
+  color: #fff;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+/* END OF BUTTON STYLING */
+
+/* ------ MEDIA QUIRES ------ */
 
 @media screen and (max-width: 800px) {
   * {
@@ -247,13 +256,10 @@ svg {
     padding: 0;
   }
   .formHelp {
-    width: 100%;
+    width: 85%;
+    margin: 0 auto;
   }
-  
-  .buttonStory:hover {
-    background-color: #ffcd51;
-  }
-  
+
   .card {
     display: flex;
     align-items: center;
@@ -306,10 +312,9 @@ svg {
     color: #cddee5;
     font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
       "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  
   }
-  .button2 {
-    margin: 5px;
-    font-size: 12px;
+  .button {
+    margin-bottom: 20px;
+    /* font-size: 12px; */
   }
 }
