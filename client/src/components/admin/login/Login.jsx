@@ -46,8 +46,8 @@ function Login({ updateToken }) {
   }
 
   return (
-    <>
-      <h1 style={{color: "white", }}>Login</h1>
+    <div style={{height: "80vh"}}>
+      <h1 style={{color: "white", fontFamily: "Georgia, serif"}}>Login</h1>
       <Form onSubmit={handleSubmit}>
         <FormGroup style={{color: "white"
         }}>
@@ -66,7 +66,7 @@ function Login({ updateToken }) {
           Login
         </Button>
       </Form>
-    </>
+    </div>
   )
 }
 

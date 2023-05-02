@@ -34,7 +34,7 @@ function TestimonialsTable(props) {
 
     return (
         <>
-        <h1 style={{color: "#cddee5"}}>Testimonials</h1>
+        <h1 style={{color: "#cddee5", fontFamily: "Georgia, serif"}}>Testimonials</h1>
         <Table striped>
             <thead>
                 <tr>
