@@ -109,7 +109,7 @@ function Home() {
                             {story}
                         </p>
                         <Link to="/about">
-                            <button className={styles.buttonStory} style={{width: "10vw"}} >
+                            <button className={styles.buttonStory} style={{width: "35%", padding: "1%"}} >
                                 Read My Story
                             </button>
                         </Link>
@@ -157,7 +157,8 @@ function Home() {
                                                     // color: "white",
                                                     marginBottom: "20px",
                                                     // fontSize: "12px",
-                                                    width: "10vw"
+                                                    width: "35%",
+                                                    padding: "1%"
                                                   }}
                                 
                                 >
@@ -178,7 +179,7 @@ function Home() {
                             >
                                 <button
                                     className={styles.button2}
-                                    style={{ width: "10vw" }}
+                                    style={{ width: "35%", padding: "1%" }}
                                 >
                                     Schedule A Meeting
                                 </button>

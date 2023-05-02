@@ -250,7 +250,10 @@ svg {
     width: 100%;
   }
   
-
+  .buttonStory:hover {
+    background-color: #ffcd51;
+  }
+  
   .card {
     display: flex;
     align-items: center;
