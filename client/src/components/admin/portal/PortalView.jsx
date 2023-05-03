@@ -76,11 +76,11 @@ function PortalView() {
     }
     return (
     <>
-        <>
-        <h1 style={{color: "#d2d5d1"}}>Message from {name}</h1>
+        <div style={{height: "100vh"}}>
+        <h1 style={{color: "#d2d5d1", fontFamily: "Georgia, serif"}}>Message from {name}</h1>
             <CardGroup>
-            <Card>
-                <CardBody >
+            <Card style={{padding: "1%", margin: "3%"}}>
+                <CardBody>
                     <CardTitle>Message received: {date} </CardTitle>
                     <CardText>Message: {message}</CardText>
                     <ListGroup flush>
@@ -96,7 +96,7 @@ function PortalView() {
         color: "black"}}>Delete Message</Button>
             <Button onClick={() => navigate('/admin')} style={{backgroundColor: "#ffcd51", 
         color: "black"}} >Back to Admin Portal</Button>
-        </>
+        </div>
     </>
     )
 }

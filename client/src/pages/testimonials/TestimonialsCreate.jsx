@@ -98,7 +98,7 @@ function TestimonialsCreate(props) {
                         type='textarea'/>
                 </FormGroup>
                 
-                <Button type='submit' style={style} >Add Testimonial</Button>
+                <Button type='submit' className={style.button} >Add Testimonial</Button>
             </Form>
         </>
     )
@@ -129,7 +129,7 @@ function TestimonialsCreate(props) {
           <Label style={{ color: "#cddee5" }}>Quote</Label>
           <Input innerRef={quoteRef} autoComplete="off" type="textarea" />
         </FormGroup>
-        <Button type="submit" style={style}>
+        <Button type="submit" className={style.button}>
           Add Testimonial
         </Button>
       </Form>

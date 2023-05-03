@@ -73,140 +73,151 @@ const Intake = () => {
     <div className="idea">
       <Container>
         <Row>
-        <h1 style={{ color: "white", fontFamily: "Georgia, serif" }}>
-          <span style={{ color: "#ffcd51" }}>Contact</span> Thomas
-        </h1>
-            <Col md="6" className="photo-section" >
-                    <img className="contactPhoto" src={photo} alt="contact image" />
-            </Col>
-        <Col md="6">
-          <Form onSubmit={handleSubmit}>
-            <FormGroup
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                paddingTop: "20px",
-              }}
-              row
-            >
-              {" "}
-              <Label for="exampleName">Name or Name of Organization</Label>
-              <Input
+          <h1 style={{ color: "white", fontFamily: "Georgia, serif" }}>
+            <span style={{ color: "#ffcd51" }}>Contact</span> Thomas
+          </h1>
+          <Col md="6" className="photo-section">
+            <img className="contactPhoto" src={photo} alt="contact image" />
+          </Col>
+          <Col md="6">
+            <Form onSubmit={handleSubmit}>
+              <FormGroup
                 style={{
-                  width: "15rem",
-                }}
-                id="Name"
-                name="name"
-                placeholder="Name"
-                type="name"
-                innerRef={nameRef}
-              />
-            </FormGroup>{" "}
-            <FormGroup
-              style={{ display: "flex", justifyContent: "center" }}
-              row
-            >
-              <Label for="exampleEmail">Email</Label>
-              <Input
-                style={{
-                  width: "15rem",
-                }}
-                id="email"
-                name="email"
-                placeholder="Email"
-                type="email"
-                innerRef={emailRef}
-              />
-            </FormGroup>{" "}
-            <FormGroup
-              style={{ display: "flex", justifyContent: "center" }}
-              row
-            >
-              <Label
-                style={{
-                  // opacity: ".4",
+                  display: "flex",
+                  justifyContent: "center",
+                  paddingTop: "20px",
                   color: "white",
                 }}
-                for="examplePhone"
+                row
               >
-                Phone Number
-              </Label>
-              <Input
+                {" "}
+                <Label for="exampleName">Name or Name of Organization</Label>
+                <Input
+                  style={{
+                    width: "25rem",
+                  }}
+                  id="Name"
+                  name="name"
+                  placeholder="Name"
+                  type="name"
+                  innerRef={nameRef}
+                />
+              </FormGroup>{" "}
+              <FormGroup
                 style={{
-                  width: "15rem",
+                  display: "flex",
+                  justifyContent: "center",
+                  color: "white",
                 }}
-                id="Phone"
-                name="phone"
-                placeholder="Phone"
-                innerRef={phoneRef}
-              />
-            </FormGroup>{" "}
-            <FormGroup style={{ color: "white" }}>
-              <label>Best Time to Contact You: </label>
-              <div
-                className="timeContainer"
-                style={{ display: "flex", justifyContent: "center" }}
+                row
               >
+                <Label for="exampleEmail">Email</Label>
                 <Input
                   style={{
-                    width: "15rem",
+                    width: "25rem",
                   }}
-                  name="select"
-                  type="select"
-                  innerRef={timeRef}
-                >
-                  <option></option>
-                  <option value={"Morning"}>Morning</option>
-                  <option value={"Afternoon"}>Afternoon</option>
-                  <option value={"Evening"}>Evening</option>
-                </Input>
-              </div>
-            </FormGroup>
-            <FormGroup style={{ color: "white" }}>
-              <label>Best Method of Contact: </label>
-              <div
-                className="timeContainer"
+                  id="email"
+                  name="email"
+                  placeholder="Email"
+                  type="email"
+                  innerRef={emailRef}
+                />
+              </FormGroup>{" "}
+              <FormGroup
                 style={{ display: "flex", justifyContent: "center" }}
+                row
               >
+                <Label
+                  style={{
+                    // opacity: ".4",
+                    color: "white",
+                  }}
+                  for="examplePhone"
+                >
+                  Phone Number
+                </Label>
                 <Input
                   style={{
-                     width: "15rem",
+                    width: "25rem",
                   }}
-                  name="select"
-                  type="select"
-                  innerRef={methodRef}
+                  id="Phone"
+                  name="phone"
+                  placeholder="Phone"
+                  innerRef={phoneRef}
+                />
+              </FormGroup>{" "}
+              <FormGroup style={{ color: "white" }}>
+                <label>Best Time to Contact You: </label>
+                <div
+                  className="timeContainer"
+                  style={{ display: "flex", justifyContent: "center" }}
                 >
-                  <option></option>
-                  <option value={"Phone"}>Phone</option>
-                  <option value={"Email"}>Email</option>
-                </Input>
-              </div>
-            </FormGroup>
-
-            <FormGroup style={{ color: "white" }}>
-              <label>Leave Thomas a Message:</label>
-              <div style={{ display: "flex", justifyContent: "center" }}
->
-              <Input
-                id="Message"
-                name="message"
-                placeholder="Leave a brief message about yourself, your organization, or
+                  <Input
+                    style={{
+                      width: "25rem",
+                    }}
+                    name="select"
+                    type="select"
+                    innerRef={timeRef}
+                  >
+                    <option></option>
+                    <option value={"Morning"}>Morning</option>
+                    <option value={"Afternoon"}>Afternoon</option>
+                    <option value={"Evening"}>Evening</option>
+                  </Input>
+                </div>
+              </FormGroup>
+              <FormGroup style={{ color: "white" }}>
+                <label>Best Method of Contact: </label>
+                <div
+                  className="timeContainer"
+                  style={{ display: "flex", justifyContent: "center" }}
+                >
+                  <Input
+                    style={{
+                      width: "25rem",
+                    }}
+                    name="select"
+                    type="select"
+                    innerRef={methodRef}
+                  >
+                    <option></option>
+                    <option value={"Phone"}>Phone</option>
+                    <option value={"Email"}>Email</option>
+                  </Input>
+                </div>
+              </FormGroup>
+              <FormGroup style={{ color: "white" }}>
+                <label>Leave Thomas a Message:</label>
+                <div style={{ display: "flex", justifyContent: "center" }}>
+                  <Input
+                    id="Message"
+                    name="message"
+                    placeholder="Leave a brief message about yourself, your organization, or
             goals!"
-                type="textarea"
+                    type="textarea"
+                    style={{
+                      height: "20vh",
+                      width: "25rem",
+                    }}
+                    innerRef={messageRef}
+                  />
+                </div>
+              </FormGroup>
+              <br />
+              <button
                 style={{
-                  height: "20vh",
-                  width: "15rem"}}
-                innerRef={messageRef}
-              />
-
-              </div>
-            </FormGroup>
-            <br />
-            <button type="submit" className={styles.buttonHelp}>
-              Submit
-            </button>
-          </Form>
-        </Col>
+                  maxWidth: "120px",
+                  padding: "5.5px",
+                  marginBottom: "30px",
+                }}
+                type="submit"
+                className={styles.button}
+              >
+                Submit
+              </button>
+            </Form>
+          </Col>
         </Row>
       </Container>
     </div>
