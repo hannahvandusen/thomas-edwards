@@ -119,8 +119,6 @@ We would like to thank all those who helped throughout the project, including ou
 
 # License
 
-Is this project licensed?
-
 This project uses the following third-party libraries:
 
 -   [React](https://reactjs.org/) - [MIT License](https://opensource.org/licenses/MIT)
