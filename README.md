@@ -126,7 +126,6 @@ This project uses the following third-party libraries:
 -   [React](https://reactjs.org/) - [MIT License](https://opensource.org/licenses/MIT)
 -   [Node.js](https://nodejs.org/) - [MIT License](https://opensource.org/licenses/MIT)
 -   [MongoDB](https://www.mongodb.com/) - [Server Side Public License (SSPL)](https://www.mongodb.com/licensing/server-side-public-license)
--   [Cloudinary](https://cloudinary.com/) - [Cloudinary Terms of Service](https://cloudinary.com/terms)
 
 # Contact
 
